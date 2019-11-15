@@ -2,26 +2,9 @@ User Guide
 ==========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 5
 
-   user-guide/getting-started/introduction-to-liferay-commerce.md
-
-   user-guide/getting-started/accelerators.md
-   user-guide/getting-started/using-the-minium-accelerator-to-jump-start-your-b2b-store.md
-
-   user-guide/getting-started/store-setup-overview.md
-   user-guide/getting-started/introduction-to-the-admin-account.md
-   user-guide/getting-started/liferay-commerce-configuration-overview.md
-   user-guide/getting-started/locale-options.md
-   user-guide/marketing/automating-store-emails-by-using-notification-templates.md
-   user-guide/getting-started/payments.md
-   user-guide/getting-started/managing-payment-methods.md
-   user-guide/getting-started/adding-regions.md
-   user-guide/getting-started/adding-a-new-currency.md
-   user-guide/getting-started/deactivating-a-country-for-billing-or-shipping.md
-   user-guide/getting-started/managing-exchange-rates.md
-   user-guide/getting-started/shipping-methods.md
-
+   user-guide/getting-started/index
    user-guide/catalog/creating-a-new-catalog.md
 
    user-guide/catalog/introduction-to-channels.md

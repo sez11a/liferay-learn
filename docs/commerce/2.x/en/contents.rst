@@ -10,7 +10,7 @@ Contents
 .. toctree::
    :glob:
    :includehidden:
-   :maxdepth: 2
+   :maxdepth: 5
 
    docs/getting_started
    docs/installation_and_upgrades
