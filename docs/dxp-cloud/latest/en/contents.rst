@@ -3,23 +3,17 @@ Contents
 
 .. toctree::
    :glob:
-   :hidden:
-
-   docs/**/*
-
-.. toctree::
-   :glob:
    :includehidden:
    :maxdepth: 2
 
-   docs/getting_started
-   docs/using_the_liferay_dxp_service
-   docs/build_and_deploy
-   docs/manage_and_optimize
-   docs/platform_services
-   docs/infrastructure_and_operations
-   docs/troubleshooting
-   docs/reference
+   getting_started
+   using_the_liferay_dxp_service
+   build_and_deploy
+   manage_and_optimize
+   platform_services
+   infrastructure_and_operations
+   troubleshooting
+   reference
 
 
 Indices and tables
