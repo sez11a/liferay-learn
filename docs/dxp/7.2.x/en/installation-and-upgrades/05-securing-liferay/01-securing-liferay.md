@@ -30,6 +30,8 @@ When setting up Liferay Portal for use, you should review the default security c
 - Single Sign-On
 - Web Services access and authorization
 
+You should review each topic individually to determine how to configure your system optimally; all the information is here. Security topics covered elsewhere are permission checking using Liferay Portal's permissions system, reviewing portal properties that affect security, and best practices, such as patching your system regularly. 
+
 ## Permission Checking
 
 Users can be assigned to Sites, Teams, User Groups, or Organizations. Custom Roles can be created, permissions can be assigned to these Roles, and those Roles can be assigned to users. Roles are scoped to apply only in a specific context, such as a Site, Organization, or globally. See [Roles and Permissions](../user-and-system-management/roles-and-permissions.md) for more information.
