@@ -1,6 +1,5 @@
 # Setting up @product@ as a SAML Identity Provider
 
-
 An identity provider is a trusted provider that provides single sign-on for users to access other websites. A service provider is a website that hosts applications and grants access only to identified users with proper credentials. Liferay Portal 6.1 EE and later versions support SAML 2.0 integration via the [Liferay Connector to SAML 2.0](https://web.liferay.com/marketplace/-/mp/application/15188711) application. It is provided from Liferay Marketplace and allows @product@ to act as a SAML 2.0 identity provider or as a service provider.
 
 **Important:** You can set @product@ up as an Identity Provider or as a Service Provider. Each single @product@ instance can serve as an identity provider or as a service provider, but **not both**. Both configurations are covered in this article.
@@ -15,6 +14,22 @@ Your first step is to determine where to store your keystore. You have two optio
 The file system keystore manager is used by default and the default location is the `[Liferay Home]/data` directory (you can change the location in System Settings &rarr; SSO &rarr; SAML Configuration &rarr; Key Store Path). To use Documents and Media library storage for your keystore instead of file system storage, go to *Control Panel* &rarr; *System Settings* &rarr; *Security* &rarr; *SSO* &rarr; *SAML KeyStoreManager Implementation Configuration*. Select from the two options: *Filesystem Keystore Manager* or *Document Library Keystore Manager*.
 
 If you use Document Library storage, you can use any number of [back-end file stores](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration). These are protected not only by the system where the key is stored, but also by @product@'s permissions system.
+
+## Important SAML Paths
+
+For reference, here are a few important SAML paths.
+
+This URL is the default location of the metadata XML file:
+
+    [host]:[port]/c/portal/saml/metadata
+
+Note that when configuring SAML, no importing of SAML certificates is required. @product@ reads certificates from the SAML metadata XML file. If you want a third-party application like Salesforce to read a Liferay SAML certificate, you can export the @product@ certificate from the keystore. The default keystore file is 
+
+```bash
+[Liferay Home]/data/keystore.jks 
+```
+
+You can change this path in System Settings &rarr; SSO &rarr; SAML Configuration &rarr; Key Store Path.
 
 ## Configuring @product@ as a SAML Identity Provider
 
