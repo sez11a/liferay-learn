@@ -1,6 +1,5 @@
 # Authenticating Using SAML
 
-
 The SAML (Security Assertion Markup Language) adapter provides Single Sign On (SSO) and Single Log Off (SLO) in your deployment. Each @product@ instance serves as either the Service Provider (SP) or the Identity Provider (IdP). An identity provider is a trusted provider that provides single sign-on for users to access other websites. A service provider is a website that hosts applications and grants access only to identified users with proper credentials.
 
 **Note:** A single @product@ instance is *either* the SP or the IdP in your SSO setup; it can't be both. You can, however, use separate instances for both purposes (for example, one instance is the SP and another is the IdP).
