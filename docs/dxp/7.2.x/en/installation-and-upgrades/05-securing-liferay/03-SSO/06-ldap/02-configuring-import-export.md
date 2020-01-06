@@ -26,7 +26,7 @@ If you want to search for only a subset of users or users that have different LD
 
 **Note:** If you intend to create or import users with no email addresses, you must set `users.email.address.required=false` in `portal-ext.properties`. With this set, Liferay auto-generates an email address combining the user ID plus the suffix defined in the property `users.email.address.auto.suffix=`. Finally, make sure to set Liferay and LDAP authentication to something other than email address.
 
-If you want to import LDAP groups as Liferay user groups, make sure define a mapping for the Liferay group field so that membership information is preserved:
+If you want to import LDAP groups as Liferay user groups, make sure you define a mapping for the Liferay group field so that membership information is preserved:
 
   -   *Group* (e.g., *member*)
 
@@ -58,7 +58,7 @@ Enter the LDAP group attributes you want retrieved for this mapping. The followi
 
 ## Export
 
-This section contains settings for exporting user data from LDAP.
+This section contains settings for exporting Liferay user data to LDAP.
 
 **Users DN:** Enter the location in your LDAP tree where the users are stored. Liferay exports the users to this location.
 
@@ -72,4 +72,4 @@ When you've set all your options and tested your connection, click *Save*.
 
 **Note:** If a user changes a value like a password in Liferay, that change is passed to the LDAP server, provided Liferay has enough schema access to make the change.
 
-Now you know how to connect an LDAP server to Liferay and how to configure user import behavior, export behavior, and other LDAP settings.
+Now you know how to connect an LDAP server to Liferay and how to configure user import behavior, export behavior, and other LDAP settings. There are other configurable options; [Configuring LDAP](./03-configuring-ldap.md) describes those. 
