@@ -6,19 +6,19 @@ Click the *Add* button to add an LDAP server connection. If you have more than o
 
 **Server Name:** Enter a name for your LDAP server.
 
-**Default Values:** Several common directory servers appear here. If you use one of these, select it. The rest of the form is populated with default values for that directory.
+**Default Values:** Several common directory servers appear here. If you use one of these, select it to populate the rest of the form with default values for that directory.
 
 These settings cover the connection to LDAP.
 
 **Base Provider URL:** The link to the LDAP server. Make sure the Liferay server can communicate with the LDAP server. If there is a firewall between the two systems, make sure the appropriate ports are opened.
 
-**Base DN:** The Base Distinguished Name for your LDAP directory. It is usually modeled after your organization. It may look similar to this: `dc=companynamehere,dc=com`.
+**Base DN:** The Base Distinguished Name for your LDAP directory, usually modeled after your organization. It may look like this: `dc=companynamehere,dc=com`.
 
 **Principal:** The default LDAP administrator user ID is populated here. If your administrator ID differs, use that credential instead. You need an administrative credential because Liferay uses this ID to synchronize user accounts to and from LDAP.
 
-**Credentials:** This is the password for the LDAP administrative user.
+**Credentials:** Enter the password for the LDAP administrative user.
 
-This is all you need to make a regular connection to an LDAP directory. The rest of the configuration, however, may need to be customized, as it represents "best guesses" as to correct defaults. The default attribute mappings usually provide enough data to synchronize back to the Liferay database when a user attempts to log in. To test the connection to your LDAP server, click the *Test LDAP Connection* button.
+This is all you need to make a regular connection to an LDAP directory. You may, however, need to customize the rest of the configuration, as it represents "best guesses" as to correct defaults. The default attribute mappings usually provide enough data to synchronize back to the Liferay database when a user attempts to log in. To test the connection to your LDAP server, click the *Test LDAP Connection* button.
 
 ## Checkpoint
 
@@ -32,7 +32,7 @@ Before proceeding to fine tune Liferay's LDAP connections, ensure the following 
 
 ## Instance Settings vs. System Settings
 
-You can define an LDAP server connection at the System Settings scope as well. Because this user interface is auto-generated, it's not as helpful as the one in Instance Settings. For this reason, you should define and troubleshoot your settings in Instance Settings first. If you decide you want your LDAP connection at the system scope, you can copy your configuration from Instance Settings and then delete the server from Instance Settings. 
+You can also define an LDAP server connection at the System Settings scope. Because this user interface is auto-generated, it's not as helpful as the one in Instance Settings. For this reason, you should define and troubleshoot your settings in Instance Settings first. If you decide you want your LDAP connection at the system scope, you can copy your configuration from Instance Settings and then delete the server from Instance Settings. 
 
 Of course, you can also configure LDAP servers at the system scope using OSGi `.config` files. The easiest way to do this is to use the GUI and export the configuration. Then you can use the resulting `.config` file anywhere you need it (such as other nodes in a cluster). 
 
@@ -41,7 +41,7 @@ Of course, you can also configure LDAP servers at the system scope using OSGi `.
 ```properties
 companyId=1234
 ```
-You can find your Virtual Instance ID in Control Panel &rarr; Configuration &rarr; Virtual Instances.
+You can find your Virtual Instance ID in *Control Panel* &rarr; *Configuration* &rarr; *Virtual Instances*.
 
 ## Security
 
@@ -61,3 +61,4 @@ Once this is done, go back to the LDAP page in the Control Panel. Modify the LDA
 
 Save the changes. Communication to LDAP is now encrypted. 
 
+To tune or configure how Liferay DXP matches users in LDAP for syncing, please see [configuring import and export](/.02-configuring-import-export.md). 
