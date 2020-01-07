@@ -1,13 +1,12 @@
 # Configuring CORS
 
-
 CORS stands for Cross-Origin Resource Sharing. An Origin is a web server at a different domain, and a Resource is some asset stored on the server, like an image, PDF, or HTML file. Sometimes you must request resources stored on another origin. This is called a cross-origin request, and web servers have policies to allow or deny such requests. 
 
-For example, browsers themselves don't allow cross-origin AJAX-style requests from scripts to help mitigate [cross-site scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks. These APIs follow a *same origin* policy. But for certain resources, it can be convenient to allow @product@ to serve them to different origins. 
+For example, browsers themselves don't allow cross-origin AJAX-style requests from scripts to help mitigate [cross-site scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks. These APIs follow a *same origin* policy. But for certain resources, it can be convenient to allow Liferay DXP to serve them to different origins. 
 
-For example, if you manage images in Docs & Media, you may want to allow cross-origin requests for them. You can enable CORS for matching URLs in @product@ or for JAX-RS application resources. 
+For example, if you manage images in Docs & Media, you may want to allow cross-origin requests for them. You can enable CORS for matching URLs in Liferay DXP or for JAX-RS application resources. 
 
-## Enabling CORS for @product@ Services
+## Enabling CORS for Liferay DXP Services
 
 You'll find the settings in Configuration &rarr; System Settings &rarr; Security &rarr; Security Tools &rarr; Portal Cross Resource Origin Sharing (CORS): 
 
@@ -29,7 +28,7 @@ This would define resources stored in the Knowledge Base as applicable to the po
 
 **CORS Response Headers:** Use the Plus button to add as many headers as you need. Define policies for any of the [CORS headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#CORS) here. 
 
-You can also use a [configuration file](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files) to configure CORS. 
+You can also use a [configuration file](../../08-reference/02-understanding-system-configuration-files.md) to configure CORS. 
 
 ## Enabling CORS for JAX-RS Applications
 
@@ -41,7 +40,7 @@ You'll find the settings in Configuration &rarr; System Settings &rarr; Security
 
 ![Figure 2: There's a separate system settings category for CORS web contexts.](./images/CORS-jax-rs.png)
 
-**Dynamic Web Context OSGi Filter:** Define an LDAP-style [filter](https://osgi.org/specification/osgi.cmpn/7.0.0/service.http.whiteboard.html) to define which JAX-RS whiteboard applications the CORS headers in this entry apply to. This is the default filter: 
+**Dynamic Web Context OSGi Filter:** Define an LDAP-style [filter](https://osgi.org/specification/osgi.cmpn/7.0.0/service.http.whiteboard.html) to define which JAX-RS whiteboard applications apply to the CORS headers in this entry. This is the default filter: 
 
 ```properties
 (&(!(liferay.cors=false))(osgi.jaxrs.name=*))
