@@ -1,6 +1,6 @@
 # OAuth 2.0
 
-OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly share select data from another website to log into yours. Any time you see a "Log In with Facebook" or "Log In with Google" button, or you authorize a third-party Twitter client, that's OAuth 2.0 in action. It works by authorizing password-less access using a secure token to portions of user-owned resources (such as an email address, a user profile picture, or something else from your account) and other permissioned resources.
+OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly share select data from another website to log into yours. Any time you see a dialog from Facebook or Google that says "this website wants to access" and then it lists data from your account, or you authorize a third-party Twitter client, that's OAuth 2.0 in action. It works by authorizing password-less access using a secure token to portions of user-owned resources (such as an email address, a user profile picture, or something else from your account) and other permissioned resources.
 
 OAuth 2.0's design encrypts all authorization transport through HTTPS, which prevents data passed between the systems from being intercepted. 
 
