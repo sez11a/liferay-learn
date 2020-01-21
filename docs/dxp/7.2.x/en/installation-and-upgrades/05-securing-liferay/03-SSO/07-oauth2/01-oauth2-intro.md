@@ -1,8 +1,6 @@
 # OAuth 2.0
 
-OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly share select data from another website to log into yours. Any time you see a dialog from Facebook or Google that says "this website wants to access" and then it lists data from your account, or you authorize a third-party Twitter client, that's OAuth 2.0 in action. It works by authorizing password-less access using a secure token to portions of user-owned resources (such as an email address, a user profile picture, or something else from your account) and other permissioned resources.
-
-OAuth 2.0's design encrypts all authorization transport through HTTPS, which prevents data passed between the systems from being intercepted. 
+OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly share select credentials from your Liferay-based website with various clients. You've seen this before: any time you see a "This site wants to access:" button (followed by a list of things like email address, friends list, etc.) from Google or Facebook, or you authorize a third-party Twitter client, that's OAuth 2.0 in action. It works by authorizing password-less access to portions of user-owned resources (such as an email address, a user profile picture, or something else from your account) and other permissioned resources. OAuth 2.0's design encrypts all authorization transport through HTTPS, which prevents data passed between the systems from being intercepted. 
 
 You can jump into creating OAuth 2.0 apps or continue reading to learn how it works. 
 
