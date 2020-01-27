@@ -37,7 +37,7 @@ You can change this path in _System Settings_ &rarr; _SSO_ &rarr; _SAML Configur
 
 2.  To begin configuring Liferay DXP to use SAML, select the _Identity Provider_ role for your installation and enter your own entity ID.
 
-    [Figure 1: Select a SAML role for Liferay and enter an entity ID.](./images/saml-initial-config.png)
+    [Select a SAML role for Liferay and enter an entity ID.](./images/saml-initial-config.png)
 
     Click *Save*. A new Certificate and Private Key section appears. 
 
@@ -60,7 +60,7 @@ You can change this path in _System Settings_ &rarr; _SSO_ &rarr; _SAML Configur
  
 4.  After you click *Save*, you can click *Replace Certificate* at any time to replace the current certificate with a new one if your old one has expired or if you want to change the key's password. 
 
-    [Figure 2: The General tab displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](./images/saml-keystore-info.png) 
+    [The General tab displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](./images/saml-keystore-info.png) 
 
     Three more tabs now appear: 
 

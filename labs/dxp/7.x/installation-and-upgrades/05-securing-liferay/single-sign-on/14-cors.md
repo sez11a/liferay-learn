@@ -14,7 +14,7 @@ You'll find the settings in Configuration &rarr; System Settings &rarr; Security
 
 2.  Fill out the fields on the form. When finished, click *Save*. 
 
-![Figure 1: The CORS system settings provide a way to configure CORS headers for Liferay services.](./images/CORS-portal.png)
+![The CORS system settings provide a way to configure CORS headers for Liferay services.](./images/CORS-portal.png)
 
 **Enabled:** Check this box to enable the entry. 
 
@@ -38,7 +38,7 @@ You'll find the settings in Configuration &rarr; System Settings &rarr; Security
 
 2.  Fill out the fields on the form. When finished, click *Save*. 
 
-![Figure 2: There's a separate system settings category for CORS web contexts.](./images/CORS-jax-rs.png)
+![There's a separate system settings category for CORS web contexts.](./images/CORS-jax-rs.png)
 
 **Dynamic Web Context OSGi Filter:** Define an LDAP-style [filter](https://osgi.org/specification/osgi.cmpn/7.0.0/service.http.whiteboard.html) to define which JAX-RS whiteboard applications apply to the CORS headers in this entry. This is the default filter: 
 

@@ -8,7 +8,7 @@ Consider IdP initiated SSO first.
 
 Sometimes a user enters the SSO cycle by sending a request directly from the browser to the IdP.
 
-![Figure 1: Identity Provider Initiated SSO](./images/saml-idp-initiated-sso.png)
+![Identity Provider Initiated SSO](./images/saml-idp-initiated-sso.png)
 
 ### The SSO Request to the IdP
 
@@ -43,7 +43,7 @@ If a `RelayState` is included in the SAML Response, the user is redirected to it
 
 Most of the time, authentication requests come from the Service Provider.
 
-![Figure 2: Service Provider Initiated SSO](./images/saml-sp-initiated-sso.png)
+![Service Provider Initiated SSO](./images/saml-sp-initiated-sso.png)
 
 ### The SSO Request to the SP
 
@@ -71,7 +71,7 @@ The Single Log Off request is sent from the user's browser to the IdP or an SP, 
 
 ## Identity Provider Initiated SLO
 
-![Figure 3: Identity Provider Initiated SLO](./images/saml-idp-initiated-slo.png)
+![Identity Provider Initiated SLO](./images/saml-idp-initiated-slo.png)
 
 ### The SLO Request to the IdP
 
@@ -97,7 +97,7 @@ The second SP then delivers the `LogoutResponse` to the IdP. The process is repe
 
 ## Service Provider Initiated SLO
 
-![Figure 4: Service Provider Initiated SLO](./images/saml-sp-initiated-slo.png)
+![Service Provider Initiated SLO](./images/saml-sp-initiated-slo.png)
 
 ### The SLO Request to the SP
 

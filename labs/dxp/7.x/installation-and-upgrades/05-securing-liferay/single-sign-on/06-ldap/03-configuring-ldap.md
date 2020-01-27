@@ -30,7 +30,7 @@ You can import user data from LDAP directories using the following options:
 
 **Enable Import:** Check this box to do a mass import from your LDAP directories. Otherwise, Users are imported as they log in. 
 
-![Figure 1: Ziltoid and Rex have been imported because they logged in.](./images/imported-ldap-users.png)
+![Ziltoid and Rex have been imported because they logged in.](./images/imported-ldap-users.png)
 
 **Enable Import on Startup:** Check this box to do the mass import when Liferay starts. Note: this box only appears if you check **Enable Import**, described above. Definitely leave this unchecked if you have a Liferay cluster, or all your nodes will do a mass import when each of them starts up.
 

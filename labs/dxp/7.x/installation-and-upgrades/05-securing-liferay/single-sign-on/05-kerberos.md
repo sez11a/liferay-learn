@@ -22,7 +22,7 @@ When you have all of these prerequisites in place, you're ready to configure Ker
 
 From the prerequisites, you may be able to guess that there are several moving parts to how SSO works with Kerberos. 
 
-![Figure 1: Kerberos authentication requires a web server in front of your Liferay DXP server.](./images/kerberos.png)
+![Kerberos authentication requires a web server in front of your Liferay DXP server.](./images/kerberos.png)
 
 First, a properly configured web browser sends a negotiate request using encrypted Windows user data. To configure this, the browser must recognize the site as a trusted site (explained below). The web server's Kerberos module uses the keytab file to bind over the Kerberos protocol to AD and verify the user information. If this works, the AD server confirms the connection with a valid response. 
 

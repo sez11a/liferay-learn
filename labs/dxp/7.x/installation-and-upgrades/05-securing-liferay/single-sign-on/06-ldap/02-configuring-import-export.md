@@ -36,7 +36,7 @@ The Control Panel provides default mappings for commonly used LDAP attributes. Y
 
 **Test LDAP Users:** Once you have your attribute mappings set up (see above), click the *Test LDAP Users* button and Liferay attempts to pull LDAP users and match them with their mappings as a preview.
 
-![Figure 1: You should see a list of users when you click the *Test LDAP Users* button.](./images/testing-ldap-users.png)
+![You should see a list of users when you click the Test LDAP Users button.](./images/testing-ldap-users.png)
 
 ## Groups
 

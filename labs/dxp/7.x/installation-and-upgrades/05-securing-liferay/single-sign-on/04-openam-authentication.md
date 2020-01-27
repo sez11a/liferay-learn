@@ -31,7 +31,7 @@ Users are mapped back and forth by screen names, so be sure to match the OpenAM'
     click *Configuration* &rarr; *Instance Settings* &rarr; *Security* &rarr;
     *SSO*. Then choose *OpenSSO* in the list on the left.
 
-![Figure 1: OpenSSO Configuration in Liferay must be enabled for the integration to work.](./images/opensso-configuration.png)
+![OpenSSO Configuration in Liferay must be enabled for the integration to work.](./images/opensso-configuration.png)
 
 2.  Modify the three URL fields (Login URL, Logout URL, and Service URL) so
     they point to your OpenAM server (in other words, only modify the host name
