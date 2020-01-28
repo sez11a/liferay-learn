@@ -16,7 +16,7 @@ The Message Boards app is a platform for content-rich discussions and provides t
 
 ![Figure 1: The Message Boards app is fantastic for facilitating discussions.](./collaboration-overview/images/01.png)
 
-To begin using the Message Board app to build a forum, see the [Getting Started with Message Boards](./02-message-boards/01-getting-started-with-message-boards.md) article.
+To begin using the Message Board app to build a forum, see the [Getting Started with Message Boards](./message-boards/user-guide/getting-started-with-message-boards.md) article.
 
 ## Wiki
 
@@ -39,7 +39,7 @@ These tools are building blocks for building an integrated, social experience fo
 
 ## Invitations
 
-The _Invite Members_ widget lets Site Administrators send invitations to join the Site. When Users confirm such invitations, they become Site members assigned to the Roles defined by the site administrator. Click to learn more about [Site Membership](../site-building/01-building-sites/05-adding-members-to-sites.md).
+The _Invite Members_ widget lets Site Administrators send invitations to join the Site. When Users confirm such invitations, they become Site members assigned to the Roles defined by the site administrator. Click to learn more about [Site Membership](../site-building/building-sites/adding-members-to-sites.md).
 
 ![Figure 4: Inviting members to a site.](./collaboration-overview/images/04.png)
 
