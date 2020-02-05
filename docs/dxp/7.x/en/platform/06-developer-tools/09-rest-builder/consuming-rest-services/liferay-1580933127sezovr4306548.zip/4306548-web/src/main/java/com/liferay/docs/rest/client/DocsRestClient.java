@@ -38,3 +38,4 @@ public class DocsRestClient extends MVCPortlet {
 		super.render(renderRequest, renderResponse);
 	}
 }
+ 
