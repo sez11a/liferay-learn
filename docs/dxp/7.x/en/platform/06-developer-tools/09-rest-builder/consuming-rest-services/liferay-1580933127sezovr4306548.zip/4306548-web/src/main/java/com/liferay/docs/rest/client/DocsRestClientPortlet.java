@@ -1,11 +1,11 @@
 package com.liferay.docs.rest.client;
 
+import com.github.scribejava.core.builder.ServiceBuilder;
+import com.github.scribejava.core.oauth.OAuth20Service;
 import java.io.IOException;
 
 import javax.portlet.Portlet;
 import javax.portlet.PortletException;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
 
 import org.osgi.service.component.annotations.Component;
 
@@ -30,11 +30,16 @@ import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 		"javax.portlet.security-role-ref=power-user,user",
 		"javax.portlet.supports.mime-type=text/html" }, 
 	service = Portlet.class)
-public class DocsRestClient extends MVCPortlet {
+public class DocsRestClientPortlet extends MVCPortlet {
 		
 	@Override
 	public void render(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
 		
 		super.render(renderRequest, renderResponse);
+	}
+
+	private void authorize () {
+		String clientSecret = "id-e1bbc8d0-ac24-4560-9f41-3287876d1cd3";
+		final OAuth20Service service = new ServiceBuilder (clientSecret);
 	}
 }
