@@ -36,7 +36,7 @@ Now that you have your blog entry in your site, you need only find the site ID:
 1. Go to Control Panel &rarr; Sites &rarr; Sites. 
 1. Click the Actions button, and then choose *Go to Site Settings*. 
 
-The Site ID appears at the top of the Details section. 
+The Site ID appears at the top of the Details section. It's an Integer, like `20119`.
 
 ## Make the Service Call Using Credentials with Access to the Data
 
