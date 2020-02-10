@@ -30,7 +30,7 @@ import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 		"javax.portlet.security-role-ref=power-user,user",
 		"javax.portlet.supports.mime-type=text/html" }, 
 	service = Portlet.class)
-public class DocsRestClient extends MVCPortlet {
+public class DocsRestClientPortlet extends MVCPortlet {
 		
 	@Override
 	public void render(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
