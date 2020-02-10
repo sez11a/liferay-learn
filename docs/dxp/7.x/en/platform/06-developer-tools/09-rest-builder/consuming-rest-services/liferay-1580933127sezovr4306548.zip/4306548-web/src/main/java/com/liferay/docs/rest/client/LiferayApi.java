@@ -23,12 +23,12 @@ public class LiferayApi extends DefaultApi20 {
 
 	@Override
 	public String getAccessTokenEndpoint() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "http://localhost:8080/o/oauth2/token";
 	}
 
 	@Override
 	protected String getAuthorizationBaseUrl() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "http://localhost:8080/o/oauth2/authorize";
 	}
     
 }
