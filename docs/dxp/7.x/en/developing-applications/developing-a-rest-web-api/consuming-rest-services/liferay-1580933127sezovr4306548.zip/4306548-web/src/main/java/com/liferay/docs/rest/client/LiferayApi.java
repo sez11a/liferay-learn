@@ -21,6 +21,18 @@ import com.github.scribejava.core.builder.api.DefaultApi20;
  */
 public class LiferayApi extends DefaultApi20 {
 
+	protected LiferayApi() {
+
+	}
+
+	private static class InstanceHolder {
+		private static final LiferayApi INSTANCE = new LiferayApi();
+	}
+
+	public static LiferayApi instance() {
+		return InstanceHolder.INSTANCE;
+	}
+
 	@Override
 	public String getAccessTokenEndpoint() {
 		return "http://localhost:8080/o/oauth2/token";

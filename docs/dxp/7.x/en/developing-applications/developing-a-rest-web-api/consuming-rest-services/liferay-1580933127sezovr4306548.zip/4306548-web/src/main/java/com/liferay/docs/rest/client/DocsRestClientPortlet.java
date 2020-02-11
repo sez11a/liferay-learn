@@ -39,7 +39,16 @@ public class DocsRestClientPortlet extends MVCPortlet {
 	}
 
 	private void authorize () {
-		String clientSecret = "id-e1bbc8d0-ac24-4560-9f41-3287876d1cd3";
-		final OAuth20Service service = new ServiceBuilder (clientSecret);
+		String clientId = "id-e0ce2b84-35a1-cff7-5a84-d11854fc5a";
+		String clientSecret = "secret-8c5c3548-11c6-2620-7d19-48f68bf7c13";
+		final OAuth20Service service = new ServiceBuilder(clientId).
+			apiSecret(clientSecret)
+			.defaultScope("Liferay.Headless.Delivery.everything")
+			.callback("http://localhost:8080/rest/-/rest/view.jsp")
+			.build(LiferayApi.instance());
+		final String authorizationUrl = service.getAuthorizationUrl();
+		System.out.println("Authorization URL: " + authorizationUrl);
+		
+	
 	}
 }
