@@ -1,0 +1,112 @@
+<div class="landing-page" id="landingPage">
+	<div class="section-card" v-for="card in cards">
+		<a class="autofit-row autofit-row-center" :href="card.sectionURL">
+			<div class="autofit-col autofit-col-expand">
+				<h4 class="title">{{ card.sectionName }}</h4>
+				<ul class="subsection" v-if="card.subsections">
+					<li v-for="subsection in card.subsections">
+						<a class="subsection-link" :href="subsection.url">
+							{{ subsection.name}}
+						</a>
+					</li>
+				</ul>
+			</div>
+		</a>
+	</div>
+</div>
+
+<script type="module">
+	import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.min.js'
+
+	const page = new Vue({
+		el: '#landingPage',
+		data: {
+			cards: [
+				{
+					sectionName: 'Developing a Single Page Application',
+					sectionURL: 'developing-applications/developing_a_single_page_application.html',
+					subsections: [
+						{
+							name: 'Using React (Coming Soon)',
+							url: 'developing-applications/developing-a-single-page-application/using-react.html'
+						},
+						{
+							name: 'Using Angular (Coming Soon)',
+							url: 'developing-applications/developing-a-single-page-application/using-angular.html'
+						},
+						{
+							name: 'Using Vue.JS (Coming Soon)',
+							url: 'developing-applications/developing-a-single-page-application/using-vuejs.html'
+						}
+					]
+				},
+				{
+					sectionName: 'Developing a Java Web Application',
+					sectionURL: 'developing-applications/developing_a_java_web_application.html',
+					subsections: [
+						{
+							name: 'Using MVC (Coming Soon)',
+							url: 'developing-applications/developing-a-java-web-application/using-mvc.html'
+						},
+						{
+							name: 'Using Spring (Coming Soon)',
+							url: 'developing-applications/developing-a-java-web-application/using-spring.html'
+						},
+						{
+							name: 'Using JSF (Coming Soon)',
+							url: 'developing-applications/developing-a-java-web-application/using-jsf.html'
+						},
+					]
+				},
+				{
+					sectionName: 'Developing a REST Web API',
+					subsections: [
+						{
+							name: 'Producing GraphQL APIs (Coming Soon)',
+							url: 'developing-applications/developing-a-rest-web-api/producing-graphql-apis.html'
+						},
+					]
+				},
+				{
+					sectionName: 'Tooling',
+					subsections: [
+          {
+							name: 'Blade CLI (Coming Soon)',
+							url: 'developing-applications/tooling/blade-cli.html'
+						},
+						{
+							name: 'Liferay Workspace (Coming Soon)',
+							url: 'developing-applications/tooling/liferay-workspace.html'
+						},
+						{
+							name: 'Developer Studio (Coming Soon)',
+							url: 'developing-applications/tooling/liferay-workspace.html'
+						},
+          ]
+				},
+				{
+					sectionName: 'Core Frameworks',
+					subsections: [
+						{
+							name: 'Understanding the Message Bus (Coming Soon)',
+							url: 'developing-applications/core-frameworks/message-bus.html'
+						},
+					]
+				},
+				{
+					sectionName: 'Data Frameworks',
+					subsections: [
+						{
+							name: 'Understanding Service Builder (Coming Soon)',
+							url: 'developing-applications/data-frameworks/service-builder.html'
+						},
+						{
+							name: 'Understanding Search (Coming Soon)',
+							url: 'developing-applications/data-frameworks/search.html'
+						},
+					]
+        },
+			]
+		}
+	})
+</script>
