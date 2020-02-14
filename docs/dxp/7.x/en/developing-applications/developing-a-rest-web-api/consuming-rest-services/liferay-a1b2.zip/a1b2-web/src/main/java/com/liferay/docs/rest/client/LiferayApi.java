@@ -11,6 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
+
 package com.liferay.docs.rest.client;
 
 import com.github.scribejava.core.builder.api.DefaultApi20;
@@ -21,14 +22,6 @@ import com.github.scribejava.core.builder.api.DefaultApi20;
  */
 public class LiferayApi extends DefaultApi20 {
 
-	protected LiferayApi() {
-
-	}
-
-	private static class InstanceHolder {
-		private static final LiferayApi INSTANCE = new LiferayApi();
-	}
-
 	public static LiferayApi instance() {
 		return InstanceHolder.INSTANCE;
 	}
@@ -38,9 +31,18 @@ public class LiferayApi extends DefaultApi20 {
 		return "http://localhost:8080/o/oauth2/token";
 	}
 
+	protected LiferayApi() {
+	}
+
 	@Override
 	protected String getAuthorizationBaseUrl() {
 		return "http://localhost:8080/o/oauth2/authorize";
 	}
-    
+
+	private static class InstanceHolder {
+
+		private static final LiferayApi INSTANCE = new LiferayApi();
+
+	}
+
 }

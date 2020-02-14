@@ -1,0 +1,4 @@
+Bundle-Name: Liferay Docs Blogs REST Client
+Bundle-SymbolicName: com.liferay.docs.a1b2-web
+Bundle-Version: 1.0.0
+Web-ContextPath: /a1b2-web
