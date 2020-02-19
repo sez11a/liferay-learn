@@ -49,25 +49,40 @@ public class DocsRestClientPortlet extends MVCPortlet {
 		throws IOException, PortletException {
 		
 		PortletPreferences prefs = renderRequest.getPreferences();
-		String token = prefs.getValue("token", "none");
-
-		if (token == "none") {
-
-			token = authorize();
+		String token = (String)renderRequest.getAttribute("token");
+		
+		if (token == null) {
+			// Get token from preferences
+			token = prefs.getValue("token", "none");
 		}
 
-		String oAuth2Code = ParamUtil.getString(renderRequest, "code");
+		if (token.equals("none")) {
+						
+			renderRequest.setAttribute("authURL", authorize());
+			
+		} else {
 
-		if (oAuth2Code == null) {
-			authorize();
+			long timeStamp = Long.valueOf(prefs.getValue("tokenExpires",  "600000"));
+			long now = System.currentTimeMillis();
+			if ((now - timeStamp) > 600000) {
+				// We have a previously stored token, but it has expired. Refresh it.
+				String refreshToken = prefs.getValue("refreshToken", "none");
+				
+				if (refreshToken.equals("none")) {
+					// should never happen; something weird is going on
+					renderRequest.setAttribute("authURL", authorize());
+				
+				} else {
+					renderRequest.setAttribute("refreshToken", refreshToken);
+				}
+			}
 		}
-
+		
 		super.render(renderRequest, renderResponse);
 	}
 
 	private String authorize() {
 
-		String token = "";
 		// HP Machine ID
 
 		//String clientId = "id-e0ce2b84-35a1-cff7-5a84-d11854fc5a";
@@ -98,27 +113,7 @@ public class DocsRestClientPortlet extends MVCPortlet {
 			"response_type=client_credentials");
 		System.out.println("Authorization URL: " + authorizationUrl);
 
-		String jsonBody = "";
-		OkHttpClient client = new OkHttpClient();
-		Request request = new Request.Builder().url(
-			authorizationUrl
-		).build();
-
-		try {
-			Response response = client.newCall(
-				request
-			).execute();
-
-			jsonBody = response.body(
-			).string();
-		}
-		catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
-		}
-
-		// We actually don't care about the response; the parameter should come back
-
-		return token;
+		return authorizationUrl;
 
 	}
 
