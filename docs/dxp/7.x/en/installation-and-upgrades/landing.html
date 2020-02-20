@@ -1,0 +1,142 @@
+<div class="landing-page" id="landingPage">
+	<div class="section-card" v-for="card in cards">
+		<div class="autofit-row autofit-row-center">
+			<div class="autofit-col" v-if="card.icon">
+				<svg class="icon">
+					<use :xlink:href="card.icon"></use>
+				</svg>
+			</div>
+			<div class="autofit-col autofit-col-expand">
+				<a :href="card.sectionURL">
+					<h4 class="title" v-if="card.icon">{{ card.sectionName }}</h4>
+					<h4 class="sidebar title" v-else>{{ card.sectionName }}</h4>
+				</a>
+				<ul class="subsection" v-if="card.subsections">
+					<li v-for="subsection in card.subsections">
+						<a :href="subsection.url">{{ subsection.name}}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="module">
+	import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.min.js'
+
+	const page = new Vue({
+		el: '#landingPage',
+		data: {
+			cards: [
+				{
+					sectionName: 'Installing Liferay',
+					sectionURL: 'installation-and-upgrades/installing_liferay.html',
+					subsections: [
+						{
+							name: 'Installing a Tomcat Bundle',
+							url: 'installation-and-upgrades/installing-liferay/installing-a-liferay-dxp-tomcat-bundle.html'
+						},
+						{
+							name: 'Configuring a Database',
+							url: 'installation-and-upgrades/installing-liferay/configuring-a-database.html'
+						},
+						{
+							name: 'Running Liferay DXP for the First Time',
+							url: 'installation-and-upgrades/installing-liferay/running-liferay-dxp-for-the-first-time.html'
+						},
+					]
+				},
+				{
+					sectionName: 'Setting Up Liferay DXP',
+					sectionURL: 'installation-and-upgrades/setting_up_liferay_dxp.html',
+					subsections: [
+						{
+							name: 'Connecting to a Mail Server (Coming Soon)',
+							url: 'installation-and-upgrades/setting-up-liferay-dxp/connecting-to-a-mail-server.html'
+						},
+						{
+							name: 'Configuring the Document Library Repository (Coming Soon)',
+							url: 'installation-and-upgrades/setting-up-liferay-dxp/document-repository-overview.html'
+						},
+						{
+							name: 'Introduction to Clustering Liferay DXP (Coming Soon)',
+							url: 'installation-and-upgrades/configuring-clustering-for-high-availability/01-introduction-to-clustering-liferay-dxp.html'
+						},
+					]
+				},
+				{
+					sectionName: 'Securing Liferay',
+					sectionURL: 'installation-and-upgrades/securing_liferay.html',
+					subsections: [
+          {
+							name: 'Introduction to Securing Liferay (Coming Soon)',
+							url: 'installation-and-upgrades/securing-liferay/securing-liferay.html'
+						},
+						{
+							name: 'Configuring Authentication (Coming Soon)',
+							url: 'installation-and-upgrades/securing-liferay/configuring-authentication.html'
+						},
+						{
+							name: 'Using an SSO with Liferay DXP (Coming Soon)',
+							url: ''
+						},
+					]
+				},
+				{
+					sectionName: 'Upgrading Liferay',
+					sectionURL: 'installation-and-upgrades/upgrading_liferay.html',
+					subsections: [
+          {
+							name: 'Introduction to Upgrading Liferay (Coming Soon)',
+							url: 'installation-and-upgrades/upgrading_liferay.html'
+						},
+						{
+							name: 'Basic Upgrade Steps (Coming Soon)',
+							url: 'installation-and-upgrades/upgrading_liferay.html'
+						},
+						{
+							name: 'Using the Upgrade Tool (Coming Soon)',
+							url: 'installation-and-upgrades/upgrading_liferay.html'
+						},
+          ]
+				},
+				{
+					sectionName: 'Maintaining a Liferay DXP Installation',
+					sectionURL: 'installation-and-upgrades/maintaining_a_liferay_dxp_installation.html',
+					subsections: [
+          {
+							name: 'Installing Patches (Coming Soon)',
+							url: 'installation-and-upgrades/maintaining_a_liferay_dxp_installation.html'
+						},
+						{
+							name: 'Backing Up (Coming Soon)',
+							url: 'installation-and-upgrades/maintaining_a_liferay_dxp_installation.html'
+						},
+						{
+							name: 'Maintaining Clustered Installations (Coming Soon)',
+							url: 'installation-and-upgrades/maintaining_a_liferay_dxp_installation.html'
+						},
+					]
+				},
+				{
+					sectionName: 'Reference',
+					sectionURL: 'installation-and-upgrades/reference.html',
+					subsections: [
+						{
+							name: 'Liferay Home',
+							url: 'installation-and-upgrades/reference.html'
+						},
+						{
+							name: 'Portal Properties',
+							url: 'installation-and-upgrades/reference.html'
+						},
+						{
+							name: 'Database Templates',
+							url: 'installation-and-upgrades/reference.html'
+						},
+					]
+        },
+			]
+		}
+	})
+</script>
