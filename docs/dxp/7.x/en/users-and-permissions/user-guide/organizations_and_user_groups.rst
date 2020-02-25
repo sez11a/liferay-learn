@@ -4,6 +4,7 @@ Organizations and User Groups
 .. toctree::
    :maxdepth: 3
 
+   organizations-and-user-groups/understanding-organizations-and-user-groups.md
    organizations-and-user-groups/organizations.rst
    organizations-and-user-groups/user_groups.rst
 

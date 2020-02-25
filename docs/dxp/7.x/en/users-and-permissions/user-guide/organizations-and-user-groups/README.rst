@@ -1,8 +1,6 @@
 Organizations and User Groups
 =============================
 
--  :doc:`/users-and-permissions/user-guide/organizations-and-user-groups/understanding-organizations-and-user-groups`
-
 Organizations
 -------------
 
