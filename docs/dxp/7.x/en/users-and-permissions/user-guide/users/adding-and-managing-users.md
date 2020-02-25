@@ -9,7 +9,7 @@ Here's how to add Users:
 1. From the Product Menu, click *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.
 1. In the Users tab, click the *Add* button ![Add](../../../../images/icon-add.png).
 
-    ![Add Users from the Users and Organizations section of the Control Panel.](./adding-editing-removing-users/images/01.png)
+    ![Add Users from the Users and Organizations section of the Control Panel.](./adding-and-managing-users/images/01.png)
 
 1. Fill out the Add User form and click *Save*. At a minimum, provide a Screen Name, First Name, Last Name, and Email Address for the User.
 
@@ -29,7 +29,7 @@ When a user account is created, a password is automatically generated. If a [mai
 
 If you haven't set up a mail server, click the *Password* item from the General menu and manually set a password for your new user. Enter the new password twice.
 
-![Enter the password twice to manually set the password for a user. If the Password Policy you're using is configured to allow it, select whether to require the user to reset their password the first time they sign in to the portal.](./adding-editing-removing-users/images/03.png)
+![Enter the password twice to manually set the password for a user. If the Password Policy you're using is configured to allow it, select whether to require the user to reset their password the first time they sign in to the portal.](./adding-and-managing-users/images/03.png)
 
 ## Editing Users
 
@@ -83,11 +83,11 @@ To delete a user:
 1. Deactivate the user.
 1. Click on *Filter and order* in the top of the table and a dropdown menu appears. Click *Inactive*, and you can see the User you just deactivated.
 
-    ![In order to delete users, first filter to show users that are inactive or that have been deactivated.](./adding-editing-removing-users/images/05.png)
+    ![In order to delete users, first filter to show users that are inactive or that have been deactivated.](./adding-and-managing-users/images/05.png)
 
 1. Click the Actions menu again, and click *Delete* if you really mean to delete the User.
 
-The user is deleted. Be aware that there is no way to recover the user once deleted besides restoring from a prior backup.
+The user is deleted. There is no way to recover the user once deleted besides restoring from a prior backup.
 
 ## Impersonating Users
 
@@ -112,4 +112,4 @@ See [Password Policies](../../devops/password-policies.md) for more information 
 ## Related Information
 
 * Related
-* Links 
+* Links

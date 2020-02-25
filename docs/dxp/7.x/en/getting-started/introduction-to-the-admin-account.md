@@ -51,7 +51,7 @@ Now that you know how to log in, we strongly recommend that you setup a new admi
 
 To create a new admin account follow these steps:
 
-1. Create a new user. See [Adding Users](../users-and-permissions/user-guide/users/managing-users/adding-editing-removing-users.md) to learn how.
+1. Create a new user. See [Adding Users](../users-and-permissions/user-guide/users/managing-users/adding-and-managing-users.md) to learn how.
 1. Click the *Roles* link in the left navigation pane (in the *Edit User* page's *General* tab).
 1. Click *Select* under Regular Roles. Select the Administrator role from the list (click *Choose*). The dialog box disappears and the Role is added to the list of Roles associated with your account.
 
