@@ -1,39 +1,57 @@
-# Users and Organizations
+# Understanding Users
 
-*Users* and *Organizations* are fundamental entities. If your site requires people (even just a set of site administrators) to have accounts to do anything, you need to know about Users. If your Users are at all divided hierarchically, like into departments, you'll find that Organizations are helpful. 
+Every person who accesses a Liferay site is considered a User. Users who are not authenticated are considered "Guest" users. Liferay ships out-of-the-box with a default Admin user who has complete control and access to the system. [Roles and Permissions](link) govern what users are able to see and do on a site.
 
-![Users and Organizations are managed from the same place in the Control Panel](./intro/images/01.png)
+Users break down into three general categories:
 
-Users and Organizations are managed in the Control Panel's *Users and Organizations* section.
+| User | Default Access | Notes |
+| --- | --- | --- | --- |
+| Administrator | Liferay Admin with full system access | Default Admin user <br> Email: `test@liferay.com` <br> Password: `test` <br> We *strongly* recommend that users change the password for this account promptly after installation. |
+| Guest | View access to Public Pages and Sites. In most cases cannot create or add content unless explicitly permitted to. | By default, Guest users are able to create an account on a Liferay site to view and interact with *Public* sites. |
+| User | View access to Pages and Sites they are members of. Able to create content. | Placeholder notes. |
 
-These are just a few examples of activities executed from the Users and Organizations section of the Control Panel: 
+## Managing Users
 
-- An employee leaves the company, requiring account deletion
+Users are managed in the *Users* section of the Control Panel.
 
-- An employee joins the company and must be added to the portal, and to a specific department.
+![Managing Users in the Users and Organizations section of the Control Panel.](introduction-to-users/images/2020-02-21-15-47-05.png)
 
-- An employee is promoted to a new role and needs additional permissions within the portal.
+Managing user metadata (name, department, etc.), permissions, and activation status can be done through this section.
 
-- Organize the Users by department with Organizations.
+### Adding Users
 
-- Add new departments (as Organizations, most likely) and give the department's employees their own internal website.
+Users can be added by an administrator using the Users and Organizations section of the Control Panel or [through the API](future-article?). New users can also be created if open registration is configured or by syncing your Liferay installation with an LDAP server. See [Adding, Editing, or Removing Users]() to learn more.
 
-- An employee gets married and changes her name.
+#### Open Registration
 
-## What are Users?
+By default, guest users are able to create user accounts.
 
-A User is an entity that can sign into Liferay DXP and do something. A User has more privileges, called Permissions, than a Guest of your site who does not sign in. Users are assigned Roles, and Roles define the User's privileges.
+See [this article]() to learn more about configuring registration and authentication for users.
 
-## What are Organizations? 
+#### Configuring a User Directory
 
-An *Organization* groups [*Users*](./02-managing-users.md) hierarchically. For example, you can model a company's departments (i.e., Human Resources and Customer Support) with Organizations. Organizations often have their own Sites. 
+Organizations that manage users with LDAP can sync their LDAP server with Liferay to import users. See [this article]() to learn more.
 
-Many simple portal designs don't use Organizations at all; they only use Sites. The main purpose of Organizations is to enable distributed User management. Portal administrators can delegate some User management responsibilities to Organization administrators. If you don't anticipate needing to delegate User management responsibilities, your portal design may not need Organizations. 
+<!-- #### Other Methods
 
-**User Groups and Organizations:** It's easy to confuse User Groups with Organizations since they both collect Users. User Groups are an ad hoc collection of Users, organized for a specific function. If you wanted a group of bloggers, for example, it wouldn't make sense to assign the Sales Department the Role of blogging. Instead, creating a User Group containing one individual from each department who is responsible for blogging would make more sense. 
+Are there other methods of adding users? -->
 
-To decide whether your portal design should include Organizations, think about its function. A photo-sharing website could be powered by Sites only. On the other hand, Organizations are useful for corporations, educational institutions, governments, or any other large entity since their Users can be placed into a hierarchical structure. 
+## Managing User Access
 
-Don't think that Organizations are only for large enterprises, though. Any group hierarchy, from large government agencies all the way down to small clubs, can be modeled with Organizations. Also, don't think that you must decide between an Organization-based structure or a Site-based structure for assembling your portal's Users. Users can belong both to Organizations and to independent Sites. For example, a corporation or educational institution could create a social networking site open to all Users, even ones from separate Organizations. 
+User access is controlled by Roles and Permissions. Permissions define what a user can and cannot do. Roles are groupings of permissions. Permissions can be configured specifically for individual users, but is more effectively done by defining permissions for a role and assigning users to pre-set roles. To learn more about managing access for users, see [Roles and Permissions](blah).
 
-Users and Organizations are two of the most common ways to administer Liferay DXP and model your use case. Read on to learn how to manage them. 
+## Organizing Users
+
+Liferay has several tools to help users organize and administer users.
+
+[Organizations](link-to-organizations-article) are an entity in Liferay that can group users in a distributed hierarchy. Practically, this means that large organizations can empower and delegate users to administer their organizational groups.
+
+![An example of how an organizational hierarchy can be created in Liferay.](introduction-to-users/images/2020-02-24-09-56-27.png)
+
+[User Groups](link-to-user-groups-article) are another method available for grouping users to simplify assignment of roles and administration. The main distinction between a User Group and an Organization is that a User Group is a more informal and ad-hoc tool for grouping.
+
+## Related Information
+
+* [Adding and Managing Users]()
+* [Organizations]()
+* [User Groups]()
