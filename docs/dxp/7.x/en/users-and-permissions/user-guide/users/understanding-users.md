@@ -14,7 +14,7 @@ Users break down into three general categories:
 
 Users are managed in the *Users* section of the Control Panel.
 
-![Managing Users in the Users and Organizations section of the Control Panel.](introduction-to-users/images/2020-02-21-15-47-05.png)
+![Managing Users in the Users and Organizations section of the Control Panel.](./introduction-to-users/images/01.png)
 
 Managing user metadata (name, department, etc.), permissions, and activation status can be done through this section.
 
@@ -46,7 +46,7 @@ Liferay has several tools to help users organize and administer users.
 
 [Organizations](link-to-organizations-article) are an entity in Liferay that can group users in a distributed hierarchy. Practically, this means that large organizations can empower and delegate users to administer their organizational groups.
 
-![An example of how an organizational hierarchy can be created in Liferay.](introduction-to-users/images/2020-02-24-09-56-27.png)
+![An example of how an organizational hierarchy can be created in Liferay.](introduction-to-users/images/02.png)
 
 [User Groups](link-to-user-groups-article) are another method available for grouping users to simplify assignment of roles and administration. The main distinction between a User Group and an Organization is that a User Group is a more informal and ad-hoc tool for grouping.
 
