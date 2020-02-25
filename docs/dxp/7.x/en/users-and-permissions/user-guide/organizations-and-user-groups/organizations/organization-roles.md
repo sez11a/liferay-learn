@@ -1,45 +1,20 @@
-# Organizations
+# Organization Roles
 
-<!-- https://confluence.atlassian.com/adminjiraserver/managing-nested-groups-938847047.html for reference to try and simplify this down. This jira article seemed the closest feature analog (it's definitely not the same) that tries to do a similar thing. This is my attempt at an opening paragraph: -->
-
-Organizations are groups of users that can be arranged in a hierarchical fashion. Organizations can be comprised of sub-organizations that inherit the roles and permissions assigned to them. This allows for distributed and delegated management for groups and their related sub-groups. This arrangement can simplify administration of large groups of users.
-
-Organizations and sub-Organization hierarchies can nest as much as needed. There are features that are specific for Organizations.
-
-## When to Use Organizations
-
-<!-- this is very imperfect...but if we can get this right it might be helpful. If we can't - we can just remove it for now. -->
-
-| Criteria | Sites | Organizations | User Groups |
-| --- | --- | --- | --- |
-| Many users distributed into smaller sub-groups |  | x | x |
-| Roles and permissions inheritance and scoped to specific groups |  | x |  |
-| Sites easily created and scoped for each sub-group |  | x |  |
-| Hierarchical delegation of user administration across multiple sub-groups |  | x |  |
-
-### Examples of Organizations in Action
-
-<!-- diagram of basketball club -->
-
-<!-- diagram of bank -->
-
-<!-- diagram of software company -->
-
-## Organization Roles
+Coming soon!
 
 <!-- What are Organization Roles and how are they different from Regular / Site roles? -->
 
-<!-- ### Organization Roles and Permissions
+<!-- ## Organization Roles and Permissions
 
 A time-saving benefit of including Organizations into your portal design is that Organization administrators can assign Organization-scoped Roles to members of the entire Organization. For example, consider an IT Security group in a corporate setting. You could have a sub-Organization of your IT organization that handles security for all applications company-wide. If you grant the IT Security Organization the portal administrator Role, all members of the Organization get administrative access to the entire system. Suppose further that a User in this Organization was later hired by the Human Resources department. The act of removing the User from the IT Security Organization also removes the User's administrative privileges, since the privilege came from the IT Security Organization's Role. By adding the User to the HR Organization, any roles the HR Organization has (such as access to a benefits system in the portal) are transferred to the User. In this manner, you can design your portal to correspond with your existing organization chart and Users' permissions are granted according to their positions in the chart.
 
 Of course, this is only one way to set things up. If you have more complex requirements for permissions within an Organization, you can create custom Organization-scoped Roles to assemble the permissions you wish to grant to particular Users. Alternatively, you can attach a Site to your Organization and use Site Teams to assemble the sets of permissions (see below). See [Roles and Permissions](../roles-and-permissions/defining-roles.md) for more details. -->
 
-### Organization Administrators
+<!-- ## Organization Administrators -->
 
 <!-- Organization Administrator vs Administrator vs. Site Administrator Comparison? I'm very focused on trying to use tables or some other method of describing distinctions between things because of the overall amount of text present in the article. -->
 
-<!-- ### What can Organization Administrators Do?
+<!-- ## What can Organization Administrators Do?
 
 Whenever you have a collection of Users that fits into a hierarchical structure, you can use Organizations to model those Users. Organization administrators can manage all the Users in their Organization *and* in any sub-Organization. Referring to the hierarchy above, for example, an Organization administrator of the Lunar Resort could manage any Users belonging to the resort itself, to any of the departments, or to any of a department's subdivisions. An Organization Administrator of the Physical Plant Department can manage any Users belonging to the Physical Plant Department itself, or to the Grounds Crew, the Janitorial Crew, or the Mechanical Crew. However, an administrator of the Physical Plant Department can't manage Users belonging to the Recreation Department or the Retail Group organization.
 
@@ -50,9 +25,3 @@ Organizations and sub-Organization hierarchies can nest to unlimited levels. Use
 <!-- Organization administrators can't access the Control Panel by default, but it's not necessary. In their personal Sites, Organization administrators can click the *My Organizations* link to gain access to any Organizations they manage.
 
 ![The My Organizations application lets Organization Administrators manage their organizations in their personal site.](./creating-and-managing-organizations/images/01.png) -->
-
-## Organization Sites
-
-Organizations and each child organization can be configured to have its own attached Site. See article [x]() to enable this functionality.
-
-Organization sites allow groups to create nested hierarchical sites with content created, administered, and tailored specifically to each organizational unit's needs. Organization administrators are treated as the Site administrators: they can manage the pages, widgets, and content of the Site as well as the Users of the Organization. Members of an Organization with an attached Site are treated as members of the Organization's Site. This means that they can access the private pages of the Organization's Site, along with any widgets or content there. Attaching Sites to Organizations allows portal administrators to use Organizations to facilitate distributed portal administration, not just distributed User administration.
