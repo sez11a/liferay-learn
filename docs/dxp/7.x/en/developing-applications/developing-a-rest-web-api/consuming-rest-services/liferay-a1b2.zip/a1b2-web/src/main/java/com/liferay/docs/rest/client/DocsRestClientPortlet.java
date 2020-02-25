@@ -99,6 +99,15 @@ public class DocsRestClientPortlet extends MVCPortlet {
 		super.render(renderRequest, renderResponse);
 	}
 
+	private String getBlogPostings(String token) {
+		String url = DocsRestClientKeys.REST_APP_URL 
+			+ "/" + DocsRestClientKeys.SITEID 
+			+ "/" + DocsRestClientKeys.END_POINT;
+		Request request = new Request.Builder()
+			.url(url)
+			.build();
+	}
+
 	private String refreshToken (String refreshToken) {
 		String token = "";
 		RequestBody formBody = new FormBody.Builder()
