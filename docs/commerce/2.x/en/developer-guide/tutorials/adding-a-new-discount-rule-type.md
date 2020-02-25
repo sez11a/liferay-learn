@@ -178,7 +178,11 @@ public void render(
 }
 ```
 
+<<<<<<< HEAD:docs/commerce/2.x/en/developer-guide/tutorials/adding-a-new-discount-rule-type.md
 > Use a `JSPRenderer` to render the JSP for the discount rule type's custom UI input (in our example, [view.jsp](https://github.com/liferay/liferay-learn/blob/master/docs/commerce/2.x/en/developer-guide/tutorials/adding-a-new-discount-rule-type/liferay-m6a8.zip/m6a8-web/src/main/resources/META-INF/resources/view.jsp)). Provide the `ServletContext` as a parameter to find the JSP.
+=======
+> Use a `JSPRenderer` to render the JSP for the discount rule type's custom UI input (in our example, [view.jsp](https://github.com/liferay/liferay-learn/blob/master/docs/commerce/2.x/en/developer-guide/tutorial/adding-a-new-discount-rule-type/liferay-m6a8.zip/m6a8-web/src/main/resources/META-INF/resources/view.jsp)). Provide the `ServletContext` as a parameter to find the JSP.
+>>>>>>> Wordsmithing.:docs/commerce/2.x/en/developer-guide/tutorial/adding-a-new-discount-rule-type.md
 
 #### Add the Evaluation Logic to `evaluate`
 
@@ -234,7 +238,11 @@ The example adds a JSP with a numeric input for a minimum number of products.
 
 #### Add the Language Keys to `Language.properties`
 
+<<<<<<< HEAD:docs/commerce/2.x/en/developer-guide/tutorials/adding-a-new-discount-rule-type.md
 Add the language keys and their values to a [Language.properties](https://github.com/liferay/liferay-learn/blob/master/docs/commerce/2.x/en/developer-guide/tutorials/adding-a-new-discount-rule-type/liferay-m6a8.zip/m6a8-web/src/main/resources/content/Language.properties) file:
+=======
+Add the language keys and their values to a [Language.properties](https://github.com/liferay/liferay-learn/blob/master/docs/commerce/2.x/en/developer-guide/tutorial/adding-a-new-discount-rule-type/liferay-m6a8.zip/m6a8-web/src/main/resources/content/Language.properties) file:
+>>>>>>> Wordsmithing.:docs/commerce/2.x/en/developer-guide/tutorial/adding-a-new-discount-rule-type.md
 
 ```
 has-a-minimum-number-of-products=Has a minimum number of products
