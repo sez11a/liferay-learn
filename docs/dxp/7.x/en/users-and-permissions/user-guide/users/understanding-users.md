@@ -5,8 +5,8 @@ Every person who accesses a Liferay site is considered a User. Users who are not
 Users break down into three general categories:
 
 | User | Default Access | Notes |
-| --- | --- | --- | --- |
-| Administrator | Liferay Admin with full system access | Default Admin user <br> Email: `test@liferay.com` <br> Password: `test` <br> We *strongly* recommend that users change the password for this account promptly after installation. |
+| --- | --- | --- |
+| [Administrator](../../../getting-started/introduction-to-the-admin-account.md) | Liferay Admin with full system access | We *strongly* recommend that users change the password for this account promptly after installation. |
 | Guest | View access to Public Pages and Sites. In most cases cannot create or add content unless explicitly permitted to. | By default, Guest users are able to create an account on a Liferay site to view and interact with *Public* sites. |
 | User | View access to Pages and Sites they are members of. Able to create content. | Placeholder notes. |
 
@@ -20,7 +20,7 @@ Managing user metadata (name, department, etc.), permissions, and activation sta
 
 ### Adding Users
 
-Users can be added by an administrator using the Users and Organizations section of the Control Panel or [through the API](future-article?). New users can also be created if open registration is configured or by syncing your Liferay installation with an LDAP server. See [Adding, Editing, or Removing Users]() to learn more.
+Users can be added by an administrator using the Users and Organizations section of the Control Panel or [through the API](future-article?). New users can also be created if open registration is configured or by syncing your Liferay installation with an LDAP server. See [Adding and Managing Users](./adding-and-managing-users.md) to learn more.
 
 #### Open Registration
 
@@ -52,6 +52,6 @@ Liferay has several tools to help users organize and administer users.
 
 ## Related Information
 
-* [Adding and Managing Users]()
+* [Adding and Managing Users](./adding-and-managing-users.md)
 * [Organizations]()
 * [User Groups]()
