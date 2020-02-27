@@ -2,7 +2,7 @@
 
 *Users* and *Organizations* are foundational elements in Liferay DXP. Users represent people who sign in and perform various tasks. Organizations collect Users into hierarchical structures, making it easier for you to manage them in these collections. 
 
-![Users and Organizations are managed from the same place in the Control Panel](./intro/images/01.png)
+![Users and Organizations are managed from the same place in the Control Panel](./introduction-to-users/images/01.png)
 
 Go to the Control Panel's *Users and Organizations* section to manage Users and Organizations. 
 

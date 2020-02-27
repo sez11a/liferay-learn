@@ -49,7 +49,7 @@ Choose *Erase Personal Data* to [delete the User's personal data](./03-managing-
 
 Choose *Export Personal Data* to [download the User's personal data](./03-managing-user-data/03-exporting-user-data.md)
 
-![You can choose whether to view active or inactive (deactivated) portal users in the users list found at *Product Menu* &rarr; *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.](./images/04.png)
+![You can choose whether to view active or inactive (deactivated) portal users in the users list found at Product Menu &rarr; Control Panel &rarr; Users &rarr; Users and Organizations.](./images/04.png)
 
 Most Users can't perform any of the above actions. In fact, most Users won't have access to the Control Panel at all. You can perform all of the above functions because you have administrative access.
 

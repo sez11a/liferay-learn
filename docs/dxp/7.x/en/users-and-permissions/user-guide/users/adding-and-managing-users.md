@@ -7,7 +7,7 @@ Core user management activities include adding, editing, and deleting users. Thi
 Here's how to add Users:
 
 1. From the Product Menu, click *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.
-1. In the Users tab, click the *Add* button ![Add](../../../../images/icon-add.png).
+1. In the Users tab, click the *Add* button ![Add](../../../images/icon-add.png).
 
     ![Add Users from the Users and Organizations section of the Control Panel.](./adding-and-managing-users/images/01.png)
 
@@ -37,7 +37,7 @@ To edit a particular user:
 
 1. Click on *Users and Organizations* in the Control Panel
 
-1. Click the *Actions* button (![Actions](../../../../images/icon-actions.png)) next to that user to edit.
+1. Click the *Actions* button (![Actions](../../../images/icon-actions.png)) next to that user to edit.
 
 1. The following options are available:
 
@@ -70,7 +70,7 @@ Deactivating a user disallows the user from logging in to Liferay DXP. This effe
 To deactivate a user:
 
 1. Navigate to *Control Panel* &rarr; *Users* &rarr; *Users and Organizations* to locate the user to deactivate.
-1. Click the *Actions* (![Actions](../../../../images/icon-actions.png)) menu for the User and select *Deactivate*
+1. Click the *Actions* (![Actions](../../../images/icon-actions.png)) menu for the User and select *Deactivate*
 
 The user is now deactivated and can no longer log in. Users can be reactivated by finding them in the Users table (be sure you're filtering the table results by Deactivated users), clicking the Actions menu, and selecting Activate. There's no confirmation window for activation: they're automatically restored to their former status once Activate is clicked.
 
@@ -94,7 +94,7 @@ The user is deleted. There is no way to recover the user once deleted besides re
 Impersonating users allows you to view the system with the permissions the user would see it. This helps to diagnose issues an administrator can't see, such as making sure a user doesn't have access to sensitive data. Only users with the Administrator role are able to impersonate.
 
 1. Click Control Panel &rarr; *Users and Organizations* to see the list of users and find the one you want to impersonate.
-1. Click that user's *Actions* button (![Actions](../../../../images/icon-actions.png)).
+1. Click that user's *Actions* button (![Actions](../../../images/icon-actions.png)).
 1. Click *Impersonate User*.
 
 This opens another browser window logged in as that user.

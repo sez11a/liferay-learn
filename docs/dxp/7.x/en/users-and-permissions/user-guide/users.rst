@@ -4,6 +4,7 @@ Users
 .. toctree::
    :maxdepth: 3
 
+   users/introduction-to-users.md
    users/understanding-users.md
    users/adding-and-managing-users.md
    users/updating-user-profile-pictures.md

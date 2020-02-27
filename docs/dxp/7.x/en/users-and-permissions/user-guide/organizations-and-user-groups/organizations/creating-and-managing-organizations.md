@@ -1,11 +1,11 @@
 # Creating and Managing Organizations
 
-If you're not entirely sure what Organizations are or whether you need them, start [here](./04-organizations.md). This article gets right to the practical stuff: how to manage Organizations.
+If you're not entirely sure what Organizations are or whether you need them, start [here](../intro-to-organizations.md). This article gets right to the practical stuff: how to manage Organizations.
 
 ## Adding Organizations
 
 1. Click *Users and Organizations* from Control Panel &rarr; Users.
-1. Go to the *Organizations* tab and click the Add button (![Add](../../images/icon-add.png)). Fill out the Name field at a minimum.
+1. Go to the *Organizations* tab and click the Add button (![Add](../../../../images/icon-add.png)). Fill out the Name field at a minimum.
 1. If you're creating a child Organization, use the Parent Organization *Select* button to select an Organization in the system to be the direct parent. Click the *Remove* button to remove the currently configured parent.
 1. Click *Save* when finished filling out the Add Organization form.
 
