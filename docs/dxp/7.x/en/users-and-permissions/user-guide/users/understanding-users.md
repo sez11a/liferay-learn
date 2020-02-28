@@ -1,14 +1,14 @@
 # Understanding Users
 
-Every person who accesses a Liferay site is considered a User. Users who are not authenticated are considered "Guest" users. Liferay ships out-of-the-box with a default Admin user who has complete control and access to the system. [Roles and Permissions](link) govern what users are able to see and do on a site.
+Every person who accesses a Liferay site is considered a User. Unauthenticated Users are considered *Guest* users. Liferay ships out-of-the-box with a default Admin user who has complete control of and access to the system. [Roles and Permissions](../roles-and-permissions/roles-and-permissions.md) govern what users are able to see and do on a site.
 
 Users break down into three general categories:
 
 | User | Default Access | Notes |
 | --- | --- | --- |
 | [Administrator](../../../getting-started/introduction-to-the-admin-account.md) | Liferay Admin with full system access | We *strongly* recommend that users change the password for this account promptly after installation. |
-| Guest | View access to Public Pages and Sites. In most cases cannot create or add content unless explicitly permitted to. | By default, Guest users are able to create an account on a Liferay site to view and interact with *Public* sites. |
-| User | View access to Pages and Sites they are members of. Able to create content. | Placeholder notes. |
+| Guest | View access to Public Pages and Sites. In most cases cannot create or add content unless explicitly permitted. | By default, Guest users can create an account on a Liferay Site to view and interact with *Public* Sites. |
+| User | View access to Pages and Sites they are members of. Able to create content. | Users get defined default permissions and can be elevated to Organization or Site Administrators. |
 
 ## Managing Users
 
@@ -16,17 +16,17 @@ Users are managed in the *Users* section of the Control Panel.
 
 ![Managing Users in the Users and Organizations section of the Control Panel.](./understanding-users/images/01.png)
 
-Managing user metadata (name, department, etc.), permissions, and activation status can be done through this section.
+Here, you can manage user metadata (name, department, etc.), permissions, and activation status.
 
 ### Adding Users
 
-Users can be added by an administrator using the Users and Organizations section of the Control Panel or [through the API](future-article?). New users can also be created if open registration is configured or by syncing your Liferay installation with an LDAP server. See [Adding and Managing Users](./adding-and-managing-users.md) to learn more.
+Administrators can add Users through the Users and Organizations section of the Control Panel or [through the API](future-article?). New users can be created by administrators, can register themselves if open registration is configured, or can be synced from an LDAP server. See [Adding and Managing Users](./adding-and-managing-users.md) to learn more.
 
 #### Open Registration
 
-By default, guest users are able to create user accounts.
+By default, guest users can create user accounts.
 
-See [this article]() to learn more about configuring registration and authentication for users.
+See [Configuring Authentication](../../../installation-and-upgrades/securing-liferay/configuring-authentication.md) to learn more about configuring registration and authentication for users.
 
 #### Configuring a User Directory
 
@@ -38,17 +38,17 @@ Are there other methods of adding users? -->
 
 ## Managing User Access
 
-User access is controlled by Roles and Permissions. Permissions define what a user can and cannot do. Roles are groupings of permissions. Permissions can be configured specifically for individual users, but is more effectively done by defining permissions for a role and assigning users to pre-set roles. To learn more about managing access for users, see [Roles and Permissions](blah).
+User access is controlled by Roles and Permissions. Permissions define what a User can and cannot do. Roles are groupings of permissions. Permissions are configured by defining permissions for a Role and assigning Users to pre-set Roles. To learn more about managing access for Users, see [Roles and Permissions](blah).
 
 ## Organizing Users
 
-Liferay has several tools to help users organize and administer users.
+Liferay has several tools to help you organize and administer Users.
 
-[Organizations](link-to-organizations-article) are an entity in Liferay that can group users in a distributed hierarchy. Practically, this means that large organizations can empower and delegate users to administer their organizational groups.
+[Organizations](../organizations-and-user-groups/intro-to-organizations.md) are an entity in Liferay that can group users in a distributed hierarchy. Practically, this means that large organizations can empower and delegate Users to administer their Organizations.
 
 ![An example of how an organizational hierarchy can be created in Liferay.](understanding-users/images/02.png)
 
-[User Groups](link-to-user-groups-article) are another method available for grouping users to simplify assignment of roles and administration. The main distinction between a User Group and an Organization is that a User Group is a more informal and ad-hoc tool for grouping.
+[User Groups](../organizations-and-user-groups/user-groups/creating-and-managing-user-groups.md) are another way to group Users to simplify administration and assigning Roles. User Groups are simple lists of Users that can have Roles assigned to them.
 
 ## Related Information
 
