@@ -5,8 +5,7 @@ Process Automation
    :maxdepth: 4
 
    process-automation/forms.rst
-   process-automation/app_builder.rst
    process-automation/workflow.rst
 
-.. include:: /process-automation/README.rst
-   :start-line: 2
+.. raw:: html
+   :file: process-automation/landing.html
