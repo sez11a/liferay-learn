@@ -4,6 +4,7 @@ Organizations
 .. toctree::
    :maxdepth: 2
 
+   organizations/intro-to-organizations.md
    organizations/creating-and-managing-organizations.md
    organizations/organization-roles.md
    organizations/organization-sites.md
