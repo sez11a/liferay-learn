@@ -10,7 +10,7 @@ Subscribers can use redundant VPN tunnels by mapping their connections between t
 
 The client to site VPN feature supports the following protocols:
 
-* IPsec (IKEv1, IKEv2, L2TP)
+* IPsec (IKEv2)
 * OpenVPN
 
 Subscribers can choose one of the protocols (IPSec or OpenVPN) to perform the connection from DXP Cloud Console settings page for the desired environment. See [Connecting a VPN to DXP Cloud](./connecting-a-vpn-to-dxp-cloud.md) for more information.
@@ -50,3 +50,7 @@ The best way to get stable outgoing external IP addresses is to use the DXP Clou
 ### DXP Cloud IP Ranges for Private Cluster
 
 Liferay DXP Cloud offers optional Private Clusters which isolate each subscriber's services into their own dedicated cluster. Each cluster is configured with a dedicated gateway for all outbound Internet traffic from the subscriber's cluster and is assigned a static external IP.
+
+## What's Next
+
+* [Setting up a Client-to-Site VPN example](./vpn-setup-example.md)

@@ -37,7 +37,7 @@ Once you've [installed Liferay DXP](./installing-a-liferay-dxp-tomcat-bundle.md#
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7\. Click *Finish Configuration*.
 
-The Setup Wizard stores your configuration values in a `portal-setup-wizard.properties` file in your [Liferay Home](../14-reference/01-liferay-home.md).
+The Setup Wizard stores your configuration values in a `portal-setup-wizard.properties` file in your [Liferay Home](../reference/liferay-home.md).
 
 If you have a Liferay DXP Enterprise subscription, DXP requests your activation key. See [Activating Liferay DXP](./activating-liferay-dxp.md).
 
@@ -67,10 +67,10 @@ Congratulations! You have launched your on premises Liferay DXP instance.
 
 ## Next Steps
 
-You can sign in as your administrator user and start [building a solution on DXP](../../building-solutions-on-dxp/README.md). Or you can explore [additional Liferay DXP setup](../02-setting-up-liferay-dxp/setting-up-liferay-dxp.md) topics:
+You can sign in as your administrator user and start [building a solution on DXP](../../building-solutions-on-dxp/README.md). Or you can explore [additional Liferay DXP setup](../setting-up-liferay-dxp/setting-up-liferay-dxp.md) topics:
 
-* [Setting up Marketplace](../02-setting-up-liferay-dxp/setting-up-marketplace.md)
-* [Trial Plugin Installation](../02-setting-up-liferay-dxp/trial-plugin-installation.md)
+* [Using the Liferay Marketplace](../setting-up-liferay-dxp/using-the-liferay-marketplace.md)
+* [Trial Plugin Installation](../setting-up-liferay-dxp/trial-plugin-installation.md)
 * Installing and Configuring a Search Engine
-* [Securing Liferay DXP](../05-securing-liferay/01-securing-liferay.md)
-* [Introduction to Clustering Liferay DXP](../02-setting-up-liferay-dxp/configuring-clustering-for-high-availability/01-introduction-to-clustering-liferay-dxp.md)
+* [Securing Liferay DXP](../securing-liferay/securing-liferay.md)
+* [Introduction to Clustering Liferay DXP](../setting-up-liferay-dxp/configuring-clustering-for-high-availability/01-introduction-to-clustering-liferay-dxp.md)

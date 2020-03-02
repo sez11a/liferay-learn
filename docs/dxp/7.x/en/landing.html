@@ -1,17 +1,23 @@
 <div class="landing-page" id="landingPage">
 	<div class="section-card" v-for="card in cards">
-		<a class="autofit-row autofit-row-center" :href="card.sectionURL">
+		<div class="autofit-row autofit-row-center">
+			<div class="autofit-col" v-if="card.icon">
+				<svg class="icon">
+					<use :xlink:href="card.icon"></use>
+				</svg>
+			</div>
 			<div class="autofit-col autofit-col-expand">
-				<h4 class="title">{{ card.sectionName }}</h4>
+				<a :href="card.sectionURL">
+					<h4 class="title" v-if="card.icon">{{ card.sectionName }}</h4>
+					<h4 class="sidebar title" v-else>{{ card.sectionName }}</h4>
+				</a>
 				<ul class="subsection" v-if="card.subsections">
 					<li v-for="subsection in card.subsections">
-						<a class="subsection-link" :href="subsection.url">
-							{{ subsection.name}}
-						</a>
+						<a :href="subsection.url">{{ subsection.name}}</a>
 					</li>
 				</ul>
 			</div>
-		</a>
+		</div>
 	</div>
 </div>
 
@@ -23,6 +29,7 @@
 		data: {
 			cards: [
 				{
+					icon: '#getting-started-logo',
 					sectionName: 'Getting Started',
 					sectionURL: 'getting_started.html',
 					subsections: [
@@ -41,7 +48,9 @@
 					]
 				},
 				{
+					icon: '#building-solutions-on-dxp-logo',
 					sectionName: 'Building Solutions on DXP',
+					sectionURL: 'building_solutions_on_dxp.html',
 					subsections: [
 						{
 							name: 'Building an Intranet (Coming Soon)',
@@ -58,6 +67,7 @@
 					]
 				},
 				{
+					icon: '#site-building-logo',
 					sectionName: 'Site Building',
 					sectionURL: 'site_building.html',
 					subsections: [
@@ -76,7 +86,9 @@
 					]
 				},
 				{
+					icon: '#content-authoring-and-management-logo',
 					sectionName: 'Content Authoring and Management',
+					sectionURL: 'content_authoring_and_management.html',
 					subsections: [
 						{
 							name: 'Introduction to Assets (Coming Soon)',
@@ -93,24 +105,28 @@
 					]
 				},
 				{
+					icon: '#process-automation-logo',
 					sectionName: 'Process Automation',
+					sectionURL: 'process_automation.html',
 					subsections: [
 						{
-							name: 'Creating and Managing Forms (Coming Soon)',
-							url: 'process-automation/01-forms/user_guide.html'
+							name: 'Creating Forms',
+							url: 'process-automation/forms/user-guide/introduction-to-forms.html'
 						},
 						{
-							name: 'Creating Low-Code Applications With App Builder (Coming Soon)',
-							url: 'process-automation/02-app-builder/user_guide.html'
+							name: 'Sharing Forms',
+							url: 'process-automation/forms/user-guide/sharing-forms.html'
 						},
 						{
-							name: 'Introduction to Workflow (Coming Soon)',
-							url: 'process-automation/workflow.html'
+							name: 'Managing Form Entries',
+							url: 'process-automation/forms/user-guide/managing-form-entries.html'
 						},
 					]
 				},
 				{
+					icon: '#using-search-logo',
 					sectionName: 'Using Search',
+					sectionURL: 'using_search.html',
 					subsections: [
 						{
 							name: 'Introduction to Search (Coming Soon)',
@@ -125,45 +141,73 @@
 							url: 'using-search/developer_guide.html'
 						},
 					]
-        },
+        		},
 				{
+					icon: '#collaboration-and-social-logo',
 					sectionName: 'Collaboration and Social',
+					sectionURL: 'collaboration_and_social.html',
 					subsections: [
 						{
 							name: 'Getting Started with Message Boards',
 							url: 'collaboration-and-social/message-boards/user-guide/getting-started-with-message-boards.html'
 						},
 						{
-							name: 'Using Social Tools (Coming Soon)',
+							name: 'Using Social Tools',
 							url: 'collaboration-and-social/social_tools.html'
 						},
 						{
-							name: 'Notifications and Requests (Coming Soon)',
-							url: 'collaboration-and-social/notifications_and_requests.html'
+							name: 'Mentioning Users',
+							url: 'collaboration-and-social/notifications-and-requests/user-guide/mentioning-users.html'
 						},
 					]
 				},
 				{
-					sectionName: 'System Management',
+					icon: '#users-and-permissions-logo',
+					sectionName: 'Users and Permissions',
+					sectionURL: 'users_and_permissions.html',
 					subsections: [
 						{
-							name: 'Understanding System Settings (Coming Soon)',
-							url: 'user-and-system-management/04-system-management/01-user-guide/system_settings.html'
+							name: 'Introduction to Users (Coming Soon)',
+							url: 'users-and-permissions/user-guide/users.html'
 						},
 						{
-							name: 'Creating Virtual Instances (Coming Soon)',
-							url: 'user-and-system-management/04-system-management/01-user-guide/virtual_instances.html'
+							name: 'Introduction to Organizations and User Groups (Coming Soon)',
+							url: 'users-and-permissions/user-guide/organizations_and_user_groups.html'
 						},
 						{
-							name: 'Configuring Security Settings (Coming Soon)',
-							url: 'user-and-system-management/04-system-management/01-user-guide/security_settings.html'
+							name: 'Introduction to Roles and Permissions (Coming Soon)',
+							url: 'users-and-permissions/user-guide/roles_and_permissions.html'
 						},
 					]
 				},
 				{
+					icon: '#system-administration-logo',
+					sectionName: 'System Administration',
+					sectionURL: 'system_administration.html',
+					subsections: [
+						{
+							name: 'Introduction to Managing Apps',
+							url: 'system-administration/installing-and-managing-apps/introduction-to-managing-apps.html'
+						},
+            {
+							name: 'Installing Apps',
+							url: 'system-administration/installing-and-managing-apps/installing-apps.html'
+						},
+						{
+							name: 'Using the App Manager',
+							url: 'system-administration/installing-and-managing-apps/using-the-app-manager.html'
+						},
+					]
+				},
+				{
+					icon: '#developing-applications-logo',
 					sectionName: 'Developing Applications',
 					sectionURL: 'developing_applications.html',
 					subsections: [
+            {
+							name: 'Creating Low Code Applications with App Builder',
+							url: 'developing-applications/developing-low-code-applications/app-builder-overview.html'
+						},
 						{
 							name: 'Developing a Single Page Application with React (Coming Soon)',
 							url: 'developing-applications/developing-a-single-page-application/using-react.html'
@@ -172,22 +216,20 @@
 							name: 'Understanding Service Builder (Coming Soon)',
 							url: 'developing-applications/data-frameworks/service-builder.html'
 						},
-						{
-							name: 'Using Liferay Workspace to Accelerate Development (Coming Soon)',
-							url: 'developing-applications/tooling/liferay-workspace.html'
-						},
 					]
 				},
 				{
+					icon: '#liferay-internals-logo',
 					sectionName: 'Liferay Internals',
+					sectionURL: 'liferay_internals.html',
 					subsections: [
 						{
 							name: 'Adding a Language (Coming Soon)',
 							url: 'liferay-internals/extending-liferay/adding-a-language.html'
 						},
 						{
-							name: 'Creating a Widget Template (Coming Soon)',
-							url: 'liferay-internals/extending-liferay/creating-a-widget-template.html'
+							name: 'OSGi Extension Points (Coming Soon)',
+							url: 'liferay-internals/extending-liferay/osgi-extension-points.html'
 						},
 						{
 							name: 'Customizing the Liferay Core (Coming Soon)',
@@ -196,7 +238,9 @@
 					]
 				},
 				{
+					icon: '#headless-delivery-logo',
 					sectionName: 'Headless Delivery',
+					sectionURL: 'headless_delivery.html',
 					subsections: [
 						{
 							name: 'Using Content Delivery APIs (Coming Soon)',
@@ -213,19 +257,21 @@
 					]
 				},
 				{
+					icon: '#installation-and-upgrades-logo',
 					sectionName: 'Installation and Upgrades',
+					sectionURL: 'installation_and_upgrades.html',
 					subsections: [
 						{
 							name: 'Installing a Liferay DXP Tomcat Bundle',
-							url: 'installation-and-upgrades/installing-liferay-dxp-on-premises/installing-a-liferay-dxp-tomcat-bundle.html'
+							url: 'installation-and-upgrades/installing-liferay/installing-a-liferay-dxp-tomcat-bundle.html'
 						},
 						{
 							name: 'Running Liferay DXP for the First Time',
-							url: 'installation-and-upgrades/installing-liferay-dxp-on-premises/running-liferay-dxp-for-the-first-time.html'
+							url: 'installation-and-upgrades/installing-liferay/running-liferay-dxp-for-the-first-time.html'
 						},
 						{
 							name: 'Portal Properties',
-							url: 'installation-and-upgrades/14-reference/03-portal-properties.html'
+							url: 'installation-and-upgrades/reference/portal-properties.html'
 						},
 					]
 				},

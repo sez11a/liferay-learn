@@ -8254,11 +8254,13 @@ div.admonition {
     color: #000; }
   .documentations .doc-nav .toctree-l2,
   .documentations .doc-nav .toctree-l3,
-  .documentations .doc-nav .toctree-l4 {
+  .documentations .doc-nav .toctree-l4,
+  .documentations .doc-nav .toctree-l5 {
     font-size: 0.875rem; }
     .documentations .doc-nav .toctree-l2.current.parent-level > a,
     .documentations .doc-nav .toctree-l3.current.parent-level > a,
-    .documentations .doc-nav .toctree-l4.current.parent-level > a {
+    .documentations .doc-nav .toctree-l4.current.parent-level > a,
+    .documentations .doc-nav .toctree-l5.current.parent-level > a {
       background-image: none;
       border-left-color: #0B5FFF;
       color: inherit;
@@ -8266,11 +8268,13 @@ div.admonition {
       padding: 0.5rem 1.5rem 0.5rem 1rem; }
     .documentations .doc-nav .toctree-l2.current > a,
     .documentations .doc-nav .toctree-l3.current > a,
-    .documentations .doc-nav .toctree-l4.current > a {
+    .documentations .doc-nav .toctree-l4.current > a,
+    .documentations .doc-nav .toctree-l5.current > a {
       color: #0B5FFF; }
     .documentations .doc-nav .toctree-l2 > a,
     .documentations .doc-nav .toctree-l3 > a,
-    .documentations .doc-nav .toctree-l4 > a {
+    .documentations .doc-nav .toctree-l4 > a,
+    .documentations .doc-nav .toctree-l5 > a {
       padding: 0.5rem 2rem; }
 
 .documentations .doc-nav-wrapper {
@@ -8635,6 +8639,12 @@ header {
 .landing-page {
   display: flex;
   flex-wrap: wrap; }
+  .landing-page .autofit-row-center > .autofit-col {
+    justify-content: initial; }
+  .landing-page .icon {
+    height: 2rem;
+    margin-right: 1.5rem;
+    width: 2rem; }
   .landing-page .section-card {
     border: 1px solid rgba(9, 16, 24, 0.12);
     border-radius: 0.25rem;
@@ -8657,6 +8667,10 @@ header {
     .landing-page .section-card h4 {
       font-size: 1.125rem;
       margin-bottom: 0.5rem; }
+      .landing-page .section-card h4.sidebar {
+        border-left: 3px solid #42BFC2;
+        margin-left: -1.5rem;
+        padding-left: 1.25rem; }
   .landing-page .subsection {
     font-size: 0.875rem;
     list-style: none;

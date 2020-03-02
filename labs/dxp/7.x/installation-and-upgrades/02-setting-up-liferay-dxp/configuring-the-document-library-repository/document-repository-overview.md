@@ -12,11 +12,11 @@
 
 ## Configuring the System File Store
 
-Each option is a type of store, or storage method, which can be configured through the [`portal-ext.properties`](../../14-reference/03-portal-properties.md) file by setting the [`dl.store.impl=`property](https://docs.liferay.com/dxp/portal/7.2-latest/propertiesdoc/portal.properties.html#Document%20Library%20Service).
+Each option is a type of store, or storage method, which can be configured through the [`portal-ext.properties`](../../reference/portal-properties.md) file by setting the [`dl.store.impl=`property](https://docs.liferay.com/dxp/portal/7.2-latest/propertiesdoc/portal.properties.html#Document%20Library%20Service).
 
 ## Document Repositories in a Clustered Environment
 
-To propagate store configuration in a [cluster](https://help.liferay.com/hc/articles/360029123831-Liferay-DXP-Clustering), [export](https://help.liferay.com/hc/articles/360029131591-System-Settings#exporting-and-importing-configurations) your store settings from your store's *File Storage* screen in System Settings to a `.config` file and copy the file to the `[Liferay-Home]/osgi/config` folder in each node.
+To propagate store configuration in a [cluster](https://help.liferay.com/hc/articles/360029123831-Liferay-DXP-Clustering), [export](https://help.liferay.com/hc/articles/360029131591-System-Settings#exporting-and-importing-configurations) your store settings from your store's *File Storage* screen in System Settings to a `.config` file and copy the file to the `[Liferay-Home]/osgi/configs` folder in each node.
 
 ## Migrating Documents Across Repositories
 

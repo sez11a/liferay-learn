@@ -1,17 +1,23 @@
 <div class="landing-page" id="landingPage">
 	<div class="section-card" v-for="card in cards">
-		<a class="autofit-row autofit-row-center" :href="card.sectionURL">
+		<div class="autofit-row autofit-row-center">
+			<div class="autofit-col" v-if="card.icon">
+				<svg class="icon">
+					<use :xlink:href="card.icon"></use>
+				</svg>
+			</div>
 			<div class="autofit-col autofit-col-expand">
-				<h4 class="title">{{ card.sectionName }}</h4>
+				<a :href="card.sectionURL">
+					<h4 class="title" v-if="card.icon">{{ card.sectionName }}</h4>
+					<h4 class="sidebar title" v-else>{{ card.sectionName }}</h4>
+				</a>
 				<ul class="subsection" v-if="card.subsections">
 					<li v-for="subsection in card.subsections">
-						<a class="subsection-link" :href="subsection.url">
-							{{ subsection.name}}
-						</a>
+						<a :href="subsection.url">{{ subsection.name}}</a>
 					</li>
 				</ul>
 			</div>
-		</a>
+		</div>
 	</div>
 </div>
 
@@ -22,6 +28,20 @@
 		el: '#landingPage',
 		data: {
 			cards: [
+      {
+					sectionName: 'Developing Low Code Applications',
+					sectionURL: 'developing-applications/developing_low_code_applications.html',
+					subsections: [
+						{
+							name: 'App Builder Overview',
+							url: 'developing-applications/developing-low-code-applications/app-builder-overview.html'
+						},
+						{
+							name: 'Creating an Application with App Builder',
+							url: 'developing-applications/developing-low-code-applications/creating-an-application-with-app-builder.html'
+						},
+					]
+				},
 				{
 					sectionName: 'Developing a Single Page Application',
 					sectionURL: 'developing-applications/developing_a_single_page_application.html',
