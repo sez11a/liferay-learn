@@ -1,6 +1,6 @@
 # Creating and Managing Organizations
 
-If you're not entirely sure what Organizations are or whether you need them, start [here](../intro-to-organizations.md). This article gets right to the practical stuff: how to manage Organizations.
+If you're not sure what Organizations are or whether you need them, start [here](../intro-to-organizations.md). This article gets right to the practical stuff: how to manage Organizations.
 
 ## Adding Organizations
 
@@ -9,31 +9,25 @@ If you're not entirely sure what Organizations are or whether you need them, sta
 1. If you're creating a child Organization, use the Parent Organization *Select* button to select an Organization in the system to be the direct parent. Click the *Remove* button to remove the currently configured parent.
 1. Click *Save* when finished filling out the Add Organization form.
 
-As when creating a new user, once you submit the form you see a success message, and a new form appears where you can enter additional information about the Organization. Organizations can have associated multiple email addresses, postal addresses, web sites, and phone numbers. The Services link can be used to indicate the operating hours of the Organization, if any.
+As when creating a new User, once you submit the form you see a success message, and a new form appears where you can enter additional information about the Organization. Organizations can have associated multiple email addresses, postal addresses, web sites, and phone numbers. You can use the Services link to indicate the operating hours of the Organization, if any.
 
-> **Tip:** After creating an Organization, assign the desired user to the Organization Owner Role. The Organization Owner can do everything that an Organization Administrator can. In addition to their full administrative rights within the Organization, they can do these things:
->
->- Appoint other Users to be Organization Administrators
->- Appoint other Users to be Organization Owners
->- Remove the memberships of other Organization Administrators or Owners
+```tip::
+**Tip:** After creating an Organization, assign the desired user to the Organization Owner Role. The Organization Owner can do everything that an Organization Administrator can. In addition to their full administrative rights within the Organization, they can do these things:
+
+- Appoint other Users to be Organization Administrators
+- Appoint other Users to be Organization Owners
+- Remove the memberships of other Organization Administrators or Owners
+```
 
 Organization Administrators can't make these Role assignments and can't manage the memberships of other Organization Administrators or Owners.
 
 ## Editing Organizations
-
-To edit an Organization:
 
 1. Go to the Users and Organizations section of the Control Panel
 
 1. Click the *Organizations* tab. All active Organizations are listed.
 
 1. Click the *Actions* button next to an Organization. This shows a list of actions you can perform on this Organization:
-
-    | header 1 | header 2 | header 3 |
-    | --- | --- | --- |
-    | cell 1 | cell 2 | cell 3 |
-
-<!-- Put all the edit options into a table to mitigate text overload.
 
 **Edit:** Specify details about the Organization, including addresses, phone numbers, and email addresses. You can also create a Site for the Organization.
 
@@ -47,6 +41,6 @@ To edit an Organization:
 
 **Add Organization:** Add a child Organization to this Organization. This is how you create hierarchies of Organizations with parent-child relationships.
 
-**Delete:** Removes this Organization. Make sure the Organization has no Users in it first. You'll be prompted for confirmation that you want to delete the Organization. If there are Users in the Organization or if there are sub-Organizations, you must remove the Users and delete the sub-Organizations before deleting the parent Organization. -->
+**Delete:** Removes this Organization. Make sure the Organization has no Users in it first. You'll be prompted for confirmation that you want to delete the Organization. If there are Users in the Organization or if there are sub-Organizations, you must remove the Users and delete the sub-Organizations before deleting the parent Organization. 
 
 If you click the Organization name you can view both a list of Users who are members of this Organization and a list of all the sub-Organizations of this Organization.

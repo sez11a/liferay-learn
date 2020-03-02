@@ -1,10 +1,8 @@
 # Adding a New Organization Type
 
-<!-- I made this a separate article because it it felt like a lot of extra info to have in Creating and Managing Organizations and it seemed lengthy enough to break out into its own article. -->
+By default, Liferay DXP only includes the *Organization* type. You can configure the existing type or add additional types in System Settings &rarr; Users &rarr; Organization Type. There are two main reasons to configure Organization types:
 
-By default, Liferay DXP only includes the *Organization* type. You can configure the existing type or add additional types using the Organization Type entry in System Settings. There are two main reasons to configure Organization types:
-
-1. Organizations usually correlate to real-life hierarchical structures. Calling them by their real names is helpful for administrators and Users. For example, in a baseball organization, *League*, *Division*, and *Team* Organization types are useful.
+1. Organizations usually correlate to real-life hierarchical structures. Calling them by their real names is helpful for administrators and Users. For example, in a baseball organization, you might want *League*, *Division*, and *Team* Organization types.
 1. Enforce control over which Organizations can be top level Organizations and the type of sub-Organization allowed for each parent Organization type. For example, a baseball organization would not allow Division Organization types to be sub-Organizations of Team Organizations.
 
 ![Create new organization types through the System Settings entry called Organization Types.](./adding-a-new-organization-type/images/01.png)
@@ -15,28 +13,21 @@ To add another Organization type called *League*, enter these options into the c
 
 <!-- table to make it visually easier to follow -->
 
-| header 1 | header 2 | header 3 |
-| --- | --- | --- |
-| cell 1 | cell 2 | cell 3 |
+| Org Name | Country Enabled | Country Required | Rootable | Children Types |
+| --- | --- | --- | --- | --- |
+| League | True | False | True | Division |
+| Division | True | False | False | Team |
+| Team | True | False | False | [blank: leaf node] |
 
-<!-- Name: *League*
-: Adds League to the list of Organization types that appear in the Add
-Organization menu.
+**Name:** Enter the name of your Organization type. 
 
-Country Enabled: *True*
-: Enables the Country selection list field on the form for adding and editing
-League types.
+**Country Enabled:** Enables the Country selection list field on the form when adding or editing Organization types. 
 
-Country Required: *False*
-: Specifies that the *Country* field is not required when adding a League.
+**Country Required:** Specifies that the *Country* field is not required when adding one of these Organization types.
 
-Rootable: *True*
-: Enables Leagues as a top level Organization. Limit League to sub-Organization
-status by excluding this property.
+**Rootable:** Enables this type as a top level Organization. Note that Division and Team above are both False, because they must be children of Leagues. 
 
-Children Types: *Division*
-: Specifies Division as the only allowable sub-Organization type for the League
-parent type. -->
+Children Types: Specifies the allowable sub-Organization types for this parent type. As above, Divisions can only be children of Leagues, and Teams can only be children of Divisions.
 
 Once you configure additional Organization types and click Save, you'll find your new type(s) available for selection in the Add Organization form.
 
