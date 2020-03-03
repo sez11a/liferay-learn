@@ -1,8 +1,8 @@
-# Organizations
+# Understanding Organizations
 
 Liferay Organizations are an optional, but potent feature that can enable distributed user and site management that reflects real world organizational hierarchies. Organizations in Liferay can nest to an unlimited number of hierarchical levels. Consider a typical organization chart:
 
-![An organization chart shows how a typical grouping of company, governmental department, non profit, or any other collection of people is organized. Liferay's Organizations can model these.](./intro-to-organizations/images/01.png)
+![An organization chart shows how a typical grouping of company, governmental department, non profit, or any other collection of people is organized. Liferay's Organizations can model these.](./understanding-organizations/images/01.png)
 
 This structure can be modeled in Liferay DXP, empowering you to delegate administrative responsibility and organize Users in a way that reflects your organization. If you apply permissions to those Users through Organization Roles, Users who move from one organization to another in a defined hierarchy automatically receive permissions appropriate to them.
 
@@ -10,7 +10,7 @@ This structure can be modeled in Liferay DXP, empowering you to delegate adminis
 
 Organizations can have Roles scoped only to them. An Organization Role's permissions affect only applications and content within that Organization hierarchy. For example, the difference between a portal-scoped Role versus an Organization-scoped Role that define access to Message Boards is that the Organization Role affects only Message Boards in that Organization (or its children), while the portal Role affects all Message Boards installation-wide.
 
-![The Organization Roles management screen.](./intro-to-organizations/images/02.png)
+![The Organization Roles management screen.](./understanding-organizations/images/02.png)
 
 This has great benefits. If, for example, a large company has modeled its organization chart in Liferay DXP as Organizations, administration becomes an easy task. An IT User who has permission to use IT's provisioning application can transfer to HR, and by moving that User from IT to HR, permissions to the provisioning tool are removed automatically, while permissions to HR's compensation tool are granted automatically.
 
@@ -24,7 +24,7 @@ Organization administrators are *delegated* administrators. This means they get 
 
 Organization administrators can't access the Control Panel by default. Instead, they can click the *My Organizations* link to gain access to any Organizations they manage.
 
-![Organization administrators can access their Organizations from their profile.](./intro-to-organizations/images/03.png)
+![Organization administrators can access their Organizations from their profile.](./understanding-organizations/images/03.png)
 
 ## Organization Sites
 
