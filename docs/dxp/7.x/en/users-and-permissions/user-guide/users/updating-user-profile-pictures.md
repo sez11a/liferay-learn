@@ -6,9 +6,9 @@ Users have profile pictures. Administrative Users can upload images in the Edit 
 
 To update a User profile picture follow these steps:
 
-1. Click *My Profile* in the User menu or if you're an administrator, go to *Control Panel* &rarr; *Users and Organizations* and find the User that needs a profile picture. 
-1. Click the *Change* button under the generic profile picture. 
-1. Select an image from your computer, crop it (if necessary), and then click *Done*. 
+1. Click *My Profile* in the User menu or if you're an administrator, go to *Control Panel* &rarr; *Users and Organizations* and find the User that needs a profile picture.
+1. Click the *Change* button under the generic profile picture.
+1. Select an image from your computer, crop it (if necessary), and then click *Done*.
 
 ![Upload images for user avatars in the Edit User form.](./updating-user-profile-pictures/images/01.png)
 
@@ -26,7 +26,7 @@ If no image is explicitly uploaded for a User's profile picture, a default User 
 1. In the Platform section, click *Users* &rarr; *User Images*.
 1. De-select *Use Initials for Default User Portrait*.
 
-![If you disable the default initials-based profile picture, this icon is used instead.](./images/updating-user-profile-pictures/03.png)
+![If you disable the default initials-based profile picture, this icon is used instead.](./updating-user-profile-pictures/images/03.png)
 
 Now, instead of the default icon, the icon is a generic silhouette.
 
@@ -40,9 +40,9 @@ The default user icon (with the user initials) can be configured to work for you
 
 ### Using a Custom Default Profile Image
 
-You can use your own default profile image: 
+You can use your own default profile image:
 
-1. Create at least one image that is a 100x100 px square in .png or .jpg format. 
+1. Create at least one image that is a 100x100 px square in .png or .jpg format.
 
 1. Place it somewhere on the application server's classpath. For example, in Tomcat you could place it in the `tomcat/webapps/ROOT/WEB-INF/classes` folder.
 
@@ -59,12 +59,10 @@ You can use your own default profile image:
     ```
 
     ```tip::
-    **Note:** If you use the binary gender field to collect information on users' genders, then you have two default images to override. Set these properties instead:
-
-    ```properties
-    image.default.user.female.portrait=image-filename.png
-    image.default.user.male.portrait=image-filename.png
-    ```
+       If you use the binary gender field to collect information on users' genders, then you have two default images to override. Set these properties instead:
+       ::
+         image.default.user.female.portrait=image-filename.png
+         image.default.user.male.portrait=image-filename.png
     ```
 
 1. Restart the application server.

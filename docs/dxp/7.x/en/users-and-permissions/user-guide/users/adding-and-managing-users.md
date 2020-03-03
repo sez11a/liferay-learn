@@ -1,6 +1,6 @@
 # Adding and Managing Users
 
-Core user management activities include adding, editing, and deleting users. This activities are typically restricted to Administrative users.
+Core user management activities include adding, editing, and deleting users. These activities are typically restricted to Administrative users.
 
 ## Adding Users
 
@@ -11,11 +11,11 @@ Core user management activities include adding, editing, and deleting users. Thi
 
 1. Fill out the Add User form and click *Save*. At a minimum, provide a Screen Name, First Name, Last Name, and Email Address for the User.
 
-```note::
-    **Note:** Screen names and email addresses are not interchangeable. A screen name cannot contain an `@` symbol because it is used in the URL to a User's private page.
+    ```note::
+        **Note:** Screen names and email addresses are not interchangeable. A screen name cannot contain an `@` symbol because it is used in the URL to a User's private page.
 
-    The Add User functionality is split over several independent forms. Save the first form to create the User, and then you'll see a success message saying `Success. Your request completed successfully.`
-```
+        The Add User functionality is split over several independent forms. Save the first form to create the User, and then you'll see a success message saying `Success. Your request completed successfully.`
+    ```
 
 Once you create the User, additional information can be added.
 
@@ -35,23 +35,23 @@ If you haven't set up a mail server, click the *Password* item from the General 
 
 1. The following options are available:
 
-    | Option | Description |
-    | --- | --- |
-    | Edit | Modify any aspect of the User account. |
-    | Permissions | Define which Roles have permissions to edit the User. |
-    | Manage Pages | Configure the personal pages of a User. |
-    | Impersonate User | Browse the Site in another window as though you were that User. |
-    | Deactivate | [Disable the user's account](#deactivating-users). |
-    | Erase Personal Data | [Delete the User's personal data](./03-managing-user-data/01-intro.md). |
-    | Export Personal Data | [Download the User's personal data](./03-managing-user-data/03-exporting-user-data.md). |
+| Option | Description |
+| --- | --- |
+| Edit | Modify any aspect of the User account. |
+| Permissions | Define which Roles have permissions to edit the User. |
+| Manage Pages | Configure the personal pages of a User. |
+| Impersonate User | Browse the Site in another window as though you were that User. |
+| Deactivate | [Disable the user's account](#deactivating-users). |
+| Erase Personal Data | [Delete the User's personal data](./03-managing-user-data/01-intro.md). |
+| Export Personal Data | [Download the User's personal data](./03-managing-user-data/03-exporting-user-data.md). |
 
 ## Deactivating and Deleting Users
 
-Removing Users is a two-step process for several reasons: 
+Removing Users is a two-step process for several reasons:
 
 - You or the User may decide you really wanted that account.
-- Users are often tied to content with possible [legal ramifications](./managing-user-data-gdpr-compliance/managing-user-data.md) in your country. 
-- You may need time to review a User's account activity before removing all evidence of that User's existence. 
+- Users are often tied to content with possible [legal ramifications](./managing-user-data-gdpr-compliance/managing-user-data.md) in your country.
+- You may need time to review a User's account activity before removing all evidence of that User's existence.
 
 For these and more reasons, you must first *deactivate* a User before *deleting* that User.
 
