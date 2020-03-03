@@ -8,5 +8,5 @@ Users and Permissions
    users-and-permissions/devops.rst
    users-and-permissions/developer_guide.rst
 
-.. include:: /users-and-permissions/README.rst
-   :start-line: 2
+.. raw:: html
+   :file: users-and-permissions/landing.html
