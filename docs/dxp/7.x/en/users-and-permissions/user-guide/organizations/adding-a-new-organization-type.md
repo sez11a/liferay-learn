@@ -5,7 +5,7 @@ By default, Liferay DXP only includes the *Organization* type. You can configure
 1. Organizations usually correlate to real-life hierarchical structures. Calling them by their real names is helpful for administrators and Users. For example, in a baseball organization, you might want *League*, *Division*, and *Team* Organization types.
 1. Enforce control over which Organizations can be top level Organizations and the type of sub-Organization allowed for each parent Organization type. For example, a baseball organization would not allow Division Organization types to be sub-Organizations of Team Organizations.
 
-    ![Create new organization types through the System Settings entry called Organization Types.](./adding-a-new-organization-type/images/01.png)
+![Create new organization types through the System Settings entry called Organization Types.](./adding-a-new-organization-type/images/01.png)
 
 Check out the configuration options that configure the default *Organization* type and then configure an additional type.
 

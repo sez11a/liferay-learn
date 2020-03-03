@@ -24,7 +24,7 @@ Administrators can add Users through the Users and Organizations section of the 
 
 #### Open Registration
 
-By default, guest users can create user accounts.
+By default, guest users can create User accounts.
 
 See [Configuring Authentication](../../../installation-and-upgrades/securing-liferay/configuring-authentication.md) to learn more about configuring registration and authentication for users.
 
