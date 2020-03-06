@@ -1,5 +1,7 @@
 # Using Vue.js
 
+> Liferay DXP 7.1+
+
 Running an existing Vue app on @product@ makes the app available as a widget for using on site pages. You can [adapt your existing Angular app](TODO), but this doesn't give you access to the bundler and its various loaders to develop your project further in @product@. To have access to all of @product@'s features, you must use the Liferay JS Generator and Liferay npm Bundler to merge your files into a portlet bundle, update your static resource paths, and deploy your bundle. The steps below demonstrate how to prepare a Vue app that uses single file components (`.vue` files) with multiple views. 
 
 ![Apps like this Guestbook app are easy to migrate.](./using-vue/images/01.png)
@@ -12,6 +14,8 @@ Running an existing Vue app on @product@ makes the app available as a widget for
 
 1. [Deploy an Example](#deploy-an-example)
 1. [Walk Through the Example](#walk-through-an-example)
+
+## Deploy an Example
 
 > Liferay DXP 7.3+
 
@@ -29,6 +33,10 @@ First you must deploy an example migrated Vue JS app. Follow these steps:
     curl https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.x/en/developing-applications/developing-a-single-page-application/using-vue/1583523242liferay84.zip
     
     unzip 1583523242liferay84.zip
+    ```
+
+    ```note::
+        The original app, before it was migrated, is included in the `/before` folder of the zip file for reference.
     ```
 
 1. Install the app's dependencies:
@@ -80,6 +88,10 @@ Great! You successfully built and deployed a migrated Vue JS app. Next, you'll w
 
     ```bash
     npm install -g yo generator-liferay-js
+    ```
+
+    ```note::
+        To use the Liferay JS Generator, you must have the Liferay JS Portlet Extender activated in your Portal instance. It's activated by default in Liferay DXP 7.2+. You can confirm this by opening the Control Menu, navigating to the *App Manager*, and searching for `com.liferay.frontend.js.portlet.extender`. In Liferay DXP 7.1 you must install the Liferay JS Portlet Extender from the Marketplace ([Liferay Digital Enterprise 7.1](https://web.liferay.com/marketplace/-/mp/application/115543020) | and | [Liferay Portal CE 7.1](https://web.liferay.com/marketplace/-/mp/application/115542926).).
     ```
 
 1. Generate a React based portlet bundle project for deploying your app to your Portal installation. 

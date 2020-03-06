@@ -1,5 +1,7 @@
 # Using Angular
 
+> Liferay DXP 7.1+
+
 Running an existing Angular app on @product@ makes the app available as a widget for using on site pages. You can [adapt your existing Angular app](TODO), but this doesn't give you access to the bundler and its various loaders to develop your project further. To have access to all of Liferay DXP's features, you must use the Liferay JS Generator and Liferay npm Bundler to merge your files into a portlet bundle, adapt your routes and CSS, and deploy your bundle.
 
 ![Apps like this Guestbook app are easy to migrate.](./using-angular/images/01.png)
@@ -8,6 +10,8 @@ Running an existing Angular app on @product@ makes the app available as a widget
 
 1. [Deploy an Example](#deploy-an-example)
 1. [Walk Through the Example](#walk-through-an-example)
+
+## Deploy an Example
 
 > Liferay DXP 7.3+
 
@@ -25,6 +29,10 @@ First you must deploy an example migrated Angular app. Follow these steps:
     curl https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.x/en/developing-applications/developing-a-single-page-application/using-angular/1583511312liferay99.zip
     
     unzip 1583511312liferay99.zip
+    ```
+
+    ```note::
+        The original app, before it was migrated, is included in the `/before` folder of the zip file for reference.
     ```
 
 1. Install the app's dependencies:
@@ -76,6 +84,10 @@ Great! You successfully built and deployed a migrated React app. Next, you'll wa
 
     ```bash
     npm install -g yo generator-liferay-js
+    ```
+
+    ```note::
+        To use the Liferay JS Generator, you must have the Liferay JS Portlet Extender activated in your Portal instance. It's activated by default in Liferay DXP 7.2+. You can confirm this by opening the Control Menu, navigating to the *App Manager*, and searching for `com.liferay.frontend.js.portlet.extender`. In Liferay DXP 7.1 you must install the Liferay JS Portlet Extender from the Marketplace ([Liferay Digital Enterprise 7.1](https://web.liferay.com/marketplace/-/mp/application/115543020) | and | [Liferay Portal CE 7.1](https://web.liferay.com/marketplace/-/mp/application/115542926).).
     ```
 
 1. Generate an Angular based portlet bundle project for deploying your app to your Portal installation. 
