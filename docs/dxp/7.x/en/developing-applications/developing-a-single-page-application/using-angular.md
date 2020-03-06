@@ -2,7 +2,7 @@
 
 > Liferay DXP 7.1+
 
-Running an existing Angular app on @product@ makes the app available as a widget for using on site pages. You can [adapt your existing Angular app](TODO), but this doesn't give you access to the bundler and its various loaders to develop your project further. To have access to all of Liferay DXP's features, you must use the Liferay JS Generator and Liferay npm Bundler to merge your files into a portlet bundle, adapt your routes and CSS, and deploy your bundle.
+Running an existing Angular app on Portal makes the app available as a widget for using on site pages. You can [adapt your existing Angular app](TODO), but this doesn't give you access to the bundler and its various loaders to develop your project further. To have access to all of Liferay DXP's features, you must use the Liferay JS Generator and Liferay npm Bundler to merge your files into a portlet bundle, adapt your routes and CSS, and deploy your bundle.
 
 ![Apps like this Guestbook app are easy to migrate.](./using-angular/images/01.png)
 
@@ -119,7 +119,7 @@ Great! You successfully built and deployed a migrated React app. Next, you'll wa
                 *   `app.module.ts` &rarr; Root module
                 *   `dynamic.loader.ts` &rarr; Loads an Angular component dynamically for the portlet to attach to
             *   `types/`
-                *   `LiferayParams.ts` &rarr; Parameters passed by @product@ to the JavaScript module
+                *   `LiferayParams.ts` &rarr; Parameters passed by Portal to the JavaScript module
             *   `index.ts` &rarr; Main module invoked by the "bootstrap" module to initialize the portlet
             *   `polyfills.ts` &rarr; Fills in browser JavaScript implementation gaps
         *   `package.json` &rarr; npm bundle configuration

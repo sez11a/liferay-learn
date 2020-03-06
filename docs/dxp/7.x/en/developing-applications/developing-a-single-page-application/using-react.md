@@ -165,7 +165,7 @@ Here's an example image resource:
         Components must be loaded dynamically to attach to the portlet's DOM. The DOM is determined at run time when the portlet's page is rendered.
     ```
 
-    * Use the `HashRouter` for routing between component views, as @product@ requires hash routing for proper portal navigation:
+    * Use the `HashRouter` for routing between component views. Portal requires hash routing for proper portal navigation:
  
     ```javascript
     import { HashRouter as Router } from 'react-router-dom';
