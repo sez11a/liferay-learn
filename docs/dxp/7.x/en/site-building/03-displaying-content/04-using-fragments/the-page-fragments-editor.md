@@ -5,7 +5,7 @@ The Page Fragment editor's interface is organized into two tabs:
 * [The Code Editor](#the-code-editor)
 * [The Configuration](#the-configuration)
 
-The sections below cover how to use these portions of the interface. See [Developing Page Fragments](TODO) to learn how to develop Page Fragments.
+The sections below cover how to use these portions of the interface. See [Developing Page Fragments](../../developer-guide/developing-page-fragments/developing-fragments-intro.md) to learn how to develop Page Fragments.
 
 ## The Code Editor
 
@@ -33,4 +33,4 @@ The Configuration tab provides the JSON configuration for the Page Fragment. Her
   Changes made to the configuration are automatically made available to the code editor. If your configuration is invalid, you can't publish your Page Fragment. Be sure to always have a valid JSON configuration before previewing or publishing Page Fragments.
 ```
 
-configuration values are made available to the Page Fragment developer through the FreeMarker context in the HTML pane. You can combine configuration options with conditional values in the HTML to create dynamic experiences for the user. You can also access these values via JavaScript. See [Making Page Fragments Configurable](TODO) for more information.
+configuration values are made available to the Page Fragment developer through the FreeMarker context in the HTML pane. You can combine configuration options with conditional values in the HTML to create dynamic experiences for the user. You can also access these values via JavaScript. See [Making Page Fragments Configurable](../../developer-guide/developing-page-fragments/making-a-page-fragment-configurable.md) for more information.

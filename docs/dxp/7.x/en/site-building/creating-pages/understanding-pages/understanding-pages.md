@@ -24,14 +24,14 @@ There are several page types available when you [add a page](../adding-pages/add
 
 ### Content Pages
 
-Content Pages enable users to build professional pages that can be easily managed and have their content edited in-line on the fly. Content Pages are primarily built using [Page Fragments](../README.md#using-fragments), but also allow widgets.
+Content Pages enable users to build professional pages that can be easily managed and have their content edited in-line on the fly. Content Pages are primarily built using [Page Fragments](../03-displaying-content/04-using-fragments/page-fragments-intro.md), but also allow widgets.
 
 ![Content Pages can be composed of multiple Fragments.](./understanding-pages/images/04.png)
 
 Using Content Pages allows access to additional powerful features and benefits:
 
-* [Personalized and Adaptive Site Experiences](../../personalizing-site-experience/README.md)
-* [A/B Testing](../../optimizing-sites/02-ab-testing/README.md)
+* [Personalized and Adaptive Site Experiences](../personalizing-site-experience/introduction-to-personalizing-site-experience.md)
+* [A/B Testing](../07-optimizing-sites/02-ab-testing/README.md)
 * Approachable Content and Site Building Experience
 
 To learn more about Content Pages see the [Content Page Overview](../building-and-managing-content-pages/content-pages-overview.md). To jump right into building one, see [Building Content Pages](../building-and-managing-content-pages/building-content-pages.md).
