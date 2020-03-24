@@ -10,6 +10,9 @@ System scoped search configurations are primarily found in [System Settings](htt
 
 ![There are numerous system scoped entries for search in System Settings.](./configuring-search/images/01.png)
 
+
+> Many widgets are backed by widget templates. The default template for these can be set at the system scope: [see the article on the widget scoped configuration for the details](./configuring-search-widget-scope#setting-system-and-instance-scoped-widget-defaults). These are all listed in the Search category under the WIDGET SCOPE heading.
+
 ## Default Keyword Query
 
 The Default Keyword Query entry contains one setting:
@@ -89,15 +92,34 @@ Configure the connection between Liferay DXP and Elasticsearch 6. See [the searc
 
 You'll only see this entry if you have deployed the Cross-Cluster Replication module, which is available with a Liferay Enterprise Search subscription. These configuration properties are covered in the dedicated [Cross-Cluster Replication documentation]--Coming Soon.
 
-## Search Web
+<!-- THIS IS LIKELY  A DUPLICATED CONFIG THAT'S BEING REMOVED
+## Similar Results Web Template Configuration Name
 
-This entry contains one property: `classicSearchPortletInFrontPage`: Revert the default search experience from using the new Search Widgets to the classic Search Portlet that was standard in past releases. -->
+This entry contains one setting:
 
-<!-- Need coverage of some new 7.3 screens and the LES/DXP only screens: Similar Results Web Template Configuration Name (DXP only), Search Results Web Template (new in 7.3), X-Pack Monitoring (LES only), X-Pack Security (default now), Learning to Rank (LES only). There are also widget scoped sys settings for Similar Results Configuration and a lot of other widgets we could just briefly mention -->
+**`similarResultsTemplateKeyDefault`:** Configure the default widget template to be used for Similar Results through the system. This entry will only appear if you are a subscriber to Liferay DXP, and if you have the Similar Results widget deployed in your system (if you're unsure, see the [Similar Results] documentationComing Soon). Out of the box, valid options include
 
-<!-- ## Search Administration
+- `similar-results-compact-ftl`
+- `similar-results-card-ftl`
+- `similar-results-list-ftl`
+-->
 
-In *Control Panel* &rarr; *Configuration* &rarr; *Search* there are three administrative UIs: Connections, Index Actions, and Field Mappings.
+## X-Pack Security
+
+Configure Liferay DXP's connection to Elastic's X-Pack Security module. See the [DevOps documentation](./../dev-ops/) for the details, or [Liferay's Help Center documentation](https://help.liferay.com/hc/en-us/articles/360028711172-Installing-Liferay-Enterprise-Search-Security). This security connector is available by default (i.e., Liferay Enterprise Search is not required) at no cost for Elasticsearch 7 installations.
+
+## Liferay Enterprise Search Entries
+
+Two Liferay Enterprise Search entries appear when you've downloaded and installed the apps:
+
+- *X-Pack Monitoring* is for linking Liferay DXP with Elastic's Kibana monitoring tool.
+- *Learning to Rank* is for leveraging machine learning to produce better search results.
+
+See the [Liferay Enterprise Search documentation](./../liferay-enterprise-search) for the details.
+
+## Search Administration
+
+In *Control Panel* &rarr; *Configuration* &rarr; *Search* there are three administrative UIs: Connections, Index Actions, and Field Mappings. All of them operate or show information at the system level.
 
 ### Connections
 
@@ -105,11 +127,11 @@ Information about the search engine connection(s) is displayed here. For example
 
 ```bash
 Search Engine Vendor: Elasticsearch (Embedded), Client Version: 6.5.0, Nodes: A0D6GlN (6.5.0)
-``` -->
+```
 
 <!-- Left a screenshot out on purpose, since this is still changing -->
 
-<!-- ### Index Actions
+### Index Actions
 
 In Index Actions, re-index at one of these levels:
 
@@ -123,4 +145,4 @@ The Field Mappings tab shows you all field mappings that are effective in the sy
 
 ## Portal Properties
 
-Portal properties are system scoped as well. The [Lucene Search](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#Lucene%20Search) portal properties configure low level search behavior. Review the properties and their descriptions and determine if they apply to your search requirements. -->
+Portal properties are system scoped as well. The [Lucene Search](https://docs.liferay.com/portal/7.3-latest/propertiesdoc/portal.properties.html#Lucene%20Search) portal properties configure low level search behavior. Review the properties and their descriptions and determine if they apply to your search requirements.

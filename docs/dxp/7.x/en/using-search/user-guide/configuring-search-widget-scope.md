@@ -33,13 +33,15 @@ Several search widgets are available to place on Pages. Each one has its own con
 
 Many Search widgets have System Settings/Instance Settings entries, where widget defaults can be set. These defaults are overridden in the individual widget's configuration. To understand whether to use System or Instance Settings for your default configurations, read the article on [configuration scope](../../system-administration/system-settings-and-configuration-scope.md).
 
-Each of these configuration entries have 
+Each of these configuration entries have the same two properties:
 
 **Display Style Group ID:** Enter the Site ID where the widget template is located. The default ones are all Global templates, so use *0* for the ID.
 
 **Display Style:** The widget template's key. For example, setting `CATEGORY-FACET-CLOUD-FTL` in the Category Facet's System Settings entry sets the Cloud Layout template as the system scoped default for the Category Facet Widget.
 
-> To find the template keys available to enter in the Display Style field, go to the Site Selector and choose the Global scope. From there open the Site Menu &rarr; Site Builder &rarr; Widget Templates. Click into a template to find its template key.
+> To find the template keys available to enter in the Display Style field, go to the Site Selector and choose the Global scope. From there open the Site Menu &rarr; Site Builder &rarr; Widget Templates. Click into a template to find its template key, but make sure you enter the value with all lower case letters:
+> 
+> If a template key is `SIMILAR-RESULTS-COMPACT-FTL`, instead enter `similar-results-compact-ftl` in the Display Style configuration field.
 
 ![Instance and System Settings are used to configure Search widget display defaults.](./configuring-search/images/05.png)
 
