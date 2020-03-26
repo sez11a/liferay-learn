@@ -30,11 +30,15 @@ Documents and Media
 User Guide
 ~~~~~~~~~~
 
-* Managing Documents, Images, and Video
-* Displaying Documents in a Site
+-  :doc:`/content-authoring-and-management/documents-and-media/user-guide/managing-folders`
+-  :doc:`/content-authoring-and-management/documents-and-media/user-guide/uploading-files`
+-  :doc:`/content-authoring-and-management/documents-and-media/user-guide/using-the-media-gallery`
 * Image Editor
 * Image Auto Tagging
-* Document Types
+* Checking Out and Editing Files
+-  :doc:`/content-authoring-and-management/documents-and-media/user-guide/document-types/creating-document-types`
+-  :doc:`/content-authoring-and-management/documents-and-media/user-guide/document-types/creating-metadata-sets`
+-  :doc:`/content-authoring-and-management/documents-and-media/user-guide/document-types/documents-and-media-permissions-reference`
 * Connectors
 
 Developer Guide
@@ -61,13 +65,15 @@ Blogs
 User Guide
 ~~~~~~~~~~
 
-* Adding Blog Entries
-* Using the Blog Entry Editor
-* Managing Blog Entries
-* Configuring the Blogs App
-* Displaying Blogs
-* Aggregating Blogs
-* Highlighting Recent Bloggers
+-  :doc:`/content-authoring-and-management/blogs/user-guide/getting-started-with-blogs`
+-  :doc:`/content-authoring-and-management/blogs/user-guide/adding-blog-entries`
+-  :doc:`/content-authoring-and-management/blogs/user-guide/managing-blog-entries`
+-  :doc:`/content-authoring-and-management/blogs/user-guide/configuring-the-blogs-app`
+-  :doc:`/content-authoring-and-management/blogs/user-guide/displaying-blogs`
+-  :doc:`/content-authoring-and-management/blogs/user-guide/aggregating-blogs`
+-  :doc:`/content-authoring-and-management/blogs/user-guide/highlighting-recent-bloggers`
+-  :doc:`/content-authoring-and-management/blogs/user-guide/blog-entry-editor-reference`
+-  :doc:`/content-authoring-and-management/blogs/user-guide/blog-permissions-reference`
 
 Developer Guide
 ~~~~~~~~~~~~~~~
