@@ -10,9 +10,11 @@ Page Fragments are organized in *Collections*. Collections differentiate between
 
 1. Open the Product Menu and go to Site &rarr; *Site Builder* &rarr; *Page Fragments*. From this page you can manage your Page Fragments and Collections. See [Managing Page Fragments](./managing-page-fragments.md) for more information on the available actions for Page Fragments.
 
-1. Click the (![add](../../../images/icon-add.png)) button next to *Collections* heading to add a new Collection if one doesn't already exist, or select an existing custom Collection.
+1. Click the (![add](../../../images/icon-add.png)) button next to *Collections*.
 
-  ![Here is the Page Fragments page with no custom Page Fragments or Collections created.](./adding-a-page-fragment/images/01.png)
+<!-- Something seems to be missing here. We should be walking the user through creating a collection and then a fragment, but you don't say what to name the Collection or to save it or anything. -->
+
+  ![The Page Fragments interface is where you create Page Fragments and Collections.](./adding-a-page-fragment/images/01.png)
 
 1. With the Collection selected, click the (![add button](../../../icon-add.png)) under the new Collection's window to create a new Page Fragment.
 
@@ -27,3 +29,4 @@ Page Fragments are organized in *Collections*. Collections differentiate between
 ```note::
   You can also create Page Fragments outside of Liferay Portal using your own tooling. See `Developing a Page Fragment with the Fragments Toolkit <../../developer-guide/developing-page-fragments/developing-page-fragments-with-the-fragments-toolkit.md#collection-format>`_ for more information.
 ```
+<!-- Okay; I see what you've done here. I don't think this article belongs here; it should be with the developer guide tutorials. These articles in the User Guide should come from the perspective of someone assembling Fragments into pages. --> 
