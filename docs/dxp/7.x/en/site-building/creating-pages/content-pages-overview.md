@@ -13,7 +13,7 @@ The Content Page sidebar contains these elements and tools for Content Pages:
 * [Look and Feel](#look-and-feel)
 * [Comments](#comments)
 
-Liferay Portal ships with several Layouts, Fragments, and Widgets that you can use to build pages. Developers can [create their own Fragments](./README.md#dev-guide) to add to these.
+Liferay Portal ships with several Layouts, Fragments, and Widgets that you can use to build pages. Developers can [create their own Fragments](../developer-guide/developing-page-fragments/developing-fragments-intro.md) to add to these.
 
 ## Fragments
 
@@ -21,7 +21,7 @@ Liferay Portal ships with several Layouts, Fragments, and Widgets that you can u
    Available in Liferay DXP 7.3+. This section was previously divided between the *Sections* and *Section Builder* panels.
 ```
 
-You can drag-and-drop Fragments on a page. Fragments can have editable elements, such as [text](./building-content-pages.md#modify-editable-text), [images](./building-content-pages.md#modify-editable-images), or [links](./building-content-pages.md#modify-editable-links), that you can replace with custom content. You can also [map these elements](./building-content-pages.md#mapping-elements) to content that is already available on the site itself. For more information on developing these elements, see [Fragment Specific Tags](./README.md#using-fragments).
+You can drag-and-drop Fragments on a page. Fragments can have editable elements, such as [text](./building-content-pages.md#editing-text), images, or [links](./building-content-pages.md#editing-a-hyperlink), that you can replace with custom content. You can also [map these elements](./building-content-pages.md#mapping-elements) to content that is already available on the site itself. For more information on developing these elements, see [Fragment Specific Tags](../../developer-guide/developing-page-fragments/fragment-specific-tags-reference.md).
 
 ### Layouts
 
@@ -104,5 +104,5 @@ You can comment on a Page Fragment to discuss changes and collaborate. Comments 
 ## Next Steps
 
 * [Building Content Pages](./building-content-pages.md)
-* [Page Fragments](./README.md#using-fragments)
+* [Page Fragments](../03-displaying-content/04-using-fragments/page-fragments-intro.md)
 * [Using Fragment Comments](./using-fragment-comments.md)
