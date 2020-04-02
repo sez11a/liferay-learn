@@ -6,7 +6,7 @@ By default, updates made to Page Fragments aren't automatically propagated to th
 
 Follow these steps to propagate your Page Fragment changes manually:
 
-1. Open the Product Menu and go to *Site Builder* &rarr; *Page Fragments* under the Site Menu.
+1. Open the Product Menu and go to Site &rarr; *Site Builder* &rarr; *Page Fragments*.
 
 1. Select the Collection containing the changed Page Fragment.
 
@@ -23,7 +23,7 @@ Follow these steps to propagate your Page Fragment changes manually:
 1. Click the *Propagate* icon (![Propagate](../../../../images/icon-propagate.png)) to propagate your changes.
 
 ```note::
-  Changes to existing `editable` fields are not propagated since this overwrites content currently in content pages. To force propagation to content in an `editable` field, you must change the field ID. Content created in that field no longer appears in the Content Page when the changes are propagated, but it remains in the database and can be retrieved using the old ID.
+  Changes to existing ``editable`` fields are not propagated since this overwrites content currently in Content Pages. To force propagation to content in an ``editable`` field, you must change the field ID. Content created in that field no longer appears in the Content Page when the changes are propagated, but it remains in the database and can be retrieved using the old ID.
 ```
 
 ## Enabling Automatic Page Fragment Propagation
@@ -31,14 +31,12 @@ Follow these steps to propagate your Page Fragment changes manually:
 During development testing, manually propagating Page Fragment changes can be tedious. For development purposes, since Liferay DXP 7.2 SP1+ and Liferay Portal CE GA2+, you can enable automatic Page Fragment propagation.
 
 ```note::
-  Automatic Page Fragment propagation should only be enabled for development testing, as automatic propagation can lead to unintended consequences in the production environment. Automatic propagation only works for HTML, CSS, and JavaScript Page Fragment code, not the editable values.
+  Automatic Page Fragment propagation should only be enabled for development testing, as automatic propagation can lead to unintended consequences in the production environment, such as typos or inaccurate content being published. Automatic propagation only works for HTML, CSS, and JavaScript Page Fragment code, not the editable values.
 ```
-
-<!-- I think we need to spell out the unintended consequences. This is way too vague. It's not enough to convince me not to do it in production anyway. Let's not be authoritarian about it; let's be informative instead. -->
 
 Follow these steps to enable automatic Page Fragment propagation:
 
-1. Open the Product Menu and select *Configuration* &rarr; *System Settings* under the *Control Panel* heading.
+1. Open the Product Menu and select *Control Panel* &rarr; *Configuration* &rarr; *System Settings*.
 
 1. Click *Page Fragments* under the Content and Data heading.
 
