@@ -4,7 +4,7 @@ Contents
 .. toctree::
    :glob:
    :includehidden:
-   :maxdepth: 3
+   :maxdepth: 4
 
    installation_and_upgrades
    starting_a_store
@@ -13,7 +13,7 @@ Contents
    promoting_products
    account_management
    orders_and_fulfillment
-   configuring_taxes
+   store_administration
    developer_guide
    get_help
 

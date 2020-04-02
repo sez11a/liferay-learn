@@ -2,7 +2,7 @@ Managing a Catalog
 ==================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    managing-a-catalog/creating-a-new-catalog.md
 
@@ -10,5 +10,5 @@ Managing a Catalog
    managing-a-catalog/managing_inventory.rst
    managing-a-catalog/managing_price.rst
 
-.. include:: /managing-a-catalog/README.rst
-   :start-line: 2
+.. raw:: html
+   :file: managing-a-catalog/landing.html

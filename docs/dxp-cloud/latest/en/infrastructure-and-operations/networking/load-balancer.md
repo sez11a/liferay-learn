@@ -1,6 +1,6 @@
 # Load Balancer
 
-The Ingress Load Balancer gives internet access to your environment's services via proxied HTTP(S) connections. Each load balancer has a static IP that can set up custom domains.
+The Ingress Load Balancer gives internet access to your environment's services via proxied HTTP(S) connections using TLS (1.0 to 1.2) protocol. Each load balancer has a static IP that can set up custom domains.
 
 ![Figure 1: You can configure your environment's load balancer with a custom domain.](./load-balancer/images/01.png)
 
@@ -80,7 +80,6 @@ base64encodedcertificate
 ```
 
 The Network page shows any custom certificates, with a maximum of one per service. For more information, see [Custom Domains](./custom-domains.md).
-
 
 ![Figure 4: DXP Cloud shows the status of SSL certificates that cover custom domains.](./load-balancer/images/04.png)
 
