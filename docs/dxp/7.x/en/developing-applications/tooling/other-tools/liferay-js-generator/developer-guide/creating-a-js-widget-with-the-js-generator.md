@@ -1,69 +1,15 @@
 # Creating a JavaScript App with the Liferay JS Generator
 
-You can create pure JavaScript applications, including the major frameworks (React, Angular, and VueJS), with the Liferay JS Generator. Creating your JavaScript application with the Liferay JS Generator, as opposed to just migrating your application ([React](../../../../developing-a-single-page-application/using-react.md)|[Angular](../../../../developing-a-single-page-application/using-angular.md)|[VueJS](../../../../developing-a-single-page-application/using-vuejs.md)) to use the Liferay JS Toolkit, lets you modify your application further, taking advantage of Portal features such as system and instance setting configuration and localization.
+You can create pure JavaScript applications, including the major frameworks (React, Angular, and VueJS), with the Liferay JS Generator. Creating your JavaScript application with the Liferay JS Generator, as opposed to just migrating your application ([React](../../../../developing-a-single-page-application/using-react.md)|[Angular](../../../../developing-a-single-page-application/using-angular.md)|[VueJS](../../../../developing-a-single-page-application/using-vuejs.md)) to use the Liferay JS Toolkit, lets you modify your application further, taking advantage of Portal features such as system and instance setting configuration and localization. You can create a JavaScript application with the Liferay JS Generator to run on Portal in just a couple steps:
 
-## Overview
+1. Run the Liferay JS Generator.
+1. Build the JAR and copy it to the Docker container.
 
-1. [Deploy an Example](#deploy-an-example)
-1. [Walk Through an Example](#walk-through-an-example)
+This example uses a Docker image with a fresh install of Liferay DXP.
 
-## Deploy an Example
+> This example runs on Liferay DXP 7.3+
 
-> Liferay DXP 7.3+
-
-First you must deploy an example generated JavaScript application. Follow these steps:
-
-1. Start the Docker container with a bind mount:
-
-    ```bash
-    docker run -d -it -p 8080:8080 -p 8000:8000 --name mylrdev -v C:\Users\liferay\Desktop\liferay-docker:/mnt/liferay liferay/portal:7.3.0-ga1
-    ```
-
-1. Download and unzip the [example generated app](https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.x/en/developing-applications/tooling/other-tools/liferay-js-generator/creating-a-js-widget-with-the-js-generator/1584738845liferay95.zip):
-
-    ```bash
-    curl https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.x/en/developing-applications/tooling/other-tools/liferay-js-generator/developer-guide/creating-a-js-widget-with-the-js-generator/1584738845liferay95.zip
-    
-    unzip 1584738845liferay95.zip
-    ```
-
-1. Install the Application's dependencies:
-
-    ```bash
-    cd my-react-widget
-    npm install
-    ```
-
-1. Build the generated application's JAR file:
-
-    ```bash
-    npm run build
-    ```
-
-1. Copy the generated application's JAR to the `[host_folder]/deploy` folder for your Docker image's [bind mount](TODO), or create the `[host_folder]/deploy` folder if it doesn't exist.
-  
-    ```bash
-    cd dist
-    cp my-react-widget-1.0.0.jar path/to/your/bind/mount
-    ```
-
-    ```note::
-        You must restart the Docker container if you're creating the `[host_folder]/deploy` folder for the first time in your bind mount.
-    ```
-  
-1. Confirm the deployment to the Liferay Docker container console. The log message below should appear in the Docker console:
-
-    ```bash
-    INFO [fileinstall-/opt/liferay/osgi/modules][BundleStartStopLogger:39] STARTED adapted-react-guestbook-app_0.1.0 [1132]
-    ```
-  
-1. Verify that the app is available. Open your browser to `https://localhost:8080`. Click the (![Add button](../../../../../images/icon-add-app.png)) in the Control Menu and drag the *My React Widget* onto the page from the *Sample* category.
-  
-    ![The generated sample React widget displays basic information about the app.](./creating-a-js-widget-with-the-js-generator/images/01.png)
-
-Great! You successfully built and deployed the adapted React app. Next, you'll walk through the example and learn how it works.
-
-## Walk Through the Example
+## Run the Liferay JS Generator
 
 1. Install the [Liferay JS Generator](../installing-the-js-generator-and-creating-js-portlets.md).
 1. Open the command line and run the Liferay JS Generator:
@@ -99,18 +45,61 @@ Great! You successfully built and deployed the adapted React app. Next, you'll w
     ```
 
     ```note::
-        To use configuration support in your widget, you must have Liferay DXP/Portal CE 7.1 with JS Portlet Extender 1.1.0 or Liferay DXP/Portal CE 7.2+.
+      To use configuration support in your widget, you must have Liferay DXP/Portal CE 7.1 with JS Portlet Extender 1.1.0 or Liferay DXP/Portal CE 7.2+.
     ```
 
     ```tip::
-        If you specify your app server information when your widget is generated, you can deploy your widget by running the `npm run deploy` command. The `liferayDir` entry in the widget's `.npmbuildrc` defines the app server.
+      If you specify your app server information when your widget is generated, you can deploy your widget by running the ``npm run deploy`` command. The ``liferayDir`` entry in the widget's `.npmbuildrc` defines the app server.
     ```
 
-The adapt process automatically adds a few npm scripts to the project's `package.json` so you can build and deploy your project to your server. See [Liferay JS Generator Commands Reference](../reference/liferay-js-generator-commands-reference.md) for the available commands.
+The generator automatically adds a few npm scripts to the project's `package.json` so you can build and deploy your project to your server. See [Liferay JS Generator Commands Reference](../reference/liferay-js-generator-commands-reference.md) for the available commands.
 
 ```tip::
-    By default, the webpack server uses port 8080, which conflicts with the port used by Tomcat. You can point the webpack server to a different port by setting the `port` key in `.npmbuildrc`: `"webpack": {"port": 2070}`.
+  By default, the webpack server uses port 8080, which conflicts with the port used by Tomcat. You can point the webpack server to a different port by setting the ``port`` key in ``.npmbuildrc``: ``"webpack": {"port": 2070}``.
 ```
+
+## Build the Jar and Copy it to the Docker Container
+
+You can download and unzip the [example generated app](https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.x/en/developing-applications/tooling/other-tools/liferay-js-generator/creating-a-js-widget-with-the-js-generator/liferay-g2a8.zip) if you want to deploy it or compare your code at this point:
+
+    ```bash
+    curl https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.x/en/developing-applications/tooling/other-tools/liferay-js-generator/developer-guide/creating-a-js-widget-with-the-js-generator/liferay-g2a8.zip
+    
+    unzip liferay-g2a8.zip
+    cd my-react-widget
+    npm install
+    ```
+
+1. Start the Docker container:
+
+    ```bash
+    docker run -it -p 8080:8080 liferay/portal:7.3.0-ga1
+    ```
+
+1. Build the generated application's JAR file:
+
+    ```bash
+    npm run build
+    ```
+
+1. Copy the generated application's JAR to the Docker container:
+  
+    ```bash
+    cd dist
+    cp my-react-widget-1.0.0.jar docker-container-name:/path/to/deploy/folder
+    ```
+  
+1. Confirm the deployment to the Liferay Docker container console. The log message should appear in the Docker console. The example produces the log message below:
+
+    ```bash
+    INFO [fileinstall-/opt/liferay/osgi/modules][BundleStartStopLogger:39] STARTED my-react-widget_1.0.0 [1132]
+    ```
+  
+1. Verify that the app is available. Open your browser to `https://localhost:8080`. Click the (![Add button](../../../../../images/icon-add-app.png)) in the Control Menu and drag the app onto the page. The example is listed as *My React Widget* under the *Sample* category.
+  
+    ![The generated sample React widget displays basic information about the app.](./creating-a-js-widget-with-the-js-generator/images/01.png)
+
+Great! You successfully built and deployed a generated app.
 
 ## Related Information
 
