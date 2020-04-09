@@ -1,38 +1,31 @@
-# Upgrading from Liferay Commerce 1.1.x
+# Upgrading Liferay Commerce
 
-This article documents how to upgrade Liferay Commerce to the latest Commerce 2.x version. Store administrators should consider regularly updating to the latest available product version to receive bug fixes and new features.
+This article documents how to upgrade Liferay Commerce to the latest Commerce version. Store administrators should consider regularly updating to the latest available product version to receive bug fixes and new features.
 
-## Roadmap
+## Upgrading the Base DXP Version
 
-1. Download and Deploy.
-1. Apply the Latest Fix Pack (Subscribers Only).
-1. Clear Stale Data and Verify the Upgrade Process.
-1. Execute Post-Upgrade Reindex.
+If administrators are upgrading both DXP and Commerce, upgrade DXP 7.1 to 7.2 first. To learn more about the DXP upgrade process:
 
-## Download and Deploy
+* [Upgrade Overview](https://learn.liferay.com/dxp-7.x/installation-and-upgrades/upgrading-liferay-dxp/upgrade-basics/upgrade-overview.html)
 
-1. Download the latest Liferay Commerce Enterprise `LPKG` from [Help Center](https://customer.liferay.com/downloads?p_p_id=com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_productAssetCategoryId=118190997&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_fileTypeAssetCategoryId=118191001).
-    >The latest Liferay Commerce `LPKG` may be obtained from the [Liferay Commerce Community Download Page](https://commerce.liferay.dev/download).
+Once DXP has been successfully upgraded from 7.1 to 7.2, follow the steps below to upgrade Liferay Commerce.
 
-1. Deploy the `LPKG` to the `${liferay.home}/deploy` folder.
-    > To learn more about deploying applications to Liferay DXP, see [Liferay Home](https://help.liferay.com/hc/en-us/articles/360028712272-Liferay-Home).
-1. Verify that the messages similar to those shown below appear in the application server console:
+Alternately, administrators can chose to upgrade just Liferay Commerce.
 
-    ```
-    Processing Liferay Commerce Enterprise x.x.x.lpkg
-    ```
+## Upgrading Commerce
 
-    ```
-    The portal instance needs to be restarted to complete the installation of file:/../../liferay-commerce-enterprise-1.1.6/osgi/marketplace/Liferay%20Commerce%20-%20API.lpkg
-    ```
+Liferay Commerce provides a seamless upgrade process to the latest version. Users can perform either one of the following:
 
-    ```
-    The portal instance needs to be restarted to complete the installation of file:/../../liferay-commerce-enterprise-1.1.6/osgi/marketplace/Liferay%20Commerce%20-%20Impl.lpkg
-    ```
+* From 1.1.x to 2.1.x
+* From 2.0.x to 2.1.x
 
-1. Shut down the application server.
+```tip::
+   Upgrading from 1.1.x to 2.1.x does **not** require an incremental upgrade to 2.0.x.
+```
 
-## Apply the Latest Fix Pack (Subscribers Only)
+### Apply the Latest Fix Pack
+
+> Subscribers
 
 Before upgrading Liferay Commerce, update Liferay Digital Experience Platform (DXP) to the latest available fix pack release. For example, if upgrading to Liferay Commerce Enterprise 2.0.6 - upgrading Liferay DXP to Fix Pack 14 is required. The latest fix pack releases are available from [Help Center](https://customer.liferay.com/downloads).
 
@@ -56,10 +49,34 @@ To verify Fix Pack installation do the following:
 
 Fix Packs are cumulative in nature and include all previously release fix packs. After patching, remove Liferay DXP's cache of deployed code by deleting the contents of the `${liferay.home}/work` folder. See the next section on how to remove other stale data.
 
-## Clear Stale Data and Verify the Upgrade Process
+### Download and Deploy
 
-1. Delete the `${liferay.home}/osgi/state` folder.
-    > To learn more about OSGi folders, see [Installing Apps Manually](https://help.liferay.com/hc/en-us/articles/360017895412-Installing-Apps-Manually#using-your-file-system-to-install-apps).
+1. Download the latest Liferay Commerce.
+
+    * Commerce Enterprise is available from [Help Center](https://customer.liferay.com/downloads?p_p_id=com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_productAssetCategoryId=118190997&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_fileTypeAssetCategoryId=118191001).
+    * Commerce Community is available from the [Liferay Commerce Community Download Page](https://www.liferay.com/downloads-community)
+
+1. Deploy the `LPKG` to the `${liferay.home}/deploy` folder.To learn more about deploying applications to Liferay DXP, see [Installing Apps](https://learn.liferay.com/dxp-7.x/system-administration/installing-and-managing-apps/installing-apps.html).
+
+1. Verify that the messages similar to those shown below appear in the application server console:
+
+    ```
+    Processing Liferay Commerce Enterprise x.x.x.lpkg
+    ```
+
+    ```
+    The portal instance needs to be restarted to complete the installation of file:/../../liferay-commerce-enterprise-1.1.6/osgi/marketplace/Liferay%20Commerce%20-%20API.lpkg
+    ```
+
+    ```
+    The portal instance needs to be restarted to complete the installation of file:/../../liferay-commerce-enterprise-1.1.6/osgi/marketplace/Liferay%20Commerce%20-%20Impl.lpkg
+    ```
+
+1. Shut down the application server.
+
+### Clear Stale Data and Verify the Upgrade Process
+
+1. Delete the `${liferay.home}/osgi/state` folder. To learn more about OSGi folders, see [Installing Apps](https://learn.liferay.com/dxp-7.x/system-administration/installing-and-managing-apps/installing-apps.html).
 1. Start the application server.
 1. Verify that the the upgrade process has begun by looking for messages similar to this in your application server console logs:
 
@@ -91,9 +108,9 @@ Fix Packs are cumulative in nature and include all previously release fix packs.
 
 The Liferay Commerce instance has been upgraded.
 
-## Execute Post-Upgrade Reindex
+### Execute Post-Upgrade Reindex
 
-After upgrading from Liferay Commerce 1.1.x to the latest version, execute a full search reindex.
+After upgrading from to the latest version, execute a full search reindex.
 
 To execute a search reindex:
 
@@ -107,5 +124,5 @@ Once reindexing is complete, the upgraded Liferay Commerce instance is ready for
 
 ## Additional Information
 
-* [Installing Apps Manually](https://help.liferay.com/hc/en-us/articles/360017895412-Installing-Apps-Manually#using-your-file-system-to-install-apps)
-* [Liferay Commerce Fix Delivery Method](../../get-help/commerce-enterprise-support/liferay-commerce-fix-delivery-method.md)
+* [Installing Apps](https://learn.liferay.com/dxp-7.x/system-administration/installing-and-managing-apps/installing-apps.html)
+* [Liferay Commerce Fix Delivery Method](../get-help/commerce-enterprise-support/liferay-commerce-fix-delivery-method.md)

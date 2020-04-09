@@ -14,13 +14,15 @@ See the [Liferay Commerce 2.0 Compatibility Matrix](https://web.liferay.com/docu
 
 See the [Liferay Digital Experience Platform 7.1 Deployment Checklist](https://www.liferay.com/documents/10182/3292406/Liferay+DXP+7.1+Deployment+Checklist/cacaac23-9e02-411a-dcc9-adf86f95c513) for information about Liferay DXP architecture and performance tuning guidelines.
 
+See the [Liferay Digital Experience Platform 7.2 Deployment Checklist](https://www.liferay.com/documents/10182/3292406/Liferay+DXP+7.2+Deployment+Checklist.pdf/22dee290-6b06-0bdc-aa89-30bb88d1d42e?t=1566483298239) for information about Liferay DXP architecture and performance tuning guidelines.
+
 ## Installing Liferay Commerce
 
-Liferay offers several methods of installing Liferay Commerce.
+There are several methods of installing Liferay Commerce.
 
 ### Using a Docker Image
 
-The latest version Liferay Commerce is available as a docker image. See [Using Liferay Commerce Docker Image](./using-the-liferay-commerce-docker-image.md) for more information.
+The latest version Liferay Commerce is available as a Docker image. See [Using Liferay Commerce Docker Image](./using-the-liferay-commerce-docker-image.md) for more information.
 
 ### Using a Bundle
 
@@ -40,8 +42,8 @@ Subscribers who have purchased Liferay Commerce Enterprise may download the `LPK
 
 There are periodic updates and upgrades that contain the latest features and bug fixes.
 
-* [Maintenance Versions](../../get-help/commerce-enterprise-support/liferay-commerce-fix-delivery-method.md)
-* [Upgrading from Liferay Commerce 1.1.x](./upgrading-from-liferay-commerce-1.1.x.md)
+* [Maintenance Versions](../get-help/commerce-enterprise-support/liferay-commerce-fix-delivery-method.md)
+* [Upgrading Liferay Commerce](./upgrading-liferay-commerce.md)
 
 ## Additional Information
 

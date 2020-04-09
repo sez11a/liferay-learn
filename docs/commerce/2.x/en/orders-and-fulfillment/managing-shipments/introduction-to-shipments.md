@@ -1,16 +1,56 @@
 # Introduction to Shipments
 
+Create shipments first in the _Orders_ menu as part of processing an order. Once an order is processed, you are redirected to the _Shipments_ menu to complete oder processing.
+
+Navigate to _Control Panel_ → _Commerce_ → _Orders_. Select an order that is ready to be shipped and click the _Create Shipment_ button.
+
+![Shipments Menu](./introduction-to-shipments/images/04.png)
+
+This takes the user automatically to the Shipments menu to finish processing the order. There are four stages: Processing, Ready to Ship, Shipped, and Delivered.
+
+## Processing
+
+![Shipments Menu - Finish Processing](./introduction-to-shipments/images/05.png)
+
+Once all the items and the sourcing warehouse chosen, the order is ready to ship. Here, you can view additional details such as the carrier, tracking number, and estimated delivery date.
+
+## Ready to Ship
+
+ Clicking the _Ship_ button advances the order's process.
+
+![Shipments Menu - Ready to Ship](./introduction-to-shipments/images/06.png)
+
+## Shipped
+
+Once an order has been shipped and awaiting confirmation of delivery, the order is in the Shipped phase. Click _Deliver_ when the delivery has been made.
+
+![Shipments Menu - Shipped](./introduction-to-shipments/images/08.png)
+
+## Delivered
+
+Once delivery has been confirmed, the _Delivered_ tab marks each phase in green as completed.
+
+![Shipments Menu - Shipped](./introduction-to-shipments/images/09.png)
+
+## Completed
+
+When delivery has been confirmed, the shipment process marked delivered and the order is marked completed.
+
+![Shipments Menu - Ready to Ship](./introduction-to-shipments/images/07.png)
+
+## Liferay Commerce 2.0 and Below
+
 The _Shipments_ menu is where store managers can create and track a shipment after receiving an order.
 
 Navigate to the _Control Panel_ → _Commerce_ → _Shipments_.
 
 ![Shipments Menu](./introduction-to-shipments/images/01.png)
 
-The _Shipments_ menu displays all created shipments in all statuses. Click the (+) button to add a new shipment.
+The _Shipments_ menu displays all created shipments in all statuses. Click the Add (![add-icon](../../images/icon-add.png)) button to add a new shipment.
 
 Clicking on a particular shipment number (for example, _41250_) displays the Shipment's _Details_ tab and the _Items_ tab. (Note that clicking the _Order Number_ (_41241_) redirects to the _Orders_ menu.)
 
-## Shipment Details Tab
+### Details
 
 The _Shipment Details_ tab contains the following information:
 
@@ -33,7 +73,7 @@ The _Shipment Details_ tab contains the following information:
 | Shipping Date | Date the shipment was delivered to the carrier  |
 | Expected Delivery Date | Date the shipment is expected to arrive  |
 
-## Shipment Items Tab
+### Items
 
 The _Shipment Items_ Tab contains the following information:
 
