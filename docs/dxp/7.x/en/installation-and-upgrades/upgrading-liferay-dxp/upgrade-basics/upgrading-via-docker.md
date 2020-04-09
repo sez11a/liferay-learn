@@ -19,7 +19,7 @@ Here are the steps for using the Docker image:
 1. Set up a new [Liferay Home](../../reference/liferay-home.md) folder with the contents of your current Liferay Home. You'll bind this new Liferay Home to the Docker image in a later step.
 
     ```bash
-    cp /old-version/liferay-home/ /new-version/liferay-home/
+    cp -r /old-version/liferay-home/* /new-version/liferay-home/
     ```
 
     Alternatively if your current Liferay Home is in source control, create a new branch.
@@ -34,7 +34,8 @@ Here are the steps for using the Docker image:
 
     ```bash
     cd /new-version/liferay-home
-    echo "indexReadOnly=\"true\"" > osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config
+    mkdir -p files/osgi/configs
+    echo "indexReadOnly=\"true\"" > files/osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config
     ```
 
 1. Run the DXP Docker image mounted to your new Liferay Home using the following command, substituting your environment values as needed:
@@ -42,8 +43,8 @@ Here are the steps for using the Docker image:
     ```bash
     docker run -it -p 8080:8080 \
      -v /new-version/liferay-home:/mnt/liferay \
-     liferay/portal:7.3.0-ga1 \
-     -e LIFERAY_UPGRADE_PERIOD_DATABASE_PERIOD_AUTO_PERIOD_RUN=true
+     -e LIFERAY_UPGRADE_PERIOD_DATABASE_PERIOD_AUTO_PERIOD_RUN=true \
+     liferay/portal:7.3.1-ga2
     ```
 
     The `-v /new-version/liferay-home:/mnt/liferay` arguments bind mount the `/new-version/liferay-home` folder on the host to `/mnt/liferay` in the container.
@@ -61,7 +62,7 @@ Here are the steps for using the Docker image:
 1. Re-enable search indexing by setting `indexReadOnly="false"` or by deleting the `com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config` file.
 
     ```bash
-    rm osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config
+    rm files/osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config
     ```
 
 1. Validate your upgraded database.
@@ -71,7 +72,7 @@ Here are the steps for using the Docker image:
 Your Liferay DXP database upgrade is now complete!
 
 ```note::
-   If you're done upgrading the database, leave off the `-e LIFERAY_UPGRADE_PERIOD_DATABASE_PERIOD_AUTO_PERIOD_RUN=true` environment setting from your Docker command the next time you run DXP.
+   If you're done upgrading the database, leave off the ``-e LIFERAY_UPGRADE_PERIOD_DATABASE_PERIOD_AUTO_PERIOD_RUN=true`` environment setting from your Docker command the next time you run DXP.
 ```
 
 ## Conclusion

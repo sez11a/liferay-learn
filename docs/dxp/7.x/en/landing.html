@@ -1,26 +1,3 @@
-<div class="landing-page" id="landingPage">
-	<div class="section-card" v-for="card in cards">
-		<div class="autofit-row autofit-row-center">
-			<div class="autofit-col" v-if="card.icon">
-				<svg class="icon">
-					<use :xlink:href="card.icon"></use>
-				</svg>
-			</div>
-			<div class="autofit-col autofit-col-expand">
-				<a :href="card.sectionURL">
-					<h4 class="title" v-if="card.icon">{{ card.sectionName }}</h4>
-					<h4 class="sidebar title" v-else>{{ card.sectionName }}</h4>
-				</a>
-				<ul class="subsection" v-if="card.subsections">
-					<li v-for="subsection in card.subsections">
-						<a :href="subsection.url">{{ subsection.name}}</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-
 <script type="module">
 	import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.min.js'
 
@@ -77,11 +54,11 @@
 						},
 						{
 							name: 'Understanding Pages',
-							url: 'site-building/creating-pages/understanding-pages.html'
+							url: 'site-building/creating-pages/understanding-pages/understanding-pages.html'
 						},
 						{
 							name: 'Content Pages Overview',
-							url: 'site-building/creating-pages/content-pages-overview.html'
+							url: 'site-building/creating-pages/building-and-managing-content-pages/content-pages-overview.html'
 						},
 					]
 				},
@@ -141,7 +118,7 @@
 							url: 'using-search/developer_guide.html'
 						},
 					]
-        		},
+				},
 				{
 					icon: '#collaboration-and-social-logo',
 					sectionName: 'Collaboration and Social',
@@ -189,7 +166,7 @@
 							name: 'Introduction to Managing Apps',
 							url: 'system-administration/installing-and-managing-apps/introduction-to-managing-apps.html'
 						},
-            {
+						{
 							name: 'Configuring File Storage',
 							url: 'system-administration/file-storage/configuring-file-storage.html'
 						},
@@ -204,7 +181,7 @@
 					sectionName: 'Developing Applications',
 					sectionURL: 'developing_applications.html',
 					subsections: [
-            {
+						{
 							name: 'Creating Low Code Applications with App Builder',
 							url: 'developing-applications/developing-low-code-applications/app-builder-overview.html'
 						},
