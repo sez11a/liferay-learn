@@ -6,20 +6,22 @@
 		data: {
 			cards: [
         {
-					sectionName: 'Order Life Cycle',
-					sectionURL: 'orders-and-fulfillment/order-life-cycle.html',
-				},
-				{
-					sectionName: 'Orders Menu',
-					sectionURL: 'orders-and-fulfillment/orders-menu.html',
-				},
-				{
-					sectionName: 'Order Information',
-					sectionURL: 'orders-and-fulfillment/order-information.html',
-				},
-				{
-					sectionName: 'Order Management Statuses',
-					sectionURL: 'orders-and-fulfillment/order-management-statuses.html',
+					sectionName: 'Orders',
+					sectionURL: 'orders-and-fulfillment/orders.html',
+					subsections: [
+          {
+							name: 'Order Life Cycle',
+							url: 'orders-and-fulfillment/orders/order-life-cycle.html'
+						},
+						{
+							name: 'Orders Menu',
+							url: 'orders-and-fulfillment/orders/orders-menu.html'
+						},
+						{
+							name: 'Order Information',
+							url: 'orders-and-fulfillment/orders/order-information.html'
+						},
+					]
 				},
 				{
 					sectionName: 'Order Workflows',
@@ -36,16 +38,30 @@
 					]
 				},
 				{
-					sectionName: 'Managing Shipments',
-					sectionURL: 'orders-and-fulfillment/managing-shipments/introduction-to-shipments.html',
+					sectionName: 'Subscriptions',
+					sectionURL: 'orders-and-fulfillment/subscriptions.html',
+					subsections: [
+						{
+							name: 'Managing Subscriptions',
+							url: 'orders-and-fulfillment/subscriptions/managing-subscriptions.html'
+						},
+						{
+							name: 'Subscription Administration Reference Guide',
+							url: 'orders-and-fulfillment/subscriptions/subscription-administration-reference-guide.html'
+						},
+					]
+				},
+				{
+					sectionName: 'Shipments',
+					sectionURL: 'orders-and-fulfillment/shipments/introduction-to-shipments.html',
 					subsections: [
 						{
 							name: 'Creating a Shipment',
-							url: 'orders-and-fulfillment/managing-shipments/creating-a-shipment.html'
+							url: 'orders-and-fulfillment/shipments/creating-a-shipment.html'
 						},
 						{
 							name: 'Cancelling a Shipment',
-							url: 'orders-and-fulfillment/managing-shipments/cancelling-a-shipment.html'
+							url: 'orders-and-fulfillment/shipments/cancelling-a-shipment.html'
 						},
 					]
 				},

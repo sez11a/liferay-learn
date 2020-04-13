@@ -10,7 +10,7 @@ To use the _Media Gallery_:
 
     ![The widget displays only preexisting media files.](./using-the-media-gallery-widget/images/01.png)
 
-1. The steps are the same when [adding a folder](./../../uploading-and-managing/creating-folders.md#adding-folders) and [uploading media files](./uploading-files.md) in the widget.
+1. The steps are the same when [adding a folder](./../../uploading-and-managing/creating-folders.md#adding-a-folder) and [uploading media files](../../uploading-and-managing/uploading-files.md) in the widget.
 
     ![The widget's folder tracks the files.](./using-the-media-gallery-widget/images/02.png)
 
@@ -20,3 +20,4 @@ Once the media files have been uploaded, clicking on a file automatically starts
 
 * [Managing Folders](../../uploading-and-managing/creating-folders.md)
 * [Uploading Files](../../uploading-and-managing/uploading-files.md)
+* [Enabling Xuggler and ImageMagick for previews](../../../system-administration/using-the-server-administration-panel/configuring-external-services.md)
