@@ -2,9 +2,15 @@
 
 As your Site grows, you'll have many Collections of Page Fragments. You can organize them in any way you wish: 
 
+<<<<<<< HEAD
 - You can edit them directly.
 - You can export and import them. 
 - You can move and copy Fragments between Collections. 
+=======
+* You can edit them directly.
+* You can export and import them. 
+* You can move and copy Fragments between Collections. 
+>>>>>>> 2613991be776b6c5a9b4cde9ce0913405f39aa92
 
 These functions and more are described below. 
 
