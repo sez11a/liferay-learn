@@ -12,8 +12,6 @@ Developers can also [embed Liferay widgets](../../developer-guide/developing-pag
 
 Page Fragments are organized into Collections. Collections group related Fragments together so you can manage them easily. Fragments are accessible through these Collections when [building a Content Page](../../creating-pages/building-content-pages.md). You can include resources in Page Fragment Collections and reference them from your Page Fragment's code without worrying about their availability. This is helpful when moving Page Fragments. See [Including Default Resources in Page Fragments](../../developer-guide/developing-page-fragments/including-default-resources-with-fragments.md) for more information.
 
-<!-- Please modify the image below so that the Collection and Fragment displayed are real world examples, not My Collection and My Fragment. --> 
-
 ![Collections provide an easy way to organize, manage, and share Fragments.](./page-fragments-intro/images/03.png)
 
 These topics are covered:
