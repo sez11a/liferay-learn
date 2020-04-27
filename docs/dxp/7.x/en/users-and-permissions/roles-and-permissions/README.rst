@@ -11,6 +11,5 @@ Roles and Permissions
 
 * Assigning Roles to Groups of Users
 
-Advanced Roles and Permissions
-------------------------------
-Coming soon!
+-  :doc:`/users-and-permissions/roles-and-permissions/assigning-roles-to-user-segments`
+
