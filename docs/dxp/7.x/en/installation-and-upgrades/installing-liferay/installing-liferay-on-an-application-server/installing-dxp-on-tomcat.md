@@ -16,7 +16,7 @@ In addition to copying dependencies, scripts, and configurations from the Lifera
 * Dependencies ZIP file
 * OSGi Dependencies ZIP file
 
-Liferay DXP requires a **Java JDK 8 or 11**. See [www.java.com](https://www.java.com/) to install a JDK.
+Liferay DXP requires a **Java JDK 8 or 11**. See [the compatibility matrix](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.2+Compatibility+Matrix.pdf/ed234765-db47-c4ad-7c82-2acb4c73b0f9) to choose a JDK. See [JVM Configuration](../../reference/jvm-configuration.md) for recommended settings.
 
 ```note::
    The `Liferay DXP Compatibility Matrix <https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?>`_ specifies supported databases and environments.
@@ -167,7 +167,7 @@ Here are the steps:
 1. Refrain from writing access logs (optional) by commenting out the access log `Valve` element in `$CATALINA_BASE/conf/server.xml`. It's commented out here:
 
     ```xml
-    <!-- <Valve className="org.apache.catalina.valves.AccessLogValve" 
+    <!-- <Valve className="org.apache.catalina.valves.AccessLogValve"
            directory="logs"
            prefix="localhost_access_log" suffix=".txt"
            pattern="%h %l %u %t &quot;%r&quot; %s %b" /> -->
