@@ -1,0 +1,35 @@
+<script type="module">
+	import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.min.js'
+
+	const page = new Vue({
+		el: '#landingPage',
+		data: {
+			cards: [
+				{
+					sectionName: 'Developing Themes',
+					sectionURL: 'developer-guide/developing_themes.html',
+					subsections: [
+						{
+							name: 'Look and Feel Overview',
+							url: 'developer-guide/developing-themes/look-and-feel-overview.html'
+						},
+						{
+							name: 'Developing a Theme',
+							url: 'developer-guide/developing-themes/developing-a-theme.html'
+						},
+					]
+				},
+				{
+					sectionName: 'Developer Reference',
+					sectionURL: 'developer-guide/reference.html',
+					subsections: [
+						{
+							name: 'Themes Reference',
+							url: 'developer-guide/reference/themes.html'
+						},
+					]
+				},
+			]
+		}
+	})
+</script>
