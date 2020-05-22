@@ -18,12 +18,17 @@ Advanced Forms Usage
 Form Rules
 ----------
 
+<<<<<<< HEAD
 -  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/form-rules/form-rules-overview`
 -  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/form-rules/using-the-show-hide-rule`
 -  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/form-rules/using-the-require-rule`
 -  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/form-rules/using-the-autofill-rule`
 -  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/form-rules/using-the-enable-disable-rule`
 -  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/form-rules/using-the-calculate-rule`
+=======
+-  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/form-rules/introduction-to-form-rules`
+-  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/form-rules/using-the-show-hide-rule`
+>>>>>>> Introduction to Form Rules, Jump to Page, and Show-hide Rules
 -  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/form-rules/using-the-jump-to-page-rule`
 
 Kaleo Forms
