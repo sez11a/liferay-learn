@@ -20,6 +20,15 @@ Follow these steps to install the Liferay JS Generator:
     npm install -g generator-liferay-js
     ```
 
+## Generator and Sub-generator Commands
+
+The JS Generator has several sub-generators available that you can use. The available sub-generators are listed in the table below:
+
+| command | description | Generator Version |
+| --- | --- | --- |
+| `yo liferay-js` | Generates a JavaScript-based application | All versions |
+| `yo liferay-js:adapt` | Adapts an existing application | 9.5.0+ |
+
 ## Related Information
 
 * [Adapting Existing Apps to Run on Portal](./developer-guide/adapting-apps-for-liferay.md)

@@ -1,7 +1,10 @@
 # Liferay JS Generator Commands Reference
 
+The available commands for widgets created, adapted, and migrated with the Liferay JS Generator are listed below. You can swap `npm` for `yarn` below if you prefer to use yarn instead.
 
-The available commands for bundles created with the Liferay JS Generator and migrated to use it are listed below. You can swap `npm` for `yarn` below if you prefer to use yarn instead.
+## Generated and Migrated App Commands
+
+Bundles created with the Liferay JS Generator and migrated to use it are listed below.
 
 | Command | Description |
 | --- | --- |
@@ -9,6 +12,8 @@ The available commands for bundles created with the Liferay JS Generator and mig
 | `npm run deploy` | Deploys the application to the configured server. This command is only available if you configured your liferay instance with the generator. |
 | `npm run start` | Tests the application in a local webpack installation instead of a Portal server. This speeds up development because you can see live changes without the need to deploy. Note, however, that because it's outside a Liferay instance, you don't have access to Liferay's APIs. |
 | `npm run translate` | Runs the translation features for your bundle. Note that this feature requires Microsoft Translator credentials. See [Using Translation Features in Your Widget](TODO:using-translation-features-in-your-widget) for more information. |
+
+## Adapted App Commands
 
 These commands are Available for [adapted apps](../developer-guide/adapting-apps-for-liferay.md):
 
