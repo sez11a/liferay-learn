@@ -1,6 +1,6 @@
 # Configuration JSON Reference
 
-If you've [created an OSGi bundle with the Liferay JS Generator](../installing-the-js-generator-and-creating-js-widgets.md) and want to provide system settings or instance settings for your widget, you must provide a `configuration.json` file. This reference guide lists the available configuration options for `configuration.json` along with example code. 
+If you've [created an OSGi bundle with the Liferay JS Generator](../developer-guide/creating-a-js-widget-with-the-js-generator.md) and want to provide system settings or instance settings for your widget, you must provide a `configuration.json` file. This reference guide lists the available configuration options for `configuration.json` along with example code. 
 
 ## JSON Format
 
