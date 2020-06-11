@@ -21,7 +21,7 @@ Workflow allows users to build more complex workflows that can have multiple rev
 * [Uploading Workflow Definitions](./managing-workflows.md#uploading-a-new-workflow-definitions)
 * [Managing Workflow Definitions](./managing-workflows.md)
 
-To start building your own workflows, see [Building Workflows](./building-workflows.md).
+To start building your own workflows, see [Managing Workflow with Designer](./workflow-designer/managing-workflow-with-designer.md).
 
 ### Using Workflow Metrics to Implement SLAs
 
@@ -42,4 +42,4 @@ See the [Using Workflow Metrics](./using-workflow-metrics.md) article to learn h
 
 * [Activating Workflow](./activating-workflow.md)
 * [Managing Workflows](./managing-workflows.md)
-* [Building Workflows](./building-workflows.md)
+* [Introduction to the Workflow Designer](./introduction-to-the--workflow-designer.md)
