@@ -7,3 +7,4 @@ User Guide
 -  :doc:`/process-automation/workflow/user-guide/reviewing-assets`
 -  :doc:`/process-automation/workflow/user-guide/introduction-to-the-workflow-designer`
 -  :doc:`/process-automation/workflow/user-guide/using-workflow-metrics`
+-  :doc:`/process-automation/workflow/user-guide/workflow_designer.rst`
