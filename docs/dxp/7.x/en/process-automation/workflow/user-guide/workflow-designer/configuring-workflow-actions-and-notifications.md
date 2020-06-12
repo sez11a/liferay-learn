@@ -30,7 +30,7 @@ To add an action to a node:
 
 In this example, the action script first sets the status to _denied_ and then to _pending_ because for some assets, the _denied_ status sends the asset creator an email notification that the item has been denied.
 
-The end node in your workflow definition has an action configured on it by default, on entry to the end node:
+The end node in the _Single Approver_ definition has this default action upon entry to the end node:
 
 ```java
     import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
@@ -39,7 +39,7 @@ The end node in your workflow definition has an action configured on it by defau
     WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("approved"), workflowContext);
 ```
 
-This is a Groovy script that updates the status to _approved_.
+You can use this sample Groovy Script in your end node.
 
 ## Adding Notifications
 
@@ -67,5 +67,6 @@ To set up notifications, double click on _Notifications_ in a node's Properties 
 
 ## Additional Information
 
-* [Using the Task Node](./using-the-task-node.md)
+* [Creating Workflow Tasks](./creating-workflow-tasks.md)
+* [Using Forks, Joins, and Conditions](./using-forks-joins-and-conditions.md)
 * [Workflow Designer Nodes Reference](./workflow-designer-nodes-reference.md)
