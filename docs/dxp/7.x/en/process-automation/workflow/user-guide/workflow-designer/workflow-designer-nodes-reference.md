@@ -44,7 +44,7 @@ State nodes can have [Actions and Notifications](./configuring-workflow-actions-
 
 ## Additional Information
 
-* [Creating Workflow Tasks](./creating-workflow-tasks.md)
+* [Using the Task Node](./using-the-task-node.md)
 * [Kaleo Forms](../../../user-guide/advanced-forms-usage/kaleo-forms/kaleo-forms.md)
 * [Activating Workflow](../activating-workflow.md)
 * [Introduction to the Workflow Framework](https://help.liferay.com/hc/en-us/articles/360028727112-Introduction-to-The-Workflow-Framework)
