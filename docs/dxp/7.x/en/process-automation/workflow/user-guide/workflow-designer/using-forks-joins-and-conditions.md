@@ -1,20 +1,26 @@
-# Using Forks, Joins and Conditions
+# Using Forks, Joins, and Conditions
 
-## Forks and Joins
+> Subscribers
 
-Sometimes you don't need to wait for one task to be completed before moving on to another one. Instead, you want to do two or more things at the same time. To do this, transition to a fork node, make two transitions from the fork to your parallel tasks, and then come back together using a join node.
+_Fork_, _Join_, and _Condition_ nodes allow users to create workflows that are more robust and diverse, such as inviting more concurrent reviewers or determining which reviewer is assigned based on certain conditions. (By comparison, the Single Approver definition is relatively linear, going from the asset creator to a single reviewer.) This article describes how to use the _Fork_, _Join_ (and _Join XOR_), and _Condition_ nodes.
 
-![Figure 3: Forks and Joins are used to enable parallel processing in the workflow.](../../../images-dxp/workflow-designer-fork-join.png)
+## Using the Fork and Join Nodes
+
+_Fork_ and _Join_ nodes allow uses to split the review task so that two reviewers can review the asset without waiting for the other. Once both reviewers have completed the review process, the workflow is joined together and can proceed.  To do this, add a transition to a fork node, make two transitions from the fork to your parallel tasks, and then come back together using a join node.
+
+![Forks and Joins are used to enable parallel processing in the workflow.](./using-forks-joins-and-conditions/images/01.png)
 
 With a regular Join node, for the workflow to proceed beyond the join, the transition from both parallel executions must be invoked. However, if you use a Join XOR node instead, the workflow proceeds as long as the transition from one of the parallel executions is invoked.
 
-Keep in mind that you must balance your fork and join nodes. In other words, for every fork, there must be a join that brings the parallel workflow threads back together.
+```tip::
+    Fork and Join nodes work as a pair. In other words, for every fork, there must be a join that brings the parallel workflow threads back together.
+```
 
-## Conditions
+## Using a Condition Node
 
-Sometimes you must inspect an asset or its execution context, and depending on the result, send it to the appropriate transition. You need a node for a script that concludes by setting a value to one of your transitions.
+_Condition_ nodes allow users to determine the next step in the review process depending on whether a condition is met. Use the _Condition node which has a script that concludes by setting a value to one of your transitions.
 
-![Figure 4: The Category Specific Approval definition starts with a Condition node.](../../../images-dxp/workflow-designer-cat-specific-condition.png)
+![The Category Specific Approval definition starts with a Condition node.](./using-forks-joins-and-conditions/images/02.png)
 
 From the *Category Specific Approval* (`category-specific-definition.xml`), this is the script in the condition node that starts the workflow (coming directly from the start node):
 
@@ -60,4 +66,15 @@ From the *Category Specific Approval* (`category-specific-definition.xml`), this
 
 This example checks the asset category to choose the processing path, whether to transition to the *Legal Review* task or the *Content Review* task.
 
-You may be wondering what that `returnValue` variable is. It's the variable that points from the condition to a transition, and its value must match a valid transition in the workflow definition. This script looks up the asset in question, retrieves its [asset category](/docs/7-2/user/-/knowledge_base/u/defining-categories-for-content), and sets an initial `returnValue`. Then it checks to see if the asset has been marked with the *legal* category. If not it goes through *Content Review* (the content-review task in the workflow), and if it does it goes through *Legal Review* (the legal-review task in the workflow).
+```tip::
+   The `returnValue` variable is the variable that points from the condition to a transition, and its value must match a valid transition in the workflow definition.
+```
+
+This script looks up the asset in question, retrieves its [asset category](https://help.liferay.com/hc/en-us/articles/360028820492-Defining-Categories-for-Content), and sets an initial `returnValue`. Then it checks to see if the asset has been marked with the *legal* category. If not it goes through *Content Review* (the content-review task in the workflow), and if it does it goes through *Legal Review* (the legal-review task in the workflow).
+
+## Additional Information
+
+* [Activating Workflow](../activating-workflow.md)
+* [Creating Workflow Tasks](./creating-workflow-tasks.md)
+* [Configuring Workflow Actions and Notifications](./configuring-workflow-actions-and-notifications.md)
+* [Workflow Designer Nodes Reference](./workflow-designer-nodes-reference.md)

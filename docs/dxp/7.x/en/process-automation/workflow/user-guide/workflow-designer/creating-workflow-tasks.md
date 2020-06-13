@@ -88,7 +88,7 @@ In this example, the script is assigning the task to the *Administrator* Role, t
 
 Note the `roles = new ArrayList<Role>();` line above. In a scripted assignment, the `roles` variable is where you specify any Roles the task is assigned to. For example, when `roles.add(adminRole);` is called, the Administrator role is added to the assignment.
 
-## Related Topics
+## Additional Information
 
 * [Activating Workflow](../activating-workflow.md)
 * [Configuring Workflow Actions and Notifications](./configuring-workflow-actions-and-notifications.md)
