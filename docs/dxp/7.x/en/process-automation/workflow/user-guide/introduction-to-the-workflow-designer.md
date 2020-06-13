@@ -31,7 +31,6 @@ Workflow transitions link each node to create the desired flow in the review pro
 ## Additional Information
 
 * [Managing Workflow with Designer](./workflow-designer/managing-workflow-with-designer.md)
-* [Workflow Designer Nodes]
 * [Using Forks, Joins, and Conditions](./workflow-designer/using-forks-joins-and-conditions.md)
 * [Creating Workflow Tasks](./workflow-designer/creating-workflow-tasks.md)
 * [Configuring Workflow Actions and Notifications](./workflow-designer/configuring-workflow-actions-and-notifications.md)
