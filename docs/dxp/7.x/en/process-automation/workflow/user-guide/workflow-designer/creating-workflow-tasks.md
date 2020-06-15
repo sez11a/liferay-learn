@@ -10,7 +10,7 @@ Commonly, task nodes contain Notifications, Assignments, and Actions (defined in
 
 Workflow tasks must be completed by a User.
 
-![Figure 1: You can add an Assignment to a Task node.](../../../images-dxp/workflow-designer-assignment.png)
+![Figure 1: You can add an Assignment to a Task node.](./creating-workflow-tasks/images/01.png)
 
 You can choose to add assignments to specific Roles, multiple Roles of a Role Type (Organization, Site, or regular Role types), to the Asset Creator, to Resource Actions, or to specific Users. Additionally, you can write a script to define the assignment (see below).
 
