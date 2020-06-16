@@ -4,9 +4,7 @@
 
  The Workflow Designer is a graphical designer lets users develop their own workflow definitions so their assets go through a review process before publication. By using a convenient drag and drop user interface, users do not need to be familiar with writing XML definitions by hand. Lastly, some of the features can be enhanced Groovy (a supported Java-based scripting language) scripts.
 
-```tip::
-   By default, only one workflow definition is installed: the Single Approver Workflow definition.
-```
+By default, only one workflow definition is installed: the Single Approver Workflow definition. Additional definitions are found in the `Liferay Forms and Workflow - Liferay Portal Workflow - Impl.lpkg` inside the `[Liferay_Home]/osgi/marketplace/` folder. Open the `jar` and find the `com.liferay.portal.workflow.kaleo.runtime.impl-[version].jar`. The additional definitions are located here in its `META-INF/definitions` folder.
 
 ## Building Workflows
 

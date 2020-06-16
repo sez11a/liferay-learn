@@ -17,7 +17,7 @@ To learn more, see the [Activating Workflow](./activating-workflow.md) and [send
 Workflow allows users to build more complex workflows that can have multiple reviewers and approvers. Learn how to build an effective workflow:
 
 * [Crafting Review Processes in XML](https://help.liferay.com/hc/articles/360029147791-Introduction-to-Crafting-XML-Workflow-Definitions)
-* [Visually Designing Review Processes](https://help.liferay.com/hc/articles/360028821892-Workflow-Designer) (Subscriber)
+* [Visually Designing Review Processes](./introduction-to-the-workflow-designer.md) (Subscriber)
 * [Uploading Workflow Definitions](./managing-workflows.md#uploading-a-new-workflow-definitions)
 * [Managing Workflow Definitions](./managing-workflows.md)
 
