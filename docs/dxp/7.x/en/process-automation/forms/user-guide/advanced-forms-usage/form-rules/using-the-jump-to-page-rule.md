@@ -38,5 +38,5 @@ To configure the Jump to Page Rule:
 ## Additional Information
 
 * [Creating Forms](../../creating-forms.md)
-* [Introduction to Form Rules](./introduction-to-form-rules.md)
+* [Introduction to Form Rules](./form-rules-overview.md)
 * [Using the Show/Hide Rule](./using-the-show-hide-rule.md)

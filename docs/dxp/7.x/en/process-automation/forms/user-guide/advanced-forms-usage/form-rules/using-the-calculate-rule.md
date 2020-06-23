@@ -39,5 +39,5 @@ The Calculate Rule has been created.
 ## Additional Information
 
 * [Creating Forms](../../creating-forms.md)
-* [Introduction to Form Rules](./introduction-to-form-rules.md)
+* [Introduction to Form Rules](./form-rules-overview.md)
 * [Providing Predefined Values for a Form](../providing-predefined-values-for-a-form.md)

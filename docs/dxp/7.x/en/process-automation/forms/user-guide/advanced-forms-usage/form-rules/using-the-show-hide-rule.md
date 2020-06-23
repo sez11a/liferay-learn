@@ -31,7 +31,7 @@ The _Legal Guardian Email Address_ field is only displayed in the form if the us
 ## Additional Information
 
 * [Creating Forms](../../creating-forms.md)
-* [Introduction to Form Rules](./introduction-to-form-rules.md)
+* [Introduction to Form Rules](./form-rules-overview.md)
 * [Using the Require Rule](./using-the-require-rule.md)
 * [Using the Enable Rule](./using-the-enable-disable-rule.md)
 * [Using the Jump to Page Rule](./using-the-jump-to-page-rule.md)
