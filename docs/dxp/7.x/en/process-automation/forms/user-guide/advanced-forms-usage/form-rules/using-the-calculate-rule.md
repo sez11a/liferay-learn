@@ -6,9 +6,7 @@ Calculate rules let you automatically populate a numeric field by calculating it
    Calculations are limited to numeric fields.
 ```
 
-## Prerequisites
-
-[Create a form](../../creating-forms.md) that includes three numeric fields:
+In this example, there is a form that has three numeric fields:
 
 * _Number of attendees_: a numeric field.
 * _Registration Fee_: a numeric field with a [predefined value](../providing-predefined-values-for-a-form.md) of 150.
@@ -39,5 +37,5 @@ The Calculate Rule has been created.
 ## Additional Information
 
 * [Creating Forms](../../creating-forms.md)
-* [Introduction to Form Rules](./form-rules-overview.md)
+* [Form Rules Overview](./form-rules-overview.md)
 * [Providing Predefined Values for a Form](../providing-predefined-values-for-a-form.md)

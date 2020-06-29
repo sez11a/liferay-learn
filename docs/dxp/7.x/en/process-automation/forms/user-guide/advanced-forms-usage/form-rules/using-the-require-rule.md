@@ -6,13 +6,13 @@ Use a Require rule to make a field required based on one or more conditions. Req
    Rules can contain multiple actions. In this example, a Require rule can be tied to a Show rule.
 ```
 
-## Prerequisites
-
-[Create a form](../../creating-forms.md) that includes the following:
+To demonstrate, assume there is a camp registration form that includes the following:
 
 * _I am 18 Years Old or Older_: a required single selection field with two options: _Yes_ and _No_.
 * _Legal Guardian Email Address_: a text field that accepts valid email addresses.
 * A [Show Rule](./using-the-show-hide-rule.md) that displays the _Legal Guardian Address_ field if the value for _I am 18 Years Old or Older_ is NO.
+
+If the respondent answers _No_, the _Legal Guardian Email Address_ is displayed and the respondent must enter a valid email address.
 
 ## Configuring the Require Rule
 

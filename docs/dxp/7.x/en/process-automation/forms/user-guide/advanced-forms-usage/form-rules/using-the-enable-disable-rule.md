@@ -2,9 +2,7 @@
 
 Use an enable/disable rule to make a field editable based on one or more conditions. This is useful for entering optional information or gathering data from only users who fall under a particular group. For example, a campsite or a doctor's office might ask people to list any medications or allergies that might affect treatment. This field is editable only if the user selects Yes.
 
-## Prerequisites
-
-[Create a form](../../creating-forms.md) that includes the following fields:
+Continuing this example, assume there is a registration form that includes the following fields:
 
 * _Are you taking any medications?_: a required single selection field with two options: _Yes_ and _No_.
 * _List all medications_: a text field element.
@@ -33,7 +31,7 @@ If the respondents has answered YES, then they are able to edit the field.
 ## Additional Information
 
 * [Creating Forms](../../creating-forms.md)
-* [Introduction to Form Rules](./form-rules-overview.md)
+* [Form Rules Overview](./form-rules-overview.md)
 * [Using the Require Rule](./using-the-require-rule.md)
 * [Using the Enable Rule](./using-the-enable-disable-rule.md)
 * [Using the Jump to Page Rule](./using-the-jump-to-page-rule.md)
