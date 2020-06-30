@@ -28,6 +28,8 @@ Look up your current Liferay DXP/Portal version in this table to determine your 
 
 If your path includes upgrading to Liferay Portal 6.2, follow the [Liferay Portal 6.2 upgrade instructions](https://help.liferay.com/hc/en-us/articles/360017903232-Upgrading-Liferay) first.
 
+If you are upgrading from a Liferay Portal CE GA to a newer GA for the same version (e.g., from 7.3 Liferay Portal CE GA2 to GA3), follow the instructions for [Updating Liferay Portal CE](./updating-liferay-portal-ce.md).
+
 ### Review Deprecations and Changes to Default Settings
 
 Features and configuration defaults may change in new versions of Liferay DXP. See the reference section or the following articles for the most recent deprecations and changes to features and to settings:
