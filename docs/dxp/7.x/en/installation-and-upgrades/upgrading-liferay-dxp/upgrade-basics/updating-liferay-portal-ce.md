@@ -30,7 +30,7 @@ Fixes for Liferay Portal CE are delivered as new Portal CE GA releases. For exam
        If a module's changes are only internal, the changes are invisible to the OSGi framework, the module stays installed, and the module's state persists. Clearing the OSGi bundle state information before the next DXP startup ensures that such modules reinstall with the appropriate state.
     ```
 
-1. Start the application server again.
+1. Start the new Portal CE server.
 
 1. Run the `upgrade:check` [Gogo Shell command](https://help.liferay.com/hc/en-us/articles/360029070351-Using-the-Felix-Gogo-Shell) to list all modules whose data hasn't been upgraded.
 
