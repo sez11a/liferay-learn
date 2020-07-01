@@ -6,7 +6,7 @@ Fixes for Liferay Portal CE are delivered as new Portal CE GA releases. For exam
 
 1. Shut down the application server.
 
-1. Install the new Portal CE GA release to a new location or source control branch.
+1. Install the new Portal CE GA release to a new location or a new source control branch to use with your current application server.
 
 1. Migrate your `[Liferay Home]/data` folder, apps, plugins and modules, and any files that you've created or customized (e.g., `portal-ext.properties`, `web.xml`, and OSGi `.config` files) to the new location/branch.
 
@@ -24,13 +24,13 @@ Fixes for Liferay Portal CE are delivered as new Portal CE GA releases. For exam
     rm -rf work/*
     ```
 
-    Delete the application server cache. Please consult the application vendor documentation on where where to find the cache.
+1. Delete the old application server cache if you installed the new Portal CE GA on that application server. Please consult the application vendor documentation on where where to find the cache.
 
     ```note::
        If a module's changes are only internal, the changes are invisible to the OSGi framework, the module stays installed, and the module's state persists. Clearing the OSGi bundle state information before the next DXP startup ensures that such modules reinstall with the appropriate state.
     ```
 
-1. Start the new Portal CE server.
+1. Start the application server for your new Portal CE GA.
 
 1. Run the [`upgrade:check`](../upgrade-stability-and-performance/upgrading-modules-using-gogo-shell.md#checking-upgrade-status) [Gogo Shell](https://help.liferay.com/hc/en-us/articles/360029070351-Using-the-Felix-Gogo-Shell) command to list all modules whose data hasn't been upgraded.
 
