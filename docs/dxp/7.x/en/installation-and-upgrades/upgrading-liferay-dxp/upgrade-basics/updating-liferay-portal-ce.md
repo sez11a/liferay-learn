@@ -29,11 +29,10 @@ Fixes for Liferay Portal CE are delivered as new Portal CE GA releases. For exam
     ```note::
        If a module's changes are only internal, the changes are invisible to the OSGi framework, the module stays installed, and the module's state persists. Clearing the OSGi bundle state information before the next DXP startup ensures that such modules reinstall with the appropriate state.
     ```
+1. If the release notes mention micro or minor schema/data changes, use the [Database Upgrade Tool](../../upgrading-liferay-dxp/upgrade-basics/using-the-database-upgrade-tool.md) to apply minor changes (required) and any micro changes you want.
 
 1. Start the application server for your new Portal CE GA.
 
-1. Run the [`upgrade:check`](../upgrade-stability-and-performance/upgrading-modules-using-gogo-shell.md#checking-upgrade-status) [Gogo Shell](https://help.liferay.com/hc/en-us/articles/360029070351-Using-the-Felix-Gogo-Shell) command to list all modules whose data hasn't been upgraded.
-
-1. Use the [`upgrade:module [module name]`](../upgrade-stability-and-performance/upgrading-modules-using-gogo-shell.md#executing-module-upgrades) Gogo Shell command to upgrade data for these modules.
+1. Run the [`upgrade:check`](../upgrade-stability-and-performance/upgrading-modules-using-gogo-shell.md#checking-upgrade-status) [Gogo Shell](https://help.liferay.com/hc/en-us/articles/360029070351-Using-the-Felix-Gogo-Shell) command to list all modules whose data hasn't been upgraded. Use the [`upgrade:module [module name]`](../upgrade-stability-and-performance/upgrading-modules-using-gogo-shell.md#executing-module-upgrades) Gogo Shell command to upgrade data for these modules.
 
 Congratulations! You've updated your Portal CE installation to the new GA release!
