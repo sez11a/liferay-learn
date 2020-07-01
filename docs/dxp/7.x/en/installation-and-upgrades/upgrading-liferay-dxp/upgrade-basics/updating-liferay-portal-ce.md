@@ -8,7 +8,7 @@ Fixes for Liferay Portal CE are delivered as new Portal CE GA releases. For exam
 
 1. Install the new Portal CE GA release to a new location or source control branch.
 
-1. Migrate your apps, plugins and modules, and any files that you've created or customized (e.g., `portal-ext.properties`, `web.xml`, and OSGi `.config` files) to the new location/branch.
+1. Migrate your `[Liferay Home]/data` folder, apps, plugins and modules, and any files that you've created or customized (e.g., `portal-ext.properties`, `web.xml`, and OSGi `.config` files) to the new location/branch.
 
 1. Clean up DXP cache.
 

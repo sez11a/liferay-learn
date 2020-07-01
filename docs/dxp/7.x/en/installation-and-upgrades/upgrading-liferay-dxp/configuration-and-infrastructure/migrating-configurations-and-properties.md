@@ -10,7 +10,7 @@ Your current DXP installation's OSGi configurations (7.0+) and properties (such 
 
 ## Migrating Liferay Home
 
-Set up a new [Liferay Home](../../reference/liferay-home.md) folder with the contents of your current Liferay Home, including your portal properties (e.g., `portal-ext.properties`) and OSGi configurations (`.config` files).
+Set up a new [Liferay Home](../../reference/liferay-home.md) folder with the contents of your current Liferay Home, including your `[Liferay Home]/data` folder, portal properties (e.g., `portal-ext.properties`), and OSGi configurations (`.config` files).
 
 ```bash
 cp /old-version/liferay-home/ /new-version/liferay-home/
