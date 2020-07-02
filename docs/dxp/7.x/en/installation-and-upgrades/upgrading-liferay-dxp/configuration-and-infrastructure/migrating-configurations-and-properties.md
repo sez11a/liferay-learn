@@ -10,19 +10,21 @@ Your current DXP installation's OSGi configurations (7.0+) and properties (such 
 
 ## Migrating Liferay Home and Application Server Files
 
-Merge the [Liferay Home files](../../maintaining-a-liferay-dxp-installation/backing-up.md#liferay-home) and [application server files](../../maintaining-a-liferay-dxp-installation/backing-up.md#application-server) that you have added and edited from your [backup](../../maintaining-a-liferay-dxp-installation/backing-up.md) to your installation. Here are some commonly added/edited files:
+1. Merge the [Liferay Home files](../../maintaining-a-liferay-dxp-installation/backing-up.md#liferay-home) and [application server files](../../maintaining-a-liferay-dxp-installation/backing-up.md#application-server) that you have added and edited from your [backup](../../maintaining-a-liferay-dxp-installation/backing-up.md) to your installation. Here are some commonly added/edited files:
 
-`portal-*.properties`: Portal properties files, such as `portal-ext.properties`.
+    `portal-*.properties`: Portal properties files, such as `portal-ext.properties`.
 
-`/osgi/*.config`: OSGi configuration files.
+    `/osgi/*.config`: OSGi configuration files.
 
-`web.xml`: Portal web application descriptor.
+    `web.xml`: Portal web application descriptor.
 
-`setenv.sh`: Application server configuration scripts.
+    `setenv.sh`, `startup.sh`, and more: Application server configuration scripts.
 
-`/license/*`: Activation keys.
+    `/license/*`: Activation keys.
 
-`/log/*`: Log files.
+    `/log/*`: Log files.
+
+1. Replace the new installation's `[Liferay Home]/data` folder and with the `[Liferay Home]/data` folder from your backup.
 
 ## Updating Settings For the Database Upgrade
 

@@ -85,7 +85,7 @@ db_upgrade.sh -j "-Dfile.encoding=UTF-8 -Duser.timezone=GMT -Xmx4096m" -l "outpu
 
 1. Copy your apps, plugins and modules from your backup to your installation.
 
-1. Replace the installation's `[Liferay Home]/data` folder and with the `[Liferay Home]/data` folder from your backup.
+1. Replace the new installation's `[Liferay Home]/data` folder and with the `[Liferay Home]/data` folder from your backup.
 
 1. Make sure you're using the JDBC database driver your database vendor recommends. If you're using MySQL, for example, set `jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver` in [`portal-ext.properties`](../../reference/portal-properties.md) and replace the MySQL JDBC driver JAR your app server uses. See [Database Drivers](../configuration-and-infrastructure/migrating-configurations-and-properties.md#database-drivers) for more details.
 
