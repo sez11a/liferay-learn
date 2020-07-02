@@ -2,7 +2,7 @@
 
 Liferay software is developed using [OSGi modules](https://www.osgi.org/developer/what-is-osgi/). OSGi modules is a way of developing cohesive software packages that define APIs, provide implementations, and that use concrete implementations to provide functionality to users and other consumers.
 
-Module packages are private by default. The only packages that are published are ones specified via the module's meta data. This keeps implementation details hidden from other modules. Liferay leverages a component framework called [Declarative Services](https://enroute.osgi.org/FAQ/300-declarative-services.html) that facilitates defining, implementing, and using APis. You'll see module components in action later. First, look at the simplicity of the module project structure:
+Module packages are private by default. The only packages that are published are ones specified via the module's metadata. This keeps implementation details hidden from other modules. Liferay leverages a component framework called [Declarative Services](https://enroute.osgi.org/FAQ/300-declarative-services.html) that facilitates defining, implementing, and using APis. You'll see module components in action later. First, look at the simplicity of the module project structure:
 
 ```
 [module project]
@@ -22,13 +22,13 @@ The module project comprises three basic things:
 
 * **A Build Script:** Specifies required artifacts. Liferay uses Gradle to build modules.
 
-* **Meta Data:** Headers in the `bnd.bnd` [Bnd](https://bnd.bndtools.org/) file define the module artifact and specify the module's characteristics, including capabilities that the module defines, provides, and requires. On building the module JAR file, Bnd propagates meta data from `bnd.bnd` file to the JAR's `META-INF/MANIFEST.MF` file and Bnd adds capability and component meta data based on its inspection of the module code. The runtime framework uses the meta data to add the module's services to the registry and to inject components with the services they reference. Component services are used in the example modules, discussed next. 
+* **metadata:** Headers in the `bnd.bnd` [Bnd](https://bnd.bndtools.org/) file define the module artifact and specify the module's characteristics, including capabilities that the module defines, provides, and requires. On building the module JAR file, Bnd propagates metadata from `bnd.bnd` file to the JAR's `META-INF/MANIFEST.MF` file and Bnd adds capability and component metadata based on its inspection of the module code. The runtime framework uses the metadata to add the module's services to the registry and to inject components with the services they reference. Component services are used in the example modules, discussed next.
 
 ```tip::
-   You can examine module JAR ``META-INF/MANIFEST.MF`` files to see the propagated ``bnd.bnd`` meta data and the meta data that Bnd generates based on the module code inspection.
+   You can examine module JAR ``META-INF/MANIFEST.MF`` files to see the propagated ``bnd.bnd`` metadata and the metadata that Bnd generates based on the module code inspection.
 ```
 
-Module code and the meta data mentioned above, are more easily understood by way of example.
+Module code and the metadata mentioned above, are more easily understood by way of example.
 
 ## Example Modules: Greeting Command
 
