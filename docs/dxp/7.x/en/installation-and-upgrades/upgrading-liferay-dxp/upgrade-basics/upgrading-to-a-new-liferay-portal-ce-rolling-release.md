@@ -88,3 +88,9 @@ Here are steps for upgrading from a from one GA to another in the same Liferay P
 1. Optionally reindex your search indexes in the Control Panel by navigating to *Search* &rarr; *Index Actions* and clicking *Execute* for *Reindex All Search Indexes.* (This is not usually required when upgrading between GAs, you just need to keep your previous search engine configuration to reuse indexes from previous GA.)
 
 Congratulations! You've upgraded your Portal CE installation to the new rolling release!
+
+## Related Topics
+
+* [Upgrade Overview](./upgrade-overview.md)
+
+* [Upgrading Via Docker](./upgrading-via-docker.md)
