@@ -12,11 +12,11 @@ Here are steps for upgrading from a from one GA to another in the same Liferay P
 
 1. [Back up your Liferay installation](../../maintaining-a-liferay-dxp-installation/backing-up.md), including any files that you have added or edited.
 
-1. Install the new Portal CE GA release files to your existing installation or to a new folder. The remaining instructions demonstrate working with an existing installation.
+1. Install the new Portal CE GA release files to an empty folder.
 
 1. Replace the `[Liferay Home]/data` folder with the `[Liferay Home]/data` folder from your backup.
 
-1. Merge the files that you have added and edited from your backup to your installation. Here are some files that are common to merge:
+1. Merge the files that you have added and edited from your backup to your installation, updating the Liferay Home values to your new Liferay Home path. Here are some files that are common to merge:
 
     `portal-*.properties`: Portal properties files, such as `portal-ext.properties`.
 
