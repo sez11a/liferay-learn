@@ -10,13 +10,13 @@ Here are steps for upgrading from a from one GA to another in the same Liferay P
 
 1. Shut down your Liferay Portal CE server.
 
-1. [Back up your DXP system](../../maintaining-a-liferay-dxp-installation/backing-up.md), including any files that you have added or edited.
+1. [Back up your Liferay installation](../../maintaining-a-liferay-dxp-installation/backing-up.md), including any files that you have added or edited.
 
-1. Install the new Portal CE GA release files to your existing installation folder or to a new folder. The remaining instructions demonstrate working with an existing installation.
+1. Install the new Portal CE GA release files to your existing installation or to a new folder. The remaining instructions demonstrate working with an existing installation.
 
-1. Replace the installation's `[Liferay Home]/data` folder and with the `[Liferay Home]/data` folder from your backup.
+1. Replace the `[Liferay Home]/data` folder with the `[Liferay Home]/data` folder from your backup.
 
-1. Merge the files that you have added and edited from your backup to your installation. Here are some commonly added/edited files:
+1. Merge the files that you have added and edited from your backup to your installation. Here are some files that are common to merge:
 
     `portal-*.properties`: Portal properties files, such as `portal-ext.properties`.
 
@@ -75,9 +75,9 @@ Here are steps for upgrading from a from one GA to another in the same Liferay P
 
     After configuration is complete, the upgrade starts. You can monitor the log file. Log messages are reported for the start and completion of each upgrade process.
 
-1. After the upgrade completes, check the log for any database upgrade failures or errors. You can use [Gogo Shell commands](../upgrade-stability-and-performance/upgrading-modules-using-gogo-shell.md) to troubleshoot them and finish the upgrades.
+1. After the database upgrade completes, check the log for any upgrade failures or errors. You can use [Gogo Shell commands](../upgrade-stability-and-performance/upgrading-modules-using-gogo-shell.md) to troubleshoot them and finish the upgrades.
 
-1. After the upgrade completes, re-enable search indexing by setting `indexReadOnly="false"` or by deleting the `com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config` file.
+1. After you have finished the upgrades, re-enable search indexing by setting `indexReadOnly="false"` or by deleting the `com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config` file.
 
     ```bash
     rm liferay-home/osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config
@@ -85,6 +85,6 @@ Here are steps for upgrading from a from one GA to another in the same Liferay P
 
 1. Start the Liferay Portal CE server.
 
-1. Optionally reindex your search indexes in the Control Panel by navigating to *Search* &rarr; *Index Actions* and clicking *Execute* for *Reindex All Search Indexes.* (this is not usually required when upgrading between GAs, you just need to keep your previous search engine configuration to reuse indexes from previous GA)
+1. Optionally reindex your search indexes in the Control Panel by navigating to *Search* &rarr; *Index Actions* and clicking *Execute* for *Reindex All Search Indexes.* (This is not usually required when upgrading between GAs, you just need to keep your previous search engine configuration to reuse indexes from previous GA.)
 
 Congratulations! You've upgraded your Portal CE installation to the new rolling release!
