@@ -1,3 +1,4 @@
 .gradle/
 .metadata/
 docs/**/liferay-*theme
+/docs/**/nbproject/private/
