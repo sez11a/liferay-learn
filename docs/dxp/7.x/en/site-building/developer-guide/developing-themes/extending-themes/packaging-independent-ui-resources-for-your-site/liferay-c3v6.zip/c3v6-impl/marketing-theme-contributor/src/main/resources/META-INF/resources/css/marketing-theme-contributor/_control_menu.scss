@@ -1,0 +1,23 @@
+body {
+	.control-menu {
+		background-color: #7DBD6B;
+	}
+
+                 .toast-animation .pm, .toast-animation .cn {
+                                  border-left: 1px solid #fff;
+                                  border-radius: 1px;
+                  }
+
+                 .toast-animation .cn {
+                                  border: 1px solid #fff;
+                                  border-radius: 1px;
+                  }
+
+                  li.control-menu-nav-item > span.text-muted.text-truncate {
+                                  color: #fff !important;
+                  }
+
+                  .control-menu-level-1 a, .control-menu-level-1 button:not(.dropdown-item) {
+                                  color: #fff;
+                   }
+}

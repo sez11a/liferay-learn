@@ -1,0 +1,1 @@
+console.log('The Marketing Theme Contributor is currently applied to the page');
