@@ -2,9 +2,9 @@
 
 > Subscribers
 
-Task nodes are the most complex parts of a workflow definition. Unlike other workflow nodes, task nodes have Assignments which assigns a review task to a user.
+Task nodes are the most complex parts of a workflow definition. Unlike other workflow nodes, task nodes have Assignments which assign a review task to a user.
 
-Commonly, task nodes contain Notifications, Assignments, and Actions (defined in scripts). See the [Configuring Workflow Actions and Notifications](./configuring-workflow-actions-and-notifications.md).
+Commonly, task nodes contain Notifications, Assignments, and Actions (defined in scripts). See [Configuring Workflow Actions and Notifications](./configuring-workflow-actions-and-notifications.md).
 
 ## Assignments
 
