@@ -1,12 +1,24 @@
 # Managing Workflows
 
-> Subscribers
-
-The Workflow Designer is an intuitive interface for creating workflow definitions, from the simplest approval processes to the most complex business processes. It features a drag and drop interface, workflow definition versioning, and a graphical representation of definitions and their nodes. This tutorial documents the basics in creating and managing a workflow. See [Creating Workflow Tasks](./workflow-designer/creating-workflow-tasks.md), [Using Forks, Joins, and Conditions](./workflow-designer/using-forks-joins-and-conditions.md), and [Configuring Workflow Actions and Notifications](./workflow-designer/configuring-workflow-actions-and-notifications.md) to learn more about using the different nodes and building workflows.
+Users can have more than one Workflow definition depending on their needs. To manage your Workflow definitions, navigate to the _Control Panel_ &rarr; _Process Builder_ menu. Here users can manage the Workflow definitions and assign a Workflow to a specific DXP asset type (for example, Blog Entries or Web Content Articles).
 
 ## Adding New Workflow Definitions
 
 Workflow process definitions can be built in Liferay Workflow or uploaded in `XML` format; see the [Introduction to Crafting XML Workflow Definitions](https://help.liferay.com/hc/articles/360029147791-Introduction-to-Crafting-XML-Workflow-Definitions) to learn more.
+
+In addition, subscribers can use the [Workflow Designer](./workflow-designer-overview.md) to create their workflows on a graphical interface in addition to uploading XMLs.
+
+To add a new Workflow Definition, follow the steps below:
+
+1. Navigate to the _Control Panel_ &rarr; _Process Builder_.
+1. Click the (![Add icon](../../../images/icon-add.png)) to begin.
+1. Enter a name for the new workflow definition.
+1. You can upload an existing `XML` definition or start writing. If the Workflow Designer is present, begin dragging and dropping nodes. See [Creating Workflow Tasks](./workflow-designer/creating-workflow-tasks.md), [Using Forks, Joins, and Conditions](./workflow-designer/using-forks-joins-and-conditions.md) and [Configuring Workflow Actions and Notifications](./workflow-designer/configuring-workflow-actions-and-notifications.md) for more information.
+1. Click _Publish_ when finished.
+
+### Using the Workflow Designer
+
+> Subscribers
 
 By default there are three things added to the canvas: a start node, a transition, and an end node. The _End Node_ is the point in the workflow where an asset reaches the _Approved_ status. The _StartNode_ is where the asset goes from the _Draft_ status to _Pending_.
 
@@ -20,7 +32,7 @@ To use the canvas:
 
 1. Drag and drop a node from the _Nodes_ palette. Users can also delete the default End Node. Because all transitions must end with a node, Workflow Designer prompts you to select one. (See the [Workflow Designer Nodes Reference](./workflow-designer/workflow-designer-nodes-reference.md) to learn more about each type of node.)
 
-    ![You can add a node by creating a transition that ends at a blank spot on your Designer canvas.](./managing-workflows/images/workflow-designer-add-node.png)
+    ![You can add a node by creating a transition that ends at a blank spot on your Designer canvas.](./managing-workflows/images/08.png)
 
 1. To rename a node or a transition, double click the node to open the _Settings_ menu.
 1. Double click the value of the _Name_ property.
