@@ -2,25 +2,7 @@
 
 > Subscribers
 
-<<<<<<< HEAD
-## Workflow Definition Publication Permissions
-
-Users with permission to edit or publish workflow definitions can add [Groovy scripts](../../../system-administration/using-the-script-engine/using-the-script-engine.md) to the workflow. Access to the scripting engine means access to the server's Java Virtual Machine (JVM). Users with permission to publish (or edit) can therefore access any data within the reach of the JVM, such as data contained in a separate [Virtual Instance](../../../system-administration/virtual-instances.md) of Liferay DXP.
-
-Because of this far-reaching access, permission to create or edit workflow definitions is limited to Regular Administrators of the Default Virtual Instance. For Liferay DXP customers, Site Administrators who can access the Kaleo Designer and Kaleo Forms Admin applications can also edit and publish workflows.
-
-To grant Users with these Roles the workflow publication access in additional Virtual Instances,
-
-1. Make sure you understand the [access you're granting these administrators](../../../users-and-permissions/roles-and-permissions/understanding-roles-and-permissions.md).
-1. Navigate to Control Panel &rarr; System Settings &rarr; Workflow &rarr; Workflow Definition.
-1. Check the box for the setting _Allow Administrators to Publish and Edit Workflows_.
-
-This only applies to Virtual Instances that have been added to the system. The Default Virtual Instance provides out of the box workflow publication access to Regular Administrators, via Control Panel &rarr; Workflow &rarr; Process Builder and for Liferay DXP subscribers via the Kaleo Forms Admin application.
-
-## Uploading a New Workflow Definition
-=======
 The Workflow Designer is an intuitive interface for creating workflow definitions, from the simplest approval processes to the most complex business processes. It features a drag and drop interface, workflow definition versioning, and a graphical representation of definitions and their nodes. This tutorial documents the basics in creating and managing a workflow. See [Creating Workflow Tasks](./workflow-designer/creating-workflow-tasks.md), [Using Forks, Joins, and Conditions](./workflow-designer/using-forks-joins-and-conditions.md), and [Configuring Workflow Actions and Notifications](./workflow-designer/configuring-workflow-actions-and-notifications.md) to learn more about using the different nodes and building workflows.
->>>>>>> Revised Managing Workflows
 
 ## Adding New Workflow Definitions
 
@@ -109,11 +91,7 @@ _Published_ workflow definitions cannot be deleted if they are current associate
 
 ## Configuring Workflow Definition Permissions
 
-<<<<<<< HEAD
-In the _System Settings_, you can enable or disable permissions for Regular Administrators to publish workflows and scripts.
-=======
 In the _System Settings_, users can enable or disable permissions for Site Administrators to publish workflows and scripts.
->>>>>>> Revised Managing Workflows
 
 ![Explicit permission must be granted before administrators are allowed to publish and edit workflow definitions.](./managing-workflows/images/06.png)
 
