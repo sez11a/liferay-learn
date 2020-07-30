@@ -6,9 +6,13 @@ Task nodes are the most complex parts of a workflow definition. Unlike other wor
 
 Commonly, task nodes contain Notifications, Assignments, and Actions (defined in scripts). See [Configuring Workflow Actions and Notifications](./configuring-workflow-actions-and-notifications.md).
 
+For demonstration purposes, we are using the sample [Legal-Marketing Definition](../workflow-designer-overview/workflow-processes/legal-marketing-definition.xml).
+
+![Use the sample Legal-Marketing definition](./creating-workflow-tasks/images/02.png)
+
 ## Assignments
 
-Workflow tasks must be completed by a User.
+A Workflow task (indicated by the black square) must be completed by a specific User that has been assigned to a Reviewer Role (for example, _Portal Content Reviewer_ as in the image below).
 
 ![Figure 1: You can add an Assignment to a Task node.](./creating-workflow-tasks/images/01.png)
 
@@ -18,7 +22,7 @@ You can choose to add assignments to specific Roles, multiple Roles of a Role Ty
 
 Users can assign a workflow task to a Resource action. *Resource actions* are operations performed by Users on an application or entity. For example, a User might have permission to update Message Boards Messages. This is called an UPDATE resource action, because the User can update the resource. If your workflow definition specifies the UPDATE action in an assignment, anyone who has permission to update the type of asset being processed in the workflow is assigned to the task. You can configure multiple assignments for a task.
 
-To learn more about Resource Actions, refer to the developer tutorial on the [permission system](https://help.liferay.com/hc/en-us/articles/360028725252-Defining-Application-Permissions) for a more detailed explanation.
+To learn more about Resource Actions, refer to the developer tutorial on the [permission system](https://help.liferay.com/hc/articles/360028725252-Defining-Application-Permissions) for a more detailed explanation.
 
 Here's what the assignment looks like in the Source (Workflow XML) tab:
 
