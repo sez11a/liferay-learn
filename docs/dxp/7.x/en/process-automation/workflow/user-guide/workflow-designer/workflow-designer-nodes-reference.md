@@ -44,51 +44,9 @@ State nodes can have [Actions and Notifications](./configuring-workflow-actions-
 
 ### Condition Nodes
 
-From the *Category Specific Approval* (`category-specific-definition.xml`), this is the script in the condition node that starts the workflow (coming directly from the start node):
+A _Condition_ node checks an asset or its execution context, and depending on the result, send it to the appropriate transition. This node requires a script that sets a value to one of the transitions.
 
-```java
-    import com.liferay.asset.kernel.model.AssetCategory;
-    import com.liferay.asset.kernel.model.AssetEntry;
-    import com.liferay.asset.kernel.model.AssetRenderer;
-    import com.liferay.asset.kernel.model.AssetRendererFactory;
-    import com.liferay.asset.kernel.service.AssetEntryLocalServiceUtil;
-    import com.liferay.portal.kernel.util.GetterUtil;
-    import com.liferay.portal.kernel.workflow.WorkflowConstants;
-    import com.liferay.portal.kernel.workflow.WorkflowHandler;
-    import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
-
-    import java.util.List;
-
-    String className = (String)workflowContext.get(WorkflowConstants.CONTEXT_ENTRY_CLASS_NAME);
-
-    WorkflowHandler workflowHandler = WorkflowHandlerRegistryUtil.getWorkflowHandler(className);
-
-    AssetRendererFactory assetRendererFactory = workflowHandler.getAssetRendererFactory();
-
-    long classPK = GetterUtil.getLong((String)workflowContext.get(WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
-
-    AssetRenderer assetRenderer = workflowHandler.getAssetRenderer(classPK);
-
-    AssetEntry assetEntry = assetRendererFactory.getAssetEntry(assetRendererFactory.getClassName(), assetRenderer.getClassPK());
-
-    List<AssetCategory> assetCategories = assetEntry.getCategories();
-
-    returnValue = "Content Review";
-
-    for (AssetCategory assetCategory : assetCategories) {
-        String categoryName = assetCategory.getName();
-
-        if (categoryName.equals("legal")) {
-            returnValue = "Legal Review";
-
-            return;
-        }
-    }
-```
-
-```tip::
-   The `returnValue` variable is the variable that points from the condition to a transition, and its value must match a valid transition in the workflow definition.
-```
+See the [Category Specific Definition](../workflow-designer-overview/workflow-processes/category-specific-definition.xml)
 
 This script looks up the asset in question, retrieves its [asset category](https://help.liferay.com/hc/en-us/articles/360028820492-Defining-Categories-for-Content), and sets an initial `returnValue`. Then it checks to see if the asset has been marked with the *legal* category. If not it goes through *Content Review* (the content-review task in the workflow), and if it does it goes through *Legal Review* (the legal-review task in the workflow).
 

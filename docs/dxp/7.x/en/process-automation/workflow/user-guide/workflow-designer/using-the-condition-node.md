@@ -79,6 +79,10 @@ Follow the steps below:
 
 The new workflow has been created.
 
+```tip::
+   The `returnValue` variable is the variable that points from the condition to a transition, and its value must match a valid transition in the workflow definition.
+```
+
 ## Additional Information
 
 * [Managing Workflows](../managing-workflows.md)
