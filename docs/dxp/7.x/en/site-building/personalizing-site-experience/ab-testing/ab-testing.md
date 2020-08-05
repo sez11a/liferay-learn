@@ -4,8 +4,9 @@
    Available for Liferay DXP 7.2 SP1+.
 ```
 
-A/B Testing lets you show different versions of your site randomly to different users to determine which version is more effective. You maintain the current content and design of your webpage for the majority of the visitors, while providing an alternative *test variant*---a customization
-of the Experience you want to optimize---for a selected group of them. The current page and page variant(s) are then tested to determine which version performs better for a given goal (bounce rate, clicks, etc.). For example, a Marketing team for a bank can create an A/B Test for an underperforming credit card advertisement page to see if a page redesign can improve sales. If after comparing the clickthrough rate for the two pages they find that the page redesign is more effective, they can publish it to replace the original page.
+A/B Testing displays different versions of your site randomly to different users so you can determine which version is more effective. You maintain the current content and design of your web page for the majority of the visitors, while providing an alternative *test variant*---a customization of the experience you want to optimize---for a selected group of them. The current page and page variant(s) are then tested to determine which version performs better for a given goal (bounce rate, clicks, etc.). 
+
+For example, a bank can create an A/B Test for an under-performing credit card advertisement page to see if a redesign improves sales. If after comparing the clickthrough rate for the two pages, the page redesign is more effective, they can publish it to replace the original page.
 
 To run A/B Tests, you must have your Liferay DXP instance connected to Liferay Analytics Cloud. Liferay Analytics Cloud shares this workflow with Liferay DXP:
 
