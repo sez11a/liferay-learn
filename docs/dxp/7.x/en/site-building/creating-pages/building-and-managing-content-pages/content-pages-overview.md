@@ -2,24 +2,35 @@
 
 The default type of page used in Liferay DXP is a Content Page. The Content Page editing UI provides access to many different drag-and-drop elements (Fragments and Widgets) that are available for immediate use with minimal configuration. Continue reading to get an overview of the Content Pages UI. See [Building Content Pages](./building-content-pages.md) to jump directly in to building a Content Page.
 
-The Content Page sidebar contains two different groups of elements that you can drag-and-drop to build your content:
+The Content Page sidebar contains these elements for editing and collaborating on your Content Page:
 
-- Fragments
+![The Content Page sidebar includes the different elements you can add to your content](./content-pages-overview/images/07v.png)
+
+|  | Element Name |
+| --- | --- |
+| ![Fragments and Widgets](../../../images/icon-view-type-cards.png) | [Fragments and Widgets](#fragments-and-widgets) |
+| ![Contents](../../../images/icon-list-ul.png) | [Contents](#contents) |
+| ![Page Structure](../../../images/icon-pages-tree.png) | [Page Structure](#page-structure) |
+| ![Page Design Options](../../../images/icon-format.png) | [Page Design Options](##page-design-options) |
+| ![Comments](../../../images/icon-comments-w.png) | [Comments](#comments) |
+
+## Fragments and Widgets
+
+Fragments and Widgets are two different groups of elements that you can drag-and-drop to build your content.
+
+- [Fragments](#fragments)
     
     Fragments can have editable elements, such as [text](./building-content-pages.md#editing-text), [images](./building-content-pages.md#editing-an-image), or [links](./building-content-pages.md#editing-a-hyperlink), that you can replace with custom content. You can also [map these elements](./building-content-pages.md#mapping-content) to content that is already available on the site itself. For more information on developing these elements, see [Fragment Specific Tags](../../developer-guide/developing-page-fragments/fragment-specific-tags-reference.md).
 
     ![The Fragments panel provides a list of Fragments that can be added inside the page editor.](./content-pages-overview/images/01v.png)
 
-- Widgets
+- [Widgets](#widgets)
 
-    Widgets are applications and tools available out-of-the-box that you can add to the page. There are some limitations to using Widgets on Content Pages. See [Using Widgets on Content Pages](./using-widgets-on-a-content-page.md) for more information.
+    Widgets are applications and tools available out-of-the-box that you can add to the page.
     
     ![The Widgets panel provides a list of Widgets that can be added inside the page editor.](./content-pages-overview/images/02v.png)
     
-    ```note::
-      While portlets are rendered according to `render-weight <https://docs.liferay.com/ce/portal/7.3-latest/definitions/liferay-portlet-app_7_3_0.dtd.html#render-weight>`_ on Widget Pages, that is not true for Content Pages. Portlets are rendered in the order they appear on the page on Content Pages (i.e. left to right, top to bottom).
-    ```
-## Fragments
+### Fragments
 
 You can find the following Fragments under the Content Page sidebar:
 
@@ -30,7 +41,7 @@ You can find the following Fragments under the Content Page sidebar:
 - [Footers](#footers)
 - [Navigation Bars](#navigation-bars)
 
-### Layout Elements
+#### Layout Elements
 
 The Layout Elements section contains two Fragments:
 
@@ -39,24 +50,55 @@ The Layout Elements section contains two Fragments:
 
     ![The Layouts panel contains layouts for organizing Fragments.](content-pages-overview/images/03v.png)
 
-### Basic Components
+#### Basic Components
 
 Basic Components are small design elements or pieces that add functionality to the page. A Component might be an image with formatting or a block of text with styling pre-applied. Components work together to build pages piece by piece.
 
-![Here are several out of the box components arranged in a Layout.](./content-pages-overview/images/04v.png)
+![Several out of the box components arranged in a grid layout.](./content-pages-overview/images/04v.png)
 
-### Content Display
+#### Content Display
 
 You can display a single existing web content, blog entry, or document by adding a Content Fragment from the *Content Display* panel. See [Using the Content Display Fragment](./using-fragments.md#using-the-content-fragment) for more information.
 
-### Featured Content
+#### Featured Content
 
-### Footers
+The Featured Content panel contains complete Fragments (composed of multiple components) that can be immediately used and customized as soon as they are added to a page. A large banner image with a text overlay and customizable CTA (Call to Action) is an example of a Fragment that is ready for immediate use.
+<!-- An image with better text contrast would probably be a better example here - to help the image / text / CTA button stand out from one another more. -->
+![A Section named Banner being displayed while editing a Content Page.](./content-pages-overview/images/06v.png)
 
-### Navigation Bars
+#### Footers
 
-## Widgets
+The *Footers* panel includes Fragments that you can add as the Footer of the page. See [Master Pages](../defining-headers-and-footers/master-page-templates.md) for their use.
 
+#### Navigation Bars
+
+The *Navigation Bars* panel includes Fragments that you can add as the Header of the page. See [Master Pages](../defining-headers-and-footers/master-page-templates.md) for their use.
+
+### Widgets
+
+See [Using Widgets on Content Pages](./using-widgets-on-a-content-page.md) for more information on how to use Widgets for your Content Page.
+    
+   ```note::
+   While portlets are rendered according to `render-weight <https://docs.liferay.com/ce/portal/7.3-latest/definitions/liferay-portlet-app_7_3_0.dtd.html#render-weight>`_ on Widget Pages, that is not true for Content Pages. Portlets are rendered in the order they appear on the page on Content Pages (i.e. left to right, top to bottom).
+```
+
+## Contents
+
+The Contents panel provides a list of the web content that's used on the page. This includes content displayed in a widget and content mapped to content fields. Click the *Contents* button (![Contents](../../../images/icon-contents.png)) to open the Contents panel. From this panel, you can perform a variety of actions to edit and manage web content. See [Managing Web Content on Content Pages](./managing-web-content-on-content-pages.md) for more information.
+
+## Page Structure
+
+Page Structure provides a hierarchical view of the Fragments and their contents on the page. Click on a field in the page structure to highlight it on the page. Headers and Footers appear in the hierarchy as well for custom [Master Page Templates](../defining-headers-and-footers/master-page-templates.md), but they're disabled because they can only be modified from the Master Page Template.
+
+![Page Structure shows you a hierarchy of your page and contents.](./content-pages-overview/images/08v.png)
+
+## Page Design Options
+
+Click the *Look and Feel* icon (![Look and Feel](../../../images/icon-look-and-feel.png)) to change the Theme or manage other options for the page. These options are further explored in [Configuring Individual Pages](../page-settings/configuring-individual-pages.md#look-and-feel).
+
+## Comments
+
+You can comment on a Page Fragment to discuss changes and collaborate. Comments are disabled by default in Liferay DXP 7.2+, but Administrators can enable them. See [Using Fragment Comments](./using-fragment-comments.md) for more information.
 
 <!-- 
 ####################################################
