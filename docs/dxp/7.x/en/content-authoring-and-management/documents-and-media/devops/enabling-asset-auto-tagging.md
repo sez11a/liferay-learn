@@ -6,7 +6,7 @@
    Auto-tagging currently works only for images, text-based documents, text-based web content, and blog entries.
 ```
 
-Here, you'll learn how to enable asset auto-tagging in general. This is required prior to configuring auto-tagging for specific asset types, which is documented separately:
+This is required prior to configuring auto-tagging for specific asset types, which is documented separately:
 
 * [Auto Tagging Images](../../tags-and-categories/user-guide/auto-tagging-images.md)
 * [Auto Tagging Texts](../../tags-and-categories/user-guide/auto-tagging-texts.md)
