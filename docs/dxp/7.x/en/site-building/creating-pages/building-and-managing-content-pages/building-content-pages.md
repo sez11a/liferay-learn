@@ -5,13 +5,13 @@ Once you've [added a Content Page](../adding-pages/adding-a-page-to-a-site.md), 
 1. Open the Product Menu and, under the Site Menu, go to *Site Builder* &rarr; *Pages* to open the Site Builder.
 1. Click the Add Page button ![Add Page](../../../images/icon-plus.png)) at the level where you want to add the new page, and select *Add Page*.
 
-    ![Begin by adding your new Content Page.](building-content-pages/images/01v.png)
+    ![Begin by adding your new Content Page.](building-content-pages/images/01.png)
 
 1. Select the *Blank* template or one of the exiting templates.
 1. In the *Add Page* dialog, type your page's *Name*.
 1. Alternatively, click the Actions Menu (![Actions](../../../images/icon-actions.png)) of an existing Content Page and select *Edit*.
 
-    ![Edit an existing Content Page](building-content-pages/images/02v.png)
+    ![Edit an existing Content Page](building-content-pages/images/02.png)
 
 1. From the Content Page sidebar, select the *Fragments and Widgets* button (![Fragments and Widgets](../../../images/icon-cards2.png)) and start adding the Fragments and Widgets for your content.
 
@@ -187,15 +187,8 @@ When you create Content Pages, you can create different **Experiences** for user
 Content from Liferay Help Center follows
 ####################################################
 -->
+
 ## Liferay DXP 7.2 and Below
-
----
-header-id: content-page-elements
----
-
-# Content Page Elements
-
-[TOC levels=1-4]
 
 Content Pages, like Widget Pages, are built by dragging and dropping elements
 onto the page and then configuring the way those elements appear. There are
@@ -206,13 +199,13 @@ A section fills the entire width of the page. Sections can be thought of as
 *complete* Fragments that serve a purpose by themselves. A large banner image
 with a text overlay is an example of something you might build as a section.
 
-![Figure 1: A Section named *Banner* being displayed while editing a Content Page.](../../../../../images/content-page-section-example.png)
+![Figure 1: A Section named *Banner* being displayed while editing a Content Page.](./building-content-pages/images-v/content-page-section-example.png)
 
 **Layouts** are special Sections that define spaces where you can add fragments
 or widgets. Each layout you add fills the width of the page. You can add any
 number of layouts to the page.
 
-![Figure 2: A 3 Column and 1 Column layout stacked on top of each other.](../../../../../images/content-page-layout-example.png)
+![Figure 2: A 3 Column and 1 Column layout stacked on top of each other.](./building-content-pages/images-v/content-page-layout-example.png)
 
 **Components** are small design elements or pieces that add functionality to the
 page. A component might be an image with formatting or a block of text with
@@ -221,12 +214,11 @@ you add a component outside an existing Layout, a one column layout is
 automatically added to contain the Component. While Sections should be complete
 by themselves, Components work together to build pages piece by piece.
 
-![Figure 3: Here are several of Liferay's out of the box components arranged in the layout you saw previously.](../../../../../images/content-page-component-example.png)
+![Figure 3: Here are several of Liferay's out of the box components arranged in the layout you saw previously.](./building-content-pages/images-v/content-page-component-example.png)
 
 @product@ ships with a plethora of Layouts, Sections, and Components to use to
 build pages, and a
-[web developer can create their own Fragments](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments)
-to add to these. 
+[web developer can create their own Fragments](https://help.liferay.com/hc/en-us/articles/360032884532-Creating-Page-Fragments) to add to these. 
 
 ## Editable Elements
 
@@ -238,18 +230,18 @@ You can also map these elements to content. You can set the *Content* for the
 element (web content article, document, or blog) and choose its applicable
 *Field* to display (e.g., title, author name, tags, etc.). You can configure
 this by selecting the element's *Map* button
-(![Map](../../../../../images/icon-map.png)).
+(![Map](../../../images/icon-map.png)).
 
 | **Note:** Many mapping improvements were released in Liferay DXP 7.2 SP1+ and
 | Liferay Portal 7.2 GA2+. For example, mapping editables to text/URL fields of
 | existing content and mapping Fragment background images to image fields of
 | existing content. You can also map
-| [custom fields](/docs/7-2/user/-/knowledge_base/u/custom-fields). To ensure
+| [custom fields](https://help.liferay.com/hc/en-us/articles/360028818872-Custom-Fields). To ensure
 | you leverage the latest editable element mapping features, upgrade to these
 | versions.
 
 For more information on developing these elements, see 
-[Fragment Specific Tags](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags).
+[Fragment Specific Tags](https://help.liferay.com/hc/en-us/articles/360029147771-Fragment-Specific-Tags).
 
 Now you'll learn about each editable type.
 
@@ -259,7 +251,7 @@ Editable text can be plain or rich text. Plain text has no special styling. Rich
 text enables text styles, typographical emphasis, alignment, and list
 formatting.
 
-![Figure 4: The rich text editor provides a simple WYSIWYG interface with a number of formatting options.](../../../../../images/content-page-rich-text-editor.png)
+![Figure 4: The rich text editor provides a simple WYSIWYG interface with a number of formatting options.](./building-content-pages/images-v/content-page-rich-text-editor.png)
 
 ### Editable Images
 
@@ -270,9 +262,9 @@ To edit an image from the Content Page editor,
 
 1.  Click on the image you want to replace.
 
-2.  Click ![Image Properties](../../../../../images/icon-edit.png).
+2.  Click ![Image Properties](../../../images/icon-edit.png).
 
-![Figure 5: Editing an image allows you to enter a URL, select an image from Documents and Media or set a link for the image.](../../../../../images/fragment-image-editor.png)
+![Figure 5: Editing an image allows you to enter a URL, select an image from Documents and Media or set a link for the image.](./building-content-pages/images-v/fragment-image-editor.png)
 
 From here, you can click *Select* to upload an image from Docs and Media or
 define an image URL. Click *Clear* to reset the image. You can also specify an
@@ -285,7 +277,7 @@ the Layout, select *Layout Background Image*, and define the image to display.
 | SP1+ and Liferay Portal 7.2 GA2+.
 
 For more information on developing editable images, see 
-[Making Images Editable](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags#making-images-editable).
+[Making Images Editable](https://help.liferay.com/hc/en-us/articles/360029147771-Fragment-Specific-Tags#making-images-editable).
 
 You can also define a link for your image. You'll learn about this next.
 
@@ -298,11 +290,11 @@ To edit a link from the content page editor,
 
 1.  Click on the link or button that you want to edit.
 
-2.  Click on ![Edit](../../../../../images/icon-edit.png) to edit the link text.
+2.  Click on ![Edit](../../../images/icon-edit.png) to edit the link text.
 
-3.  Click on ![Link](../../../../../images/icon-link.png) to edit the link properties.
+3.  Click on ![Link](../../../images/icon-link.png) to edit the link properties.
 
-4.  Click on ![Map](../../../../../images/icon-map.png) to edit the link mapping
+4.  Click on ![Map](../../../images/icon-map.png) to edit the link mapping
     (described earlier).
 
 From the Link Properties popup, you can define the following link options:
@@ -331,7 +323,7 @@ Some of the content fields include
 - Basic Web Content
 
 For more information on developing editable links, see 
-[Creating Editable Links](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags#creating-editable-links).
+[Creating Editable Links](https://help.liferay.com/hc/en-us/articles/360029147771-Fragment-Specific-Tags#creating-editable-links).
 
 Next you'll learn about the Content Page Editing Interface.
 
