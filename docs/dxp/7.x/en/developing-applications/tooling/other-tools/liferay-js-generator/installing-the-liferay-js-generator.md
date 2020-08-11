@@ -1,12 +1,12 @@
 # Installing the Liferay JS Generator
 
-```note::
-    To use the Liferay JS Generator, you must have the Liferay JS Portlet Extender activated in your Portal instance. It's activated by default. You can confirm this by opening the Control Menu, navigating to the *App Manager*, and searching for `com.liferay.frontend.js.portlet.extender`.
-```
-
 Follow these steps to install the Liferay JS Generator:
 
-1. Install [Node.js](http://nodejs.org/). Note that Node Package Manager (npm) is installed with this as well. You'll use npm to install the remaining dependencies and generator and [configure your npm environment](../../../../site-building/developer-guide/developing-themes/setting-up-your-npm-environment-reference.md).
+```note::
+To use the Liferay JS Generator, you must have the Liferay JS Portlet Extender activated in your Portal instance. It's activated by default. You can confirm this by opening the Control Menu, navigating to the *App Manager*, and searching for ``com.liferay.frontend.js.portlet.extender``.
+```
+
+1. Install [Node.js](http://nodejs.org/). Make sure the Node Package Manager (npm) is installed as well. You'll use npm to install the remaining dependencies and generator and [configure your npm environment](../../../../site-building/developer-guide/developing-themes/setting-up-your-npm-environment-reference.md).
 
 1. Install [Yeoman](http://yeoman.io/) for the generator:
 
@@ -22,7 +22,7 @@ Follow these steps to install the Liferay JS Generator:
 
 ## Generator and Sub-generator Commands
 
-The JS Generator has several sub-generators available that you can use. The available sub-generators are listed in the table below:
+The JS Generator has several sub-generators:
 
 | command | description | Generator Version |
 | --- | --- | --- |

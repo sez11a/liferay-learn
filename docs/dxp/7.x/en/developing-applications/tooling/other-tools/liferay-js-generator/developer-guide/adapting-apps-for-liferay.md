@@ -20,7 +20,7 @@ First, deploy an example adapted application:
     curl https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.x/en/developing-applications/tooling/other-tools/liferay-js-generator/developer-guide/adapting-apps-for-liferay/liferay-a3w9.zip
 
     unzip liferay-a3w9.zip
-    cd liferay-a3w9/react-guestbook-adapted
+    cd liferay-a3w9/a3w9-web
     ```
 
 1. Adapt the app with the [Liferay JS Toolkit's](https://github.com/liferay/liferay-js-toolkit) [Liferay JS Generator's](./installing-the-liferay-js-generator.md) [Adapt subtarget](../installing-the-liferay-js-generator.md#generator-and-sub-generator-commands):
@@ -63,7 +63,7 @@ First, deploy an example adapted application:
 1. Build the adapted app JAR:
 
     ```bash
-    cd react-guestbook-adapted
+    cd a3w9-web
     npm run build:liferay
     ```
 
@@ -71,7 +71,7 @@ First, deploy an example adapted application:
 
     ```bash
     cd build.liferay
-    docker cp react-guestbook-adapted-0.1.0.jar docker-container-name:/path/to/osgi/modules/
+    docker cp a3w9-web-0.1.0.jar docker-container-name:/opt/liferay/deploy
     ```
 
 1. Confirm the deployment to the Liferay Docker container console. The log message should appear in the Docker console. The example produces the log message below:
@@ -79,16 +79,16 @@ First, deploy an example adapted application:
     ```bash
     INFO [fileinstall-/opt/liferay/osgi/modules][BundleStartStopLogger:39] STARTED react-guestbook-adapted_0.1.0 [1147]
     ```
-  
+
 1. Verify that the app is available. Open your browser to `https://localhost:8080`. Click the Edit button (![Edit button](../../../../../images/icon-edit-pencil.png)) (Add button (![Add button](../../../../../images/icon-add-app.png)) if on Liferay DXP 7.2) in the Control Menu and add the widget to the page. Please see the [7.3](../../../../../site-building/creating-pages/building-and-managing-content-pages/using-widgets-on-a-content-page.md#adding-widgets-on-content-pages) or [7.2](../../../../../site-building/creating-pages/using-widget-pages/adding-widgets-to-a-page.md) instructions for details. The example is listed as *react-guestbook-adapted* under the *Sample* category.
-  
+
     ![The adapted app runs inside Liferay DXP.](./adapting-apps-for-liferay/images/01.png)
 
 ## Adapted Application Requirements and Processing
 
-To adapt an application it must meet these requirements for each framework:
+Adapted applications must meet these requirements: 
 
-* **Angular CLI projects** must use `app-root` as the application's Dom selector.
+* **Angular CLI projects** must use `app-root` as the application's DOM selector.
 * **creact-react-app projects** must use `ReactDom.render()` call in the entry point with a `document.getElementById()` parameter.
 * **Vue CLI projects** must use `#app` as the application's DOM selector.
 
@@ -100,7 +100,7 @@ The adapt process automatically adds a few npm scripts to the project's `package
 
 Now that you understand the adapt process, you can update the adapted app and redeploy to see the changes.
 
-1. Open the `react-guestbook-adapted/src/view-guestbook.js` file and update the Table's head to be dark with the class below:
+1. Open the `a3w9-web/src/view-guestbook.js` file and update the Table's head to be dark with the class below:
 
     ```html
     <thead className="thead-dark">
@@ -109,15 +109,15 @@ Now that you understand the adapt process, you can update the adapted app and re
 1. Build the adapted app's JAR as you did before:
 
     ```bash
-    cd react-guestbook-adapted
+    cd a3w9-web
     npm run build:liferay
     ```
 
 1. Copy the adapted application's JAR to the Docker container:
-  
+
     ```bash
     cd build.liferay
-    docker cp react-guestbook-adapted-0.1.0.jar docker-container-name:/path/to/osgi/modules/
+    docker cp react-guestbook-adapted-0.1.0.jar docker-container-name:/opt/liferay/osgi/modules/
     ```
 
 1. Refresh the Home Page to view the changes.
