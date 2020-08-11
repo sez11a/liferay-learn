@@ -1,11 +1,6 @@
 # Adapting Existing Apps to Run on Liferay DXP
 
-Adapting your React, Angular, or VueJS application with the Liferay JS Toolkit is the fastest way to get it running in Liferay DXP. While this process can be quick, it does have some [limitations](../liferay-js-generator-intro.md#adapt-existing-applications). If you want to integrate with Liferay DXP fully and have access to all the [features and benefits](TODO:creating-and-bundling-javascript-widgets-with-javascript-tooling) that it provides, migrate your [React](../../../../developing-a-single-page-application/using-react.md)|[Angular](../../../../developing-a-single-page-application/using-angular.md)|[VueJS](../../../../developing-a-single-page-application/using-vuejs.md) project to a true Liferay JS Toolkit project instead.
-
-Here you'll learn how to adapt your external React, Angular, or VueJS application to run on Liferay DXP:
-
-1. [Deploy an Adapted React Application](#deploy-an-adapted-react-application)
-1. [Modify the React Application and Redeploy](#modify-the-react-app-and-redeploy)
+Adapting your React, Angular, or VueJS application with the Liferay JS Toolkit is the fastest way to get it running in Liferay DXP. While this process can be quick, it does have some [limitations](../liferay-js-generator.md#adapt-existing-applications). If you want to integrate with Liferay DXP fully and have access to all the [features and benefits](TODO:creating-and-bundling-javascript-widgets-with-javascript-tooling) that it provides, migrate your [React](../../../../developing-a-single-page-application/using-react.md), [Angular](../../../../developing-a-single-page-application/using-angular.md), or [VueJS](../../../../developing-a-single-page-application/using-vuejs.md) project to a true Liferay JS Toolkit project instead.
 
 This example uses a Docker image with a fresh install of Liferay DXP 7.3.
 
@@ -73,12 +68,12 @@ First, deploy an example adapted application:
     ```
 
 1. Copy the adapted application's JAR to the Docker container:
-  
+
     ```bash
     cd build.liferay
     docker cp react-guestbook-adapted-0.1.0.jar docker-container-name:/path/to/osgi/modules/
     ```
-  
+
 1. Confirm the deployment to the Liferay Docker container console. The log message should appear in the Docker console. The example produces the log message below:
 
     ```bash
