@@ -1,12 +1,16 @@
 # Using Widgets on a Content Page
 
-The Widgets section functions just like the [*Add* menu on a Widget Page](../using-widget-pages/adding-widgets-to-a-page.md). The full list of available widgets is displayed, and you can add them to the page. The main difference is that only the main configuration options for Widgets are available on Content Pages.
+The *Widgets* tab in the *Fragments and Widgets* section functions just like the [*Add* menu on a Widget Page](../using-widget-pages/adding-widgets-to-a-page.md). The full list of available widgets is displayed, and you can add them to the page. The main difference is that only the main configuration options for Widgets are available on Content Pages.
+
+![The Fragments panel provides a list of Fragments that can be added inside the page editor.](./using-widgets-on-content-pages/images/03.png)
 
 ## Adding Widgets on Content Pages
 
 Follow these steps to add a widget to a Content Page:
 
-1. While [building the Content Page](./building-content-pages.md), open the [Widgets panel](./content-pages-overview.md#widgets) and either browse through the categories of available widgets until you find the one you want, or you can search for widgets by name.
+1. While [building the Content Page](./building-content-pages.md), open the [Fragments and Widgets Section](./content-pages-overview.md#fragments-and-widgets).
+1. Select the *Widgets* tab.
+1. Browse through the categories of available widgets until you find the one you want, or search for widgets by name.
 1. Drag the widget to the column and row of the layout where you want to place it.
 
 A widget can be a wiki display or a dynamic publishing tool like the Asset Publisher. The content you display with widgets can be long-form text or an image gallery, or anything in between.
@@ -16,15 +20,12 @@ A widget can be a wiki display or a dynamic publishing tool like the Asset Publi
 Follow these steps to configure a Widget on a Content Page:
 
 1. Hover over the widget.
-1. Open the Options Menu (![Options Menu](../../../images/icon-app-options.png)) and select *Configuration*. From here, you have several options, depending on the widget.
+1. Open the Options Menu (![Options Menu](../../../images/icon-app-options.png)) and select *Configuration*.
 
-    ![You can configure widgets on Content Pages through their Options Menu.](./using-widgets-on-content-pages/images/01.png)
+    ![You can configure widgets on Content Pages through their Options Menu.](./using-widgets-on-content-pages/images/01.gif)
 
-1. Click *Save* to apply the changes.
-
-```note::
-  Since Liferay Portal CE 7.3 GA2, you also configure permissions for the widget by selecting *Permissions* from the widget's Options Menu.
-```
+1. Configure the options for your widget.
+1. Click *Save*.
 
 ## Configuring Widget Permissions on Content Pages
 
@@ -32,10 +33,10 @@ Since Liferay Portal CE 7.3 GA2, you can configure permissions for widgets from 
 
 1. Hover over the widget.
 1. Open the Options Menu (![Options Menu](../../../images/icon-app-options.png)) and select *Permissions*.
-1. Check/uncheck the permissions for the Roles in the new window that appears.
-1. Click *Save* to apply the changes.
+1. Check or uncheck the permissions for the Roles in the new window that appears.
+1. Click *Save*.
 
-![You can configure widget permissions on Content Pages through their Options Menu.](./using-widgets-on-content-pages/images/02.png)
+    ![You can configure widget permissions on Content Pages through their Options Menu.](./using-widgets-on-content-pages/images/02.png)
 
 ```note::
   When you create a page based on a `page template <../adding-pages/creating-a-page-template.md>`_, the permissions are copied too. Permissions for a Master Page are set in the `Master Page <../defining-headers-and-footers/managing-master-pages.md>`_, not in the pages.

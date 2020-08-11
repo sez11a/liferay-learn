@@ -10,7 +10,7 @@ The Content Page sidebar contains these elements for editing and collaborating o
 
 ![The Content Page sidebar includes the different elements you can add to your content](./content-pages-overview/images/07v.png)
 
-|  | Element Name |
+|  |  |
 | --- | --- |
 | ![Fragments and Widgets](../../../images/icon-cards2.png) | [Fragments and Widgets](#fragments-and-widgets) |
 | ![Contents](../../../images/icon-list-ul.png) | [Contents](#contents) |
@@ -23,7 +23,7 @@ The Content Page sidebar contains these elements for editing and collaborating o
 Fragments and Widgets are two different groups of elements that you can drag-and-drop to build your content.
 
 - [Fragments](#fragments)
-    
+
     Fragments can have editable elements, such as [text](./building-content-pages.md#editing-text), [images](./building-content-pages.md#editing-an-image), or [links](./building-content-pages.md#editing-a-hyperlink), that you can replace with custom content. You can also [map these elements](./building-content-pages.md#mapping-content) to content that is already available on the site itself. For more information on developing these elements, see [Fragment Specific Tags](../../developer-guide/developing-page-fragments/fragment-specific-tags-reference.md).
 
     ![The Fragments panel provides a list of Fragments that can be added inside the page editor.](./content-pages-overview/images/01v.png)
@@ -31,9 +31,9 @@ Fragments and Widgets are two different groups of elements that you can drag-and
 - [Widgets](#widgets)
 
     Widgets are applications and tools available out-of-the-box that you can add to the page.
-    
+
     ![The Widgets panel provides a list of Widgets that can be added inside the page editor.](./content-pages-overview/images/02v.png)
-    
+
 ### Fragments
 
 You can find the following Fragments under the Content Page sidebar:
@@ -66,7 +66,7 @@ You can display a single existing web content, blog entry, or document by adding
 
 #### Featured Content
 
-The Featured Content panel contains complete Fragments (composed of multiple components) that can be immediately used and customized as soon as they are added to a page. A large banner image with a text overlay and customizable CTA (Call to Action) is an example of a Fragment that is ready for immediate use.
+The *Featured Content* panel contains complete Fragments (composed of multiple components) that can be immediately used and customized as soon as they are added to a page. A large banner image with a text overlay and customizable CTA (Call to Action) is an example of a Fragment that is ready for immediate use.
 <!-- An image with better text contrast would probably be a better example here - to help the image / text / CTA button stand out from one another more. -->
 ![A Section named Banner being displayed while editing a Content Page.](./content-pages-overview/images/06v.png)
 
@@ -81,34 +81,35 @@ The *Navigation Bars* panel includes Fragments that you can add as the Header of
 ### Widgets
 
 See [Using Widgets on Content Pages](./using-widgets-on-a-content-page.md) for more information on how to use Widgets for your Content Page.
-    
+
    ```note::
    While portlets are rendered according to `render-weight <https://docs.liferay.com/ce/portal/7.3-latest/definitions/liferay-portlet-app_7_3_0.dtd.html#render-weight>`_ on Widget Pages, that is not true for Content Pages. Portlets are rendered in the order they appear on the page on Content Pages (i.e. left to right, top to bottom).
 ```
 
 ## Contents
 
-The Contents panel provides a list of the web content that's used on the page. This includes content displayed in a widget and content mapped to content fields. Click the *Contents* button (![Contents](../../../images/icon-contents.png)) to open the Contents panel. From this panel, you can perform a variety of actions to edit and manage web content. See [Managing Web Content on Content Pages](./managing-web-content-on-content-pages.md) for more information.
+The *Contents* panel provides a list of the web content that's used on the page. This includes content displayed in a widget and content mapped to content fields. Click the *Contents* button (![Contents](../../../images/icon-contents.png)) to open the *Contents* panel. From this panel, you can perform a variety of actions to edit and manage web content. See [Managing Web Content on Content Pages](./managing-web-content-on-content-pages.md) for more information.
 
 ## Page Structure
 
-Page Structure provides a hierarchical view of the Fragments and their contents on the page. Click on a field in the page structure to highlight it on the page. Headers and Footers appear in the hierarchy as well for custom [Master Page Templates](../defining-headers-and-footers/master-page-templates.md), but they're disabled because they can only be modified from the Master Page Template.
+*Page Structure* provides a hierarchical view of the Fragments and their contents on the page. Click on a field in the page structure to highlight it on the page. Headers and Footers appear in the hierarchy as well for custom [Master Page Templates](../defining-headers-and-footers/master-page-templates.md), but they're disabled because they can only be modified from the Master Page Template.
 
 ![Page Structure shows you a hierarchy of your page and contents.](./content-pages-overview/images/08v.png)
 
 ## Page Design Options
 
-Click the *Look and Feel* icon (![Look and Feel](../../../images/icon-look-and-feel.png)) to change the Theme or manage other options for the page. These options are further explored in [Configuring Individual Pages](../page-settings/configuring-individual-pages.md#look-and-feel).
+Click the *Look and Feel* icon (![Look and Feel](../../../images/icon-look-and-feel.png)) to change the theme or manage other options for the page. These options are further explored in [Configuring Individual Pages](../page-settings/configuring-individual-pages.md#look-and-feel).
 
 ## Comments
 
-You can comment on a Page Fragment to discuss changes and collaborate. Comments are disabled by default in Liferay DXP 7.2+, but Administrators can enable them. See [Using Fragment Comments](./using-fragment-comments.md) for more information.
+You can comment on a Page Fragment to discuss changes and collaborate. Comments are disabled by default, but Administrators can enable them. See [Using Fragment Comments](./using-fragment-comments.md) for more information.
 
 <!-- 
 ####################################################
 Content from Liferay Help Center follows
 ####################################################
 -->
+
 ## Liferay DXP 7.2 and Below
 
 <!-- This content belongs to the "Content Page Management Interface" article in Liferay Help Center. -->
@@ -166,7 +167,7 @@ background image, and spacing. Since these options are available to marketers
 and administrators editing a page, the options are limited, and the color
 palette can be set by the Fragment developer.
 
-![Figure 3: The Section managment tool provide powerful tools, but with the training wheels still on.](./content-pages-overview/images-v/content-page-sections-config.png)
+![Figure 3: The Section management tool provide powerful tools, but with the training wheels still on.](./content-pages-overview/images-v/content-page-sections-config.png)
 
 ### Section Builder
 
@@ -247,7 +248,6 @@ covered in more detail in
 ![Figure 9: The title bar has several tools built into it.](./content-pages-overview/images-v/content-page-edit-title-bar.png)
 
 Great! Now you know how to use the content page interface!
-
 
 ## Related Information
 

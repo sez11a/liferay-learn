@@ -1,5 +1,9 @@
 # Building Content Pages
 
+```note::
+   This information applies to Liferay DXP 7.3+. For previous Liferay DXP versions, see [Liferay DXP 7.2 and Below](#liferay-dxp-7.2-and-below).
+```
+
 Once you've [added a Content Page](../adding-pages/adding-a-page-to-a-site.md), you may begin building your page by adding and configuring the various [Content Page elements](./content-pages-overview.md).
 
 1. Open the Product Menu and, under the Site Menu, go to *Site Builder* &rarr; *Pages* to open the Site Builder.
@@ -132,7 +136,7 @@ You can adjust the columns width to create a more custom layout:
 You can duplicate a Fragment (Component, Section, Row, etc.) to save time:
 
 1. Click the Fragment you want to copy.
-1. Click the Actions Menu (![Image Properties](../../../images/icon-app-options.png)) for the container and select *Duplicate*.
+1. Click the Options Menu (![Image Properties](../../../images/icon-app-options.png)) for the container and select *Duplicate*.
 
     ![You can duplicate Fragments on the page.](./building-content-pages/images/10.png)
 
@@ -149,7 +153,7 @@ You can duplicate a Fragment (Component, Section, Row, etc.) to save time:
 You can save customized Fragment compositions (Section or Row layout Fragments) as new Fragments, so you can reuse them in your other Fragment-based pages:
 
 1. Click the Row or Section composition you want to save.
-1. Click the Actions Menu (![Image Properties](../../../images/icon-app-options.png)) for the container and select *Save Composition*.
+1. Click the Options Menu (![Image Properties](../../../images/icon-app-options.png)) for the container and select *Save Composition*.
 
       ![Click the Row or Section to save your composition.](./building-content-pages/images/11.png)
 
@@ -178,7 +182,9 @@ Compositions can be exported or imported between sites just as any other Fragmen
 
 ### Mapping Content
 
-You can also map these elements to existing content. You can set the *Content* for the element (web content article, document, or blog) and choose its applicable *Field* to display (e.g., title, author name, tags, etc.). You can configure this by selecting the element's *Map* button (![Map](../../../images/icon-map.png)).
+You can also map these elements to existing content. You can set the *Content* for the element (web content article, document, or blog) and choose its applicable *Field* to display (e.g., title, author name, tags, etc.).
+
+To map your elements to existing content:
 
 1. Click the Grid element you want to map.
 1. In the Content Page sidebar, under the *Mapping* tab, click the *Add* button (![Map](../../../images/icon-plus.png)).
@@ -194,6 +200,8 @@ Content from Liferay Help Center follows
 -->
 
 ## Liferay DXP 7.2 and Below
+
+<!-- This content belongs to the "Content Page Elements" article in Liferay Help Center. -->
 
 Content Pages, like Widget Pages, are built by dragging and dropping elements
 onto the page and then configuring the way those elements appear. There are
