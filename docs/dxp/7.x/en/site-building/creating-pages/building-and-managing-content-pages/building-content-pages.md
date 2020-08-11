@@ -27,7 +27,7 @@ Once you've [added a Content Page](../adding-pages/adding-a-page-to-a-site.md), 
     * [Editing Text Inline](#editing-text-inline)
     * [Editing Hyperlinks](#editing-hyperlinks)
     * [Editing Images](#editing-images)
-    * [Configuring the Grid Layout](#configuring-grid-columns)
+    * [Configuring the Grid Layout](#configuring-the-grid-layout)
     * [Copying a Fragment](#copying-a-fragment)
     * [Saving a Fragment Composition](#saving-a-fragment-composition)
     * [Mapping Content](#mapping-content)
@@ -42,7 +42,7 @@ Once you've [added a Content Page](../adding-pages/adding-a-page-to-a-site.md), 
 
 ## Configuring Elements on a Content Page
 
-Many elements that can be added to a content page can be configured and customized. When you clic on an element, the Content Page sidebar shows the available configuration options for the element.
+Many elements that can be added to a content page can be configured and customized. When you click on an element, the Content Page sidebar shows the available configuration options for the element.
 
 ### Setting the Layout Style
 
@@ -51,11 +51,11 @@ You can set different style options for your Content Page layout, like backgroun
 1. Click the layout element you want to change.
 1. In the Content Page sidebar, under the *Styles* tab, configure the style options for your content:
 
-    - Content Display and Container Width
-    - Margin
-    - Padding
-    - Background and Border color
-    - Effects
+    * Content Display and Container Width
+    * Margin
+    * Padding
+    * Background and Border color
+    * Effects
 
       ![You can set different style option for your layout.](./building-content-pages/images/05.png)
 
@@ -82,7 +82,7 @@ You can set different style options for your Content Page layout, like backgroun
 
         ![You can modify editable links.](./building-content-pages/images/08.png)
 
-    When you choose the *From Content Field* option for your link, you can configure the followin options: 
+    When you choose the *From Content Field* option for your link, you can configure the following options:
 
     * *Content:* set the content type
     * *Field:* set the field to display for the selected content. Some of the available content fields are:
@@ -97,7 +97,7 @@ You can set different style options for your Content Page layout, like backgroun
         * Last Editor Name
         * Author Name
         * Basic Web Content
-    
+
     * *Target*: set where to open the linked content.
 
 ### Editing Images
@@ -105,22 +105,22 @@ You can set different style options for your Content Page layout, like backgroun
 1. Click on the image you want to edit.
 1. In the Content Page sidebar, you can configure the image using three different options:
 
-    - *Link*: enter the URL for your image.
-    - *Image*: select an image from your computer or from the Documents and Media library.
-    - *Mapping*: select an image by [mapping content](#mapping-content).
+    * *Link*: enter the URL for your image.
+    * *Image*: select an image from your computer or from the Documents and Media library.
+    * *Mapping*: select an image by [mapping content](#mapping-content).
 
     ![Editing an image allows you to enter a URL, select an image from Documents and Media or set a link for the image.](./building-content-pages/images/09.png)
 
-You can also specify a background image for a layout by [setting the layout style](#setting-the-layout-style) or provide a link for your image by [editing hyperlinks](#editing-hyperlink).
+You can also specify a background image for a layout by [setting the layout style](#setting-the-layout-style) or provide a link for your image by [editing hyperlinks](#editing-hyperlinks).
 
 ### Configuring the Grid Layout
 
 1. Click the Grid element you want to configure.
-1. In the Content Page sidebar, under the *Styles* tab, select the style options.
+1. In the Content Page sidebar, under the *Styles* tab, select the style options for your content.
 1. Under the *Configuration* tab, select the *Number of Modules* (from 1 to 6) to specify the number of columns for the grid.
 1. Click *Show Gutter* to show the spacing between modules.
 
-You can adjust the width of the columns to create a more custom layout:
+You can adjust the columns width to create a more custom layout:
 
 1. Click on the Row to select it. A blue dot appears between each of the columns, indicating that they can be resized.
 1. Click one of the blue dots and drag to the left or right to adjust the size of the column.
@@ -129,10 +129,10 @@ You can adjust the width of the columns to create a more custom layout:
 
 ### Copying a Fragment
 
-You can duplicate a Fragment on the page (Component, Section, Row, etc.) to save time:
+You can duplicate a Fragment (Component, Section, Row, etc.) to save time:
 
 1. Click the Fragment you want to copy.
-1. Click the Action menu (![Image Properties](../../../images/icon-app-options.png)) for the container and select *Duplicate*.
+1. Click the Actions Menu (![Image Properties](../../../images/icon-app-options.png)) for the container and select *Duplicate*.
 
     ![You can duplicate Fragments on the page.](./building-content-pages/images/10.png)
 
@@ -149,16 +149,16 @@ You can duplicate a Fragment on the page (Component, Section, Row, etc.) to save
 You can save customized Fragment compositions (Section or Row layout Fragments) as new Fragments, so you can reuse them in your other Fragment-based pages:
 
 1. Click the Row or Section composition you want to save.
-1. Click the Action menu (![Image Properties](../../../images/icon-app-options.png)) for the container and select *Save Composition*.
+1. Click the Actions Menu (![Image Properties](../../../images/icon-app-options.png)) for the container and select *Save Composition*.
 
       ![Click the Row or Section to save your composition.](./building-content-pages/images/11.png)
 
 1. In the Save as Fragment dialog that appears, provide a name and other optional information:
 
-    - Fragment *Description* and *Thumbnail*.
-    - *Save Inline Content* option, for including inline content such as fragment entries (links, images, text, etc.)
-    - *Save Mapping Configuration* option, for including [mapped content](#mapping-content).
-    - *Collection* to save the Fragment.
+    * Fragment *Description* and *Thumbnail*.
+    * *Save Inline Content* option, for including inline content such as fragment entries (links, images, text, etc.)
+    * *Save Mapping Configuration* option, for including [mapped content](#mapping-content).
+    * *Collection* to save the Fragment.
 
       ![Provide the information for the Fragment composition in the dialog that appears.](./building-content-pages/images/12.png)
 
@@ -170,7 +170,7 @@ You can use the saved Fragment composition immediately using the Fragments sideb
 
 ![The saved Fragment composition can be used immediately.](./building-content-pages/images/13.png)
 
-Compositions can be exported/imported between sites just as any other Fragment.
+Compositions can be exported or imported between sites just as any other Fragment.
 
 ```note::
   The latest version of the `Liferay Fragments Toolkit <../../developer-guide/developing-page-fragments/using-the-fragments-editor.md>`_ supports creation, export/import, and preview of Fragment compositions.
@@ -178,9 +178,14 @@ Compositions can be exported/imported between sites just as any other Fragment.
 
 ### Mapping Content
 
-You can also map these elements to content. You can set the *Content* for the element (web content article, document, or blog) and choose its applicable *Field* to display (e.g., title, author name, tags, etc.). You can configure this by selecting the element's *Map* button (![Map](../../../images/icon-map.png)).
+You can also map these elements to existing content. You can set the *Content* for the element (web content article, document, or blog) and choose its applicable *Field* to display (e.g., title, author name, tags, etc.). You can configure this by selecting the element's *Map* button (![Map](../../../images/icon-map.png)).
 
-When you create Content Pages, you can create different **Experiences** for users based on User Segments. You can create a unique Experience on any Content Page for any existing User Segment. For more information, see the [Content Page Personalization guide](../../personalizing-site-experience/personalizing-site-experience.md).
+1. Click the Grid element you want to map.
+1. In the Content Page sidebar, under the *Mapping* tab, click the *Add* button (![Map](../../../images/icon-plus.png)).
+1. Select the content you want to map to your Content Page element.
+1. Select the *Field* of your content that you want to map.
+
+    ![You can map Content Page elements to existing content using the *Mapping* option](./building-content-pages/images/17.gif)
 
 <!-- 
 ####################################################
@@ -333,3 +338,4 @@ Next you'll learn about the Content Page Editing Interface.
 * [Developing a Page Fragment](../../developer-guide/developing-page-fragments/developing-fragments-intro.md)
 * [Using Master Pages](../defining-headers-and-footers/master-page-templates.md)
 * [Changing Content Pages Look and Feel](./content-pages-overview.md#look-and-feel)
+* [Content Page Personalization guide](../../personalizing-site-experience/personalizing-site-experience.md)
