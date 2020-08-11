@@ -8,7 +8,7 @@ The default type of page used in Liferay DXP is a Content Page. The Content Page
 
 The Content Page sidebar contains these elements for editing and collaborating on your Content Page:
 
-![The Content Page sidebar includes the different elements you can add to your content](./content-pages-overview/images/07v.png)
+![The Content Page sidebar includes the different elements you can add to your content](./content-pages-overview/images/07.png)
 
 |  |  |
 | --- | --- |
@@ -26,13 +26,13 @@ Fragments and Widgets are two different groups of elements that you can drag-and
 
     Fragments can have editable elements, such as [text](./building-content-pages.md#editing-text), [images](./building-content-pages.md#editing-an-image), or [links](./building-content-pages.md#editing-a-hyperlink), that you can replace with custom content. You can also [map these elements](./building-content-pages.md#mapping-content) to content that is already available on the site itself. For more information on developing these elements, see [Fragment Specific Tags](../../developer-guide/developing-page-fragments/fragment-specific-tags-reference.md).
 
-    ![The Fragments panel provides a list of Fragments that can be added inside the page editor.](./content-pages-overview/images/01v.png)
+    ![The Fragments panel provides a list of Fragments that can be added inside the page editor.](./content-pages-overview/images/01.png)
 
 - [Widgets](#widgets)
 
     Widgets are applications and tools available out-of-the-box that you can add to the page.
 
-    ![The Widgets panel provides a list of Widgets that can be added inside the page editor.](./content-pages-overview/images/02v.png)
+    ![The Widgets panel provides a list of Widgets that can be added inside the page editor.](./content-pages-overview/images/02.png)
 
 ### Fragments
 
@@ -52,23 +52,25 @@ The Layout Elements section contains two Fragments:
 - *Container*: A Fragment that can contain Rows. Each Section you add fills the width of the page. A Section can contain multiple Rows stacked.
 - *Grid*: A Fragment containing a set of columns that you can add Fragments or Widgets to. A Row can be nested inside another Row to create more complex layouts. You can [adjust the spacing](./building-content-pages.md#configuring-a-row-s-columns) of a Row's columns to create new designs.
 
-    ![The Layouts panel contains layouts for organizing Fragments.](content-pages-overview/images/03v.png)
+    ![The Layouts panel contains layouts for organizing Fragments.](content-pages-overview/images/03.png)
 
 #### Basic Components
 
 Basic Components are small design elements or pieces that add functionality to the page. A Component might be an image with formatting or a block of text with styling pre-applied. Components work together to build pages piece by piece.
 
-![Several out of the box components arranged in a grid layout.](./content-pages-overview/images/04v.png)
+![Several out of the box components arranged in a grid layout.](./content-pages-overview/images/04.png)
 
 #### Content Display
 
 You can display a single existing web content, blog entry, or document by adding a Content Fragment from the *Content Display* panel. See [Using the Content Display Fragment](./using-fragments.md#using-the-content-fragment) for more information.
 
+![Use Content Display fragments to display existing web content.](./content-pages-overview/images/04.png)
+
 #### Featured Content
 
 The *Featured Content* panel contains complete Fragments (composed of multiple components) that can be immediately used and customized as soon as they are added to a page. A large banner image with a text overlay and customizable CTA (Call to Action) is an example of a Fragment that is ready for immediate use.
 <!-- An image with better text contrast would probably be a better example here - to help the image / text / CTA button stand out from one another more. -->
-![A Section named Banner being displayed while editing a Content Page.](./content-pages-overview/images/06v.png)
+![A Section named Banner being displayed while editing a Content Page.](./content-pages-overview/images/06.png)
 
 #### Footers
 
@@ -94,7 +96,7 @@ The *Contents* panel provides a list of the web content that's used on the page.
 
 *Page Structure* provides a hierarchical view of the Fragments and their contents on the page. Click on a field in the page structure to highlight it on the page. Headers and Footers appear in the hierarchy as well for custom [Master Page Templates](../defining-headers-and-footers/master-page-templates.md), but they're disabled because they can only be modified from the Master Page Template.
 
-![Page Structure shows you a hierarchy of your page and contents.](./content-pages-overview/images/08v.png)
+![Page Structure shows you a hierarchy of your page and contents.](./content-pages-overview/images/08.png)
 
 ## Page Design Options
 
