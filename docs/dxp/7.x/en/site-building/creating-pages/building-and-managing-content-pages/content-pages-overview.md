@@ -64,12 +64,12 @@ Basic Components are small design elements or pieces that add functionality to t
 
 You can display a single existing web content, blog entry, or document by adding a Content Fragment from the *Content Display* panel. See [Using the Content Display Fragment](./using-fragments.md#using-the-content-fragment) for more information.
 
-![Use Content Display fragments to display existing web content.](./content-pages-overview/images/04.png)
+![Use Content Display fragments to display existing web content.](./content-pages-overview/images/05.png)
 
 #### Featured Content
 
 The *Featured Content* panel contains complete Fragments (composed of multiple components) that can be immediately used and customized as soon as they are added to a page. A large banner image with a text overlay and customizable CTA (Call to Action) is an example of a Fragment that is ready for immediate use.
-<!-- An image with better text contrast would probably be a better example here - to help the image / text / CTA button stand out from one another more. -->
+
 ![A Section named Banner being displayed while editing a Content Page.](./content-pages-overview/images/06.png)
 
 #### Footers
@@ -124,23 +124,23 @@ live page, until the page is published again. To create a Content Page,
 
 1.  Go to *Site Management* &rarr; *Site Builder* &rarr; *Pages*.
 
-2.  Click ![Add](./content-pages-overview/images-v/icon-add.png).
+2.  Click ![Add](../../../images/icon-add.png).
 
 3.  On the next page, select *Content Page* and provide a name for the page.
 
     You will be brought to the Content Page management interface.
  
-    ![Figure 1: Each Content Page starts as a blank page.](./content-pages-overview/images-v/content-page-edit-blank-page.png)
+    ![Figure 1: Each Content Page starts as a blank page.](./content-pages-overview/images/20.png)
 
 To edit an existing Content Page,
 
 1.  Go to *Site Administration* &rarr; *Site Builder* &rarr; *Pages*.
 
-2.  Click *Actions* (![Actions](./content-pages-overview/images-v/icon-staging-bar-options.png))
+2.  Click *Actions* (![Actions](../../../images/icon-staging-bar-options.png))
     &rarr; *Edit* next to the Content Page you want to edit.
 
 You can also get to this page by selecting the *Edit* button
-(![Edit](./content-pages-overview/images-v/icon-edit-pencil.png)) from the Control Menu if
+(![Edit](../../../images/icon-edit-pencil.png)) from the Control Menu if
 you're viewing the published Content Page.
 
 On this page you can view a preview of your page, add Fragments and Widgets, 
@@ -162,28 +162,28 @@ When you open *Sections* you see a list of Collections available. Initially,
 you only have the **Basic Sections** Collection which is included with the 
 product. You can open the Collection and drag Sections directly onto the page.
 
-![Figure 2: *Sections* contains Fragments that fully define spaces on your page.](./content-pages-overview/images-v/content-page-sections-editor.png)
+![Figure 2: *Sections* contains Fragments that fully define spaces on your page.](./content-pages-overview/images/21.png)
 
 Once a section is added to a page, you can edit its background color,
 background image, and spacing. Since these options are available to marketers
 and administrators editing a page, the options are limited, and the color
 palette can be set by the Fragment developer.
 
-![Figure 3: The Section management tool provide powerful tools, but with the training wheels still on.](./content-pages-overview/images-v/content-page-sections-config.png)
+![Figure 3: The Section management tool provide powerful tools, but with the training wheels still on.](./content-pages-overview/images/22.png)
 
 ### Section Builder
 
 In Section Builder, you start with *Layouts* and *Basic Components*. Add 
 Layouts to the page to provide a spaces where you can add Components.
 
-![Figure 4: *Sections Builder* contains *Component* Fragments which are intended to be combined to create Sections.](./content-pages-overview/images-v/content-page-section-builder-editor.png)
+![Figure 4: *Sections Builder* contains *Component* Fragments which are intended to be combined to create Sections.](./content-pages-overview/images/23.png)
 
 ### Widgets
 
 The Widgets section functions just like the *Add* menu on a Widget Page. The 
 full list of available widgets is displayed, and you can add them to the page.
 
-![Figure 5: The Widgets section provides a list of Widgets that can be added inside of a Layout.](./content-pages-overview/images-v/content-page-widget-editor.png)
+![Figure 5: The Widgets section provides a list of Widgets that can be added inside of a Layout.](./content-pages-overview/images/24.png)
 
 The main difference is that only the main configuration options for widgets on 
 Content Pages. Various other configurations like *Look and Feel* are only 
@@ -194,7 +194,7 @@ available for widgets on Widget Pages.
 Page Structure provides a high level view of every Fragment and every field
 within each Fragment on the page.
 
-![Figure 6: *Page Structure* shows you a hierarchy of your page.](./content-pages-overview/images-v/content-page-page-structure-editor.png)
+![Figure 6: *Page Structure* shows you a hierarchy of your page.](./content-pages-overview/images/25.png)
 
 Clicking on a field in Page Structure will  highlight it on the page. On large
 complicated page, this helps you keep on top  of where everything is and also
@@ -203,7 +203,7 @@ access items that might be hard to click on  directly.
 ### Look and Feel
 
 Click the *Look and Feel* icon 
-(![Look and Feel](./content-pages-overview/images-v/icon-look-and-feel.png)) 
+(![Look and Feel](../../../images/icon-look-and-feel.png)) 
 to change the theme or manage other options for the page. These options are 
 fully documented in 
 [Creating Pages](/docs/7-2/user/-/knowledge_base/u/creating-pages). 
@@ -220,10 +220,10 @@ Comments are disabled by default, but administrators can enable them from
 on an instance-by-instance basis, navigate to the same setting in 
 *Instance Settings* (instead of System Settings). 
 
-![Figure 7: Administrators can enable comments for content pages.](./content-pages-overview/images-v/enable-content-page-comments.png)
+![Figure 7: Administrators can enable comments for content pages.](./content-pages-overview/images/26.png)
 
 If comments are enabled, you can access them via the *Comments* icon 
-(![Comments](./content-pages-overview/images-v/icon-comments.png)). 
+(![Comments](../../../images/icon-comments.png)). 
 The comments appear for the selected fragment. You can take the following 
 actions in the comments UI for a fragment:
 
@@ -231,14 +231,14 @@ actions in the comments UI for a fragment:
 -   Resolve comments by clicking the checkbox for each. Resolving a comment 
     hides it from view, unless *Show Resolved Comments* is selected. 
 -   Edit and delete your own comments via the Actions button 
-    (![Actions](./content-pages-overview/images-v/icon-actions.png)) 
+    (![Actions](../../../images/icon-actions.png)) 
     for each. 
 
 If you de-select a fragment or enter the comments UI without a fragment selected, 
 a list of the fragments on the page appears with the number of comments for 
 each. Selecting a fragment then shows its comments. 
 
-![Figure 8: When creating content pages, you and your team can comment on any fragments.](./content-pages-overview/images-v/content-page-comments.png)
+![Figure 8: When creating content pages, you and your team can comment on any fragments.](./content-pages-overview/images/27.png)
 
 ### The Title Bar
 
@@ -247,7 +247,7 @@ configuration, and the ability to search for other pages. The title bar is
 covered in more detail in 
 [Creating Pages](/docs/7-2/user/-/knowledge_base/u/creating-pages). 
 
-![Figure 9: The title bar has several tools built into it.](./content-pages-overview/images-v/content-page-edit-title-bar.png)
+![Figure 9: The title bar has several tools built into it.](./content-pages-overview/images/28.png)
 
 Great! Now you know how to use the content page interface!
 
