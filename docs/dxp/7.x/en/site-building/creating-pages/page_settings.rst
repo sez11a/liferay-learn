@@ -5,7 +5,7 @@ Page Settings
    :maxdepth: 3
 
    page-settings/configuring-page-sets.md
-   page-settings/configuring-individual-pages.md
+   page-settings/page-configuration-ui-reference.md
    page-settings/updating-page-permissions.md
 
 .. include:: /site-building/creating-pages/page-settings/README.rst
