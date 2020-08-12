@@ -1,6 +1,6 @@
 # JS Portlet Extender Configuration Reference
 
-Bundles generated with the Liferay JS Generator require specific method signatures, MANIFEST headers, and configuration within their `package.json` file to use the JS Portlet Extender. This configuration is provided by default. 
+Bundles generated with the Liferay JS Generator require specific method signatures, MANIFEST headers, and configuration within their `package.json` files to use the JS Portlet Extender. This configuration is provided by default. 
 
 ## Manifest Header
 

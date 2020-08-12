@@ -1,6 +1,6 @@
 # Creating a JavaScript App with the Liferay JS Generator
 
-You can create pure JavaScript applications, including the major frameworks (React, Angular, and VueJS), with the Liferay JS Generator. Creating your JavaScript application with the Liferay JS Generator, as opposed to just migrating your application ([React](../../../../developing-a-single-page-application/using-react.md)|[Angular](../../../../developing-a-single-page-application/using-angular.md)|[VueJS](../../../../developing-a-single-page-application/using-vuejs.md)) to use the Liferay JS Toolkit, lets you modify your application further, taking advantage of Liferay DXP features such as [system and instance setting configuration](./configuring-system-and-instance-settings-for-your-widget.md) and [localization](./localizing-your-widget.md). Here you'll learn how to create a JavaScript application with the Liferay JS Generator:
+You can create pure JavaScript applications, including using the [React](../../../../developing-a-single-page-application/using-react.md), [Angular](../../../../developing-a-single-page-application/using-angular.md), and [VueJS](../../../../developing-a-single-page-application/using-vuejs.md) frameworks, with the Liferay JS Generator. Creating, rather than migrating, your JavaScript application makes it possible to use Liferay DXP features such as [system and instance setting configuration](./configuring-system-and-instance-settings-for-your-widget.md) and [localization](./localizing-your-widget.md). Here you'll learn how to create a JavaScript application with the Liferay JS Generator:
 
 1. [Deploy a Generated Application](#deploy-a-generated-application)
 1. [Modify the Application and Redeploy](#modify-the-app-and-redeploy)
@@ -17,37 +17,36 @@ First, deploy an example generated application:
     docker run -it -p 8080:8080 liferay/portal:7.3.2-ga3
     ```
 
-1. Download and unzip the [example generated app](https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.x/en/developing-applications/tooling/other-tools/liferay-js-generator/developer-guide/creating-a-js-widget-with-the-js-generator/liferay-g2a8.zip):
+1. Download and unzip the [example generated app](./creating-a-js-widget-with-the-js-generator/liferay-g2a8.zip):
 		
     ```bash
-    curl https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.x/en/developing-applications/tooling/other-tools/liferay-js-generator/developer-guide/creating-a-js-widget-with-the-js-generator/liferay-g2a8.zip
+    curl https://learn.liferay.com/dxp/7.x/en/developing-applications/tooling/other-tools/liferay-js-generator/developer-guide/creating-a-js-widget-with-the-js-generator/liferay-g2a8.zip
 
     unzip liferay-g2a8.zip
-    cd liferay-g2a8/react-app-generated
+    cd liferay-g2a8/g2a8-web
     ```
 
 1. Build the generated React app JAR:
 
     ```bash
-    cd react-app-generated
     npm run build
     ```
 
 1. Copy the generated application's JAR to the Docker container:
-  
+
     ```bash
     cd dist
-    docker cp react-app-generated-1.0.0.jar docker-container-name:/path/to/osgi/modules/
+    docker cp g2a8-web-0.1.0.jar docker-container-name:/opt/liferay/osgi/modules/
     ```
-  
-1. Confirm the deployment to the Liferay Docker container console. The log message should appear in the Docker console. The example produces the log message below:
+
+1. Confirm the deployment to the Liferay Docker container console. The log message should appear in the Docker console: 
 
     ```bash
     INFO [fileinstall-/opt/liferay/osgi/modules][BundleStartStopLogger:39] STARTED react-app-generated_1.0.0 [1147]
     ```
-  
+
 1. Verify that the app is available. Open your browser to `https://localhost:8080`. Click the Edit button (![Edit button](../../../../../images/icon-edit-pencil.png)) (Add button (![Add button](../../../../../images/icon-add-app.png)) if on Liferay DXP 7.2) in the Control Menu and add the widget to the page. Please see the [7.3](../../../../../site-building/creating-pages/building-and-managing-content-pages/using-widgets-on-a-content-page.md#adding-widgets-on-content-pages) or [7.2](../../../../../site-building/creating-pages/using-widget-pages/adding-widgets-to-a-page.md) instructions for details. The example is listed as *React App Generated* under the *Sample* category.
-  
+
 ![The generated app prints metadata about itself.](./creating-a-js-widget-with-the-js-generator/images/01.png)
 
 ## JS Toolkit Generated App Overview
@@ -58,7 +57,7 @@ The generated React app is created with the [Liferay JS Toolkit's](https://githu
 yo liferay-js
 ```
 
-The example uses the answers shown below to create a React widget with all features and sample code. Note that the answer is No (n) to the "Do you have a local installation of Liferay for development?" question so the JAR file can be deployed manually to a Docker container.
+The example uses the below answers to create a React widget with all features and sample code. Note that the answer is No (n) to the "Do you have a local installation of Liferay for development?" question so the JAR file can be deployed manually to a Docker container.
 
 ```bash
 ? What type of project do you want to create? React Widget
@@ -84,7 +83,7 @@ The example uses the answers shown below to create a React widget with all featu
    create src\AppComponent.js
 ```
 
-The sample generated app prints metadata information about the portlet's namespace, context path, ID, and [configuration settings](./configuring-system-and-instance-settings-for-your-widget.md). It contains an additional `assets/css/styles.css` file to hold your custom styles.
+The sample generated app prints metadata information about the widget's namespace, context path, ID, and [configuration settings](./configuring-system-and-instance-settings-for-your-widget.md). It contains an additional `assets/css/styles.css` file to hold your custom styles.
 
 The app's entry point is configured to run on Liferay DXP. See [Liferay DXP's standard entry point](../reference/js-portlet-extender-configuration-reference.md#main-entry-point) for more information.
 
@@ -122,15 +121,15 @@ Now that you understand how the Liferay JS Toolkit generates JavaScript-based wi
 1. Build the updated app's JAR as you did before:
 
     ```bash
-    cd react-app-generated
+    cd g2a8-web
     npm run build
     ```
 
 1. Copy the updated application's JAR to the Docker container:
-  
+
     ```bash
     cd dist
-    docker cp react-app-generated-1.0.0.jar docker-container-name:/path/to/osgi/modules/
+    docker cp g2a8-web-0.1.0.jar docker-container-name:/opt/liferay/osgi/modules/
     ```
 
 1. Refresh the Home Page to view the changes.

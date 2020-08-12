@@ -1,10 +1,10 @@
 # Configuration JSON Reference
 
-If you've [created an OSGi bundle with the Liferay JS Generator](../developer-guide/creating-a-js-widget-with-the-js-generator.md) and want to provide system settings or instance settings for your widget, you must provide a `configuration.json` file. This reference guide lists the available configuration options for `configuration.json` along with example code. 
+If you've [created an OSGi bundle with the Liferay JS Generator](../developer-guide/creating-a-js-widget-with-the-js-generator.md) and want to provide system settings or instance settings for your widget, you must provide a `configuration.json` file. The available configuration options for `configuration.json` along with example code appear below. 
 
 ## JSON Format
 
-The `configuration.json` must follow the basic pattern shown below:
+The `configuration.json` must follow this pattern: 
 
 ```json
 {
@@ -52,12 +52,12 @@ The `configuration.json` must follow the basic pattern shown below:
 }
 ```
 
-The available options are described in the table below:
+Here are the available options: 
 
 | Option | Value |
 | --- | --- |
-| `{category identifier}` | Describes the identifier of the configuration category where the settings must be placed. It's equivalent to the [category field of the `@ExtendedObjectClassDefinition` annotation](TODO:categorizing-the-configuration). The category field of `configuration.json` is optional and, when not set, the project's name specified in `package.json` is used. You need JS Portlet Extender 1.1.0+ for this feature to work. Otherwise, the system configuration will show up under *Platform* &rarr; *Third Party* in System Settings. |
-| `{name of configuration}` | the configuration's name as a string or a localization key. If no value is given, the bundler falls back to the project's name, then description given in `package.json`. |
+| `{category identifier}` | Describes the identifier of the configuration category where the settings must be placed. It's equivalent to the [category field of the `@ExtendedObjectClassDefinition` annotation](TODO:categorizing-the-configuration). The category field of `configuration.json` is optional and, when not set, the project's name specified in `package.json` is used. You need JS Portlet Extender 1.1.0+ for this feature to work. Otherwise, the system configuration appears under *Platform* &rarr; *Third Party* in System Settings. |
+| `{name of configuration}` | the configuration's name as a string or a localization key. If no value is given, the bundler falls back to the project's name, then the description given in `package.json`. |
 | `{field id}` | the field's name as a string or a localization key |
 | `{field type}` | specifies the field's type, which can be one of the following types: &nbsp;- `number`: an integer number&nbsp;- `float`: a floating point number&nbsp;- `string`: a string&nbsp;- `boolean`: true or false&nbsp;- `password`: a password (string) |
 | `{field name}` | the field's name as a string or a localization key |
@@ -67,7 +67,7 @@ The available options are described in the table below:
 | `{option id}` | a string that defines the option's ID |
 | `{option name}` | the option's name as a string or a localization key |
 
-An example configuration is shown below:
+Here's an example configuration: 
 
 ```json
 {
