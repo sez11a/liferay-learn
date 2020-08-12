@@ -129,7 +129,7 @@ You can adjust the columns width to create a more custom layout:
 1. Click on the Row to select it. A blue dot appears between each of the columns, indicating that they can be resized.
 1. Click one of the blue dots and drag to the left or right to adjust the size of the column.
 
-    ![You can adjust the spacing of columns in a Layout to create a custom Layout.](./building-content-pages/images/16.gif)
+    ![You can adjust the spacing of columns in a Layout to create a custom Layout.](./building-content-pages/images/16.png)
 
 ### Copying a Fragment
 
@@ -191,7 +191,7 @@ To map your elements to existing content:
 1. Select the content you want to map to your Content Page element.
 1. Select the *Field* of your content that you want to map.
 
-    ![You can map Content Page elements to existing content using the *Mapping* option](./building-content-pages/images/17.gif)
+    ![You can map Content Page elements to existing content using the *Mapping* option](./building-content-pages/images/17.png)
 
 <!-- 
 ####################################################
