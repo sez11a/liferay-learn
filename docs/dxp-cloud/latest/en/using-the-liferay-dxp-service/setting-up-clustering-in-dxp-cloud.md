@@ -11,19 +11,19 @@ This article outlines the steps necessary to configure clustering for your Lifer
 
 ## Enable the Clustering Environment Variable
 
-Start from the desired environment in the DXP Cloud Management Console. Then, under `Services`, navigate to `liferay`, and then click `Environment Variables`. Ensure that the `LCP_PROJECT_LIFERAY_CLUSTER_ENABLED` variable is set to `true`. This instructs the image startup process to add the clustering configuration to Liferay DXP.
+Start from the desired environment in the DXP Cloud Console. Then, under `Services`, navigate to `liferay`, and then click `Environment Variables`. Ensure that the `LCP_PROJECT_LIFERAY_CLUSTER_ENABLED` variable is set to `true`. This instructs the image startup process to add the clustering configuration to Liferay DXP.
 
 ![Setting LCP_PROJECT_LIFERAY_CLUSTER_ENABLED](./setting-up-clustering-in-dxp-cloud/images/01.png)
 
 ## Set the Clustering Scale
 
-The number of nodes for your clustering environment is determined by the `scale` property within the Liferay service's `LCP.json` file (in `lcp/liferay/`). If you are deploying your Liferay service for the first time, or if the `scale` property has not yet been set in the `LCP.json` file, then you must first set the value to `1` and then [deploy the service](../build-and-deploy/overview-of-the-dxp-cloud-deployment-workflow.md#deploy).
+The number of nodes for your clustering environment is determined by the `scale` property within the Liferay service's `LCP.json` file (in the `liferay/` folder). If you are deploying your Liferay service for the first time, or if the `scale` property has not yet been set in the `LCP.json` file, then you must first set the value to `1` and then [deploy the service](../build-and-deploy/overview-of-the-dxp-cloud-deployment-workflow.md#deploy).
 
 ```json
 {
   "kind": "Deployment",
   "id": "liferay",
-  "image": "@liferay.workspace.lcp.liferay.image@",
+  "image": "liferaycloud/liferay-dxp:7.2-4.0.1",
   "memory": 8192,
   "cpu": 8,
   "scale": 1,

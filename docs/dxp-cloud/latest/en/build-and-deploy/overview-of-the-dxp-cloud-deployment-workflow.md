@@ -16,28 +16,29 @@ The repository provides the following:
 * Shared version control for configuration and customizations of DXP Cloud services. 
 * Single source of truth for DXP Cloud project deployments. 
 
-With the exception of the `common` folder, changes added to a given service's environment folder (e.g., `dev`, `uat`, `prd`) are only propagated when deploying to the corresponding environment. Changes added to `common` are always deployed regardless of the target deployment environment. See [Deployment](../using-the-liferay-dxp-service/introduction-to-the-liferay-dxp-service.md#deployment-customization-patching-and-licensing) for more information.
+With the exception of the `common/` directory, changes added to an environment-specific folder (e.g., `dev`, `uat`, `prod`) will _only_ be propagated when deploying to the corresponding environment. Changes added to a `common/` directory will _always_ be deployed, regardless of the target deployment environment. This applies to all subfolders within the `configs/` directory, for all services. See [Deployment](../using-the-liferay-dxp-service/introduction-to-the-liferay-dxp-service.md#deployment-customization-patching-and-licensing) for more information.
 
 ### Code Additions
 
-The source for new code additions must be added to folders at the root of the
-repository: 
+The source for new code additions must be added to folders in the repository's `liferay/` directory: 
 
 * The `modules` folder for new modules
 * The `themes` folder for custom themes
 * The `wars` folder for exploded WARs 
 
-When the build is deployed, code changes in any of these locations are 
-automatically compiled and added to the Liferay DXP service. 
+When the build is deployed, code changes in any of these locations are automatically compiled and added to the Liferay DXP service.
+
+```note::
+   If you are using version 3.x.x services, then these folders are instead located at the root of the repository. See `Understanding Service Stack Versions <../reference/understanding-service-stack-versions.md>`__ for more information on checking the version.
+```
 
 ### Compiled Additions
 
-You can add compiled files (e.g., pre-built JARs or LPKGs) to a service's 
-`deploy` folder. When the build is deployed to an environment, these files are 
-copied to the corresponding folder within `$LIFERAY_HOME` (depending on the file 
-type). For example, adding a JAR file
-to `lcp/liferay/deploy/common/` will result in the file being copied to
-`$LIFERAY_HOME/osgi/modules/` for any environment the build is deployed to. 
+You can add compiled files (e.g., pre-built JARs or LPKGs) to a `liferay/configs/{ENV}/deploy/` folder. When the build is deployed to an environment, these files are copied to the corresponding folder within `$LIFERAY_HOME` (depending on the file type). For example, adding a JAR file to `liferay/configs/common/deploy/` will result in the file being copied to `$LIFERAY_HOME/osgi/modules/` for any environment the build is deployed to. 
+
+```note::
+   If you are using version 3.x.x services, then these additions are instead added to the appropriate ``lcp/liferay/deploy/{ENV}`` folder. See `Understanding Service Stack Versions <../reference/understanding-service-stack-versions.md>`__ for more information on checking the version.
+```
 
 ## Build and Test
 
@@ -49,7 +50,7 @@ Navigate to the `Builds` tab to see all builds that have been initiated. Pending
 
 ## Deploy
 
-There are two main ways to deploy to services on DXP Cloud: deploying through the CLI, or deploying a successful build from the `Builds` tab in the DXP Cloud Management Console.
+There are two main ways to deploy to services on DXP Cloud: deploying through the CLI, or deploying a successful build from the `Builds` tab in the DXP Cloud Console.
 
 ### Option 1: Deploying Through the Command Line Interface
 
@@ -59,7 +60,7 @@ After logging in through the CLI, use `lcp deploy` to deploy any additions prese
 
 ### Option 2: Deploying From `Builds` in DXP Cloud
 
-Another way to deploy changes is to use a completed build in CI from the DXP Cloud Management Console.
+Another way to deploy changes is to use a completed build in CI from the DXP Cloud Console.
 
 Committed changes to the repository will automatically trigger a new build in CI any time a pull request is sent or merged. This allows changes to be deployed to a testing environment at any point of the review process. See [Continuous Integration](./walking-through-the-deployment-life-cycle.md) for an example tutorial.
 

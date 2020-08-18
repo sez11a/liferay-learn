@@ -4,6 +4,22 @@ set -eo pipefail
 
 readonly CURRENT_DIR_NAME=$(dirname "$0")
 
+function activate_venv {
+	if [[ "$(uname)" == "Darwin" || "$(uname)" == "Linux" ]]
+	then
+		python3 -m venv venv
+
+		source venv/bin/activate
+	else
+		if [[ -z `find ${PWD} -maxdepth 1 -mindepth 1 -name venv -type d` ]]
+		then
+			python -m venv ${PWD}/venv
+		fi
+
+		source ${PWD}/venv/scripts/activate
+	fi
+}
+
 function check_args {
 	if [[ ${#} -eq 0 ]]
 	then
@@ -41,38 +57,43 @@ function check_utils {
 }
 
 function configure_env {
-
-	#
-	# sudo dnf install python3-sphinx
-	#
-
 	if [ "${1}" == "prod" ]
 	then
 		rm -fr venv
 	fi
 
-	python3 -m venv venv
-
-	source venv/bin/activate
+	activate_venv
 
 	check_utils pip3 zip
 
-	pip_install recommonmark sphinx sphinx-copybutton sphinx-intl sphinx-markdown-tables sphinx-notfound-page
+	pip_install \
+		nodeenv recommonmark wheel \
+		\
+		sphinx sphinx-copybutton sphinx-intl sphinx-markdown-tables sphinx-notfound-page
+
+	if [ "${1}" == "prod" ]
+	then
+		nodeenv -p
+
+		activate_venv
+
+		npm_install generator-liferay-theme yo
+	fi
 }
 
 function generate_sphinx_input {
 	rm -fr build
 
-	cd ../docs
-
 	if [ "${1}" == "prod" ]
 	then
+		pushd ../docs
+
 		git clean -dfx .
+
+		./update_examples.sh && ./update_permissions.sh
+
+		pushd ../site
 	fi
-
-	./update_examples.sh && ./update_permissions.sh
-
-	cd ../site
 
 	for docs_dir_name in `find ../docs -maxdepth 4 -mindepth 4 -type f -name "contents.rst" -printf "%h\n"`
 	do
@@ -184,6 +205,16 @@ function main {
 	generate_static_html
 
 	upload_to_server
+}
+
+function npm_install {
+	for package_name in "${@}"
+	do
+		if [[ -z `npm list --depth=0 --global --loglevel=silent --no-versions --parseable | grep ${package_name}` ]]
+		then
+			npm install -g ${package_name}
+		fi
+	done
 }
 
 function pip_install {
