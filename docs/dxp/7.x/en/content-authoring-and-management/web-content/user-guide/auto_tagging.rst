@@ -4,5 +4,9 @@ Auto Tagging
 .. toctree::
    :maxdepth: 2
 
-.. include:: /content-authoring-and-management/web-content/01-user-guide/04-auto-tagging/README.rst
+   auto-tagging/configuring-asset-auto-tagging.md
+   auto-tagging/auto-tagging-assets.md
+   auto-tagging/auto-tagging-images.md
+
+.. include:: /content-authoring-and-management/tags-and-categories/user-guide/auto-tagging/README.rst
    :start-line: 2
