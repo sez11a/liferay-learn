@@ -37,7 +37,7 @@ cp path-to-module/my-module my-repository-path/liferay/configs/dev/deploy
 ```
 
 ```note::
-   If you are using version 3.x.x services, then the appropriate ``deploy/`` folder instead is in ``lcp/liferay/``. The environment-specific folder is also inside of ``deploy/``, so the path to use in the repository in this case is ``lcp/liferay/deploy/dev``. See `DXP Cloud Project Changes in Version 4 <#project-version-3-differences>`__ for more information on the differences in the directory structure.
+   If you are using version 3.x.x services, then the appropriate ``deploy/`` folder instead is in ``lcp/liferay/``. The environment-specific folder is also inside of ``deploy/``, so the path to use in the repository in this case is ``lcp/liferay/deploy/dev``. See `DXP Cloud Project Changes in Version 4 <#project-version-3-differences>`__ for more information on the differences in the directory structure, and `Understanding Service Stack Versions <../reference/understanding-service-stack-versions.md>`__ for more information on checking the version.
 ```
 
 ## Deploy the Sample to the Development Environment
@@ -45,7 +45,7 @@ cp path-to-module/my-module my-repository-path/liferay/configs/dev/deploy
 Deployment to DXP Cloud normally consists of pushing the changes in Git, the GitHub webhook triggering a build with the DXP Cloud CI service, and finally deploying the successful build. However, you can also skip pushing your changes to GitHub by using the CLI if desired.
 
 ```tip::
-   In general, pushing to GitHub and using the DXP Cloud Management Console is recommended for deployments.
+   In general, pushing to GitHub and using the DXP Cloud Console is recommended for deployments.
 ```
 
 ### Commit the Sample in Git
@@ -78,9 +78,9 @@ Once you have sent the pull request to the upstream repository, the CI service a
    You may view triggered builds in the Jenkins `CI service <../platform-services/continuous-integration.md>`_ by visiting ``https://ci-<project>-<environment>.lfr.cloud``.
 ```
 
-### Deploy the Build to the Development Environment from the DXP Cloud Management Console
+### Deploy the Build to the Development Environment from the DXP Cloud Console
 
-Navigate to the DXP Cloud Management Console, and then go to the `Builds` tab for the desired environment. The option to deploy the build appears when the build completes successfully; click the three dots to the right side of the build to see the option.
+Navigate to the DXP Cloud Console, and then go to the `Builds` tab for the desired environment. The option to deploy the build appears when the build completes successfully; click the three dots to the right side of the build to see the option.
 
 ![Builds](./walking-through-the-deployment-life-cycle/images/03.png)
 
@@ -159,7 +159,7 @@ Verify that the module was deployed in the `dev` environment by navigating to yo
 
 You first need the customer user name and password to access the web server; these credentials are shared between all environments.
 
-From the DXP Cloud Management Console, navigate to the `infra` environment → CI service → Environment Variables tab (or go directly to `https://console.liferay.cloud/projects/<project-name>-infra/services/ci/environment-variables`).
+From the DXP Cloud Console, navigate to the `infra` environment → CI service → Environment Variables tab (or go directly to `https://console.liferay.cloud/projects/<project-name>-infra/services/ci/environment-variables`).
 
 From this screen, you can check the `JENKINS_CUSTOMER_USER_NAME` and `JENKINS_CUSTOMER_PASSWORD` variables for the login credentials for your web server:
 

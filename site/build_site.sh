@@ -4,6 +4,22 @@ set -eo pipefail
 
 readonly CURRENT_DIR_NAME=$(dirname "$0")
 
+function activate_venv {
+	if [[ "$(uname)" == "Darwin" || "$(uname)" == "Linux" ]]
+	then
+		python3 -m venv venv
+
+		source venv/bin/activate
+	else
+		if [[ -z `find ${PWD} -maxdepth 1 -mindepth 1 -name venv -type d` ]]
+		then
+			python -m venv ${PWD}/venv
+		fi
+
+		source ${PWD}/venv/scripts/activate
+	fi
+}
+
 function check_args {
 	if [[ ${#} -eq 0 ]]
 	then
@@ -41,36 +57,25 @@ function check_utils {
 }
 
 function configure_env {
-
-	#
-	# sudo dnf install python3-sphinx
-	#
-
 	if [ "${1}" == "prod" ]
 	then
 		rm -fr venv
 	fi
 
-	if [[ "$(uname)" == "Darwin" || "$(uname)" == "Linux" ]]
-	then
-		python3 -m venv venv
-
-		source venv/bin/activate
-	else
-		python -m venv ${PWD}/venv
-
-		source ${PWD}/venv/scripts/activate
-	fi
+	activate_venv
 
 	check_utils pip3 zip
 
-	pip_install nodeenv recommonmark sphinx sphinx-copybutton sphinx-intl sphinx-markdown-tables sphinx-notfound-page
+	pip_install \
+		nodeenv recommonmark wheel \
+		\
+		sphinx sphinx-copybutton sphinx-intl sphinx-markdown-tables sphinx-notfound-page
 
 	if [ "${1}" == "prod" ]
 	then
 		nodeenv -p
 
-		source venv/bin/activate
+		activate_venv
 
 		npm_install generator-liferay-theme yo
 	fi

@@ -10,17 +10,15 @@ By default, this automated build will compile code and can be configured to exec
 
 ## Using the Default Jenkinsfile
 
-In the past, we used to give customers an entire `Jenkinsfile` for them to customize. The problem with this approach is that bug fixes, security fixes, and improvements had to be manually applied, line by line.
+Starting with CI service version `liferaycloud/jenkins:2.222.1-3.2.0`, a default Jenkinsfile is available when it is not overridden. The default Jenkinsfile is always available for use for projects [using version 4.x.x services](../reference/understanding-service-stack-versions.md).
 
-Starting with CI service version `liferaycloud/jenkins:2.222.1-3.2.0`, we are introducing the concept of a default Jenkinsfile. The default Jenkinsfile is always available for use for projects using version 4.x.x services. This encapsulates all the logic that was previously stored on the Jenkinsfile and moves it to a Jenkins plugin.
+The default Jenkinsfile encapsulates all the logic that was previously stored on the Jenkinsfile and moves it to a Jenkins plugin. This means that all bug fixes, security fixes, and improvements can be applied without requiring any CI configuration.
 
-This means that all bug fixes, security fixes, and improvements can be applied by us, without any requiring any user action.
-
-Apart from that, a powerful set of extension points are now provided for you to customize every step of the pipeline.
+Apart from that, a powerful set of extension points are now provided to customize every step of the CI pipeline.
 
 ### Enable the Default Jenkinsfile
 
-If your project is already updated to version 4.x.x, then these steps are already complete. Otherwise, enable the default Jenkinsfile by performing the following steps:
+If your project is already updated to [version 4.x.x](../reference/understanding-service-stack-versions.md), then these steps are already complete. Otherwise, enable the default Jenkinsfile by performing the following steps:
 
 1. Update your CI service to version `liferaycloud/jenkins:2.222.1-3.2.0`
 
@@ -64,7 +62,7 @@ Here is a basic overview of the steps in the CI build process:
    build fails and when it succeeds.
 
 ```note::
-   If you are using version 3.x.x services, then these extensions to the Jenkinsfile are located in the ``lcp/ci/`` folder instead.
+   If you are using version 3.x.x services, then these extensions to the Jenkinsfile are located in the ``lcp/ci/`` folder instead. See `Understanding Service Stack Versions <../reference/understanding-service-stack-versions.md>`__ for more information on checking the version.
 ```
 
 To see how they are used in the default pipeline, simply monitor the Jenkins service startup logs. The full default Jenkinsfile is printed out in the startup logs.
@@ -90,7 +88,7 @@ util.sendSlackMessage("About to create DXP Cloud build...")
 ```
 
 ```note::
-   If you are using version 3.x.x services, then these files instead belong in the ``lcp/ci/`` directory in the repository.
+   If you are using version 3.x.x services, then these files instead belong in the ``lcp/ci/`` directory in the repository. See `Understanding Service Stack Versions <../reference/understanding-service-stack-versions.md>`__ for more information on checking the version.
 ```
 
 ## Environment Variables Reference
@@ -100,6 +98,7 @@ The following environment variables are only used in the default Jenkinsfile. To
 Name                                          | Default Value   | Description |
 --------------------------------------------- | --------------- | ----------- |
 `LCP_CI_USE_DEFAULT_JENKINSFILE`      | `false`         | Option to enable of disable the Default Jenkinsfile |
+`LCP_CI_LIFERAY_DXP_HOTFIXES_{ENV}`   |                 | Comma-delimited list of hotfixes for CI to apply automatically when deploying the Liferay service. Replace `{ENV}` with the environment name (in all-caps), or `COMMON`. |
 `LCP_CI_BUILD_TIMEOUT_MINUTES`        | `30`            | Set a timeout period for the Pipeline run, after which Jenkins should abort the Pipeline  |
 `LCP_CI_PRESERVE_STASHES_BUILD_COUNT` | `20`            | Preserve stashes from completed builds, for use with stage restarting |
 `LCP_CI_BUILD_NUM_TO_KEEP`            | `10`            | Number of builds that will be stored |
