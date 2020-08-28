@@ -42,7 +42,8 @@ Coming soon!
 
 Configuring Content Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Coming soon!
+
+-  :doc:`/site-building/displaying-content/configuring-content-recommendations/content-recommendations`
 
 Site Navigation
 ---------------
