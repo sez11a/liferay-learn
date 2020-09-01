@@ -1,21 +1,16 @@
-Developer Reference
-===================
+Themes
+======
 
 .. toctree::
    :maxdepth: 3
 
-   reference/fragments.rst
-
-Developing Fragments Reference
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  :doc:`/site-building/developer-guide/reference/fragments/fragments-toolkit-command-reference`
--  :doc:`/site-building/developer-guide/reference/fragments/page-fragment-editor-interface-reference`
--  :doc:`/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference`
--  :doc:`/site-building/developer-guide/reference/fragments/fragment-specific-tags-reference`
-
-Themes
-~~~~~~
+   themes/look-and-feel-overview.md
+   themes/understanding-the-page-structure.md
+   themes/installing-the-theme-generator.md
+   themes/setting-up-your-npm-environment-reference.md
+   themes/theme-anatomy.md
+   themes/liferay-js-themes-toolkit-theme-development-workflow.md
+   themes/running_theme_tasks.rst
 
 -  :doc:`/site-building/developer-guide/reference/themes/look-and-feel-overview`
 -  :doc:`/site-building/developer-guide/reference/themes/understanding-the-page-structure`
@@ -25,7 +20,7 @@ Themes
 -  :doc:`/site-building/developer-guide/reference/themes/liferay-js-themes-toolkit-theme-development-workflow`
 
 Running Theme Tasks
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 -  :doc:`/site-building/developer-guide/reference/themes/running-theme-tasks/running-theme-tasks`
 -  :doc:`/site-building/developer-guide/reference/themes/running-theme-tasks/building-themes`
