@@ -8,7 +8,7 @@ User Guide
    user-guide/activating-workflow.md
    user-guide/managing-workflows.md
    user-guide/reviewing-assets.md
-   user-guide/building-workflows.md
+   user-guide/workflow-designer-overview.md
    user-guide/using-workflow-metrics.md
    user-guide/workflow-metrics-reports.md
    user-guide/workflow-designer-overview.md
