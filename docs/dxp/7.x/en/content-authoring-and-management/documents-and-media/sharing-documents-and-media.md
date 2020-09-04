@@ -1,18 +1,18 @@
-# Introduction to Documents and Media
+# Sharing Documents and Media
 
-The Documents and Media library stores files on the server using the same type of structure that you use to store files locally. It accepts files of any kind and can serve as a virtual shared drive.
+The Documents and Media library stores and organizes files on the server. It accepts files of any kind and can serve as a virtual shared drive.
 
 ```tip::
-   Each DXP site has its own Documents and Media library. Thus documents are scoped to that site and are not shared between sites.
+   Each DXP Site has its own Documents and Media library. Thus documents are scoped to that Site and are not shared between Sites.
 ```
 
-Users can create [folders](./uploading-and-managing/creating-folders.md) and [upload documents](./uploading-and-managing/uploading-files.md) to the Documents and Media library. You can also upload multiple documents at once using a drag-and-drop feature.
-
-![You can create a customizable Document Type or Metadata Set.](./introduction-to-documents-and-media/images/03.png)
+You can create [folders](./uploading-and-managing/creating-folders.md) and [upload documents](./uploading-and-managing/uploading-files.md) (even multiple ones at once via drag and drop) to the Documents and Media library.
 
 Users can organize their documents using customizable document types and metadata sets and display them with automatic document preview generation. To create customizable Document Types, see [Defining Document Types](./uploading-and-managing/managing-metadata/defining-document-types.md). To create a new Metadata Set, see [Using Metadata Sets](./uploading-and-managing/managing-metadata/using-metadata-sets.md).
 
 ![You can create a customizable Document Type or Metadata Set.](./introduction-to-documents-and-media/images/01.png)
+
+<!-- Stopped reviewing here. -Rich --> 
 
 ## Integrations
 
