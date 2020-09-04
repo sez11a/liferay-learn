@@ -12,22 +12,22 @@ In general, you can use the `@generated` annotation above the class name in each
 
 ## Generated Code Structure
 
-REST Builder generates several packages of code for you, so that you can focus on just your implementation class. However, you must start by creating the locations for each of your modules. In a conventional Liferay workspace, you only need to create the folders for each module (each with their own `bnd.bnd` and `build.gradle` files).
+REST Builder generates several packages of code for you, so that you can focus on just your implementation class. However, you must start by creating the locations for each of your modules. In a conventional Liferay workspace, you only need to create the folders for each module and each of their `bnd.bnd` and `build.gradle` files.
 
-After you create the initial configuration for your modules,  and the [REST Builder configuration files](#adding-your-api-configurations) (`rest-config.yaml` and `rest-openapi.yaml`), then running REST Builder will generate the following structure:
+After you create the initial configuration for your modules,  and the [REST Builder configuration files](#adding-your-api-configurations) (`rest-config.yaml` and `rest-openapi.yaml`), then running REST Builder generates the following structure:
 
 ```
-api
-- bnd.bnd
-- build.gradle
-- <apiDir>
----- <apiPackagePath>
------ dto
------- <version>
-------- Schema object classes
------ resource
------- <version>
-------- Schema object resource interfaces
+api root
+├── bnd.bnd
+├── build.gradle
+└── <apiDir>
+    └── <apiPackagePath>
+        ├── dto
+        │   └── <version>
+        │       └── Schema object classes
+        └── resource
+            └── <version>
+                └── Schema object resource interfaces
 ```
 
 The API module contains the Java classes for any custom objects you have defined (as [object schemas](#defining-schemas) in ``rest-openapi.yaml``) within the `dto` package. Reference these classes to work with your custom objects when you are adding your implementation logic.
@@ -39,30 +39,30 @@ The API module contains the Java classes for any custom objects you have defined
 REST Builder generates the following structure for `impl` modules:
 
 ```
-impl
-- bnd.bnd
-- build.gradle
-- rest-config.yaml
-- rest-openapi.yaml
-- src
--- main
--- java
---- <apiPackagePath>
----- internal
------ graphql
------- GraphQL endpoint code
------ jaxrs
------- application
-------- JAX-RS application code
------ resource
------- <version>
-------- *ResourceImpl classes
---- resources
----- OSGI-INF
------ liferay
------- rest
-------- <version>
--------- Generated properties files
+impl root
+├── bnd.bnd
+├── build.gradle
+├── rest-config.yaml
+├── rest-openapi.yaml
+└── src
+    └── main
+        ├── resources
+        │   └── OSGI-INF
+        │       └── liferay
+        │           └── rest
+        │               └── <version>
+        │                   └── Generated properties files
+        └── java
+            └── <apiPackagePath>
+                └── internal
+                    ├── graphql
+                    │   └── GraphQL endpoint code
+                    ├── jaxrs
+                    │   └── application
+                    │       └── JAX-RS application code
+                    └── resource
+                        └── <version>
+                            └── *ResourceImpl classes
 ```
 
 GraphQL endpoint code and JAX-RS application code are both generated in the `graphql` and `jaxrs` packages, respectively. Your own API implementation is added into the appropriate `*ResourceImpl` class within the `resource` package.
@@ -73,7 +73,7 @@ You can also configure a `client` and `test` module for REST Builder to generate
 
 As with the `api` and `impl` modules, REST Builder uses the directory paths, `apiPackagePath` values, and `version` value to define the folders that it will add classes into.
 
-For `test` modules, you can define the implementation of your tests to the appropriate `*ResourceTest` Java class.
+For `test` modules, you can define the implementation of your tests to the appropriate `*ResourceTest` Java class. Generated test classes follow the [JUnit](https://junit.org/junit5/docs/current/user-guide/) testing framework.
 
 ## Adding Your API Configurations
 
@@ -103,7 +103,7 @@ Schemas are the main mechanism REST Builder provides for defining new data types
 
 Objects are each defined with a name, a `type` (usually `object`, unless it only represents a basic type), and then a list of `properties` (their fields in the Java code) that they contain. Each of the properties also has a `type`, as well as a `description` that will be used for generated Java documentation.
 
-Here is an example of a `components` section that defines one new schema (for a "BasicUser", with only a name and ID):
+Here is an example of a `components` section that defines one new schema (for a `BasicUser` object, with only a name and ID):
 
 ```
 components:
