@@ -1,14 +1,14 @@
 # Documents and Media UI Reference
 
-This article serves as a reference guide to the _Documents and Media_ menu. Navigate to the _Site Administration_ &rarr; _Content & Data_ &rarr; _Documents and Media_.
+To get to the _Documents and Media_ menu, navigate to the _Site Administration_ &rarr; _Content & Data_ &rarr; _Documents and Media_.
 
-![The Documents and Media menu is found in the Site Administration.](./documents-and-media-ui-reference/images/01.png)
+![The Documents and Media menu is found in Site Administration.](./documents-and-media-ui-reference/images/01.png)
 
 There are three tabs: _Documents and Media_, _Document Types_, and _Metadata Sets_.
 
 ## Documents and Media Tab
 
-The _Documents and Media_ Tab's Home screen displays all the folders and documents on that site. This is the Root folder. Here, users can upload a single document or multiple documents, add a new folder, add a new Repository (for example, Sharepoint), or a new shortcut.
+The _Documents and Media_ Tab displays that site's folders and documents, beginning at the Root folder. Here, users can upload a single document or multiple documents, add a new folder, add a new Repository (for example, Sharepoint), or a new shortcut.
 
 Click the (![Add icon](../../images/icon-add.png)) to begin using the _Documents and Media_ application.
 
@@ -16,7 +16,7 @@ Click the (![Add icon](../../images/icon-add.png)) to begin using the _Documents
 
 ## Document Types Tab
 
-_Document Types_ are made of metadata fields and help users define the purpose of Document Library files.
+_Document Types_ are made of metadata fields that users fill out to and help define the purpose of Document Library files. They provide additional, searchable information about uploaded documents. 
 
 ![The Document Types Tab contains all Document Types which contain metadata sets.](./documents-and-media-ui-reference/images/02.png)
 
@@ -26,9 +26,9 @@ To learn more about using Document Types, see [Defining Document Types](./upload
 
 ## Metadata Set Tab
 
-You can define metadata fields that users fill out when they create or edit Documents and Media files by creating a Metadata Set. Metadata Sets are independent from _Document Types_, but you can still use Metadata Sets in a Document Type.
+Metadata Sets are groups of fields that can be added to Document Types. 
 
-Metadata Sets can be grouped in a hierarchy and can become the foundation of another metadata set (an "extension"). A "child" metadata set is displayed on the same level as the parent.
+Metadata Sets can be grouped in a hierarchy to be used as the foundation of another metadata set (an "extension"). A "child" metadata set appears on the same level as the parent.
 
 ![The Metadata Set Tab contains all Metadata Sets.](./documents-and-media-ui-reference/images/03.png)
 
@@ -40,59 +40,55 @@ To learn more about Metadata Sets, see [Using Metadata Sets](./uploading-and-man
 
 You can access the application's settings from any of the three tabs by clicking the (![Options icon](../../images/icon-options.png)) to access the _Options_ menu.
 
-![Access the Options menu.](./documents-and-media-ui-reference/images/05.png)
+![The Options menu contains the application settings.](./documents-and-media-ui-reference/images/05.png)
 
 ### Access from Desktop
 
-Users can access their _Documents and Media_ repository in their file explorer on their desktop using WebDAV. To do so, users can click on _Access from Desktop_ to generate the WebDAV URL.
+You can access the Documents and Media repository from your desktop using WebDAV. To do so, click _Access from Desktop_ to access the WebDAV URL.
 
-![Generate the WebDAV URL.](./documents-and-media-ui-reference/images/06.png)
+![The WebDAV URL provides desktop access to the Documents and Media repository.](./documents-and-media-ui-reference/images/06.png)
 
 ### Edit
 
 Users can enable or disable [Workflow](../../process-automation/workflow/user-guide/activating-workflow.md) for all Document Types. To learn more about Workflows in general, see [Introduction to Workflow](../../process-automation/workflow/user-guide/introduction-to-workflow.md).
 
-![Select a Workflow definition.](./documents-and-media-ui-reference/images/07.png)
+![Select a Workflow definition to apply to Document Types.](./documents-and-media-ui-reference/images/07.png)
 
-Workflows for Documents and Media are managed only here.
+Workflows for Documents and Media are managed here.
 
 ### Home Folder Permissions
 
 Users can manage the permissions for the _Documents and Media_ Home folder.
 
-![Configure the permissions.](./documents-and-media-ui-reference/images/08.png)
-
 See [Understanding Roles and Permissions](../../users-and-permissions/roles-and-permissions/understanding-roles-and-permissions.md) to learn more.
 
 ### Export/ Import
 
-You can [Export or Import](../../site-building/building-sites/importing-exporting-pages-and-content.md) Documents and Media `LAR` (Liferay Archive) files. There are two primary places Export/Import is used: Sites and apps. Here, you can export the contents of your DM application or import an existing one.
+You can [Export or Import](../../site-building/building-sites/importing-exporting-pages-and-content.md) Documents and Media `LAR` (Liferay Archive) files. There are two primary places Export/Import is used: Sites and apps. Here, you can export the contents of your DM application or import documents from another one.
 
-![Export or Import a DM LAR.](./documents-and-media-ui-reference/images/12.png)
+![You can import or export documents to and from Liferay ARchive (LAR) files.](./documents-and-media-ui-reference/images/08.png)
 
 ### Configuration
 
-Users can configure their DM email notifications settings on the _Configuration_ menu. See [Connecting to a Mail Server](../../installation-and-upgrades/setting-up-liferay-dxp-configuring-mail/connecting-to-a-mail-server.md) to set up a mail server first.
+You can configure DM email notification settings on the _Configuration_ menu. See [Connecting to a Mail Server](../../installation-and-upgrades/setting-up-liferay-dxp-configuring-mail/connecting-to-a-mail-server.md) to set up a mail server first.
 
-Users can use the _Definition of Terms_ which are placeholders that parse information such as the system administrator, the recipient, and the name of the document.
+Email templates contain _Definition of Terms_ which are placeholders that parse information such as the system administrator, the recipient, and the name of the document.
 
 #### Email From Tab
 
-Users can enter a name and email address.
+Users can enter a name and email address to populate the email's `from` field.
 
-![Enter the name and email address.](./documents-and-media-ui-reference/images/09.png)
+![Enter a name and email address to populate the from field. This can be important if recipients use rules to filter their mail.](./documents-and-media-ui-reference/images/09.png)
 
 #### Document Added Email
 
-If a new document has been added, this is the email notification sent to the desired persons.
+Recipients receive this notification if a new document has been added.
 
-![Enter the name and contents of the email notification.](./documents-and-media-ui-reference/images/10.png)
+![Place the appropriate information in to the template for "document added" notifications.](./documents-and-media-ui-reference/images/10.png)
 
 #### Document Updated Email
 
-If an existing document has been updated, this is the email notification sent to the desired persons.
-
-![Enter the name and contents of the email notification.](./documents-and-media-ui-reference/images/11.png)
+Recipients receive this notification if an existing document has been updated.
 
 ## Additional Information
 
