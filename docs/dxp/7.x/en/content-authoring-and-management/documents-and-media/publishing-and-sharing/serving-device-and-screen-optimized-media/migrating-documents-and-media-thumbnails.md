@@ -23,17 +23,17 @@ To create the new Image Resolutions, see [Adding Image Resolutions](./adding-ima
 
 ## Creating the Adaptive Media Images
 
-Once the required image resolutions exist, you can convert the Documents and Media thumbnails to Adaptive Media images. 
+Once the required image resolutions exist, you can convert the Documents and Media thumbnails to Adaptive Media images.
 
 There are two different ways to migrate the Documents and Media thumbnails to Adaptive Media:
 
 * Adapt the images for the thumbnail image resolution: This scales the existing thumbnails to the values in the Adaptive Media image resolutions, which can take time depending on the number of images. This is recommended only for a small number of images or if you prefer to generate your images from scratch. This approach is covered in more detail in [Generating Missing Adapted Images](./managing-image-resolutions.md#generating-missing-adapted-images).
 
-* Execute a migrate process that reuses the existing thumbnails: This copies the existing thumbnails to Adaptive Media, which performs better because it avoids the computationally expensive scaling operation. 
+* Execute a migrate process that reuses the existing thumbnails: This copies the existing thumbnails to Adaptive Media, which performs better because it avoids the computationally expensive scaling operation.
 
 ### Running the Migration Process
 
-The migration process is a set of [Gogo console commands](/dxp/7.x/en/liferay-internals/fundamentals/using-felix-gogo-shell.md). 
+The migration process is a set of [Gogo console commands](/dxp/7.x/en/liferay-internals/fundamentals/using-felix-gogo-shell.md).
 
 1. Navigate to the _Global Menu_ &rarr; _Control Panel_ &rarr; _Gogo Shell_.
 
@@ -45,7 +45,7 @@ The migration process is a set of [Gogo console commands](/dxp/7.x/en/liferay-in
 
 ## Troubleshooting
 
-If you undeploy Adaptive Media at some point after running the migration process, you must regenerate the Documents and Media thumbnails: 
+If you undeploy Adaptive Media at some point after running the migration process, you must regenerate the Documents and Media thumbnails:
 
 1. Navigate to the _Global Menu_ &rarr; _Control Panel_ &rarr; _Server Administration_.
 

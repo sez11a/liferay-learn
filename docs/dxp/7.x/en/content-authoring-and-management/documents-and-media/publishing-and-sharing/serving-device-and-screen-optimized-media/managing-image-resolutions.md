@@ -43,19 +43,17 @@ The Image Resolution has been deleted.
    Image resolutions and their identifiers can't be updated if the resolution has been used to adapt images. This prevents inconsistencies in generated images.
 ```
 
-Therefore, editing an image resolution is only possible if Adaptive Media hasn't yet generated adapted images for it. If you must change the values of a resolution that already has adapted images, you must delete that resolution and create a new one with the new values. 
+Therefore, editing an image resolution is only possible if Adaptive Media hasn't yet generated adapted images for it. If you must change the values of a resolution that already has adapted images, you must delete that resolution and create a new one with the new values.
 
 ## Generating Missing Adapted Images
 
 If Adaptive Media hasn't generated all the images you need (for example, if new images were uploaded before a new image resolution was created or while the resolution was disabled), you must generate the missing images manually.
 
-<!-- The below image is missing/not named properly. -Rich -->
-
-![The Adapted Images column shows the percentage of images that are adapted for each resolution.](../../../images/adaptive-media-coverage.png)
+![The Adapted Images column shows the percentage of images that are adapted for each resolution.](./managing-image-resolutions/images/01.png)
 
 To manually generate missing adapted images,
 
-1. For a single resolution, select *Adapt Remaining* from the resolution's Actions menu (![Actions](../../../images/icon-actions.png)).
+1. For a single resolution, select *Adapt Remaining* from the resolution's Actions menu (![Actions](../../../../images/icon-actions.png)).
 1. For all resolutions at once, select *Adapt All Images* from the Actions menu in the Control Menu at the top of the page.
 
 ## The Recycle Bin and Adapted Images

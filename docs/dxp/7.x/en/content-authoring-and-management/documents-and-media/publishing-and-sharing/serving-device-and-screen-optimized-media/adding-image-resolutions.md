@@ -11,7 +11,7 @@ Images uploaded before you create a resolution are _not_ affected and must be ad
 ## Adding a New Image Resolution
 
 1. Navigate to the _Global Menu_ &rarr; _Control Panel_ &rarr; _Adaptive Media_.
-1. Click the *Add* icon (![Add new resolution](../../../../images/icon-add.png)) on the Adaptive Media configuration page and provide the information below. 
+1. Click the *Add* icon (![Add new resolution](../../../../images/icon-add.png)) on the Adaptive Media configuration page and provide the information below.
 1. Click _Save_ when finished.
 
 **Name**: Enter a unique name. This can be updated if a custom `Identifier` is defined.
