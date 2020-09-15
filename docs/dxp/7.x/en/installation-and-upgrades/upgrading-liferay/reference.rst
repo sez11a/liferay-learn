@@ -4,6 +4,7 @@ Reference
 .. toctree::
    :maxdepth: 2
 
+   reference/data-cleanup.md
    reference/database-upgrade-tool-reference.md
    reference/changes-to-default-settings.md
    reference/deprecations-in-liferay-dxp-7-3.md
