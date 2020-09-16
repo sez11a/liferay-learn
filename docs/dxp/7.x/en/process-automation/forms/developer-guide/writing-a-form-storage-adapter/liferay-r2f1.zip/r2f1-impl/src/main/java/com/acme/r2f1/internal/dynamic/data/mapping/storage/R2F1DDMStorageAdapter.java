@@ -15,18 +15,6 @@
 package com.acme.r2f1.internal.dynamic.data.mapping.storage;
 
 import com.liferay.dynamic.data.mapping.exception.StorageException;
-import com.liferay.dynamic.data.mapping.io.DDMFormValuesDeserializer;
-import com.liferay.dynamic.data.mapping.io.DDMFormValuesDeserializerDeserializeRequest;
-import com.liferay.dynamic.data.mapping.io.DDMFormValuesDeserializerDeserializeResponse;
-import com.liferay.dynamic.data.mapping.io.DDMFormValuesDeserializerTracker;
-import com.liferay.dynamic.data.mapping.io.DDMFormValuesSerializer;
-import com.liferay.dynamic.data.mapping.io.DDMFormValuesSerializerSerializeRequest;
-import com.liferay.dynamic.data.mapping.io.DDMFormValuesSerializerSerializeResponse;
-import com.liferay.dynamic.data.mapping.io.DDMFormValuesSerializerTracker;
-import com.liferay.dynamic.data.mapping.model.DDMContent;
-import com.liferay.dynamic.data.mapping.model.DDMForm;
-import com.liferay.dynamic.data.mapping.service.DDMContentLocalService;
-import com.liferay.dynamic.data.mapping.storage.DDMFormValues;
 import com.liferay.dynamic.data.mapping.storage.DDMStorageAdapter;
 import com.liferay.dynamic.data.mapping.storage.DDMStorageAdapterDeleteRequest;
 import com.liferay.dynamic.data.mapping.storage.DDMStorageAdapterDeleteResponse;
@@ -34,9 +22,8 @@ import com.liferay.dynamic.data.mapping.storage.DDMStorageAdapterGetRequest;
 import com.liferay.dynamic.data.mapping.storage.DDMStorageAdapterGetResponse;
 import com.liferay.dynamic.data.mapping.storage.DDMStorageAdapterSaveRequest;
 import com.liferay.dynamic.data.mapping.storage.DDMStorageAdapterSaveResponse;
-import com.liferay.portal.kernel.service.ServiceContext;
-
-import java.util.Date;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -45,7 +32,8 @@ import org.osgi.service.component.annotations.Reference;
  * @author Russell Bohl
  */
 @Component(
-	immediate = true, property = "ddm.storage.adapter.type=file-system",
+	immediate = true,
+	property = "ddm.storage.adapter.type=r2f1-ddm-storage-adapter",
 	service = DDMStorageAdapter.class
 )
 public class R2F1DDMStorageAdapter implements DDMStorageAdapter {
@@ -56,13 +44,11 @@ public class R2F1DDMStorageAdapter implements DDMStorageAdapter {
 		throws StorageException {
 
 		try {
-			_ddmContentLocalService.deleteDDMContent(
-				ddmStorageAdapterDeleteRequest.getPrimaryKey());
+			if (_log.isWarnEnabled()) {
+				_log.warn("Acme storage adapter's delete method was invoked");
+			}
 
-			DDMStorageAdapterDeleteResponse.Builder builder =
-				DDMStorageAdapterDeleteResponse.Builder.newBuilder();
-
-			return builder.build();
+			return _jsonStorageAdapter.delete(ddmStorageAdapterDeleteRequest);
 		}
 		catch (Exception exception) {
 			throw new StorageException(exception);
@@ -75,16 +61,11 @@ public class R2F1DDMStorageAdapter implements DDMStorageAdapter {
 		throws StorageException {
 
 		try {
-			DDMContent ddmContent = _ddmContentLocalService.getContent(
-				ddmStorageAdapterGetRequest.getPrimaryKey());
+			if (_log.isWarnEnabled()) {
+				_log.warn("Acme storage adapter's get method was invoked");
+			}
 
-			DDMFormValues ddmFormValues = _deserialize(
-				ddmContent.getData(), ddmStorageAdapterGetRequest.getDDMForm());
-
-			DDMStorageAdapterGetResponse.Builder builder =
-				DDMStorageAdapterGetResponse.Builder.newBuilder(ddmFormValues);
-
-			return builder.build();
+			return _jsonStorageAdapter.get(ddmStorageAdapterGetRequest);
 		}
 		catch (Exception exception) {
 			throw new StorageException(exception);
@@ -96,109 +77,22 @@ public class R2F1DDMStorageAdapter implements DDMStorageAdapter {
 			DDMStorageAdapterSaveRequest ddmStorageAdapterSaveRequest)
 		throws StorageException {
 
-		if (ddmStorageAdapterSaveRequest.isInsert()) {
-			return _insert(ddmStorageAdapterSaveRequest);
-		}
-
-		return _update(ddmStorageAdapterSaveRequest);
-	}
-
-	private DDMFormValues _deserialize(String content, DDMForm ddmForm) {
-		DDMFormValuesDeserializer ddmFormValuesDeserializer =
-			_ddmFormValuesDeserializerTracker.getDDMFormValuesDeserializer(
-				"json");
-
-		DDMFormValuesDeserializerDeserializeRequest.Builder builder =
-			DDMFormValuesDeserializerDeserializeRequest.Builder.newBuilder(
-				content, ddmForm);
-
-		DDMFormValuesDeserializerDeserializeResponse
-			ddmFormValuesDeserializerDeserializeResponse =
-				ddmFormValuesDeserializer.deserialize(builder.build());
-
-		return ddmFormValuesDeserializerDeserializeResponse.getDDMFormValues();
-	}
-
-	private DDMStorageAdapterSaveResponse _insert(
-			DDMStorageAdapterSaveRequest ddmStorageAdapterSaveRequest)
-		throws StorageException {
-
 		try {
-			ServiceContext serviceContext = new ServiceContext();
+			if (_log.isWarnEnabled()) {
+				_log.warn("Acme storage adapter's save method was invoked");
+			}
 
-			serviceContext.setScopeGroupId(
-				ddmStorageAdapterSaveRequest.getScopeGroupId());
-			serviceContext.setUserId(ddmStorageAdapterSaveRequest.getUserId());
-			serviceContext.setUuid(ddmStorageAdapterSaveRequest.getUuid());
-
-			DDMContent ddmContent = _ddmContentLocalService.addContent(
-				ddmStorageAdapterSaveRequest.getUserId(),
-				ddmStorageAdapterSaveRequest.getScopeGroupId(),
-				ddmStorageAdapterSaveRequest.getClassName(), null,
-				_serialize(ddmStorageAdapterSaveRequest.getDDMFormValues()),
-				serviceContext);
-
-			DDMStorageAdapterSaveResponse.Builder builder =
-				DDMStorageAdapterSaveResponse.Builder.newBuilder(
-					ddmContent.getPrimaryKey());
-
-			return builder.build();
+			return _jsonStorageAdapter.save(ddmStorageAdapterSaveRequest);
 		}
 		catch (Exception exception) {
 			throw new StorageException(exception);
 		}
 	}
 
-	private String _serialize(DDMFormValues ddmFormValues) {
-		DDMFormValuesSerializer ddmFormValuesSerializer =
-			_ddmFormValuesSerializerTracker.getDDMFormValuesSerializer("json");
+	private static final Log _log = LogFactoryUtil.getLog(
+		R2F1DDMStorageAdapter.class);
 
-		DDMFormValuesSerializerSerializeRequest.Builder builder =
-			DDMFormValuesSerializerSerializeRequest.Builder.newBuilder(
-				ddmFormValues);
-
-		DDMFormValuesSerializerSerializeResponse
-			ddmFormValuesSerializerSerializeResponse =
-				ddmFormValuesSerializer.serialize(builder.build());
-
-		return ddmFormValuesSerializerSerializeResponse.getContent();
-	}
-
-	private DDMStorageAdapterSaveResponse _update(
-			DDMStorageAdapterSaveRequest ddmStorageAdapterSaveRequest)
-		throws StorageException {
-
-		try {
-			DDMContent ddmContent = _ddmContentLocalService.getContent(
-				ddmStorageAdapterSaveRequest.getPrimaryKey());
-
-			ddmContent.setModifiedDate(new Date());
-			ddmContent.setData(
-				_serialize(ddmStorageAdapterSaveRequest.getDDMFormValues()));
-
-			_ddmContentLocalService.updateContent(
-				ddmContent.getPrimaryKey(), ddmContent.getName(),
-				ddmContent.getDescription(), ddmContent.getData(),
-				new ServiceContext());
-
-			DDMStorageAdapterSaveResponse.Builder builder =
-				DDMStorageAdapterSaveResponse.Builder.newBuilder(
-					ddmContent.getPrimaryKey());
-
-			return builder.build();
-		}
-		catch (Exception exception) {
-			throw new StorageException(exception);
-		}
-	}
-
-	@Reference
-	private DDMContentLocalService _ddmContentLocalService;
-
-	@Reference
-	private DDMFormValuesDeserializerTracker _ddmFormValuesDeserializerTracker;
-
-	@Reference
-	private DDMFormValuesSerializerTracker _ddmFormValuesSerializerTracker;
+	@Reference(target = "(ddm.storage.adapter.type=json)")
+	private DDMStorageAdapter _jsonStorageAdapter;
 
 }
