@@ -1,87 +1,55 @@
 # Example: Creating a Simple DXP Cluster
 
-An easy way to learn DXP clustering is to set up a two node DXP cluster environment on a single machine using [Docker containers](https://docs.docker.com/get-started/overview/). Here you'll prepare each required server and two DXP app server nodes in their own containers. The containers will refer to each other by container name over a Docker bridge network. This is a fast way to set up a DXP cluster development environment.
+A fast, easy way to learn DXP clustering is to set up a two node DXP cluster environment on one machine using [Docker containers](https://docs.docker.com/get-started/overview/). Here you'll create two DXP server containers along with server containers for a database, search engine, and file store.
 
-Here are the server's you'll create:
+Here are the server containers you'll create:
 
-| Server Type | Implementation | Server Container |
+| Server Type | Implementation | Container Name |
 | :---------- | :------- | :---------- |
 | Database | MariaDB  | `some-mariadb` |
-| Search Engine | Elasticsearch | `elasticsearch` |
 | File Store | DBStore | `some-mariadb` |
-| App Server | Tomcat | `dxp-1` |
-| App Server | Tomcat | `dxp-2` |
-| App Server | Apache Httpd | `httpd` |
+| Search Engine | Elasticsearch | `elasticsearch` |
+| DXP Server | Tomcat | `dxp-1` |
+| DXP Server | Tomcat | `dxp-2` |
 
-The following figure depicts the DXP cluster environment you'll create.
+```warning::
+   This example is for learning purposes and is not suitable for production use cases. For production environments, you should include an HTTP server for load balancing requests to the DXP servers, use separate database servers for read only and read-write operations, and consider clustering and load balancing database servers, file store servers, and search engine servers. Please read all of the `Clustering for High Availability <./clustering-for-high-availability.md>`_ articles for more information.
+```
 
+<!--
 ![DXP cluster environment.](./example-creating-a-simple-dxp-cluster/images/01.png)
+Should we remove this diagram since it includes a load balancer? -->
 
-Here are the steps for creating the cluster:
+Here are the main steps:
 
-1. [Configure a Network for the Containers](#configure-a-network-for-the-containers) (example-specific)
-1. [Prepare a Database Server](#prepare-a-database-server)
-1. [Prepare a Search Engine](#prepare-a-search-engine)
-1. [Prepare a File Store](#prepare-a-file-store)
-1. [Configure the DXP Server Cluster](#configure-the-dxp-server-cluster)
-1. [Front the Cluster with a Web Server](#front-the-cluster-with-a-web-server)
-1. [Test the Cluster](#test-the-cluster)
+1. [Start a Database Server](#prepare-a-database-server)
+1. [Start a File Store Server](#prepare-a-file-store-server)
+1. [Start a Search Engine Server](#prepare-a-search-engine-server)
+1. [Configure the Search Engine for Each Node](#configure-the-search-engine-for-each-node)
+1. [Start the DXP Cluster](#start-the-dxp-cluster)
+1. [Test the DXP Cluster](#test-the-dxp-cluster)
 
-```important::
-    Don't have Docker? Go here first: `Linux <https://docs.docker.com/install/linux/docker-ce/ubuntu/>`_ | `Windows <https://docs.docker.com/docker-for-windows/install/>`_ | `OSX <https://docs.docker.com/docker-for-mac/install/>`_
-```
+## Start a Database Server
 
-```note::
-   DXP cluster environments can also be set up using an `on-premises DXP Tomcat bundle <../../installing-liferay/installing-a-liferay-tomcat-bundle.md>`_, using `DXP installed to an app server <../../installing-liferay/installing_liferay_on_an_application_server.md>`_ on-premises, or using any combination of Docker containers and DXP installations.
-```
+A DXP cluster requires a data source that's accessible to all of the DXP cluster nodes. The data source can be a JNDI data source or a direct connection to a database server or a database server cluster. Please see the [compatibility matrix](https://www.liferay.com/compatibility-matrix) for the database servers your DXP version supports. Please see [Database Configuration for Cluster Nodes](./database-configuration-for-cluster-nodes.md) for more information.
 
-## Configure a Network for the Containers
+Create the database server and DXP database:
 
-Since the server containers in this example run on the same machine, the server IP addresses can be complicated. By launching all of the containers on a [Docker bridge network](https://docs.docker.com/network/bridge/), the containers can refer to each other by container name, rather than IP address. Outside of this kind of environment, IP addresses would be used.
-
-Create an arbitrarily named Docker bridge network for the containers to use on your host machine:
-
-```bash
-docker network create --driver=bridge my-bridge
-```
-
-A bridged network called `my-bridge` is available.
-
-## Prepare a Database Server
-
-A DXP cluster requires a data source that's accessible to all of the app server nodes. The data source can be a JNDI data source, a database server, or a database server cluster. See the [compatibility matrix](https://www.liferay.com/compatibility-matrix) for the database servers your DXP version supports.
-
-Create a database server container based on a [MariaDB Docker image](https://hub.docker.com/_/mariadb/):
-
-1. Create a MariaDB database server container. First, download the MariaDB Docker image.
+1. Start a MariaDB Docker container.
 
     ```bash
-    docker pull mariadb:10.2
+    docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:10.2
     ```
 
-    Run the Maria DB Docker image.
+1. In a shell on the container, [create the DXP database](../../reference/database-configurations.md).
+
+    Sign in to the database server.
 
     ```bash
-    docker run --name some-mariadb --network=my-bridge -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:10.2
+    docker exec -it some-mariadb bash -c "/usr/bin/mysql -uroot -pmy-secret-pw"
     ```
 
-    The `docker run` command creates a MariaDB Docker container called `some-mariadb` on the `my-bridge` Docker network. The database server's `root` user password is `my-secret-pw`. See the [MariaDB Docker Hub page](https://hub.docker.com/_/mariadb/) for more information.
-
-1. In a shell on the container, [create a database](../../reference/database-configurations.md) for DXP.
-
-    Connect to your MariaDB container's terminal.
-
-    ```bash
-    docker exec -it some-mariadb bash
-    ```
-
-    Log in to the database.
-
-    ```bash
-    mysql -uroot -pmy-secret-pw
-    ```
-
-    Create the database.
+    Create a database for DXP.
 
     ```sql
     create database dxp_db character set utf8;
@@ -93,440 +61,240 @@ Create a database server container based on a [MariaDB Docker image](https://hub
     quit
     ```
 
-    End your terminal session.
+    End your bash session.
 
     ```bash
     exit
     ```
-
-See [Database Configuration for Cluster Nodes](./database-configuration-for-cluster-nodes.md) for more information.
 
 Your database server is ready for DXP.
 
-## Prepare a Search Engine
+## Start a File Store Server
 
-A DXP cluster requires a search engine (running as a separate process) that's accessible to all of the app server nodes. See [Installing a Search Engine](../../../using-search/installing-and-upgrading-a-search-engine/introduction-to-installing-a-search-engine.md) for more information.
+A DXP cluster requires a File Store accessible to all of the DXP cluster nodes. For convenience, this example uses a [DBStore File Store](../../../system-administration/file-storage/other-file-store-types/dbstore.md) configured on the DXP database. The database server already started in this example includes the File Store. Please see [Configuring File Storage](../../../system-administration/file-storage/configuring-file-storage.md) for information on configuring all File Store types.
 
-Create a search engine container based on an [Elasticsearch Docker image](https://hub.docker.com/_/elasticsearch):
+## Start a Search Engine Server
 
-1. Download the Elasticsearch Docker image that's compatible with your DXP version.
+A DXP cluster requires a search engine (running as a separate process) accessible to all of the DXP cluster nodes. Please see [Installing a Search Engine](../../../using-search/installing-and-upgrading-a-search-engine/introduction-to-installing-a-search-engine.md) for more information.
 
-    ```bash
-    docker pull elasticsearch:6.8.7
-    ```
+Create and configure an Elasticsearch server:
 
-1. Start an Elasticsearch container, mounting the container's data folder to a host machine folder.
-
-    Create a folder to hold the Elasticsearch indexes.
+1. Set a local folder for storing an Elasticsearch server's data volume.  For example,
 
     ```bash
-    mkdir -p ~/elasticsearch/es_data_volume
+    mkdir -p elasticsearch/es_data_volume
     ```
 
-    Run the Elasticsearch container.
+1. Start an Elasticsearch container named `elasticsearch`.
 
     ```bash
-    docker run -it -p 9200:9200 -p 9300:9300  -e cluster.name=LiferayElasticsearchCluster -e ES_JAVA_OPTS="-Xms512m -Xmx512m" --network my-bridge --name elasticsearch -v ~/elasticsearch/es_data_volume:/usr/share/elasticsearch/data elasticsearch:6.8.7
+    docker run -it --name elasticsearch -p 9200:9200 -p 9300:9300 -e cluster.name=LiferayElasticsearchCluster -e ES_JAVA_OPTS="-Xms512m -Xmx512m" -v $(pwd)/elasticsearch/es_data_volume:/usr/share/elasticsearch/data elasticsearch:6.8.7
     ```
 
-    The `docker run` command creates an Elasticsearch Docker container that publishes on ports `9200` and `9300`, and has an Elasticsearch cluster called `LiferayElasticsearchCluster`. `512m` of initial memory is allocated to the server. The `-v ...` option maps the container's data folder to the host machine folder you created.
+    ```note::
+       If the container reports ``max virtual memory areas vm.max_map_count [xxxxx] is too low, increase to at least [xxxxxx]``, then set ``vm.max_map_count`` to a sufficient value using a command like this one: ``sudo sysctl -w vm.max_map_count=[xxxxxx]``. Then start the container.
+    ```
 
-1. In a shell on the container, install the required Elasticsearch plugins.
-
-    Connect to the Elasticsearch container terminal.
+1. Install the required Elasticsearch plugins.
 
     ```bash
-    docker exec -it elasticsearch bash
+    docker exec -it elasticsearch bash -c '/usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu && /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-kuromoji && /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-smartcn && /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-stempel'
     ```
 
-    Navigate to the `/elasticsearch` directory.
+Your search engine is ready to manage search indexes.
+
+## Configure the Search Engine Server For Each Node
+
+Use [Configuration Files](../../../system-administration/system-settings/using-configuration-files.md) to configure Elasticsearch for each DXP node:
+
+1. Create the Configuration Files locations.
 
     ```bash
-    cd /usr/share/elasticsearch
+    mkdir -p dxp-1/files/osgi/configs dxp-2/files/osgi/configs
     ```
 
-    Install required plugins.
+1. Configure Elasticsearch for the `dxp-1` server node.
 
     ```bash
-    ./bin/elasticsearch-plugin install analysis-icu
-    ```
-
-    ```bash
-    ./bin/elasticsearch-plugin install analysis-kuromoji
-    ```
-
-    ```bash
-    ./bin/elasticsearch-plugin install analysis-smartcn
-    ```
-
-    ```bash
-    ./bin/elasticsearch-plugin install analysis-stempel
-    ```
-
-    Finish your terminal session.
-
-    ```bash
-    exit
-    ```
-
-Your search engine is ready to store and retrieve search indexes for DXP.
-
-## Prepare a File Store
-
-A DXP cluster requires a File Store that's accessible to all of the app server nodes. For convenience, this example uses a [DBStore File Store](../../../system-administration/file-storage/other-file-store-types/dbstore.md) configured on the DXP database. It's configured by the app server nodes (described next). See [File Store](../../../system-administration/file-storage/configuring-file-storage.md) for other file store types.
-
-## Configure the DXP Server Cluster
-
-Each DXP app server that you add as a cluster node must be configured for the cluster and configured to connect to the servers you created.
-
-Here's a summary of the items to configure:
-
-| Item | Configuration Method |
-| :--- | :---------- |
-| Search engine connection | [Configuration file](../../../system-administration/system-settings/using-configuration-files.md) |
-| Data source connection | `portal-ext.properties` file | See [Database Templates](../../reference/database-templates.md) |
-| File Store connection | `portal-ext.properties` file. Some File Store types require a configuration file too. | See [Configuring a File Store](../../..//system-administration/file-storage/configuring-file-storage.md) |
-| Cluster Link | `portal-ext.properties` file | See [Configuring Cluster Link](./configuring-cluster-link.md) |
-
-The [Portal Properties](../../reference/portal-properties.md) can be specified using Docker environment variables or a `portal-ext.properties` file. Since this example uses several properties, properties files are used.
-
-One way to organize your node configurations is to create a folder for each node:
-
-```bash
-mkdir dxp-1 dxp-2
-```
-
-You're ready to configure the DXP server nodes.
-
-### Configure the Search Engine Connection
-
-1. Create a search engine [configuration file](../../../system-administration/system-settings/using-configuration-files.md):
-
-    Create an `/osgi/config/` folder.
-
-    ```bash
-    mkdir -p dxp-1/files/osgi/configs
-    ```
-
-    Create the search engine configuration file.
-
-    ```bash
-    touch dxp-1/files/osgi/configs/com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.config
-    ```
-
-1. Add the following Elasticsearch server connection settings to the `.config` file:
-
-    ```properties
+    cat <<EOT >> dxp-1/files/osgi/configs/com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.config
     operationMode="REMOTE"
     transportAddresses="elasticsearch:9300"
     clusterName="LiferayElasticsearchCluster"
+    EOT
     ```
 
-1. Copy the configuration to your other node(s).
-
-    Create a `/osgi/config/` directory for the second DXP node.
+1. Configure Elasticsearch for the `dxp-2` server node.
 
     ```bash
-    mkdir -p dxp-2/files/osgi/configs
+    cat <<EOT >> dxp-2/files/osgi/configs/com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.config
+    operationMode="REMOTE"
+    transportAddresses="elasticsearch:9300"
+    clusterName="LiferayElasticsearchCluster"
+    EOT
     ```
 
-    Copy the search configurations to the second DXP node.
+You'll make these configuration files accessible to the cluster nodes via bind mounts on the DXP server containers.
 
-    ```bash
-    cp dxp-1/files/osgi/configs/com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.config dxp-2/files/osgi/configs/
-    ```
+```note::
+   The ``docker run --add-host elasticsearch:[ip] ...`` commands used later for the DXP servers add ``/etc/hosts/`` entries that map the name _elasticsearch_ to the Elasticsearch server host IP address.
+```
 
-See [Using Configuration Files](../../../system-administration/system-settings/using-configuration-files.md) for more information.
+## Start the DXP Cluster
 
-### Configure Cluster Link and the Other Server Connections
-
-On each DXP server, use [Portal Properties](../../reference/portal-properties.md) to enable Cluster Link and to configure connections with the data source and file store.
-
-1. Create a `portal-ext.properties` file for each node:
-
-    ```bash
-    touch dxp-1/files/portal-ext.properties
-    ```
-
-    ```bash
-    touch dxp-2/files/portal-ext.properties
-    ```
-
-1. Add the following configurations to the `dxp-1/files/portal-ext.properties` file:
-
-    ```properties
-    jdbc.default.jndi.name=
-
-    jdbc.default.driverClassName=org.mariadb.jdbc.Driver
-    jdbc.default.url=jdbc:mariadb://some-mariadb:3306/dxp_db?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.default.username=root
-    jdbc.default.password=my-secret-pw
-
-    dl.store.impl=com.liferay.portal.store.db.DBStore
-
-    cluster.link.enabled=true
-
-    cluster.link.autodetect.address=some-mariadb:3306
-
-    cluster.link.channel.logic.name.control=control-channel-logic-name-1
-    cluster.link.channel.logic.name.transport.0=transport-channel-logic-name-1
-
-    web.server.display.node=true
-    ```
-
-1. Add the following configurations to the `dxp-2/files/portal-ext.properties` file:
-
-    ```properties
-    jdbc.default.jndi.name=
-
-    jdbc.default.driverClassName=org.mariadb.jdbc.Driver
-    jdbc.default.url=jdbc:mariadb://some-mariadb:3306/dxp_db?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.default.username=root
-    jdbc.default.password=my-secret-pw
-
-    dl.store.impl=com.liferay.portal.store.db.DBStore
-
-    cluster.link.enabled=true
-
-    cluster.link.autodetect.address=some-mariadb:3306
-
-    cluster.link.channel.logic.name.control=control-channel-logic-name-2
-    cluster.link.channel.logic.name.transport.0=transport-channel-logic-name-2
-
-    web.server.display.node=true
-    ```
-
-You've configured the properties required to configure the server connections, to enable and configure Cluster Link. Cluster Link enables communication between the nodes and replicates cache between them.
-
-The tables below describe the common and unique property settings.
-
-#### Common Properties
-
-These property settings are common to each node:
-
-| Property Setting | Description |
-| :--------------- | :---------- |
-| `cluster.link.autodetect.address=some-mariadb:3306` | Known address to ping to get cluster node addresses |
-| `cluster.link.enabled=true` | Enables Cluster Link |
-| `dl.store.impl=com.liferay.portal.store.db.DBStore` | File Store (Document Library Store) class |
-| `jdbc.default.jndi.name=` | Data source JNDI name |
-| `jdbc.default.driverClassName=org.mariadb.jdbc.Driver` | Database driver class |
-| `jdbc.default.url=jdbc:mariadb://some-mariadb:3306/dxp_db?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false` | Data source URL |
-| `jdbc.default.username=root` | Database admin user name |
-| `jdbc.default.password=my-secret-pw` | Database admin user password |
-| `web.server.display.node=true` | Displays the server address and web server port |
-
-#### Distinguishing Properties
-
-The following port properties and cluster logic name properties distinguish each node.
-
-| Property | dxp-1 | dxp-2 |
-| :------- | :---- | :---- |
-| `cluster.link.channel.logic.name.control` | control-channel-logic-name-1 | control-channel-logic-name-2 |
-| `cluster.link.channel.logic.name.transport.0` | transport-channel-logic-name-1 | transport-channel-logic-name-2 |
-
-See [Cluster Link](./configuring-cluster-link.md) for more information on cluster configuration.
-
-## Front the Cluster with a Web Server
-
-Lastly, a web server is used as a reverse proxy and a load balancer. It accepts all requests and redirects them to the application server that's most available. The web server makes the application servers transparent to users.
-
-This example fronts the application server cluster with an [Apache Web Server](http://httpd.apache.org/) that balances load by request count. But you can front DXP with the web server you want.
-
-1. Download the [Apache Web Server image](https://hub.docker.com/_/httpd).
-
-    ```bash
-    docker pull httpd
-    ```
-
-1. Create a container for the web server.
-
-    ```bash
-    docker run -it --name httpd -p 80:80 --network my-bridge httpd
-    ```
-
-1. Copy its configuration file locally for editing.
-
-    ```bash
-    docker cp httpd:/usr/local/apache2/conf/httpd.conf .
-    ```
-
-1. In the `httpd.conf` file, add or uncomment lines for loading these modules:
-
-    ```
-    LoadModule xml2enc_module modules/mod_xml2enc.so
-    LoadModule proxy_html_module modules/mod_proxy_html.so
-    LoadModule proxy_module modules/mod_proxy.so
-    LoadModule proxy_http_module modules/mod_proxy_http.so
-    LoadModule proxy_ajp_module modules/mod_proxy_ajp.so
-    LoadModule proxy_balancer_module modules/mod_proxy_balancer.so
-    LoadModule slotmem_shm_module modules/mod_slotmem_shm.so
-    LoadModule ssl_module modules/mod_ssl.so
-    LoadModule lbmethod_byrequests_module modules/mod_lbmethod_byrequests.so
-    LoadModule lbmethod_bytraffic_module modules/mod_lbmethod_bytraffic.so
-    ```
-
-1. Configure the request proxy and load balancing (using Apache's [`byrequests` method](https://httpd.apache.org/docs/2.4/mod/mod_lbmethod_byrequests.html)), by adding the [`VirtualHost` element](https://httpd.apache.org/docs/2.4/vhosts/) to the end of `httpd.conf` file:
-
-    ```
-    <VirtualHost *:80>
-      ProxyRequests off
-      ProxyPass / balancer://liferaycluster/
-      ProxyPassReverse / balancer://liferaycluster/
-
-      # Set the header for the http protocol
-      RequestHeader set X-Forwarded-Proto "http"
-
-      # Serve /excluded from the local httpd data
-      ProxyPass /excluded !
-
-      # Preserve the host when invoking tomcat
-      ProxyPreserveHost on
-
-      Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
-
-      <Proxy balancer://liferaycluster>
-        BalancerMember "http://dxp-1:8080" route=liferay1
-        BalancerMember "http://dxp-2:8080" route=liferay2
-
-        ProxySet lbmethod=byrequests
-        ProxySet stickysession=ROUTEID
-      </Proxy>
-    </VirtualHost>
-    ```
-
-1. Copy the edited `httpd.conf` file back to the `httpd` container.
-
-    ```bash
-    docker cp httpd.conf httpd:/usr/local/apache2/conf
-    ```
-
-1. Restart the `httpd` container to apply the changes.
-
-   ```bash
-   docker stop httpd
-   docker start -i httpd
-   ```
-
-Your web server is ready to proxy requests and balance request load between the DXP application servers. It's time to see the DXP cluster in action.
-
-## Start the DXP Cluster Nodes
-
-The DXP cluster node containers will have this configuration:
+The DXP cluster node containers will have these unique settings:
 
 | Configuration | dxp-1 | dxp-2 |
 | :------------ | :---- | :---- |
 | AJP port mapping | `8009:8009` | `9009:8009` |
 | HTTP port mapping | `8080:8080` | `9080:8080` |
 | OSGi container port mapping | ``11311:11311`` | `11312:11311` |
-| Volume bind mount | `$(pwd)/dxp-1:/mnt/liferay` | `$(pwd)/dxp-2:/mnt/liferay` |
+| Bind mount | `$(pwd)/dxp-1:/mnt/liferay` | `$(pwd)/dxp-2:/mnt/liferay` |
+| Cluster Link control channel logic name | control-channel-logic-name-1 | control-channel-logic-name-2 |
+| Cluster Link transport channel logic name | transport-channel-logic-name-1 | transport-channel-logic-name-2 |
 
-The host ports are mapped to container ports. The unique host ports prevent collisions on the host. The container ports need only be unique within each container, and can therefore be the same on each node (e.g., each container uses the `8080` as its web server HTTP port). Remember that the example proxy server and load balancer directs requests to containers via each container's HTTP port. Here's a proxy configuration excerpt from the `httpd.conf` file:
+Start the DXP containers.
 
-```
-  ...
-  <Proxy balancer://liferaycluster>
-    BalancerMember "http://dxp-1:8080" route=liferay1
-    BalancerMember "http://dxp-2:8080" route=liferay2
-    ...
-  </Proxy>
-  ...
-```
+1. Get the container IP addresses for the `elasticsearch` and `some-mariadb` containers by executing the [`docker network inspect bridge`](https://docs.docker.com/engine/reference/commandline/network_inspect/) command. The `bridge` network is the default network.
 
-In the table above, the OSGi container port mapping is for using Gogo shell on each container. The volume bind mount, leverages the DXP container's configuration phase to copy the `portal-ext.properties` files to the DXP server's [Liferay Home](../../reference/liferay-home.md).
-
-It's time to start the DXP cluster nodes:
-
-1. Start `dxp-1`:
-
-    ```bash
-    docker run -it --name dxp-1 --network my-bridge -p 8009:8009 -p 8080:8080 -p 11311:11311 -v $(pwd)/dxp-1:/mnt/liferay liferay/portal:7.3.1-ga2
+    ```important::
+       In the ``docker run`` commands that follow, you'll replace `[IP address]` with the ``elasticsearch`` and ``some-mariadb`` container IP addresses.
     ```
 
-    As DXP finishes stating up, it prints JGroups cluster messages like these to the console:
+1. Start `dxp-1`.
+
+    Command expanded for readability:
 
     ```bash
-    ...
-    INFO  [SCR Component Actor][JGroupsClusterChannelFactory:173] Autodetecting JGroups outgoing IP address and interface for some-mariadb:3306
-    INFO  [SCR Component Actor][JGroupsClusterChannelFactory:210] Setting JGroups outgoing IP address to 172.18.0.4 and interface to eth0
-
-    -------------------------------------------------------------------
-    GMS: address=control-channel-logic-name-1, cluster=liferay-channel-control, physical address=172.18.0.4:47533
-    -------------------------------------------------------------------
-    INFO  [SCR Component Actor][JGroupsReceiver:93] Accepted view [control-channel-logic-name-1|0] (1)[control-channel-logic-name-1]
-    INFO  [SCR Component Actor][JGroupsClusterChannel:110] Create a new JGroups channel {channelName: liferay-channel-control, localAddress: control-channel-logic-name-1, ...
-    ...
-    -------------------------------------------------------------------
-    GMS: address=transport-channel-logic-name-1, cluster=liferay-channel-transport-0, physical address=172.18.0.4:53231
-    -------------------------------------------------------------------
-    ...
-    INFO  [SCR Component Actor][JGroupsReceiver:93] Accepted view [transport-channel-logic-name-1|0] (1) [transport-channel-logic-name-1]
-    INFO  [SCR Component Actor][JGroupsClusterChannel:110] Create a new JGroups channel {channelName: liferay-channel-transport-0, localAddress: transport-channel-logic-name-1,...
-    ...
+    docker run -it \
+      --add-host elasticsearch:[IP address] \
+      --add-host some-mariadb:[IP address] \
+      -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_JNDI_PERIOD_NAME="" \
+      -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_DRIVER_UPPERCASEC_LASS_UPPERCASEN_AME=org.mariadb.jdbc.Driver \
+      -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_URL="jdbc:mariadb://some-mariadb:3306/dxp_db?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false" \
+      -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_USERNAME=root \
+      -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_PASSWORD=my-secret-pw \
+      -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_ENABLED=true \
+      -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_CHANNEL_PERIOD_LOGIC_PERIOD_NAME_PERIOD_CONTROL=control-channel-logic-name-1 \
+      -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_CHANNEL_PERIOD_LOGIC_PERIOD_NAME_PERIOD_TRANSPORT_PERIOD_NUMBER0=transport-channel-logic-name-1 \
+      -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_AUTODETECT_PERIOD_ADDRESS=some-mariadb:3306 \
+      -e LIFERAY_WEB_PERIOD_SERVER_PERIOD_DISPLAY_PERIOD_NODE=true \
+      -e LIFERAY_DL_PERIOD_STORE_PERIOD_IMPL=com.liferay.portal.store.db.DBStore \
+      --name dxp-1 \
+      -p 11311:11311 \
+      -p 8009:8009 \
+      -p 8080:8080 \
+      -v $(pwd)/dxp-1:/mnt/liferay \
+      liferay/portal:7.3.2-ga3
     ```
 
-    The messages above indicate the following:
-
-    * JGroups auto-detects `dxp-1`'s IP address as `"172.18.0.4`.
-    * JGroups created `dxp-1`'s control channel and accepted it into the JGroups view.
-    * JGroups created `dxp-1`'s transport channel and accepted it into the JGroups view (the cluster).
-
-1. Start `dxp-2`:
+    Command condensed to one line:
 
     ```bash
-    docker run -it --name dxp-2 --network my-bridge -p 9009:8009 -p 9080:8080 -p 11312:11311 -v $(pwd)/dxp-2:/mnt/liferay liferay/portal:7.3.1-ga2
+    docker run -it --name dxp-1  --add-host elasticsearch:[IP address] --add-host some-mariadb:[IP address] -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_JNDI_PERIOD_NAME="" -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_DRIVER_UPPERCASEC_LASS_UPPERCASEN_AME=org.mariadb.jdbc.Driver -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_URL="jdbc:mariadb://some-mariadb:3306/dxp_db?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false" -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_USERNAME=root -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_PASSWORD=my-secret-pw -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_ENABLED=true -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_CHANNEL_PERIOD_LOGIC_PERIOD_NAME_PERIOD_CONTROL=control-channel-logic-name-1 -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_CHANNEL_PERIOD_LOGIC_PERIOD_NAME_PERIOD_TRANSPORT_PERIOD_NUMBER0=transport-channel-logic-name-1 -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_AUTODETECT_PERIOD_ADDRESS=some-mariadb:3306 -e LIFERAY_WEB_PERIOD_SERVER_PERIOD_DISPLAY_PERIOD_NODE=true -e LIFERAY_DL_PERIOD_STORE_PERIOD_IMPL=com.liferay.portal.store.db.DBStore --name dxp-1 -p 11311:11311 -p 8009:8009 -p 8080:8080 -v $(pwd)/dxp-1:/mnt/liferay liferay/portal:7.3.2-ga3
     ```
 
-    As the `dxp-2` node starts, the `dxp-1` prints cluster messages like these to the console:
+1. Start `dxp-2`.
+
+    Command expanded for readability:
 
     ```bash
-    INFO  [jgroups-42,liferay-channel-control,control-channel-logic-name-1][JGroupsReceiver:93] Accepted view [control-channel-logic-name-1|1] (2) [control-channel-logic-name-1, control-channel-logic-name-2]
-    INFO  [jgroups-41,liferay-channel-transport-0,transport-channel-logic-name-1][JGroupsReceiver:93] Accepted view [transport-channel-logic-name-1|1] (2) [transport-channel-logic-name-1, transport-channel-logic-name-2]
-    INFO  [default-2][ClusterExecutorImpl:544] Updated cluster node {bindInetAddress=/172.18.0.5, clusterNodeId=e6ee6b63-4625-1996-0bd6-dd2edf106d95, portalInetSocketAddress=/127.0.0.1:8080, portalProtocol=http}
+    docker run -it \
+      --add-host elasticsearch:[IP address] \
+      --add-host some-mariadb:[IP address] \
+      -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_JNDI_PERIOD_NAME="" \
+      -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_DRIVER_UPPERCASEC_LASS_UPPERCASEN_AME=org.mariadb.jdbc.Driver \
+      -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_URL="jdbc:mariadb://some-mariadb:3306/dxp_db?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false" \
+      -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_USERNAME=root \
+      -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_PASSWORD=my-secret-pw \
+      -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_ENABLED=true \
+      -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_CHANNEL_PERIOD_LOGIC_PERIOD_NAME_PERIOD_CONTROL=control-channel-logic-name-2 \
+      -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_CHANNEL_PERIOD_LOGIC_PERIOD_NAME_PERIOD_TRANSPORT_PERIOD_NUMBER0=transport-channel-logic-name-2 \
+      -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_AUTODETECT_PERIOD_ADDRESS=some-mariadb:3306 \
+      -e LIFERAY_WEB_PERIOD_SERVER_PERIOD_DISPLAY_PERIOD_NODE=true \
+      -e LIFERAY_DL_PERIOD_STORE_PERIOD_IMPL=com.liferay.portal.store.db.DBStore \
+      --name dxp-2 \
+      -p 11312:11311 \
+      -p 9009:8009 \
+      -p 9080:8080 \
+      -v $(pwd)/dxp-2:/mnt/liferay \
+      liferay/portal:7.3.2-ga3
     ```
 
-    These messages state `dxp-2`'s IP address (`172.18.0.5`) and that JGroups created `dxp-2`'s control channel and transport channel, and accepted the channels into the JGroups view.
+    Command condensed to one line:
 
-DXP is available at <http://localhost>. The web server directs your request to the DXP server cluster.
+    ```bash
+    docker run -it --add-host elasticsearch:[IP address] --add-host some-mariadb:[IP address] -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_JNDI_PERIOD_NAME="" -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_DRIVER_UPPERCASEC_LASS_UPPERCASEN_AME=org.mariadb.jdbc.Driver -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_URL="jdbc:mariadb://some-mariadb:3306/dxp_db?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false" -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_USERNAME=root -e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_PASSWORD=my-secret-pw -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_ENABLED=true -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_CHANNEL_PERIOD_LOGIC_PERIOD_NAME_PERIOD_CONTROL=control-channel-logic-name-2 -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_CHANNEL_PERIOD_LOGIC_PERIOD_NAME_PERIOD_TRANSPORT_PERIOD_NUMBER0=transport-channel-logic-name-2 -e LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_AUTODETECT_PERIOD_ADDRESS=some-mariadb:3306 -e LIFERAY_WEB_PERIOD_SERVER_PERIOD_DISPLAY_PERIOD_NODE=true -e LIFERAY_DL_PERIOD_STORE_PERIOD_IMPL=com.liferay.portal.store.db.DBStore --name dxp-2 -p 11312:11311 -p 9009:8009 -p 9080:8080 -v $(pwd)/dxp-2:/mnt/liferay liferay/portal:7.3.2-ga3
+    ```
 
-### Test the Cluster
+The `--add-host [domain]:[IP address]` options [add `/etc/hosts` file entries](https://docs.docker.com/engine/reference/run/#managing-etchosts) that map the domain names to the IP addresses. This enables configurations (such as environment variables, Portal Properties, and `.config` files) to refer to the servers by domain name.
 
-Test your cluster to make sure the nodes show the same content changes and that DXP stays available when there is at least one cluster node running.
+The `-e [variable]=[value]` options set the DXP container environment variables. See [Appendix A: Environment Settings](#appendix-a-environment-settings) for more information.
 
-Start by adding content (e.g., the Language Selector widget) to your site at <http://localhost>.
+### Visit the DXP Nodes
 
-Note the node's address and port (`Node: [address]:[port]`). Since the node is running in a Docker container the container ID is displayed instead of an IP address. See the figure below as an example.
+The DXP cluster nodes are available at the following URLs:
 
-![Your DXP cluster node has a Language Selector widget at the top and displays the container ID and port at the bottom.](./example-creating-a-simple-dxp-cluster/images/02.png)
+* DXP-1: http://localhost:8080
+* DXP-2: http://localhost:9080
 
-You can match the container ID with the DXP container using the `docker container ls -a` command:
+The figure below shows the cluster node home pages.
 
-```bash
-$ docker container ls -a | grep dxp-1
-0335b3568fa1        liferay/portal:7.3.1-ga2       "/bin/sh -c /usr/loc…"   About an hour ago   Up About an hour (healthy)   8000/tcp, 8009/tcp, 11311/tcp, 0.0.0.0:8080->8080/tcp   dxp-1
-$ docker container ls -a | grep dxp-2
-aa547271b4d3        liferay/portal:7.3.1-ga2       "/bin/sh -c /usr/loc…"   43 minutes ago      Up 43 minutes (healthy)      8000/tcp, 8009/tcp, 11311/tcp, 0.0.0.0:9080->8080/tcp   dxp-2
-```
+![DXP cluster nodes.](./example-creating-a-simple-dxp-cluster/images/02.png)
 
-Test server failover by stopping that DXP container. For example, if the browser is using the `dxp-1` container, stop that container.
+Each node's container ID and port (`Node: [id]:[port]`) appear at the bottom of each page. The `LIFERAY_WEB_PERIOD_SERVER_PERIOD_DISPLAY_PERIOD_NODE=true` environment setting enabled this display feature. You can find a container's ID using the [`docker container ls`](https://docs.docker.com/engine/reference/commandline/container_ls/) command.
 
-```bash
-docker stop dxp-1
-```
+### Index the Content into the Search Engine
 
-Refresh your browser to verify that the remaining DXP server handles your request and shows the content you added earlier.
+Initiate indexing DXP content:
+
+1. Navigating to *Control Panel &rarr; Configuration &rarr; Search*.
+
+1. In the Index Actions tab, click these options:
+
+    * *Reindex all search indexes*
+    * *Reindex all spell check indexes*
+
+Content indexes into the search engine. Please see [Search Overview](../../../using-search/getting-started/search-overview.html) for more information.
+
+## Test the DXP Cluster
+
+Test data synchronization between the nodes:
+
+1. Add content to one of the cluster nodes.
+
+    For example, add a new Widget Page called _New Stuff_ and add the Language Selector widget to it.
+
+1. Refresh the UI on the other cluster node.
+
+Both nodes show the same new content.
 
 ![Content is synchronized between the cluster nodes.](./example-creating-a-simple-dxp-cluster/images/03.png)
 
 Congratulations on creating a working DXP cluster!
 
-```tip::
-   When you're ready to stop containers, use the ``docker container stop [container ID]`` command like you did to stop the DXP container above. Similarly, use the ``docker container start -i [container ID]`` command to restart the containers.
-```
-
 ## What's Next
 
-Tune your [database](./database-configuration-for-cluster-nodes.md) for your DXP cluster.
+Configure your [database](./database-configuration-for-cluster-nodes.md) for your DXP cluster.
+
+## Appendix A: Environment Settings
+
+The example DXP server containers uses these settings.
+
+| Configuration | Description |
+| :------------ | :---------- |
+| LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_JNDI_PERIOD_NAME= | Data source JNDI name |
+| LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_DRIVER_UPPERCASEC_LASS_UPPERCASEN_AME=\\<br>org.mariadb.jdbc.Driver | Database driver class |
+| LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_URL=\\<br>jdbc:mariadb://some-mariadb:3306/dxp_db?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false | Data source URL |
+| LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_USERNAME=\\<br>root | Database admin user name |
+| LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_PASSWORD=\\<br>my-secret-pw | Database admin user password |
+| LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_ENABLED=\\<br>true | Enables Cluster Link  |
+| LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_CHANNEL_PERIOD_LOGIC_PERIOD_NAME_PERIOD_CONTROL=\\<br>control-channel-logic-name-2 | The cluster node's unique control channel name |
+| LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_CHANNEL_PERIOD_LOGIC_PERIOD_NAME_PERIOD_TRANSPORT_PERIOD_NUMBER0=\\<br>transport-channel-logic-name-2 | The cluster node's unique transport channel name |
+| LIFERAY_CLUSTER_PERIOD_LINK_PERIOD_AUTODETECT_PERIOD_ADDRESS=\\<br>some-mariadb:3306 | Known address to ping to get cluster node addresses |
+| LIFERAY_WEB_PERIOD_SERVER_PERIOD_DISPLAY_PERIOD_NODE=\\<br>true | Displays the server address and web server port |
+| LIFERAY_DL_PERIOD_STORE_PERIOD_IMPL=\\<br>com.liferay.portal.store.db.DBStore | File Store (Document Library Store) class |
+
+Please see the Env/[Portal Property](https://docs.liferay.com/portal/7.3-latest/propertiesdoc/portal.properties.html) definitions for more information.
 
 ## Additional Information
 
