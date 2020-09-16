@@ -6,11 +6,11 @@ By default, forms are stored as JSON in Liferay DXP's database. This example sho
 
 ![Use a DDM Storage Adapter to add a Storage Type to the Forms application.](./writing-a-form-storage-adapter/images/01.png)
 
-First, you'll look at the [default storage adapter's](https://github.com/liferay/liferay-portal/blob/7.3.1-ga2/modules/apps/dynamic-data-mapping/dynamic-data-mapping-service/src/main/java/com/liferay/dynamic/data/mapping/internal/storage/DDMJSONStorageAdapter.java) logic, which saves form records in the Liferay DXP database as JSON content. Then you'll add logic to store each Form Record on the file system.
+First you'll see how the [default storage adapter](https://github.com/liferay/liferay-portal/blob/7.3.1-ga2/modules/apps/dynamic-data-mapping/dynamic-data-mapping-service/src/main/java/com/liferay/dynamic/data/mapping/internal/storage/DDMJSONStorageAdapter.java) saves form records in the Liferay DXP database as JSON content. Then you'll add logic to store each Form Record on the file system.
 
 ## Examine a Running DDM Storage Adapter
 
-To see how storage adapters work, you'll deploy an example and then add some form data using the example adapter.
+To see how storage adapters work, deploy an example and then add some form data using the example adapter.
 
 ### Deploy the Example
 
@@ -26,7 +26,7 @@ To see how storage adapters work, you'll deploy an example and then add some for
     docker start -i [container_name]
     ```
 
-1. Download and unzip [the DDM File System Storage Adapter project](./writing-a-form-storage-adapter/liferay-r2f1.zip).
+1. Download and unzip [the DDM Storage Adapter project](./writing-a-form-storage-adapter/liferay-r2f1.zip).
 
     ```bash
     curl https://learn.liferay.com/dxp/7.x/en/process-automation/forms/developer-guide/liferay-r2f1.zip -O
@@ -49,12 +49,12 @@ To see how storage adapters work, you'll deploy an example and then add some for
 1. Confirm the deployment in the Liferay Docker container console.
 
     ```bash
-    STARTED com.liferay.learn.r2f1.impl_1.0.0 [1009]
+    STARTED com.acme.r2f1.impl_1.0.0 [1009]
     ```
 
 ### Use the Deployed Storage Adapter
 
-1. Opening your browser to `https://localhost:8080`
+1. Open your browser to <http://localhost:8080>.
 
 1. Go to the Forms application in _Site Menu_ &rarr; _Content & Data_ &rarr; _Forms_.
 
@@ -62,7 +62,7 @@ To see how storage adapters work, you'll deploy an example and then add some for
 
 1. In the Form Builder view, click the *Options* button (![Options](./../../../images/icon-options.png)) and open the *Settings* window.
 
-1. Under *Select a Storage Type*, choose the File System type and click _Done_.
+1. Under *Select a Storage Type*, choose the JSON Wrapper type and click _Done_.
 
 1. Add a [Text Field](./../user-guide/creating-forms.md) to the form, publish the form, and submit it a few times.
 
@@ -72,9 +72,15 @@ To see how storage adapters work, you'll deploy an example and then add some for
 
    ![Verify that the form entries were added.](./writing-a-form-storage-adapter/images/02.png)
 
+1. Additionally, logging is provided in each CRUD method to demonstrate that the sample's methods are being invoked.
+
+   ```bash
+   2020-08-18 22:19:48.693 WARN  [http-nio-8080-exec-2][R2F1DDMStorageAdapter:103] Acme storage adapter's save method was invoked
+   ```
+
 ## Understand the Extension Point
 
-The example contains only one class: `DDMFileSystemStorageAdapter`, a service implementing a `DDMStorageAdapter` to provide logic for storing Form Entries. The deployed example holds logic identical to the default implementation used for all forms: `DDMJSONStorageAdapter`. Later, you'll add file system storage to the code that's already here.
+The example contains only one class: `R2F1DDMStorageAdapter`, a service implementing a `DDMStorageAdapter` to provide logic for storing Form Entries. The deployed example currently just wraps the default JSON implementation: `DDMJSONStorageAdapter`. Later, you'll add file system storage to the code that's already here.
 
 ### Register the Adapter Class with the OSGi Container
 
@@ -82,19 +88,23 @@ The `DDMFileSystemStorageAdapter` implements the `DDMStorageAdapter` interface, 
 
 ```java
 @Component(
-	immediate = true, property = "ddm.storage.adapter.type=file-system",
+	immediate = true, property = "ddm.storage.adapter.type=r2f1-ddm-storage-adapter",
 	service = DDMStorageAdapter.class
 )
-public class DDMFileSystemStorageAdapter implements DDMStorageAdapter {
+public class R2F1StorageAdapter implements DDMStorageAdapter {
+```
+
+```note::
+   The ``r2f1-ddm-storage-adapter`` key is localized into the value `R2F1 Dynamic Data Mapping Storage Adapter` by the ``src/main/resources/content/Language.properties`` file and the ``Provide-Capability`` header in the ``bnd.bnd`` file.
 ```
 
 The `service` component property registers your implementation as a `DDMStorageAdapter` service.
 
-The `property = "ddm.storage.adapter.type=file-system"` provides an identifier so that your service is registered as a unique `DDMStorageAdapter` implementation. Other services can now reference it like this:
+The property `ddm.storage.adapter.type` provides an identifier so that your service is registered as a unique `DDMStorageAdapter` implementation. Other services can now reference it like this:
 
 ```java
-@Reference(target = "(ddm.storage.adapter.type=file-system)")
-private DDMStorageAdapter fileSystemDDMStorageAdapter;
+@Reference(target = "(ddm.storage.adapter.type=r2f1-ddm-storage-adapter)")
+private DDMStorageAdapter jsonWrapperDDMStorageAdapter;
 ```
 
 ### Understand the DDMStorageAdapter Interface
@@ -119,34 +129,36 @@ public DDMStorageAdapterSaveResponse save(
     throws StorageException;
 ```
 
-Each method must return a
-_DDMStorageAdapter[[Save](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/storage/DDMStorageAdapterSaveResponse.java)/[Get](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/storage/DDMStorageAdapterGetResponse.java)/[Delete](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/storage/DDMStorageAdapterDeleteSaveResponse.java)]Response_
-object, constructed using a static inner `Builder` class's `newBuilder`
-method.
+Each method must return a _DDMStorageAdapter[[Save](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/storage/DDMStorageAdapterSaveResponse.java)/[Get](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/storage/DDMStorageAdapterGetResponse.java)/[Delete](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/storage/DDMStorageAdapterDeleteSaveResponse.java)]Response_ object, constructed using a static inner `Builder` class's `newBuilder` method.
 
 All methods are passed a `DDMStorageAdapter[Save/Delete/Get]Request`. The request objects contain getter methods that return useful contextual information.
 
+## Implement File System Storage
+
+The example already overrides the necessary methods. You'll create private utility methods for your functionality and then call them from the overridden methods.
+
 ### Declare the Service Dependencies
 
-This code relies on several services deployed to an OSGi container:
+This code relies on two services deployed to an OSGi container. Add these declarations at the end of the class using Declarative Services `@Reference` annotations, provided by `org.osgi.service.component.annotations.Reference`.
 
-`DDMContentLocalService`, a `DDMFormValuesSerializer`, and a `DDMFormValuesDeserializer`. They're declared at the end using Declarative Services `@Reference` annotations, provided by `org.osgi.service.component.annotations.Reference`.
 ```java
 @Reference
 private DDMContentLocalService _ddmContentLocalService;
 
 @Reference
-private DDMFormValuesDeserializerTracker _ddmFormValuesDeserializerTracker;
-
-@Reference
 private DDMFormValuesSerializerTracker _ddmFormValuesSerializerTracker;
 ```
 
-Using this structure, you'll now add file system storage to the example adapter.
+### Create a Logger
 
-## Implement File System Storage
+Create a logger for the class and set it in a `_log` variable:
 
-Since the example already overrides the necessary methods, you only need add the appropriate logic to each one. You'll create private utility methods for your functionality and then call them from the overridden methods.
+```java
+private static final Log _log = LogFactoryUtil.getLog(
+    R2F1DDMStorageAdapter.class);
+```
+
+This will be used to add some log messages each time one of the CRUD methods is invoked.
 
 ### Implement File Deletion
 
@@ -156,26 +168,26 @@ Since the example already overrides the necessary methods, you only need add the
    private static final String _PATHNAME = "/opt/liferay/form-records";
    ```
 
-1. Create a `_deleteFile` utility method (use the `java.io.File` class here):
+1. Create a `_deleteFile` utility method (import the `java.io.File` class):
 
    ```java
    private void _deleteFile(long fileId) {
        File file = new File(_PATHNAME + "/" + fileId);
 
        file.delete();
+
+       if (_log.isWarnEnabled()) {
+        _log.warn("Deleted file with the ID " + fileId);
+       }
    }
-    ```
-
-1. Find the existing `delete` method. At the start of this method (before the `try` block), set a `fileId` variable as the primary key returned by the delete request object:
-
-   ```java
-   long fileId = ddmStorageAdapterDeleteRequest.getPrimaryKey();
    ```
 
-1. Immediately after, call your `_deleteFile` method, passing it the file ID:
+1. Find the overridden `delete` method. Immediately before the `return` statement, add
 
    ```java
-   _deleteFile(fileId);
+    long fileId = ddmStorageAdapterDeleteRequest.getPrimaryKey();
+
+    _deleteFile(fileId);
    ```
 
 Now the code first deletes the file from the file system before it deletes the copy in the database.
@@ -187,22 +199,23 @@ You'll follow the same procedure for the `get` method: create a private utility 
 1. Add the `_getFile` utility method:
 
    ```java
-   private void _getFile(long fileId) throws IOException {
-       try {
-           System.out.println(
-               "Reading the file named:" + fileId + "\n" +
-                   "The file contents: " +
-                       FileUtil.read(_PATHNAME + "/" + fileId));
-       }
-       catch (IOException e) {
-           throw new IOException(e);
-       }
-   }
+	private void _getFile(long fileId) throws IOException {
+		try {
+			if (_log.isWarnEnabled()) {
+				_log.warn(
+					"Reading the file with the ID " + fileId + ": " +
+						FileUtil.read(_PATHNAME + "/" + fileId));
+			}
+		}
+		catch (IOException e) {
+			throw new IOException(e);
+		}
+	}
     ```
 
-   Import `com.liferay.portal.kernel.FileUtil`.
+   Import `com.liferay.portal.kernel.FileUtil` and `java.io.IOException`.
 
-1. At the beginning of the `get` method (inside the `try` block), set the `storageId` (retrieved by `ddmStorageAdapterGetRequest.getPrimaryKey()`) as the `fileId` and call a `_getFile` utility method which prints the retrieved content to the Liferay log.
+1. In the overridden `get` method (inside the `try` block), insert the following immediately before the `return` statement, setting the `storageId` (retrieved by `ddmStorageAdapterGetRequest.getPrimaryKey()`) as the `fileId` and calling the `_getFile` utility method which prints the retrieved content to the Liferay log.
 
    ```java
    long fileId = ddmStorageAdapterGetRequest.getPrimaryKey();
@@ -227,6 +240,10 @@ There are two types of save requests: 1) a new record is added or 2) an existing
 
            FileUtil.write(
                _PATHNAME, abstractFile.getName(), serializedDDMFormValues);
+
+           if (_log.isWarnEnabled()) {
+               _log.warn("Saved a file with the ID" + fileId);
+           }
        }
        catch (IOException e) {
            throw new IOException(e);
@@ -234,36 +251,41 @@ There are two types of save requests: 1) a new record is added or 2) an existing
    }
     ```
 
-1. Add this logic and the call to `_saveFile` to the `insert` method by replacing the existing `return` statement:
+   Import `com.liferay.dynamic.data.mapping.storage.DDMFormValues`.
+
+1. Create a `_serialize` utility method to convert the `DDMFormValues` object to JSON:
+
+    ```java
+	private String _serialize(DDMFormValues ddmFormValues) {
+		DDMFormValuesSerializer ddmFormValuesSerializer =
+			_ddmFormValuesSerializerTracker.getDDMFormValuesSerializer("json");
+
+		DDMFormValuesSerializerSerializeRequest.Builder builder =
+			DDMFormValuesSerializerSerializeRequest.Builder.newBuilder(
+				ddmFormValues);
+
+		DDMFormValuesSerializerSerializeResponse
+			ddmFormValuesSerializerSerializeResponse =
+				ddmFormValuesSerializer.serialize(builder.build());
+
+		return ddmFormValuesSerializerSerializeResponse.getContent();
+	}
+    ```
+
+1. Add this logic and the call to `_saveFile` to the `save` method by replacing the existing `return` statement:
 
    ```java
-   DDMStorageAdapterSaveResponse ddmStorageAdapterSaveResponse =
-        builder.build();
+    DDMStorageAdapterSaveResponse jsonStorageAdapterSaveResponse =
+        _jsonStorageAdapter.save(ddmStorageAdapterSaveRequest);
 
-   long fileId = ddmStorageAdapterSaveResponse.getPrimaryKey();
+    long fileId = jsonStorageAdapterSaveResponse.getPrimaryKey();
 
-   _saveFile(fileId, ddmFormValues);
+    _saveFile(fileId, ddmStorageAdapterSaveRequest.getDDMFormValues());
 
-   return ddmStorageAdapterSaveResponse;
+    return jsonStorageAdapterSaveResponse;
    ```
 
-   When the `insert` method saves a new form, you must retrieve the primary key from the `DDMStorageAdapterSaveResponse` object, because before that the record and its primary key is not yet created in the database.
-
-1. You must also call `_saveFile` near the end of the `update` method. Replace the existing return stament with
-
-   ```java
-   DDMFormValues ddmFormValues =
-       ddmStorageAdapterSaveRequest.getDDMFormValues();
-
-   long fileId = ddmStorageAdapterSaveRequest.getPrimaryKey();
-
-   _saveFile(fileId, ddmFormValues);
-
-   return builder.build();
-    ```
-   This code has one small difference: the `ddmFormValues` comes from the save request instead of the response. This is already done in the existing logic of the `insert` method.
-
-The `_serialize` and `_deserialize` methods use the default JSON format. You could replace these methods to save in another format.
+   The `_jsonStorageAdapter.save` call is made first, so that a Primary Key is created for a new form entry. This Primary Key is retrieved from the `Response` object to create the `fielId`.
 
 ## Deploy and Test the Storage Adapter
 
@@ -285,25 +307,13 @@ Now verify that it's working:
 
 1. Add a [Text Field](./../user-guide/creating-forms.md) to the form, publish the form, and submit it a few times.
 
-1. To verify the form records were written to the container's file system, execute a `find` and `cat` via `docker exec` to print their contents to the command line:
+1. To verify the form records were written to the container's file system, check the log. You'll see messages like: 
 
    ```bash
-   docker exec -it $(docker ps -lq) find /opt/liferay/form-records -type f -exec cat {} +
+   2020-08-18 22:19:48.693 WARN  [http-nio-8080-exec-2][R2F1DDMStorageAdapter:103] Saved a file with the ID 36242
+   2020-08-18 22:19:48.716 WARN  [http-nio-8080-exec-2][R2F1DDMStorageAdapter:122] Reading the file with the ID 36242: {"availableLanguageIds":["en_US"],"defaultLanguageId":"en_US","fieldValues":[{"instanceId":"62fQx5qI","name":"PetsFavoriteVehicle","value":{"en_US":"stretch limousine"}}]}
    ```
 
-   The JSON for each form record file is printed to the command line:
-
-    ```json
-    {"availableLanguageIds":["en_US"],"defaultLanguageId":"en_US","fieldValues":[{"instanceId":"d0bVzHXG","name":"PetsFavoriteWine","value":{"en_US":"white zinfandel"}}]}
-    ```
-
 ## Conclusion
-
-If you want to download the completed project, use this command:
-
-
-```bash
-curl https://learn.liferay.com/dxp/7.x/en/process-automation/forms/developer-guide/liferay-r2f2.zip -O
-```
 
 By implementing a `DDMStorageAdapter`, you can save forms records in any storage format you want.
