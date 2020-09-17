@@ -8,6 +8,7 @@ Installing Liferay
    installing-liferay/installing-a-liferay-tomcat-bundle.md
    installing-liferay/configuring-a-database.md
    installing-liferay/running-liferay-for-the-first-time.md
+   installing-liferay/stopping-and-restarting-liferay.md
 
    installing-liferay/using_liferay_dxp_docker_images.rst
 
@@ -17,6 +18,7 @@ Installing Liferay
 -  :doc:`/installation-and-upgrades/installing-liferay/installing-a-liferay-tomcat-bundle`
 -  :doc:`/installation-and-upgrades/installing-liferay/configuring-a-database`
 -  :doc:`/installation-and-upgrades/installing-liferay/running-liferay-for-the-first-time`
+-  :doc:`/installation-and-upgrades/installing-liferay/stopping-and-restarting-liferay`
 
 Using Liferay DXP Docker Images
 -------------------------------
