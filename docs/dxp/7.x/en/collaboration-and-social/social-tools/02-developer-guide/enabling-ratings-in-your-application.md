@@ -48,13 +48,17 @@ public class R9Z4JSPPortlet extends MVCPortlet implements PortletRatingsDefiniti
 
 This class both extends [`MVCPortlet`](https://github.com/liferay/liferay-portal/blob/7.3.4-ga5/portal-kernel/src/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.java) and implements `PortletRatingsDefinition`, since it represents an MVC Portlet implementation that has ratings enabled for it.
 
-Next, you must override the `getDefaultRatingsType` method and return one of the available [ratings types](../user-guide/using-the-ratings-system.md#ratings-types) to define the default ratings type for your application. Use the [`RatingsType`](https://github.com/liferay/liferay-portal/blob/7.3.4-ga5/portal-kernel/src/com/liferay/ratings/kernel/RatingsType.java) enumeration class to return your chosen type, like stars:
+Next, you must override the `getDefaultRatingsType` method and return one of the available [ratings types](../user-guide/using-the-ratings-system.md#ratings-types) to define the default ratings type for your application. If your application uses a custom asset, then this becomes the default ratings type foro that asset. Use the [`RatingsType`](https://github.com/liferay/liferay-portal/blob/7.3.4-ga5/portal-kernel/src/com/liferay/ratings/kernel/RatingsType.java) enumeration class to return your chosen type, like stars:
 
 ```java
 @Override
 public RatingsType getDefaultRatingsType() {
     return RatingsType.STARS;
 }
+```
+
+```note::
+   The default ratings type for the asset type can still be overridden per Site via the `Site Settings` screen, or for across the entire DXP instance from _Control Panel_ → _Instance Settings_ → _Social_.
 ```
 
 Finally, override the `getPortletId` method to return the ID of the portlet that uses the entity you are applying ratings to.
