@@ -13,7 +13,7 @@ In order to implement ratings in your application, you must first retrieve an en
 To begin adding ratings, download the sample module:
 
 ```bash
-curl https://learn.liferay.com/dxp/7.x/en/.../liferay-r9z4.zip -O
+curl https://learn.liferay.com/dxp/7.x/en/collaboration-and-social/social-tools/02-developer-guide/enabling-ratings-in-your-application/liferay-r9z4.zip -O
 ```
 
 ```
@@ -102,7 +102,7 @@ JournalArticle firstArticle = journalArticles.get(0);
 ```
 
 ```note::
-In this example, the `view.jsp <./enabling-ratings-in-your-application/liferay-r9z4.zip/r9z4-web/src/main/resources/META-INF/resources/view.jsp>`__ file includes all of the logic to retrieve the asset. However, for an MVC Portlet implementation in a production environment, you should instead separate this code into the ``render`` logic within your Java code. See the `MVC Portlet Guide <../../../developing-applications/developing-a-java-web-application/using-mvc/creating-an-application-with-mvcportlet.md>`__ for more information on creating MVC Portlets.
+   In this example, the `view.jsp <./enabling-ratings-in-your-application/liferay-r9z4.zip/r9z4-web/src/main/resources/META-INF/resources/view.jsp>`__ file includes all of the logic to retrieve the asset. However, for an MVC Portlet implementation in a production environment, you should instead separate this code into the ``render`` logic within your Java code. See the `MVC Portlet Guide <../../../developing-applications/developing-a-java-web-application/using-mvc/creating-an-application-with-mvcportlet.md>`__ for more information on creating MVC Portlets.
 ```
 
 Then, once you have the asset, use the `liferay-ratings` tag to display ratings for the asset. The `className` and `classPK` attributes are required for the tag.
