@@ -74,30 +74,13 @@ public String getPortletId() {
    If you want to return an ID for an existing portlet within DXP, then you can use the `PortletKeys <https://github.com/liferay/liferay-portal/blob/7.3.4-ga5/portal-kernel/src/com/liferay/portal/kernel/util/PortletKeys.java>`__ class to choose the ID for that portlet.
 ```
 
-### Include the Ratings Taglib Declaration
-
-You must declare the `liferay-ratings` taglib to use it in your view.
-
-Add the following taglib declaration to your JSP so you can use it:
-
-```jsp
-<%@ taglib prefix="liferay-ratings" uri="http://liferay.com/tld/ratings" %>
-```
-
-You can now use the `liferay-ratings` tag within your view.
-
 ### Use the Ratings Tag to Display Ratings
 
 Next, retrieve the asset to display ratings for, such as a web content article in this example.
 
+Add the following code to the sample module's `view.jsp`:
+
 ```jsp
-<%@ page import="com.liferay.journal.model.JournalArticle" %><%@
-page import="com.liferay.journal.service.JournalArticleLocalServiceUtil" %>
-
-<%@ page import="java.util.List" %>
-
-<liferay-theme:defineObjects />
-
 <%
 List<JournalArticle> journalArticles = JournalArticleLocalServiceUtil.getArticles(themeDisplay.getScopeGroupId());
 
@@ -117,6 +100,10 @@ Then, once you have the asset, use the `liferay-ratings` tag to display ratings 
     classPK="<%= Long.valueOf(firstArticle.getArticleId()) %>"
     type="stars"
 />
+```
+
+```note::
+   You must declare the ``liferay-ratings`` taglib to use it in your view.
 ```
 
 ```tip::

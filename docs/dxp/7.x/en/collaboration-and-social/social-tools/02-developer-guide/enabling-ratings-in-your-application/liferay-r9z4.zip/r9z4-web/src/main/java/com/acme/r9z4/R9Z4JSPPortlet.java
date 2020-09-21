@@ -26,14 +26,6 @@ import org.osgi.service.component.annotations.Component;
 public class R9Z4JSPPortlet
 	extends MVCPortlet implements PortletRatingsDefinition {
 
-	@Override
-	public RatingsType getDefaultRatingsType() {
-		return RatingsType.STARS;
-	}
-
-	@Override
-	public String getPortletId() {
-		return "R9Z4";
-	}
+	// Override the necessary methods here.
 
 }
