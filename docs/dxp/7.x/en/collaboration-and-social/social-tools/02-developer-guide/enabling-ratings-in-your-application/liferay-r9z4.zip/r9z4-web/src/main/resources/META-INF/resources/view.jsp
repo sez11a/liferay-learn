@@ -8,16 +8,6 @@ page import="com.liferay.journal.service.JournalArticleLocalServiceUtil" %>
 
 <liferay-theme:defineObjects />
 
-<%
-List<JournalArticle> journalArticles = JournalArticleLocalServiceUtil.getArticles(themeDisplay.getScopeGroupId());
-
-JournalArticle firstArticle = journalArticles.get(0);
-%>
-
-<h1><%= firstArticle.getUrlTitle() %></h1>
-
-<liferay-ratings:ratings
-	className="<%= JournalArticle.class.getName() %>"
-	classPK="<%= Long.valueOf(firstArticle.getArticleId()) %>"
-	type="stars"
-/>
+<%--
+// Add the view implementation here.
+--%>
