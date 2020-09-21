@@ -1,4 +1,4 @@
-package com.acme.r9z4;
+package com.acme.r9z4.web.internal.r9z4;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.ratings.kernel.RatingsType;

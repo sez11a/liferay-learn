@@ -28,7 +28,7 @@ To enable ratings for your application, you must define an OSGi component with r
 
 ### Configure Your OSGi Component
 
-Define an OSGi component that implements the [`PortletRatingsDefinition`](https://github.com/liferay/liferay-portal/blob/7.3.4-ga5/portal-kernel/src/com/liferay/ratings/kernel/definition/PortletRatingsDefinition.java) interface. See the example [`R9Z4JSPPortlet.java`](./enabling-ratings-in-your-application/liferay-r9z4.zip/r9z4-web/src/main/java/com/acme/r9z4/R9Z4JSPPortlet.java) file for the full context of this class.
+Define an OSGi component that implements the [`PortletRatingsDefinition`](https://github.com/liferay/liferay-portal/blob/7.3.4-ga5/portal-kernel/src/com/liferay/ratings/kernel/definition/PortletRatingsDefinition.java) interface. See the example [`R9Z4JSPPortlet.java`](./enabling-ratings-in-your-application/liferay-r9z4.zip/r9z4-web/src/main/java/com/acme/r9z4/web/internal/r9z4/R9Z4JSPPortlet.java) file for the full context of this class.
 
 ```java
 @Component(
