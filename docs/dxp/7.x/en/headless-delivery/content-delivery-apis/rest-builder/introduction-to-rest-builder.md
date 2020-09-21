@@ -20,20 +20,22 @@ After you create the initial configuration for your modules,  and the [REST Buil
 api root
 ├── bnd.bnd
 ├── build.gradle
-└── <apiDir>
-    └── <apiPackagePath>
-        ├── dto
-        │   └── <version>
-        │       └── Schema object classes
-        └── resource
-            └── <version>
-                └── Schema object resource interfaces
+└── src
+    └── main
+        └── java
+            └── <apiPackagePath>
+                ├── dto
+                │   └── <version>
+                │       └── Schema object classes
+                └── resource
+                    └── <version>
+                        └── Schema object resource interfaces
 ```
 
 The API module contains the Java classes for any custom objects you have defined (as [object schemas](#defining-schemas) in ``rest-openapi.yaml``) within the `dto` package. Reference these classes to work with your custom objects when you are adding your implementation logic.
 
 ```note::
-   The ``apiPackagePath`` and ``apiDir`` are both defined in your project's ``rest-config.yaml`` file (the part of the ``apiDir`` that specifies the location of the ``api`` folder itself is not included in the structure it adds). The ``version`` path is configured in the ``rest-openapi.yaml`` file.
+   The path ``src/main/java/`` may vary if you defined a different path in the ``apiDir`` property. The ``apiPackagePath`` is defined in your project's ``rest-config.yaml`` file. Finally, the ``version`` path is configured in the ``rest-openapi.yaml`` file.
 ```
 
 REST Builder generates the following structure for `impl` modules:
@@ -126,6 +128,8 @@ components:
                 object
 ```
 
+The schema also specifies what prefix REST Builder will use when generating the resource files for your implementation. In the above example, the API implementation belongs in the `BasicUserResourceImpl` file.
+
 See the [OpenAPI specification](https://swagger.io/docs/specification/data-models/data-types/) for a list of all the supported basic data types that you can use for schemas.
 
 ```tip::
@@ -134,7 +138,7 @@ See the [OpenAPI specification](https://swagger.io/docs/specification/data-model
 
 ### Defining the APIs
 
-The last section, `paths`, specifies the details of the APIs themselves. Each API must be defined within its own path, which is added to the end of the URL to access it when it is available. Making a request to the full URL including the path will call the API you define within it. APIs can be defined to take either `get` or `post` requests.
+The last section, `paths`, specifies the details of the APIs themselves. Each API must be defined within its own path, which is added to the end of the URL to access it when it is available. Making a request to the full URL including the path will call the API you define within it. APIs can be defined to take several types of requests, including `get`, `post`, `put`, `patch`, and `delete` requests.
 
 Each API contains an `operationId` (which becomes the name of the method in the Java code), a list of `parameters`, a tag, and a list of possible `responses` that the API returns when it is called. At least a `200` response (indicating a successful request) is required for the API to work.
 
@@ -165,13 +169,13 @@ paths:
 
 The `parameters` each have a `name` (which is used both in specifying it in a request as well as in the Java method call), whether it is required, and a `schema` (which may be either a basic data type or a schema for a custom object you have defined).
 
-The `responses` each need to have `content` defined for both JSON and XML responses. Each of the possible responses must also define a `schema`, just like the parameters.
+The `responses` each need to have `content` defined for JSON or XML responses (or both). Each of the possible responses must also define a `schema`, just like the parameters.
 
 ```note::
    If you want to use an object you have defined in the ``components`` section for either your API's parameters or return type, then you can reference it with ``$ref: "#/components/schemas/<ObjectName>"``.
 ```
 
-The tag specifies what prefix REST Builder will use when generating the resource files for your implementation. In the above example, the API implementation would belong in the `BasicUserResourceImpl` file.
+The tag determines what name to use when generating documentation when your code is annotated.
 
 ## Create Your Own APIs with REST Builder
 
