@@ -4,11 +4,47 @@
 
 Task nodes are the most complex parts of a workflow definition. Unlike other workflow nodes, task nodes have Assignments which assign a review task to a user.
 
-Commonly, task nodes contain Notifications, Assignments, and Actions (defined in scripts). See [Configuring Workflow Actions and Notifications](./configuring-workflow-actions-and-notifications.md).
+This tutorial walks you through on how to use _Task Nodes_ and some of their special features.
+
+Task nodes are the most complex parts of a workflow definition; they have Assignments which can assign the task to users or a Resource Action (see below).
+
+Furthermore, task nodes contain Notifications, Assignments, and Actions (defined in scripts). See [Configuring Workflow Actions and Notifications](./configuring-workflow-actions-and-notifications.md).
 
 For demonstration purposes, we are using the sample [Legal-Marketing Definition](../workflow-designer-overview/workflow-processes/legal-marketing-definition.xml).
 
 ![Use the sample Legal-Marketing definition](./creating-workflow-tasks/images/02.png)
+
+To configure a _Task_ node:
+
+1. Go to the _Global Applications_ menu &rarr; _Applications_ &rarr; _Process Builder_.
+1. Click the _Workflows_ tab.
+1. Click the (![Add icon](../../../../images/icon-add.png)) to add a new workflow.
+1. In the Workflow Designer Canvas, delete the old connector between the _Start_ node and _End_ node.
+1. Drag and drop the _Task_ node onto the canvas then connect _Start_ node to the _Fork_ node.
+1. Rename the connector as _Marketing Review_.
+1. Click the _Task_ node to begin updating its properties.
+1. Double click the _Name_ field to give the node a name: _marketing-review_.
+1. Double click _Notifications_.
+1. Enter the following:
+
+    * **Name**: Market Content Review Notification
+    * **Template Language**: Text
+    * **Template**: (Enter a message for the reviewer.)
+    * **Notification Type**: Select the types of notifications; this is a multiple select field so you can choose more than one.
+    * **Execution Type**: On Assignment
+    * **Recipient Type**: Task Assignee
+
+    ![Configure the Task Node's notifications settings to send an email and user notification that an asset is ready for review by the Marketing Team.](./creating-workflow-tasks/images/03.png)
+
+1. Click _Save_ when finished.
+1. Double click _Assignments_. You can assign the review task to a Role, Role Type, a specific user, or a Resource Action. In this example, assign the _Task_ to a Role Type.
+1. Define which Roles will be asked to review the submission. For more information about Roles and Permissions, see [Understanding Roles and Permissions](../../../../users-and-permissions/roles-and-permissions/understanding-roles-and-permissions.md) and [Assigning Users to Roles](../../../../users-and-permissions/roles-and-permissions/assigning-users-to-roles.md). In this case, we have designating organization and site administrators and content reviewers to review the submission.
+
+    ![Configure the Task Node's notifications settings to send an email and user notification that an asset is ready for review by the Marketing Team.](./creating-workflow-tasks/images/04.png)
+
+1. Click _Save_ when finished.
+
+This node is now configured; it will send a notification that a submission is ready for review to those users assigned to a specific Role.
 
 ## Assignments
 
