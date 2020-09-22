@@ -4,7 +4,7 @@ An easy way to start developing a web application is to add markup to a JSP file
 
 Here you will deploy and examine an example application that displays some static markup--a "hello world" of sorts.
 
-![New portlet widget.](./creating-an-mvc-portlet/images/01.png)
+![New portlet widget.](./using-a-jsp-and-mvc-portlet/images/01.png)
 
 A simple JSP file and MVCPortlet class produce this widget.
 
