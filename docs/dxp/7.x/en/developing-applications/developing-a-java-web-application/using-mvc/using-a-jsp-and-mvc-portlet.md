@@ -56,7 +56,7 @@ In the module's `src/main/resources/META-INF/resources` folder, create a JSP fil
 
 ```javascript
 <p>
-	<b>Hello from W3E7 Portlet</b>
+	<b>Hello W3E7</b>
 </p>
 ```
 
