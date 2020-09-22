@@ -8,7 +8,8 @@ This tutorial documents how to use the _Fork_, _Join_ and _Join XOR_ nodes. Thes
 
 Follow the steps below:
 
-1. Navigate to the _Control Panel_ &rarr; _Workflow_ &rarr; _Process Builder_.
+1. Go to the _Global Applications_ menu &rarr; _Applications_ &rarr; _Process Builder_.
+1. Click the _Workflows_ tab.
 1. Click the (![Add icon](../../../../images/icon-add.png)) to add a new workflow.
 1. In the Workflow Designer Canvas, delete the old connector between the _Start_ node and _End_ node.
 1. Drag and drop the _Fork_ node onto the canvas then connect _Start_ node to the _Fork_ node. (You can rename the nodes and connectors later.)

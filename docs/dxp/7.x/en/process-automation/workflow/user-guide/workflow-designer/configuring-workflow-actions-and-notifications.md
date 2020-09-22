@@ -20,7 +20,7 @@ This tutorial documents adding a _Reject_ action to a Task node in a Single Appr
 
 To add an action which rejects a submission:
 
-1. Navigate to the _Control Panel_ &rarr; _Workflow_ &rarr; _Process Builder_.
+1. Go to the _Global Applications_ menu &rarr; _Applications_ &rarr; _Process Builder_.
 1. Click the _Workflows_ tab.
 1. Click on the Workflow definition (for example, _Single Approver_).
 1. Click the _Update_ node.
