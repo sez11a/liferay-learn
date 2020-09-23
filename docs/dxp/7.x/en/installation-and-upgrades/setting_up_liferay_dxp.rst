@@ -10,6 +10,7 @@ Setting Up Liferay DXP
    ../../system-administration/file_storage.rst
    ../../system-administration/installing_and_managing_apps.rst
    setting-up-liferay-dxp/initial-instance-localization.md
+   setting-up-liferay-dxp/using-a-cdn.md
    ../../installing_and_upgrading_a_search_engine.rst
    setting-up-liferay-dxp/clustering_for_high_availability.rst
 
@@ -19,5 +20,6 @@ Setting Up Liferay DXP
 -  :doc:`/system-administration/file_storage`
 -  :doc:`/system-administration/installing_and_managing_apps`
 -  :doc:`/installation-and-upgrades/setting-up-liferay-dxp/initial-instance-localization`
+-  :doc:`/installation-and-upgrades/setting-up-liferay-dxp/using-a-cdn`
 -  :doc:`/using-search/installing_and_upgrading_a_search_engine`
 -  :doc:`/installation-and-upgrades/setting-up-liferay-dxp/clustering_for_high_availability`
