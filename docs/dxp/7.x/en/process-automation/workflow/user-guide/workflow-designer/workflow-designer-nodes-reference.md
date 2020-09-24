@@ -50,9 +50,14 @@ See the [Category Specific Definition](../workflow-designer-overview/workflow-pr
 
 This script looks up the asset in question, retrieves its [asset category](https://help.liferay.com/hc/en-us/articles/360028820492-Defining-Categories-for-Content), and sets an initial `returnValue`. Then it checks to see if the asset has been marked with the *legal* category. If not it goes through *Content Review* (the content-review task in the workflow), and if it does it goes through *Legal Review* (the legal-review task in the workflow).
 
+### Task Nodes
+
+_Task_ nodes represent where all the work is done. Because _Task_ nodes can be complex, they are covered in two separate articles; see [Creating Workflow Tasks](./creating-workflow-tasks.md) and [Workflow Task Node Reference](./workflow-task-node-reference.md).
+
 ## Additional Information
 
 * [Creating Workflow Tasks](./creating-workflow-tasks.md)
+* [Workflow Task Node Reference](./workflow-task-node-reference.md)
 * [Kaleo Forms](../../../user-guide/advanced-forms-usage/kaleo-forms/kaleo-forms.md)
 * [Introduction to the Workflow Framework](https://help.liferay.com/hc/en-us/articles/360028727112-Introduction-to-The-Workflow-Framework)
 * [Dynamic Data Lists](../../../user-guide/advanced-forms-usage/dynamic-data-lists/getting-started-with-dynamic-data-lists.md)
