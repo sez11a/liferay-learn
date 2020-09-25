@@ -83,7 +83,7 @@ public class W3E7Portlet extends MVCPortlet {
 
 This example doesn't require any methods; `MVCPortlet`'s built-in methods render the `view.jsp` template specified via component annotations (discussed next).
 
-### Configure the Portlet Using Annotations
+### Configure the Portlet With Annotations
 
 ```java
 @Component(
