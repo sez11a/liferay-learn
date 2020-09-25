@@ -1,20 +1,19 @@
-# Introduction to REST Builder
+# Producing APIs with REST Builder
 
-Creating new API endpoints for your applications may be essential to effectively integrate with Liferay DXP. REST Builder is a tool that can help you generate these APIs quickly and effectively. It uses the [OpenAPI Specification](https://www.openapis.org/) to generate REST and [GraphQL](https://graphql.org/) APIs.
+REST Builder is a code generation tool that makes it easy for you to take your local APIs and make them available on the web. 
+It uses the [OpenAPI Specification](https://www.openapis.org/) to generate REST and [GraphQL](https://graphql.org/) APIs.
 
-## What is REST Builder?
+REST Builder uses the configuration you define in `rest-config.yaml` and `rest-openapi.yaml` files to generate most of the code necessary for your API to work all at once. You configure class names and where to put the code, and REST Builder generates all of the necessary files. Then you add your implementation logic. 
 
-REST Builder is a code generation tool that uses the configuration you define in a `rest-config.yaml` and `rest-openapi.yaml` file to generate most of the code necessary for your API to work all at once. You configure the names and folders to generate the code in, and REST Builder generates all of the necessary files. The only thing you need to add from there is your implementation logic.
+You run REST Builder using the Gradle task `buildREST` from your `impl` module in a Liferay workspace. Once configured, it generates all the scaffolding code, interfaces, and even resource classes ready for implementation. 
 
-REST Builder is run using the Gradle task `buildREST` from your `impl` module in a Liferay workspace. Run this command to generate all of the scaffolding code, interfaces, and even the resource classes for you to add your implementation logic to.
-
-In general, you can use the `@generated` annotation above the class name in each Java file to distinguish whether it is a file you should add your own logic to, or if it will be re-generated the next time REST Builder runs. If the annotation is not present, then the file is meant for you to add your own code to and will not be overwritten.
+In general, you can use the `@generated` annotation above the class name in each Java file to distinguish whether it's something you've modified, or if it should be re-generated the next time REST Builder runs. If the annotation is not present, the file is meant for you to add your own code to and is not overwritten.
 
 ## Generated Code Structure
 
-REST Builder generates several packages of code for you, so that you can focus on just your implementation class. However, you must start by creating the locations for each of your modules. In a conventional Liferay workspace, you only need to create the folders for each module and each of their `bnd.bnd` and `build.gradle` files.
+REST Builder generates the boilerplate, so you can focus on just your implementation class. However, you must start by defining the locations for each of your modules. In a conventional Liferay workspace, create the folders for each module and each of their `bnd.bnd` and `build.gradle` files.
 
-After you create the initial configuration for your modules,  and the [REST Builder configuration files](#adding-your-api-configurations) (`rest-config.yaml` and `rest-openapi.yaml`), then running REST Builder generates the following structure:
+After you create the initial configuration for your modules and the [REST Builder configuration files](#adding-your-api-configurations) (`rest-config.yaml` and `rest-openapi.yaml`), running REST Builder generates the following API structure:
 
 ```
 api root
@@ -67,11 +66,9 @@ impl root
                             └── *ResourceImpl classes
 ```
 
-GraphQL endpoint code and JAX-RS application code are both generated in the `graphql` and `jaxrs` packages, respectively. Your own API implementation is added into the appropriate `*ResourceImpl` class within the `resource` package.
+GraphQL endpoint code and JAX-RS application code are both generated in the `graphql` and `jaxrs` packages, respectively. Your own API implementation is added into the appropriate `*ResourceImpl` class in the `resource` package.
 
-### Configuring Client and Test Modules
-
-You can also configure a `client` and `test` module for REST Builder to generate client and test code, respectively. Define a `clientDir` or `testDir` path in your `rest-config.yaml` for it to also generate more code within these modules.
+You can also configure a `client` and `test` module for REST Builder to generate client and test code, respectively. Define a `clientDir` or `testDir` path in your `rest-config.yaml` to generate them. 
 
 As with the `api` and `impl` modules, REST Builder uses the directory paths, `apiPackagePath` values, and `version` value to define the folders that it will add classes into.
 
@@ -83,7 +80,7 @@ The details of the API you intend to add are configured in your project's `rest-
 
 ### Defining Basic API Information
 
-The `info` section of your `rest-openapi.yaml` file is the most straightforward section. This section defines the basic information for your APIs that will be used by the JAX-RS application when it becomes available, as well as the OpenAPI version beneath it.
+The `info` section of your `rest-openapi.yaml` file defines information about your APIs that is used by the JAX-RS application when it becomes available, as well as the OpenAPI version beneath it.
 
 Here is an example of an `info` section: 
 
@@ -101,11 +98,11 @@ openapi: 3.0.1
 
 ### Defining Schemas
 
-Schemas are the main mechanism REST Builder provides for defining new data types for your APIs. If you need REST Builder to create a new entity or data structure that you can use as a return type or parameter for your APIs, then you must define it as an object with its own schema in the `components` section of your `rest-openapi.yaml` file.
+If you need REST Builder to create a new entity or data structure to use as a return type or parameter for your APIs, you must define it as an object with its own _schema_ in the `components` section of your `rest-openapi.yaml` file.
 
-Objects are each defined with a name, a `type` (usually `object`, unless it only represents a basic type), and then a list of `properties` (their fields in the Java code) that they contain. Each of the properties also has a `type`, as well as a `description` that will be used for generated Java documentation.
+Objects are defined with a name, a `type` (usually `object`, unless it only represents a basic type), and then a list of `properties` (fields in Java code) they contain. Each property also has a `type` and a `description` that are used to generate Java documentation.
 
-Here is an example of a `components` section that defines one new schema (for a `BasicUser` object, with only a name and ID):
+Here is an example of a `components` section that defines one schema for a `BasicUser` object, containing only a name and ID:
 
 ```
 components:
@@ -128,17 +125,17 @@ components:
                 object
 ```
 
-The schema also specifies what prefix REST Builder will use when generating the resource files for your implementation. In the above example, the API implementation belongs in the `BasicUserResourceImpl` file.
+The schema also defines the prefix REST Builder uses when generating the resource files for your implementation. In the above example, the API implementation belongs in the `BasicUserResourceImpl` file.
 
 See the [OpenAPI specification](https://swagger.io/docs/specification/data-models/data-types/) for a list of all the supported basic data types that you can use for schemas.
 
 ```tip::
-   If your API only needs to return one of the basic data types, then you may not need to define any schemas in your ``rest-openapi.yaml`` file.
+   If your API only returns one of the basic data types, you may not need to define any schemas in your ``rest-openapi.yaml`` file.
 ```
 
 ### Defining the APIs
 
-The last section, `paths`, specifies the details of the APIs themselves. Each API must be defined within its own path, which is added to the end of the URL to access it when it is available. Making a request to the full URL including the path will call the API you define within it. APIs can be defined to take several types of requests, including `get`, `post`, `put`, `patch`, and `delete` requests.
+The last section, `paths`, specifies the details of the APIs themselves. Each API must be defined within its own path, which is added to the end of the base URL. Making a request to the full URL including the path calls the API you've defined. APIs can take several types of requests, including `get`, `post`, `put`, `patch`, and `delete`.
 
 Each API contains an `operationId` (which becomes the name of the method in the Java code), a list of `parameters`, a tag, and a list of possible `responses` that the API returns when it is called. At least a `200` response (indicating a successful request) is required for the API to work.
 
@@ -167,9 +164,9 @@ paths:
             tags: ["BasicUser"]
 ```
 
-The `parameters` each have a `name` (which is used both in specifying it in a request as well as in the Java method call), whether it is required, and a `schema` (which may be either a basic data type or a schema for a custom object you have defined).
+The `parameters` each have a `name` (used for the request as well as in the Java method call), whether it is required, and a `schema` (which may be either a basic data type or a schema for a custom object you have defined).
 
-The `responses` each need to have `content` defined for JSON or XML responses (or both). Each of the possible responses must also define a `schema`, just like the parameters.
+The `responses` must each have `content` defined for JSON or XML responses (or both). Each possible response must also define a `schema`, just like the parameters.
 
 ```note::
    If you want to use an object you have defined in the ``components`` section for either your API's parameters or return type, then you can reference it with ``$ref: "#/components/schemas/<ObjectName>"``.
@@ -179,4 +176,4 @@ The tag determines what name to use when generating documentation when your code
 
 ## Create Your Own APIs with REST Builder
 
-Now that you understand how REST Builder works, you can use it to create APIs for your own applications. See the tutorial on [Implementing a New API with REST Builder](./implementing-a-new-api-with-rest-builder.md) to walk through this process with an example.
+Now that you understand how REST Builder works, you can use it to create APIs for your own applications. See [Implementing a New API with REST Builder](./implementing-a-new-api-with-rest-builder.md) to walk through this process with an example.
