@@ -46,7 +46,7 @@ Start with deploying the example.
 
 1. Verify the application's availability. Open your browser to `https://localhost:8080`. Add the *W3E7 Portlet* widget from the *Samples* category to a widget page.
 
-![Here is the example portlet web application.](./creating-an-mvc-portlet/images/01.png)
+![Here is the example portlet web application.](./using-a-jsp-and-mvc-portlet/images/02.png)
 
 Congratulations, you've successfully built and deployed a new application.
 
