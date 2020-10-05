@@ -2,11 +2,11 @@
 
 An easy way to start developing a web application is to add markup to a JSP file, and render it using a portlet Java class.
 
-Here you will deploy an example application that displays a "Hello world" of sorts. 
+The W3E7 example application demonstrates this approach. 
 
 ![Here is the example portlet application.](./using-a-jsp-and-mvc-portlet/images/01.png)
 
-The application contains a JSP file and an `MVCPortlet` class. The JSP contains static markup and the portlet class renders the JSP. You will examine the application too.
+The application has a JSP with markup content and an `MVCPortlet` class that renders the JSP. Here you will deploy the example and examine it to learn how to create applications using a JSP with an MVC portlet. 
 
 ## Deploy a Simple MVC Portlet Module
 
