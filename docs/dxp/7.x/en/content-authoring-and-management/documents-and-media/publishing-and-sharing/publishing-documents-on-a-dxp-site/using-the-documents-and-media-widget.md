@@ -4,7 +4,8 @@ The *Documents and Media Widget* gives users a simple way to manage various asse
 
 1. Navigate to the site page where the *Documents and Media Widget* is deployed.
 
-2. 
+2. Above the different assets, you will find a toolbar with different options. You can
+![a](using-the-documents-and-media-widget/images/01.png)
 
 ![temp](using-the-documents-and-media-widget/images/01.png)
 
