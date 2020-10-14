@@ -1,16 +1,12 @@
 # Using the Documents and Media Widget
 
-The Documents and Media Widget allows you to publish your files in a simple-gallery like style. It shows thumbnails of each media file, lets the user download files, and has slideshow capabilities. A common way to use the Media Gallery is to create a separate page for displaying media and add a Media Gallery widget to it. This way, your media takes center stage.
+The *Documents and Media Widget* gives users a simple way to manage various assets from within a site page.
 
-The widget can be added to a both a Content Page as well as a Widget Page.
+1. Navigate to the site page where the *Documents and Media Widget* is deployed.
 
-Follow these steps to add the widget to your page:
+2. 
 
-1. Create a Content Page or Widget Page and enter the edit mode.
-
-2. From the editting toolbar on the right, click on "Fragments and Widgets".
-
-![](using-the-documents-and-media-widget/images/01.png)
+![temp](using-the-documents-and-media-widget/images/01.png)
 
 3. Select the "Widgets" tab and drag the "Documents and Media" widget to your page.
 
