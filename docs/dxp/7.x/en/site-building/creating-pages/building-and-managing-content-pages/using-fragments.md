@@ -15,3 +15,7 @@ You can display a single existing web content, blog entry, or document by adding
     ![The Content Fragment lets you display a single piece of content.](./using-fragments/images/01.png)
 
 1. Click the plus button next to the *Content* input and select an existing web content, blog entry, or document to display.
+
+```note::
+   *Heading* fragments cannot have line breaks. Although both *Heading* and *Paragraph* fragments use `element-text` fields, only the latter can have multiple line texts separated by a line break.
+```
