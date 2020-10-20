@@ -122,7 +122,7 @@ List words that people are likely to use when searching for your Page's content.
 
 Preview how a Page is displayed in search engine results pages (SERP) based on your configuration of its HTML title, description, and custom URL.
 
-<!-- INSERT IMAGE -->
+![Preview how a page is displayed on your Site.](./page-configuration-ui-reference/images/13.png)
 
 ### Robots
 
