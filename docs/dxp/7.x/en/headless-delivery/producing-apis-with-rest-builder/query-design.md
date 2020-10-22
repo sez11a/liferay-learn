@@ -42,7 +42,7 @@ Adding support for filtering, sorting, and searching is trickier. The first step
       type: string
 ```
 
-The `get[Entity]` or `get[Entity]Page` method signature then receives a Sort object, a Filter object, and string with the search request. Those objects use [Liferay's indexing framework](/docs/7-2/frameworks/-/knowledge_base/f/model-entity-indexing-framework). This gives you many benefits, like support for permissions out-of-the-box and having to write very little code to achieve sort, filter, and search.
+The `get[Entity]` or `get[Entity]Page` method signature then receives a Sort object, a Filter object, and string with the search request. Those objects use [Liferay's indexing framework](../../using-search/developer-guide/model-entity-indexing.rst). This gives you many benefits, like support for permissions out-of-the-box and having to write very little code to achieve sort, filter, and search.
 
 So first, make sure your entity is indexed using the indexing framework.
 
