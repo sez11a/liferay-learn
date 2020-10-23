@@ -45,12 +45,13 @@ Each Workflow Node represents a specific point in an approval process, whether i
 
 Workflow transitions link each node to create the desired flow in the review process. On exiting the first node, processing continues to the next node indicated by the transition.
 
-Ready to work on workflows? Your next step is [creating workflow tasks](./workflow-designer/creating-workflow-tasks.md). 
+Ready to work on workflows? Your next step is [creating workflow tasks](./workflow-designer/creating-workflow-tasks.md).
 
 ## Additional Information
 
 * [Managing Workflow with Designer](./workflow-designer/managing-workflow-with-designer.md)
-* [Using Forks, Joins, and Conditions](./workflow-designer/using-forks-joins-and-conditions.md)
+* [Forks and Joins Reference](./workflow-designer/forks-and-joins-reference.md)
+* [Condition Node Reference](./workflow-designer/condition-node-reference.md)
 * [Creating Workflow Tasks](./workflow-designer/creating-workflow-tasks.md)
 * [Configuring Workflow Actions and Notifications](./workflow-designer/configuring-workflow-actions-and-notifications.md)
 * [Workflow Designer Nodes Reference](./workflow-designer/workflow-designer-nodes-reference.md)
