@@ -18,4 +18,13 @@ User Guide
 -  :doc:`/process-automation/workflow/user-guide/reviewing-assets`
 -  :doc:`/process-automation/workflow/user-guide/using-workflow-metrics`
 -  :doc:`/process-automation/workflow/user-guide/workflow-metrics-reports`
+
+Workflow Designer
+-----------------
+
 -  :doc:`/process-automation/workflow/user-guide/workflow-designer-overview`
+-  :doc:`/process-automation/workflow/user-guide/workflow-designer/creating-workflow-tasks`
+-  :doc:`/process-automation/workflow/user-guide/workflow-designer/configuring-workflow-actions-and-notifications`
+-  :doc:`/process-automation/workflow/user-guide/workflow-designer/forks-and-joins-reference`
+-  :doc:`/process-automation/workflow/user-guide/workflow-designer/condition-node-reference`
+-  :doc:`/process-automation/workflow/user-guide/workflow-designer/workflow-designer-nodes-reference`
