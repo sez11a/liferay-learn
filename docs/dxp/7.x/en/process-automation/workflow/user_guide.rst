@@ -8,7 +8,6 @@ User Guide
    user-guide/activating-workflow.md
    user-guide/managing-workflows.md
    user-guide/reviewing-assets.md
-   user-guide/workflow-designer-overview.md
    user-guide/using-workflow-metrics.md
    user-guide/workflow-metrics-reports.md
    user-guide/workflow-designer-overview.md
@@ -17,7 +16,6 @@ User Guide
 -  :doc:`/process-automation/workflow/user-guide/activating-workflow`
 -  :doc:`/process-automation/workflow/user-guide/managing-workflows`
 -  :doc:`/process-automation/workflow/user-guide/reviewing-assets`
--  :doc:`/process-automation/workflow/user-guide/building-workflows`
 -  :doc:`/process-automation/workflow/user-guide/using-workflow-metrics`
 -  :doc:`/process-automation/workflow/user-guide/workflow-metrics-reports`
 -  :doc:`/process-automation/workflow/user-guide/workflow-designer-overview`
