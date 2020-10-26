@@ -1,10 +1,10 @@
-# Workflow Task Node Reference
+# Task Node Reference
 
 > Subscribers
 
 Once you have [created a few task nodes](./creating-workflow-tasks.md), you must assign a Workflow _Task_ to someone or "entity" to complete the review; in DXP, this entity is loosely defined. You can assign the Tasks to specific Roles, multiple Roles of a [Role Type](../../../../users-and-permissions/roles-and-permissions/understanding-roles-and-permissions.md) (Organization, Site, or regular Role types), to the Asset Creator, to Resource Actions, or to specific Users. In the example below, this task has been assigned to a Portal Content Reviewer Role.
 
-![You can add an Assignment to a Task node.](./workflow-task-node-reference/images/01.png)
+![You can add an Assignment to a Task node.](./task-node-reference/images/01.png)
 
  Additionally, you can write a script to define the assignment (see below).
 

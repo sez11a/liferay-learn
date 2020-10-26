@@ -1,4 +1,4 @@
-# Workflow Designer Nodes Reference
+# Workflow Designer Nodes Overview
 
 > Subscribers
 
@@ -52,7 +52,7 @@ This script looks up the asset in question, retrieves its [asset category](https
 
 ### Task Nodes
 
-_Task_ nodes represent where all the work is done. Because _Task_ nodes can be complex, they are covered in two separate articles; see [Creating Workflow Tasks](./creating-workflow-tasks.md) and [Workflow Task Node Reference](./workflow-task-node-reference.md).
+_Task_ nodes represent where all the work is done. Because _Task_ nodes can be complex, they are covered in two separate articles; see [Creating Workflow Tasks](./creating-workflow-tasks.md) and [Task Node Reference](./task-node-reference.md).
 
 ## Additional Information
 
