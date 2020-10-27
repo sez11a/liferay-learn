@@ -11,6 +11,7 @@ User Guide
    user-guide/using-workflow-metrics.md
    user-guide/workflow-metrics-reports.md
    user-guide/workflow-designer-overview.md
+   user-guide/workflow_designer.rst.md
 
 -  :doc:`/process-automation/workflow/user-guide/introduction-to-workflow`
 -  :doc:`/process-automation/workflow/user-guide/activating-workflow`
