@@ -1,6 +1,9 @@
 Workflow Designer
 =================
 
+.. toctree::
+   :maxdepth: 3
+
 -  :doc:`/process-automation/workflow/user-guide/workflow-designer/workflow-designer-nodes-overview`
 -  :doc:`/process-automation/workflow/user-guide/workflow-designer/creating-workflow-tasks`
 -  :doc:`/process-automation/workflow/user-guide/workflow-designer/configuring-workflow-actions-and-notifications`

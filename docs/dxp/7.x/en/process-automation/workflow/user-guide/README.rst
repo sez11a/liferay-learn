@@ -1,6 +1,9 @@
 User Guide
 ==========
 
+.. toctree::
+   :maxdepth: 2
+
 -  :doc:`/process-automation/workflow/user-guide/introduction-to-workflow`
 -  :doc:`/process-automation/workflow/user-guide/activating-workflow`
 -  :doc:`/process-automation/workflow/user-guide/managing-workflows`
