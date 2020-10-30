@@ -108,6 +108,8 @@ public class EntityResourceImpl extends BaseEntityResourceImpl implements
 
 Finally, call `SearchUtil.search()` to link everything together. It requires these parameters:
 
+1. `actions`: a map of actions the user can take on the returned elements (see [Available Actions](./available-actions.md) for more details).
+
 1. `booleanQueryUnsafeConsumer`: a boolean query to restrict the information we want to retrieve.
 
 1. `filter`: pass-through of the filter object.
@@ -122,9 +124,9 @@ Finally, call `SearchUtil.search()` to link everything together. It requires the
 
 1. `searchContextUnsafeConsumer`: global configuration of the query.
 
-1. `transformUnsafeFunction`: the function that transforms from `Document` (of the indexing framework) to your entity, either searching in the database, your persistence, another API, etc.
-
 1. `sorts`: pass-through of the sorts object.
+
+1. `transformUnsafeFunction`: the function that transforms from `Document` (of the indexing framework) to your entity, either searching in the database, your persistence, another API, etc.
 
 The code would be similar to this:
 
@@ -135,14 +137,15 @@ public Page<Entity> getEntitiesPage(
 	throws Exception {
 
 	return SearchUtil.search(
+		Collections.emptyMap(),
 		booleanQuery -> {},
 		filter, Entity.class, search, pagination,
 		queryConfig -> queryConfig.setSelectedFieldNames(
 			Field.ENTRY_CLASS_PK),
 		searchContext -> searchContext.setCompanyId(
 			contextCompany.getCompanyId()),
-		document -> new Entity(document.get("id")), // your implementation here
-		sorts);
+		sorts,
+		document -> new Entity(document.get("id"))); // your implementation here
 }
 ```
 
