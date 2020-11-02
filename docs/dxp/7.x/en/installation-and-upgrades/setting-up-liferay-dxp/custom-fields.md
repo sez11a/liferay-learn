@@ -77,6 +77,17 @@ For example, the *max-users* custom field we created should now be visible for a
 
 ## Editing Custom Fields
 
+Click on the Options icon (![Click on the options icon for the custom field.](../../images/icon-options.png)) next to the name of the custom field to edit. You are given different options:
 
+![Clicking on the options icon gives you different choices](custom-fields/images/05.png)
+
+* **Edit** - You can change different aspects of the custom field, but note that you cannot change the custom field name or custom field type.
+
+    ![Click Edit to open a new window to make changes to the custom field.](custom-fields/images/06.png)
+
+    The configuration options you have will also depend on the field type you choose.
+
+* **Permissions** - You can modify the permissions to allow other users to edit or view a custom field.
+* **Delete** - You can delete the custom field.
 
 
