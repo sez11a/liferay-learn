@@ -1,6 +1,6 @@
 # Setting and Defining Metadata
 
-Working with Document Types allows you to set various metadata fields. Here are the kinds of fields that Liferay supports:
+You can set various metadata fields in Document Types: 
 
 ![List of different metadata fields you can define.](setting-and-defining-metadata/images/01.png)
 
