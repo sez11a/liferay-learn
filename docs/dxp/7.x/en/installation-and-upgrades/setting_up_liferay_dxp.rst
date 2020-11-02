@@ -56,3 +56,6 @@ Other Setup Topics
 
 * Tuning your JVM (Coming soon!)
 * Setting Up Remote Staging (Coming soon!)
+   setting-up-liferay-dxp/custom-fields.md
+   
+-  :doc:`/installation-and-upgrades/setting-up-liferay-dxp/custom-fields`
