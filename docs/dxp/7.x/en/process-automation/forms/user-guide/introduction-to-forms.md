@@ -22,7 +22,7 @@ Liferay Forms also include many additional features and tools to enable users to
 * Populating a field options by integrating with a [Data Provider](./advanced-forms-usage/using-data-providers-to-populate-form-options.md)
 * [Conditional fields](./advanced-forms-usage/building-forms-with-conditional-fields.md)
 * Integration with Liferay's built-in [workflow system](./advanced-forms-usage/using-forms-with-a-workflow.md)
-* [And more...](./advanced-forms-usage/README.md)
+* [And more...](./advanced-forms-usage/forms_rules.rst)
 
 ## Integrating Forms with Business Processes
 
