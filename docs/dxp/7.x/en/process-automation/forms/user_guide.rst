@@ -8,7 +8,7 @@ User Guide
    user-guide/creating-forms.md
    user-guide/sharing-forms.md
    user-guide/managing-form-entries.md
-   user-guide/configuring-form-notifications.md
+   user-guide/exporting-and-importing-forms.md
    user-guide/forms-field-types-reference.md
    user-guide/forms-configuration-reference.md
    user-guide/forms-permissions-reference.md
@@ -18,6 +18,8 @@ User Guide
 -  :doc:`/process-automation/forms/user-guide/creating-forms`
 -  :doc:`/process-automation/forms/user-guide/sharing-forms`
 -  :doc:`/process-automation/forms/user-guide/managing-form-entries`
+-  :doc:`/process-automation/forms/user-guide/exporting-and-importing-forms`
+-  :doc:`/process-automation/forms/user-guide/forms-configuration-reference`
 -  :doc:`/process-automation/forms/user-guide/forms-field-types-reference`
 -  :doc:`/process-automation/forms/user-guide/forms-permissions-reference`
 
