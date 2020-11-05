@@ -1,8 +1,8 @@
 # Using the Require Rule
 
-Use a _Require_ rule to make a field required based on one or more conditions. Require Rules work in association with other Rules, such as the _Show_ Rule. 
+Use a _Require_ rule to make a field required based on one or more conditions. Require Rules work in association with other Rules, such as the _Show_ Rule.
 
-To demonstrate, assume the camp registration form includes these items: 
+To demonstrate, assume the camp registration form includes these items:
 
 * _I am 18 Years Old or Older_: a required single selection field with two options: _Yes_ and _No_.
 * _Legal Guardian Email Address_: a text field that accepts valid email addresses.
