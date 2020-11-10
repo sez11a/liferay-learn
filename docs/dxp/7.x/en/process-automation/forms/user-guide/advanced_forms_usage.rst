@@ -4,7 +4,6 @@ Advanced Forms Usage
 .. toctree::
    :maxdepth: 2
 
-   advanced-forms-usage/building-forms-with-conditional-fields.md
    advanced-forms-usage/customizing-auto-save-behavior.md
    advanced-forms-usage/customizing-form-layouts.md
    advanced-forms-usage/enabling-captcha-on-form-submissions.md
@@ -21,7 +20,6 @@ Advanced Forms Usage
    advanced-forms-usage/kaleo_forms.rst
    advanced-forms-usage/dynamic_data_lists.rst
 
--  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/building-forms-with-conditional-fields`
 -  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/customizing-auto-save-behavior`
 -  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/customizing-form-layouts`
 -  :doc:`/process-automation/forms/user-guide/advanced-forms-usage/enabling-captcha-on-form-submissions`
