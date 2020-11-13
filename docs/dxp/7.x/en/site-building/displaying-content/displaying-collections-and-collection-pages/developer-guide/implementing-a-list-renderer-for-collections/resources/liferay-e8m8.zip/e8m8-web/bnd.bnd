@@ -1,0 +1,4 @@
+Bundle-Name: Acme E8M8 Web
+Bundle-SymbolicName: com.acme.e8m8.web
+Bundle-Version: 1.0.0
+Web-ContextPath: /e8m8-web

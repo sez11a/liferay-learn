@@ -1,0 +1,4 @@
+Bundle-Name: Acme V7A2 Web
+Bundle-SymbolicName: com.acme.v7a2.web
+Bundle-Version: 1.0.0
+Web-ContextPath: /v7a2-web
