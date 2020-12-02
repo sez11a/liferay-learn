@@ -1,6 +1,8 @@
 # Tuning Your JVM
 
-Java Virtual Machine (JVM) tuning primarily focuses on adjusting Java heap and non-heap settings and configuring garbage collection. Finding settings that perform well for you depend on your system's load and your hardware. The settings discussed here can be used as a starting point for tuning your JVM. 
+Java Virtual Machine (JVM) tuning primarily focuses on adjusting Java heap and non-heap settings and configuring garbage collection. Finding settings that perform well for you depend on your system's load and your hardware. The settings demonstrated here can be used as a starting point for tuning your JVM. 
+
+Set your JVM options where it's appropriate for your application server. [Liferay installation instructions](../installing_liferay.html#installing-liferay-on-an-application-server) for each application server references the JVM configuration location. If you're using a Liferay Docker image, please see [Configuring Containers](../installing-liferay/using-liferay-docker-images/configuring-containers.md#jvm-options).
 
 We used Oracle's 1.8 JVM for the reference architecture. You may choose other supported JVM versions and implementations. Please consult [the compatibility matrix](https://help.liferay.com/hc/en-us/articles/360049238151) for additional compatible JVMs.
 
@@ -81,7 +83,7 @@ Choosing appropriate garbage collector (GC) algorithms helps improve Liferay ins
    There are additional "new" algorithms like G1, but Liferay Engineering's tests for G1 indicated that it does not improve performance. Since your application performance may vary, you should add G1 to your testing and tuning plans.
 ```
 
-## Consider Using Large Pages 
+## Consider Using Large Pages
 
 On systems that require large heap sizes (e.g., above 4GB), it may be beneficial to use large page sizes.
 
@@ -116,7 +118,7 @@ Here's how to configure large pages (aka "huge pages") on Linux:
 
 Make sure the total large page size (from `cat /proc/meminfo`, calculate `HugePages_Total * Hugepagesize`) can contain all of your JVM's memory usage. The example above sets 4G (2048 KB * 2048) memory as total large page size, which is enough for the Heap/Metaspace settings in this article.
 
-### Configure Large Pages in Your JVM 
+### Configure Large Pages in Your JVM
 
 Here's how to configure your JVM to use large pages:
 

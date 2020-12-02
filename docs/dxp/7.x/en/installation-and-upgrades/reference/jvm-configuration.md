@@ -1,9 +1,13 @@
 # JVM Configuration
 
-Liferay DXP requires a Java JDK 8 or 11 and requires specific JVM option settings. There are also recommended settings specific to JDK 11 and recommended baseline memory settings. Here you'll learn about all of these settings and see them demonstrated in an example Tomcat script.
+Liferay DXP requires a Java JDK 8 or 11 and requires specific JVM option settings. There are also recommended settings specific to JDK 11 and recommended baseline memory settings. Here you'll learn about all of these settings and see them demonstrated in an example Tomcat `setenv.sh` script.
 
 ```note::
    See `the Liferay DXP compatibility matrix <https://help.liferay.com/hc/en-us/articles/360049238151>`_ to choose a JDK.
+```
+
+```note::
+   Set your JVM options where it's appropriate for your application server. `Liferay installation instructions <../installing_liferay.html#installing-liferay-on-an-application-server>`_ for each application server reference the JVM configuration locations. If you're using a Liferay Docker image, please see `Configuring Containers <../installing-liferay/using-liferay-docker-images/configuring-containers.md#jvm-options>`_.
 ```
 
 ## Recommended JVM Settings
