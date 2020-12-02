@@ -228,3 +228,4 @@ You can [sign in as your administrator user](../../../getting-started/introducti
 * [Installing a Search Engine](../../../using-search/installing-and-upgrading-a-search-engine/introduction-to-installing-a-search-engine.md)
 * [Securing Liferay DXP](../../securing-liferay/introduction-to-securing-liferay.md)
 * [Clustering for High Availability](../../setting-up-liferay-dxp/clustering-for-high-availability/clustering-for-high-availability.md)
+* [Tuning Your JVM](../../setting-up-liferay-dxp/tuning-your-jvm.md)

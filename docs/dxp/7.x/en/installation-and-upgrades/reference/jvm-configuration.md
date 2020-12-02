@@ -80,3 +80,7 @@ CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.base/java.lang.reflect=ALL-UNNAME
 ```
 
 Note that Liferay supports many application servers, and all of them can be configured with the JVM options of your choosing. 
+
+## Additional Information
+
+[Tuning Your JVM](../setting-up-liferay-dxp/tuning-your-jvm.md)

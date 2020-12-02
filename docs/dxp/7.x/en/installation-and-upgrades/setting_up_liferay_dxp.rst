@@ -8,6 +8,7 @@ Setting Up Liferay DXP
    setting-up-liferay-dxp/activating-liferay-dxp.md
    setting-up-liferay-dxp/initial-instance-localization.md
    setting-up-liferay-dxp/using-a-cdn.md
+   setting-up-liferay-dxp/tuning-your-jvm.md
    setting-up-liferay-dxp/configuring_mail.rst
    ../../system-administration/file_storage.rst
    ../../system-administration/installing_and_managing_apps.rst
@@ -54,5 +55,5 @@ Clustering for High Availability
 Other Setup Topics
 ------------------
 
-* Tuning your JVM (Coming soon!)
+-  :doc:`/installation-and-upgrades/setting-up-liferay-dxp/tuning-your-jvm`
 * Setting Up Remote Staging (Coming soon!)
