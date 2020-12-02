@@ -25,7 +25,7 @@ The JVM's memory comprises heap and non-heap spaces. The heap contains a space f
 | `-Xmx2560m` | Maximim space for heap. |
 | `-XX:NewSize=1536m`| Initial new space. Setting the new size to half of the total heap typically provides better performance than using a smaller new size. |
 | `-XX:MaxNewSize=1536m` | Maximum new space. |
-| `-XX:MetaspaceSize=768m` | Initial space for static content. |
+| `-XX:MetaspaceSize=768m` | Initial space for static content (class meta data, etc.). |
 | `-XX:MaxMetaspaceSize=768m` | Maximum space for static content. |
 | `-XX:InitialCodeCacheSize=64m` | Initial space for JIT-compiled code. Too small a code cache (`48m` is the default) reduces performance, as the JIT isn't able to optimize high frequency methods. |
 | `-XX:ReservedCodeCacheSize=96m` | Maximum space for JIT-compiled code. |
