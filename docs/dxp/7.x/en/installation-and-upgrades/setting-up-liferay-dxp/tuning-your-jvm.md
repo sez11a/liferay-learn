@@ -114,7 +114,7 @@ Here's how to configure large pages (aka "huge pages") on Linux:
 
 1. Restart your machine.
 
-Make sure the total large page size (from `cat /proc/meminfo`, calculate `HugePages_Total * Hugepagesize`) can contain all of your JVM's memory usage. The example above sets 4G memory as total large page size, which is enough for the Heap/Metaspace settings in this article.
+Make sure the total large page size (from `cat /proc/meminfo`, calculate `HugePages_Total * Hugepagesize`) can contain all of your JVM's memory usage. The example above sets 4G (2048 KB * 2048) memory as total large page size, which is enough for the Heap/Metaspace settings in this article.
 
 ### Configure Large Pages in Your JVM 
 
