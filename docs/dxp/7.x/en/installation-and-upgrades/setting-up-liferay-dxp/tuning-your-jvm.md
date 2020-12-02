@@ -104,7 +104,7 @@ Here's how to configure large pages (aka "huge pages") on Linux:
 1. Set the number of pages to enable. On Linux, edit your `/etc/sysctl.conf` file and set `vm.nr_hugepages` to the number of pages. For example,
 
 	```properties
-	vm.nr_hugepages = 10
+	vm.nr_hugepages = 2048
 	```
 1. Enable the pages. On Linux, execute this:
 
@@ -114,6 +114,8 @@ Here's how to configure large pages (aka "huge pages") on Linux:
 
 1. Restart your machine.
 
+Make sure the total large page size (from `cat /proc/meminfo`, calculate `HugePages_Total * Hugepagesize`) can contain all of your JVM's memory usage. The example above sets 4G memory as total large page size, which is enough for the Heap/Metaspace settings in this article.
+
 ### Configure Large Pages in Your JVM 
 
 Here's how to configure your JVM to use large pages:
@@ -121,7 +123,7 @@ Here's how to configure your JVM to use large pages:
 **Large Page Settings Example**
 
 ```
--XX:+UseLargePages -XX:LargePageSizeInBytes=256m
+-XX:+UseLargePages -XX:LargePageSizeInBytes=2m
 ```
 
 **Large Page Settings Explained**
@@ -129,9 +131,7 @@ Here's how to configure your JVM to use large pages:
 | Large Page Setting | Explanation |
 | :------ | :---------- |
 | `-XX:+UseLargePages` | Enables large pages. |
-| `-XX:LargePageSizeInBytes=256m` | Make sure the total large page size (from `cat /proc/meminfo`, calculate `HugePages_Total * Hugepagesize`) can contain all of your JVM's memory usage. |
-
-Adjust page sizes based on your hardware specification and application profile.
+| `-XX:LargePageSizeInBytes=2m` | The large page size, which should be same with the `Hugepagesize` shown in `/proc/meminfo`. |
 
 ## Conclusion 
 
