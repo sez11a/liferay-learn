@@ -18,34 +18,7 @@ import org.osgi.service.component.annotations.Reference;
 @Component(immediate = true, service = InfoListRenderer.class)
 public class E8M8InfoListRenderer implements InfoListRenderer<BlogsEntry> {
 
-	@Override
-	public List<InfoItemRenderer<?>> getAvailableInfoItemRenderers() {
-		return infoItemRendererTracker.getInfoItemRenderers(
-			BlogsEntry.class.getName());
-	}
-
-	@Override
-	public String getKey() {
-		return "Example";
-	}
-
-	@Override
-	public void render(
-		List<BlogsEntry> entries, HttpServletRequest httpServletRequest,
-		HttpServletResponse httpServletResponse) {
-
-		RequestDispatcher requestDispatcher =
-			_servletContext.getRequestDispatcher("/blogs_entry_list.jsp");
-
-		httpServletRequest.setAttribute("entries", entries);
-
-		try {
-			requestDispatcher.include(httpServletRequest, httpServletResponse);
-		}
-		catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
+	// Override the necessary methods and implement your list renderer logic here.
 
 	@Reference(
 		target = "(osgi.web.symbolicname=com.acme.e8m8.web)", unbind = "-"
