@@ -14,28 +14,7 @@ import org.osgi.service.component.annotations.Reference;
 @Component(service = InfoItemRenderer.class)
 public class V7A2InfoItemRenderer implements InfoItemRenderer<BlogsEntry> {
 
-	@Override
-	public String getKey() {
-		return "Example";
-	}
-
-	@Override
-	public void render(
-		BlogsEntry blogsEntry, HttpServletRequest httpServletRequest,
-		HttpServletResponse httpServletResponse) {
-
-		RequestDispatcher requestDispatcher =
-			_servletContext.getRequestDispatcher("/blogs_entry_item.jsp");
-
-		httpServletRequest.setAttribute("blogsEntry", blogsEntry);
-
-		try {
-			requestDispatcher.include(httpServletRequest, httpServletResponse);
-		}
-		catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
+	// Override the necessary methods and implement your item renderer logic here.
 
 	@Reference(
 		target = "(osgi.web.symbolicname=com.acme.v7a2.web)", unbind = "-"
