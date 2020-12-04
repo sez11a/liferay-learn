@@ -14,7 +14,7 @@ To begin, download the sample module:
 curl https://learn.liferay.com/dxp/7.x/en/site-building/displaying-content/displaying-collections-and-collection-pages/developer-guide/implementing-a-list-renderer-for-collections/resources/liferay-e8m8.zip -O
 ```
 
-Once you have the example module, you are ready to begin adding a list renderer to it. Implementing the list renderer requires changes to both the Java code (in the example module, [`E8M8InfoListRenderer.java`](https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.2/en/site-building/displaying-content/displaying-collections-and-collection-pages/developer-guide/implementing-a-list-renderer-for-collections/resources/liferay-e8m8.zip/e8m8-web/src/main/java/com/acme/e8m8/info/list/renderer/E8M8InfoListRenderer.java)) and the rendering implementation for the list (which is handled in [`blogs_entry_list.jsp`](https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.2/en/site-building/displaying-content/displaying-collections-and-collection-pages/developer-guide/implementing-a-list-renderer-for-collections/resources/liferay-e8m8.zip/e8m8-web/src/main/resources/META-INF/resources/blogs_entry_list.jsp) in the sample module). The following walkthrough shows how to complete a list renderer using the example module.
+Once you have the example module, you are ready to begin adding a list renderer to it. Implementing the list renderer requires changes to both the Java code (in the example module, [`E8M8InfoListRenderer.java`](https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.2/en/site-building/displaying-content/displaying-collections/developer-guide/implementing-a-list-renderer-for-collections/resources/liferay-e8m8.zip/e8m8-web/src/main/java/com/acme/e8m8/info/list/renderer/E8M8InfoListRenderer.java)) and the rendering implementation for the list (which is handled in [`blogs_entry_list.jsp`](https://github.com/liferay/liferay-learn/tree/master/docs/dxp/7.2/en/site-building/displaying-content/displaying-collections/developer-guide/implementing-a-list-renderer-for-collections/resources/liferay-e8m8.zip/e8m8-web/src/main/resources/META-INF/resources/blogs_entry_list.jsp) in the sample module). The following walkthrough shows how to complete a list renderer using the example module.
 
 ## Declare the OSGi Component
 
@@ -126,7 +126,7 @@ Create a Collection of Blogs entries to test with:
 
 1. Open your browser to `https://localhost:8080` and log in.
 
-1. Open the Site menu by clicking the icon (![Menu icon](../../../../images/icon-menu.png)) icon, and navigate to *Content & Data* &rarr; *Blogs*.
+1. Open the Site menu by clicking the icon (![Menu icon](../../../../images/icon-menu.png)), and navigate to *Content & Data* &rarr; *Blogs*.
 
 1. Click the Add icon (![Add icon](../../../../images/icon-add.png)) to add at least one Blogs Entry.
 

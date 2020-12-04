@@ -10,6 +10,7 @@ Displaying Content
    displaying-content/using-the-iframe-widget.md
    displaying-content/using_fragments.rst
    displaying-content/using_display_page_templates.rst
+   displaying-content/displaying_collections.rst
    displaying-content/customizing_widgets.rst
 
 .. raw:: html
