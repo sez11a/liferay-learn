@@ -5,21 +5,21 @@
 ```
 To select assets to publish in the *Asset Publisher* widget,
 
-1. Click on the *Options* button (![Click on the Options button at the top-right corner of the widget for configuration.](../../../images/icon-options.png)) at the top-right corner of the widget.
+1. Click the *Options* button (![Click on the Options button at the top-right corner of the widget for configuration.](../../../images/icon-options.png)) at the top-right corner of the widget.
 
-1. Select *Configuration* and the Configuration window will appear.
+1. Select *Configuration* to display the Configuration window.
 
     ![The configuration window has four different tabs.](selecting-assets-for-the-asset-publisher/images/02.png)
 
-    Under the Setup tab, there are a few sub-tabs with different options to configure. Under the Asset Selection section, you can select how you would like to filter through your assets:
+    Under the Setup tab, there are a few sub-tabs with different options to configure. Under the Asset Selection section, you can select how you want to filter your assets:
 
-    **Dynamic:** Select this option to set parameters that will automatically include specific assets. Use the Asset Type drop-down list to select one or more types of assets to be included. Choose across your different sites in the Scope section. In the Filter section, you can also filter your assets by things such as category, keywords, or tags. As new assets are added, the widget will automatically update.
+    **Dynamic:** Here you can set parameters that automatically include specific assets. Use the Asset Type drop-down list to select one or more types of assets to be included. Choose across your different Sites in the Scope section. In the Filter section, you can also filter your assets by things such as category, keywords, or tags. As new assets are added, the widget updates itself.
 
-    **Manual:** Select this option to set parameters and manually filter specific assets. Choose across your different sites in the Scope section. Under Asset Entries, click on the *Select* button to filter for specific types of assets. For example, if you wanted to filter for images, you could select *Images* and add a check to each image you want included.
+    **Manual:** Here you can set parameters and manually filter specific assets. Choose across your different Sites in the Scope section. Under Asset Entries, click the *Select* button to filter for specific types of assets. For example, if you wanted to filter for images, you could select *Images* and add a check to each image you want included.
 
     ![Here is an example of filtering for images and manually selecting items](selecting-assets-for-the-asset-publisher/images/03.png)
 
-    Once you are finished making your selection, click the *Add* button. A new collection will be created based on your selection.
+    Once you are finished making your selection, click the *Add* button. A new collection is created based on your selection.
 
     **Collection:** Select this option to choose from your previously saved collections. Under Select Collection, click on the *Select* button and choose a collection.
 
@@ -29,7 +29,7 @@ To select assets to publish in the *Asset Publisher* widget,
 
     **Collection Provider:** This is a new feature in Liferay 7.3 that allows developers to create specific collections with more advanced criteria. 
 
-1. After making your choice for Asset Selection, there are additional settings you can configure,
+1. After making your choice for Asset Selection, there are additional settings you can configure.
 
     | Setting | Description |
     | ------- | ----------- |
