@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
-@Component(immediate = true, service = InfoListRenderer.class)
+@Component(service = InfoListRenderer.class)
 public class E8M8InfoListRenderer implements InfoListRenderer<BlogsEntry> {
 
 	// Override the necessary methods and implement your list renderer logic here.
