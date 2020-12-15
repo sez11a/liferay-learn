@@ -1,10 +1,10 @@
 # Load Balancer
 
-The Ingress Load Balancer gives internet access to your environment's services via proxied HTTP(S) connections using TLS (1.0 to 1.2) protocol. Each load balancer has a static IP that can set up custom domains.
+The Ingress Load Balancer gives internet access to your environment's services via proxied HTTP(S) connections using TLS (1.0 to 1.2) protocol. Each load balancer has a static IP that you can use to set up custom domains.
 
-![Figure 1: You can configure your environment's load balancer with a custom domain.](./load-balancer/images/01.png)
+![You can configure your environment's load balancer with a custom domain.](./load-balancer/images/01.png)
 
-Having a dedicated load balancer provides a myriad of enhanced features, such as port configuration, custom SSL certificates, and a CDN. Here's an example configuration for a load balancer in an `LCP.json` file:
+Having a dedicated load balancer provides a myriad of enhanced features, such as port configuration, custom SSL certificates, and a CDN. These features can be configured in a service's `LCP.json` file:
 
 ```json
 {
@@ -29,7 +29,7 @@ Liferay's Content Delivery Network (CDN) is a built-in feature provided with DXP
 "cdn": true
 ```
 
-![Figure 2: The CDN's status is visible on the Network page.](./load-balancer/images/02.png)
+![The CDN's status is visible on the Network page.](./load-balancer/images/02.png)
 
 ## Port
 
@@ -39,30 +39,23 @@ You can set which internal port (`targetPort`) the load balancer's service endpo
 "targetPort": 3000
 ```
 
-![Figure 3: The load balancer shows your port configurations.](./load-balancer/images/03.png)
+![The load balancer shows your port configurations.](./load-balancer/images/03.png)
 
 ## Custom SSL
 
-When you specify the load balancer attribute for a service, it adds a service endpoint named after this pattern:
+When you specify the load balancer attribute for a service, it adds a service endpoint using the following naming pattern:
 
 - `<SERVICE-NAME>-<PROJECT-NAME>-<ENVIRONMENT-NAME>.lfr.cloud`
 
-Consider this example:
-
-- Service: webserver
-- Project: acme
-- Environment: prd
-- Service endpoint name: `webserver-acme-prd.lfr.cloud`
-
-These domains created by DXP Cloud's infrastructure at `.lfr.cloud` are covered by a wildcard certificate that will not display in the Network page's SSL certificates section.
+Domains created by DXP Cloud's infrastructure at `.lfr.cloud` are covered by a wildcard certificate that is not displayed in the Network page's SSL certificates section.
 
 For all custom domains added through the console or `LCP.json`, Liferay DXP Cloud reaches out to [Let's Encrypt](https://letsencrypt.org/) for a certificate that renews automatically and covers all custom domains you create.
 
 ### Custom SSL Certificates
 
-You can also add your own SSL certificate to cover any custom domains that you want to create. Only one custom certificate can be added to `LCP.json`, so it must cover all custom domains. Only one certificate at a time can exist for a service's custom domains: the one Let's Encrypt provides, or the custom one you specify in `LCP.json`. If both exist, your custom certificate takes precedent.
+You can also add your own SSL certificate to cover any custom domains you create. However, only one certificate can be used at a time for a service's custom domains: either the one provided by Let's Encrypt, or the custom one specified in its `LCP.json`. If both certificates exist, the custom certificate takes precedent.
 
-Note that you must manage your own custom certificate. This includes updating it when new custom domains are added and renewing it when it expires. To add a custom certificate, provide a key and certificate in Base64 format:
+When creating custom certificates, note that DXP Cloud only accepts keys and certificates that are in the proper PEM format with [Base64](https://tools.ietf.org/html/rfc4648#section-4) encoding, which must include encapsulation boundaries:
 
 ```json
 "ssl": {
@@ -75,9 +68,9 @@ Note that you must manage your own custom certificate. This includes updating it
    The ``ssl`` property (containing the ``key`` and ``crt`` properties) must be contained within the ``loadbalancer`` property to work properly.
 ```
 
-```warning::
-   DXP Cloud only accepts keys and certificates that are in the proper PEM format with Base64 encoding, which must include the encapsulation boundaries. The key must be generated using RSA 2048, with an exponent of 655337. See the `spec <https://tools.ietf.org/html/rfc4648#section-4>`_ to learn more.
-```
+When generating a key, you must use either RSA-2048 or ECDSA P-256 encryption algorithms and avoid using passphrase protected keys.
+
+Once custom certificates are made, users are responsible for managing them (e.g., updating them when new custom domains are added, renewing them when they expire).
 
 If it has not already been encoded, then the certificate and key files may both contain text like the following snippet (with either `CERTIFICATE` or `KEY` in the begin/end tags, respectively):
 
@@ -125,7 +118,7 @@ The `key` and `cert` values are now encoded and usable in your web server config
 
 The Network page shows any custom certificates, with a maximum of one per service. For more information, see [Custom Domains](./custom-domains.md).
 
-![Figure 4: DXP Cloud shows the status of SSL certificates that cover custom domains.](./load-balancer/images/04.png)
+![DXP Cloud shows the status of SSL certificates that cover custom domains.](./load-balancer/images/04.png)
 
 ## Environment Variables Reference
 
@@ -136,3 +129,9 @@ The Network page shows any custom certificates, with a maximum of one per servic
 | `targetPort` | 3000 | Port number for the load balancer |
 | `key` | | SSL certificate's key in Base64 format |
 | `crt` | | SSL certificate's crt in Base64 format |
+
+## Additional Information
+
+* [Private Network](./private-network.md)
+* [VPN Integration Overview](./vpn-integration-overview.md)
+* [Custom Domains](./custom-domains.md)

@@ -1,29 +1,52 @@
-# Enabling and Using Fragment Comments
+# Using Fragment Comments
 
-Coming soon!
-
-<!-- Comments are a useful tool for collaborating on Fragments. They're included out-of-the-box in Liferay DXP 7.3, but they are disabled in Liferay DXP 7.2.
-
-## Disabling and Enabling Fragment Comments
-
-You can enable/disable comments for Fragments in Liferay DXP 7.2 and Liferay DXP 7.3 through System Settings. Follow these steps:
-
-1. Open the Product Menu and go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Content and Data* &rarr; *Pages*.
-1. Select *Content Page Editor* under the Virtual Instance scope.
-1. Check/uncheck the *Comments Enabled* checkbox and click *Update*.
-
-This affects content page comments for all instances. To control this on an instance-by-instance basis, navigate to the same setting in *Instance Settings* (instead of System Settings).
-
-![Administrators can enable comments for content pages.](./using-fragment-comments/images/09.png)
+As you and your team use Fragments to create new pages, you can use the Fragment Comments tool for collaboration. Fragment Comments are enabled out-of-the-box in Liferay DXP 7.3, but they are disabled by default in Liferay DXP 7.2. See [enabling Fragment Comments](#enabling-fragment-comments) to learn more.
 
 ## Using Fragment Comments
 
-If comments are enabled, you can access them via the *Comments* icon (![Comments](../../../../../images/icon-comments.png)). The comments appear for the selected Fragment. These actions are available for Fragment comments:
+To start using Fragment Comments,
 
-* Add new comments and reply to any existing ones.
-* Resolve comments by clicking the checkbox for each. Resolving a comment hides it from view, unless *Show Resolved Comments* is selected.
-* Edit and delete your own comments via the Actions button (![Actions](../../../../images/icon-actions.png)) for each.
+1. Navigate to the Asset that contains the fragment where you want to add a comment.
 
-If you de-select a Fragment or enter the comments UI without a Fragment selected, a list of the Fragments on the page appears with the number of comments for each. Selecting a Fragment then shows its comments.
+1. Click the *Edit* icon (![Click on the Edit icon at the top.](../../../images/icon-edit-pencil.png)) at the top of the page.
 
-![When creating content pages, you and your team can comment on any fragments.](./using-fragment-comments/images/10.png) -->
+1. Use your cursor to select the fragment where you want to add a comment.
+
+   ![Move your cursor and select the fragment.](using-fragment-comments/images/02.png)
+
+1. Click the _Comments_ icon (![Click on the Comments icon at the right sidebar.](../../../images/icon-comments.png)) in the right sidebar.
+
+1. You can add comments to a specific Fragment. Other users can also reply to your comments.
+
+   ![You and other users can make comments to a fragment.](using-fragment-comments/images/03.png)
+
+   Write a comment and click on the *Comment* button. To reply to a comment, simply type your reply and click on the *Reply* button.
+
+1. If someone answered a question or resolved an issue, click the *Resolve* icon. 
+
+   ![Click on the Resolve icon to resolve a comment.](using-fragment-comments/images/04.png)
+
+   Clicking the *Resolve* icon hides the comment and any replies to the comment. To display previously resolved comments, check the *Show Resolved Comments* checkbox.
+
+   ![Place a check on the show resolved comments to show resolved comments.](using-fragment-comments/images/05.png)
+
+1. Clicking the *Options* icon (![Click on the options icon to edit or delete a comment.](../../../images/icon-options.png)) reveals edit or delete options. To edit, click *Edit*, make your changes, and click *Update*. To delete a comment, click *Delete*.
+
+## Enabling Fragment Comments
+
+To enable comments for Fragments, follow these steps:
+
+1. Go to the Control Panel and navigate to *Configuration* &rarr; *System Settings* &rarr; *Content and Data* &rarr; *Pages*.
+
+1. Select *Content Page Editor* under the Virtual Instance Scope. Check the *Comments Enabled* checkbox and click the *Save* button.
+
+   ![Navigate to the Content Page Editor and check the Comments Enabled checkbox.](using-fragment-comments/images/01.png)
+
+   You should now be able to use Fragment Comments.
+
+   Note that this affects content page comments for all instances. To control this on an instance-by-instance basis, navigate to the same setting in *Instance Settings* (instead of *System Settings*).
+
+## Additional Information
+
+* [Content Pages Overview](./content-pages-overview.md)
+* [Using Fragments](./using-fragments.md)

@@ -1,6 +1,6 @@
 # Signing Up for a New Workspace
 
-To start using Liferay Analytics Cloud, first visit analytics.liferay.com, and sign in using your liferay.com account. If you do not have a liferay.com account, you can also sign up for one from the login page.
+To start using Liferay Analytics Cloud, visit [analytics.liferay.com](https://analytics.liferay.com) and sign in with your [liferay.com](https://www.liferay.com) account email address. If you do not have a [liferay.com](https://www.liferay.com) account, you can also sign up for one from the login page. If you have not already set up multi-factor authentication for your account you are prompted to. See [Multi-Factor Authentication for more information](./multi-factor-authentication.md).
 
 Once logged in, you can either sign up for a **free trial** workspace or purchase a **paid tier** workspace by contacting sales. If you already have a workspace, you will also see your workspace listed after login.
 
@@ -10,7 +10,7 @@ Once logged in, you can either sign up for a **free trial** workspace or purchas
 
 Free trial workspaces allow you to test Analytics Cloud for 3 months for free, as long as you have a valid Liferay DXP instance to connect with Analytics Cloud.
 
-Free trials are limited to a single workspace per valid email address registered with <www.liferay.com>. If you are a Liferay partner and wish to have more than one free trial account, please [contact Sales](mailto:sales@liferay.com).
+Free trials are limited to a single workspace per valid email address registered with [liferay.com](https://www.liferay.com). If you are a Liferay partner and wish to have more than one free trial account, please [contact Sales](mailto:sales@liferay.com).
 
 Clicking on the the Start Free Trial button from the home screen will take your to the workspace configuration screen.
 
@@ -23,8 +23,7 @@ Clicking on the the Start Free Trial button from the home screen will take your 
 * North America - Oregon, USA
 * South America - São Paulo, Brazil
 * Europe - London, United Kingdom
-
-We are also currently planning a new data center in Frankfurt, Germany.
+* Europe - Frankfurt, Germany
 
 **Friendly URL** allows you to setup a friendly url for your workspace that you can share to other collaborators with ease.
 
@@ -50,6 +49,6 @@ Fill out the form, and a sales representative will contact you shortly.
 
 Once you've successfully purchased your Analytic Cloud workspace, our team will provision a workspace for your account. Make sure you provide the email of the workspace owner, and your desired data center location to your sales representative to make this process as smooth as possible.
 
-Your workspace owner will receive an invitation email once the workspace is provisioned. The owner can then login to <analytics.liferay.com> and finish configuring the workspace.
+Your workspace owner will receive an invitation email once the workspace is provisioned. The owner can then login to [analytics.liferay.com](https://analytics.liferay.com) and finish configuring the workspace.
 
-See the next section on how to [access your paid workspace](./accessing-your-workspace.md).
+See the next section on how to [access your workspace](./accessing-your-workspace.md).

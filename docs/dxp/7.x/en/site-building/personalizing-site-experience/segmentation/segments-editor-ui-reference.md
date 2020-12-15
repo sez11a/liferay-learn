@@ -12,13 +12,14 @@ At the top of the editor you can set the name, view the current members of the s
 
 ![The top portion of the Segment Editor has the segment name and its members.](./segments-editor-ui-reference/images/01.png)
 
-On the right side of the page, there's a Properties menu with these options:
+On the right side of the page, there's a *Properties* menu with these options:
 
-* User
-* Organization
-* Session
+- User
+- Organization
+- Session
+- Segments
 
-  ![You use the Segment Editor to create new Segments.](./segments-editor-ui-reference/images/02.png)
+![You use the Segment Editor to create new Segments.](./segments-editor-ui-reference/images/02.png)
 
 Operations and conjunctions are combined with the properties to define criteria.
 
@@ -52,7 +53,7 @@ User Properties are user attributes you want to capture. This is made up of user
 
 | Property | Description |
 | --- | --- |
-| Date Modified | Provides a date picker and an relationship selector to select the date that user information was last changed |
+| Date Modified | Provides a date picker and a relationship selector to select the date that user information was last changed |
 | Email Address | Provides a text box to enter the email provided in the user's profile |
 | First Name | Enter the first name provided in the user's profile. |
 | Group | Select a site that the user is a member of. |
@@ -119,3 +120,9 @@ Since Liferay DXP 7.2 SP2+, these properties are also available for Organization
 | --- | --- |
 | Hostname | Enter a virtual host name. |
 | Request Parameters | Enter the name and value of a request parameter. |
+
+## Segments Property
+
+> Available: Liferay 7.3+.
+
+The Segments Property provides a way to combine existing Segments into a new Compound Segment. The Compound Segment inherits the properties from the Segments it is based on, and updates the members automatically. For more information, see [Compound Segments](./creating-and-managing-user-segments.md#compound-segments).
