@@ -17,7 +17,7 @@ There are two editing modes: Page Design and Content Edition, and each have diff
 * ![Fragments and Widgets](../../../images/icon-cards2.png) - [Fragments and Widgets](#fragments-and-widgets)
 * ![Contents](../../../images/icon-list-ul.png) - [Contents](#contents)
 * ![Page Structure](../../../images/icon-pages-tree.png) - [Page Structure](#page-structure)
-* ![Page Design Options](../../../images/icon-format.png) - [Page Design Options](##page-design-options)
+* ![Page Design Options](../../../images/icon-format.png) - [Page Design Options](#page-design-options)
 * ![Comments](../../../images/icon-comments-w.png) - [Comments](#comments)
 
 ## Fragments and Widgets
@@ -51,8 +51,8 @@ You can find the following Fragments under the Content Page sidebar:
 
 The Layout Elements section contains two Fragments:
 
-* *Container*: A Fragment that can contain Rows. Each Section you add fills the width of the page. A Section can contain multiple stacked Rows.
-* *Grid*: A Fragment containing a set of columns where Fragments or Widgets can be added. A Row can be nested inside another Row to create more complex layouts. You can [adjust the spacing](./building-content-pages.md#configuring-a-row-s-columns) of a Row's columns to create new designs.
+* *Container*: A Fragment where you can place content that fills the width of the page.
+* *Grid*: A Fragment containing a set of Modules (columns) where other Fragments or Widgets can be added. You can nest a Grid inside another Grid to create a more complex layout. For more information, see [Configuring the Grid Fragment](./building-content-pages.md#configuring-the-grid-fragment).
 
     ![The Layouts panel contains layouts for organizing Fragments.](content-pages-overview/images/03.png)
 
@@ -102,7 +102,7 @@ Page Structure provides a hierarchical view of the Fragments and their content o
 
 ## Page Design Options
 
-Click the *Look and Feel* icon (![Look and Feel](../../../images/icon-format.png)) to change the theme or manage other options for the page. These options are further explored in [Page Configuration UI Reference](../page-settings/page-configuration-ui-reference.md#look-and-feel).
+Click the *Page Design Options* icon (![Look and Feel](../../../images/icon-look-and-feel.png)) to change the theme or manage other options for the page. These options are further explored in [Page Configuration UI Reference](../page-settings/page-configuration-ui-reference.md#look-and-feel).
 
 ## Comments
 
