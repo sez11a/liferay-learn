@@ -135,11 +135,11 @@ The field above has these properties:
 
 | Field characteristics | Description |
 | :--- | :--- |
-| `"dataType": "string"` | Specifies the type of data to be configured in the component. |
+| `"dataType": "string"` | Specifies the type of data to be configured in the component. Please see [Fragment Configuration Types](../reference/fragments/fragment-configuration-types-reference.md) for more details and examples. |
 | `"defaultValue": "dark"` | Default configuration setting. |
 | `"label": "Text Style"` | Describes what the field configures. |
 | `"name": "c7f8TextStyle"` | The configuration's ID. |
-| `"type": "select"` | The UI component type that presents the configuration options. |
+| `"type": "select"` | The UI component type that presents the configuration options. Please see [Fragment Configuration Types](../reference/fragments/fragment-configuration-types-reference.md) for more details and examples. |
 | `"typeOptions": {...}` | The valid values for this configuration option. |
 
 ```warning::
@@ -266,7 +266,7 @@ Now you can test the updates.
 
     ![You can have as many configuration options as you want for your Fragments.](./adding-configuration-options-to-fragments/images/04.png)
 
-Great! Now you know how to add configuration options to your fragments.
+Great! Now you know how to add configuration options to your fragments. For more configuration examples, please see Please see [Fragment Configuration Types](../reference/fragments/fragment-configuration-types-reference.md).
 
 ## Related Information
 
