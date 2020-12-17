@@ -70,7 +70,7 @@ First, deploy an example to see how fragment configuration options work:
 
 1. Go to the Home Page and click the (![Edit icon](../../../images/icon-edit-pencil.png)) icon to edit the Content Page.
 1. Expand the *C7F8 Collection* heading in the [Fragments and Widgets panel](../../creating-pages/building-and-managing-content-pages/content-pages-overview.md#fragments) and drag the *C7F8 Card* fragment onto the page.
-1. Select the C7F8 Card. The Selection panel appears on the right. In the *General* tab you can set the component's text style to dark or light.
+1. Select the C7F8 Card. The Selection panel appears on the right. In the *General* tab, set the component's text style to dark or light.
 
     ![Configurable fragments provide options to modify the fragment's look and feel.](./adding-configuration-options-to-fragments/images/02.png)
 
@@ -261,8 +261,8 @@ Now you can test the updates.
     ![Configurable Fragments provide options to modify the Fragment's look and feel.](./adding-configuration-options-to-fragments/images/03.png)
 
 1. Go back to the Home Page and once again click the (![Edit icon](../../../images/icon-edit-pencil.png)) icon to edit the Content Page.
-1. Select the C7F8 Card again and click the (![Gear icon](../../../images/icon-control-menu-gear.png)) to open the Fragment Configuration Menu.
-1. Check/uncheck the *Show Description* checkbox to show/hide the card's text.
+1. Select the C7F8 Card again to show Selection panel on the right.
+1. In the *General* tab, check/uncheck the *Show Description* checkbox to show/hide the card's text.
 
     ![You can have as many configuration options as you want for your Fragments.](./adding-configuration-options-to-fragments/images/04.png)
 
