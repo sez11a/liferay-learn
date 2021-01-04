@@ -93,7 +93,7 @@ Here are some editing shortcuts:
 
 * Enter an open angle bracket (`<`) to access standard HTML tags and Liferay's Fragment-specific tags.
 
-* Start an element attribute with `data` to access Liferay's editable Fragment attributes.
+* Start an element attribute with `data` to access Liferay's [editable Fragment attributes](../reference/fragments/fragment-specific-tags-reference.md) .
 
 ![Liferay's editable Fragment attributes are available in the editor.](./using-the-fragments-editor/images/03.png)
 
@@ -139,11 +139,15 @@ Here is HTML for a Marketing Card Fragment:
 </div>
 ```
 
-The leading `div` wraps the Fragment markup. Its `class="fragment_card_203"` attribute identifies it on pages. The `<div class="card">` element is next in the hierarchy. It wraps the remaining elements in a [Bootstrap](https://getbootstrap.com/) `card` component.
+The leading `div` wraps the Fragment markup. Its `class="fragment_card_203"` attribute identifies it on pages. The `<div class="card">` element is next in the hierarchy. It wraps the remaining elements in a Clay [`card` component](https://clayui.com/docs/components/card/markup.html).
 
-Next an `img` element specifies an editable image. The `card-img-top` Bootstrap class places the image atop the Fragment's card. The default image source is Liferay's Lexicon symbol, but the `data-lft-editable-[id|type]` attributes allow users to set a different image.
+```note::
+   `Clay <https://clayui.com/>`_ is Liferay's Web implementation of `Lexicon <https://lexicondesign.io/docs/lexicon/>`_ that provides a `Bootstrap <https://getbootstrap.com/>`_-based component library.
+```
 
-The `<div class="card-body">` element wraps the card's title, text, and button. All of the `data-lft-editable-[id|type]` attributes make all of these elements editable.
+Next an `img` element specifies an [editable image](../reference/fragments/fragment-specific-tags-reference.md#making-images-editable) . The `card-img-top` class places the image atop the Fragment's card. The default image source is Liferay's Lexicon symbol, but the `data-lft-editable-[id|type]` attributes allow users to set a different image.
+
+The `<div class="card-body">` element wraps the card's title, text, and button. All of the `data-lft-editable-[id|type]` attributes make all of these elements [editable](../reference/fragments/fragment-specific-tags-reference.md) .
 
 Here is CSS to use with the Marketing Card Fragment:
 
