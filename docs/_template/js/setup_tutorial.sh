@@ -25,7 +25,7 @@ if  [ ! -d "${NPM_CONFIG_PREFIX}/lib/node_modules/generator-liferay-fragments" ]
 then
 	echo "A tutorial dependency is missing. Run this command:
 
-	npm install -g generator-liferay-fragments generator-liferay-js generator-liferay-theme yo"
+	npm install -g generator-liferay-fragments@1.7.0 generator-liferay-js generator-liferay-theme yo"
 
 	exit
 fi
