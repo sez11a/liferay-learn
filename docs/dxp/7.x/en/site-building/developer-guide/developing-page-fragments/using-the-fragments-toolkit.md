@@ -91,8 +91,7 @@ Fragment Collections use this project structure:
             "htmlPath": "index.html",
             "jsPath": "main.js",
             "name": "Fragment name",
-            "thumbnailPath": "thumbnail.png",
-            "type": "[component|react]"
+            "type": "component"
          }
          ```
 
@@ -103,8 +102,6 @@ Fragment Collections use this project structure:
     * `main.js`: the JavaScript source for the Fragment.
 
     * `styles.css`: the CSS source for the Fragment.
-
-    * `thumbnail.png` (optional): an image that's displayed when the Fragment is in a list.
 
 * `resources/` (optional): a folder containing any additional images or files the Fragments need. See [Including Default Resources in Fragments](./including-default-resources-with-fragments.md) for more information.
 
