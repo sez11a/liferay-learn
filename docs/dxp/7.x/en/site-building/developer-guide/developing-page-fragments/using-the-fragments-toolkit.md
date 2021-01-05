@@ -4,7 +4,7 @@ The Fragments Toolkit helps you develop and manage Fragments locally, using your
 
 ## Import a Fragment Collection
 
-First, deploy an example to see what a Fragment Collection looks like:
+First, import an example Fragment Collection to see what one looks like:
 
 1. Run the command below to start the Docker container:
 
@@ -31,6 +31,8 @@ First, deploy an example to see what a Fragment Collection looks like:
     ```bash
     ./setup_tutorial.sh
     ```
+
+    Resolve all unmet requirements reported by the script and rerun the script until it reports that your environment is ready.
 
 1. Import the Fragment Collection in the Docker container with the Fragments Toolkit using the `npm run import` command below. Alternatively, you can [import the Fragment Collection manually](../../displaying-content/using-fragments/managing-page-fragments.md).
 
@@ -59,13 +61,13 @@ First, deploy an example to see what a Fragment Collection looks like:
        For Liferay DXP 7.1 and 7.2, instead navigate to *Site* → *Site Builder* → *Page Fragments* under the Product Menu to get to the *Fragments* page.
     ```
 
-Great! You successfully deployed a Fragment Collection created with the Fragments Toolkit.
+Great! You successfully deployed a Fragment Collection.
 
 ## Collection Format Overview
 
 Fragment Collections use this project structure:
 
-* `collection.json`: a text file which describes your Collection.
+* `collection.json`: a text file that describes the Collection.
 
     ```json 
     {
@@ -80,7 +82,7 @@ Fragment Collections use this project structure:
 
     * `configuration.json`(optional): a JSON file that defines the Fragment's configuration. See [Adding Configuration Options to Fragments](./adding-configuration-options-to-fragments.md) for more information.
 
-    * `fragment.json`: a text file that describes the Fragment with this format:
+    * `fragment.json`: a text file that describes the Fragment.
 
         ```json
         {
@@ -104,7 +106,7 @@ Fragment Collections use this project structure:
 
     * `thumbnail.png` (optional): an image that's displayed when the Fragment is in a list.
 
-* `resources/` (optional): a folder containing any additional images or files the fragments need. See [Including Default Resources in Fragments](./including-default-resources-with-fragments.md) for more information.
+* `resources/` (optional): a folder containing any additional images or files the Fragments need. See [Including Default Resources in Fragments](./including-default-resources-with-fragments.md) for more information.
 
 The Fragments Toolkit facilitates creating Fragment Collections.
  
@@ -122,7 +124,7 @@ The example's `package.json` file provides the Fragments Toolkit. Follow these s
     ./setup_tutorial.sh 
     ```
 
-1. Create a Collection for the Fragment(s) with the `npm run add-collection` command and answer the prompts with your Collection's name and an optional description:
+1. Create a Fragment Collection with the `npm run add-collection` command and answer the prompts with your Collection's name and an optional description:
 
     ```bash
     npm run add-collection
@@ -169,7 +171,7 @@ The example's `package.json` file provides the Fragments Toolkit. Follow these s
     ```
 
     ```note::
-      In versions prior to Liferay DXP 7.3, you can add a Section or a Component. In Liferay Portal 7.3+, all Page Fragments are Components.
+      In versions prior to Liferay DXP 7.3, you can add a Section or a Component. In Liferay Portal 7.3+, all Fragments are Components.
     ```
 
 1. Select the Collection you just created (`My Collection`).
@@ -242,20 +244,20 @@ You can build off of the above HTML and use [Clay](https://clayui.com/)'s [Boots
 The first `div` element's `class="component-x276-my-jumbotron"` attribute attempts to uniquely identify this Fragment on pages. 
 
 ```tip::
-  In your Fragment's HTML file, use the main wrapper element (the ``<div>`` in the example above) to uniquely identify the Fragment so it doesn't conflict with other components on the page.
+  In your Fragment's HTML file, use the main wrapper element (the ``<div>`` in the example above) to uniquely identify the Fragment so it doesn't conflict with other components on a page.
 ```
 
-Next the `<div class="jumbotron"/>` element wraps the content, applying Clay's jumbotron component. This component makes the content stand out. Here are the content elements:
+Next the `<div class="jumbotron"/>` element wraps the content, applying [Bootstrap](https://getbootstrap.com/)'s jumbotron component. This component makes the content stand out. Here are the content elements:
 
-* `<h1 class="display-4" ...>Editable Jumbotron ...` creates the Fragment's heading. It uses [Bootstrap](https://getbootstrap.com/)'s `display-4` size style. The `data-lfr-editable-` attributes make the heading text [editable](../reference/fragments/fragment-specific-tags-reference.md). The `data-lfr-editable-id="03-text"` attribute identifies it and the `data-lfr-editable-type="rich-text"` attribute declares the content type.
-* `<p class="lead" ...>Edit this text ...` is the lead body text distinguished by Clay's [`lead`](https://clayui.com/docs/css/content/typography.html#css-lead) style component. The `data-lfr-editable-` attributes make it editable.
+* `<h1 class="display-4" ...>Editable Jumbotron ...` creates the Fragment's heading. It uses [Bootstrap](https://getbootstrap.com/)'s `display-4` size style. The `data-lfr-editable-` attributes make the heading text [editable](../reference/fragments/fragment-specific-tags-reference.md). The `data-lfr-editable-id="03-text"` attribute identifies the element and the `data-lfr-editable-type="rich-text"` attribute declares the content type.
+* `<p class="lead" ...>Edit this text ...` is the lead body text distinguished by Clay's [`lead`](https://clayui.com/docs/css/content/typography.html#css-lead) style component. The `data-lfr-editable-` attributes make the paragraph editable.
 * The `<hr/>` and next `<p ...` elements produce a horizontal rule and another editable paragraph, respectively.
-* `<a class="btn btn-primary btn-lg" ...` specifies a button that has a modifiable link. The `btn-primary` class styles it as the main button and `btn-lg` makes it large. The `href="#"` attribute links it to the top of the page. The `data-lfr-editable-type="link"` makes the link [editable](../reference/fragments/fragment-specific-tags-reference.md).
+* `<a class="btn btn-primary btn-lg" ...` specifies a modifiable link. The `btn-primary` class styles it as a main button and `btn-lg` makes it large. The `href="#"` attribute takes the user to the top of the page when the link is clicked. The `data-lfr-editable-type="link"` attribute makes the link [editable](../reference/fragments/fragment-specific-tags-reference.md).
 
-You can also include resources in your fragments. See [Including Default Resources in Fragments](./including-default-resources-with-fragments.md) for more information.
+You can also include resources in your Fragments. See [Including Default Resources in Fragments](./including-default-resources-with-fragments.md) for more information.
 
 ```note::
-  The Fragment and configuration object are passed in as arguments in JavaScript and are available as the parameters ``fragmentElement`` and ``configuration``.
+  The Fragment and configuration object are passed in as arguments in JavaScript and are available as ``fragmentElement`` and ``configuration`` parameters, respectively.
 ```
 
 ## Import and Test
@@ -272,9 +274,10 @@ You can import your new Fragment as you did the original example Fragment:
 
 ![The Collection is available.](./using-the-fragments-toolkit/images/02.png)
 
-Great! Now you know how to use the Fragments Toolkit to create fragments.
+Great! Now you know how to use the Fragments Toolkit to create and manage Fragments. See the [Fragments Toolkit Command Reference](../reference/fragments/fragments-toolkit-command-reference.md) for more toolkit command information.
 
 ## Related Information
 
 * [Creating a Contributed Fragment Collection](./creating-a-contributed-fragment-collection.md)
-* [Developing Page Fragments with the Editor](./using-the-fragments-editor.md)
+* [Using the Fragments Editor](./using-the-fragments-editor.md)
+* [Fragments Toolkit Command Reference](../reference/fragments/fragments-toolkit-command-reference.md)
