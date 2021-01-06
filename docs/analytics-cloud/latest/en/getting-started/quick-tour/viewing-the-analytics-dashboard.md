@@ -26,4 +26,4 @@ Most of the important settings are configured when you created the workspace. Ho
 * Workspace Usage Monitoring
 * Workspace Settings
 
-To see more about your workspace settings, see [Managing Your Analytics Project](../../administration/managing-projects.md).
+To see more about your workspace settings, see [Managing Workspaces](../../administration/managing-workspaces.md).
