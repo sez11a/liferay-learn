@@ -40,7 +40,7 @@ Congratulations on authorizing Analytics Cloud to connect to your Liferay DXP in
 
 ## Adding the DXP Data Source
 
-Adding a Liferay DXP data source connects your Analytics Cloud project with a Liferay DXP instance.
+Adding a Liferay DXP data source connects your Analytics Cloud workspace with a Liferay DXP instance.
 
 1. Select *Settings* → *Data Sources*. A listing of your data sources appears.
 
