@@ -5,6 +5,12 @@ Liferay Enterprise Search
    :maxdepth: 4
 
    liferay-enterprise-search/cross_cluster_replication.rst
+   liferay-enterprise-search/monitoring-elasticsearch.md
+
+Monitoring Elasticsearch
+------------------------
+
+-  :doc:`/using-search/liferay-enterprise-search/monitoring-elasticsearch`
 
 Cross Cluster Replication
 -------------------------
