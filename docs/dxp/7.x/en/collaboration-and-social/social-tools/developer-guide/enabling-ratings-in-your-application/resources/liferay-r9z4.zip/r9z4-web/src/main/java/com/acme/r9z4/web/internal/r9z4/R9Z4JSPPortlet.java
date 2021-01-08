@@ -24,7 +24,7 @@ import org.osgi.service.component.annotations.Component;
 	service = Portlet.class
 )
 public class R9Z4JSPPortlet
-	extends MVCPortlet implements PortletRatingsDefinition {
+	extends MVCPortlet {
 
 	// Override the necessary methods here.
 
