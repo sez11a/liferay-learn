@@ -4,8 +4,8 @@ Liferay Enterprise Search
 .. toctree::
    :maxdepth: 4
 
-   liferay-enterprise-search/cross_cluster_replication.rst
    liferay-enterprise-search/monitoring-elasticsearch.md
+   liferay-enterprise-search/cross_cluster_replication.rst
 
 Monitoring Elasticsearch
 ------------------------
