@@ -4,6 +4,10 @@ The _Documents and Media_ application is where users can store their files nativ
 
 Users with adequate permissions have the ability to upload a single file or multiple files simultaneously. See the [Documents and Media Permissions Reference](../publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference.md) for more information. To learn more about DXP Roles and Permissions in general, see [Roles and Permissions](https://help.liferay.com/hc/articles/360017895212-Roles-and-Permissions).
 
+```important::
+   Antivirus scanning for files on upload requires enabling antivirus scanning. For details, please see `Enabling Antivirus Scanning for Uploaded Files <../../../system-administration/file-storage/enabling-antivirus-scanning-for-uploaded-files.md>`_.
+```
+
 ## Uploading a Single File
 
 The quickest way to upload a file is on the _Documents and Media_ widget deployed on a site page. You can upload a file to the Root folder or inside a specific folder.
