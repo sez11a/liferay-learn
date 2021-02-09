@@ -26,13 +26,13 @@ First, deploy an example to see how Fragment configuration options work:
     ```
 
     ```bash
-    unzip liferay-c7f8.zip -d liferay-c7f8
+    unzip liferay-c7f8.zip
     ```
 
 1. Set up the Fragments Toolkit:
 
     ```bash
-    cd liferay-c7f8
+    cd liferay-c7f8.zip
     ```
 
     ```bash
@@ -42,9 +42,8 @@ First, deploy an example to see how Fragment configuration options work:
 1. Import the Fragment Collection to the Docker container using the Fragments Toolkit. Alternatively, you can [import the Fragment manually](../../displaying-content/using-fragments/managing-page-fragments.md).
 
     ```bash
-    npm run import
+    yarn run import
 
-    > c7f8@ import /home/jhinkey/examples/liferay-c7f8
     > yo liferay-fragments:import
 
     ? Liferay host & port http://localhost:8080
