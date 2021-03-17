@@ -1,6 +1,6 @@
 # Personalizing Site Experience
 
-Liferay DXP comes out of the box with powerful tools to understand and deliver personalized experiences. The first step to delivering a personalized experience is to start with understanding, or Segmenting your users. User Segments are dynamically assigned User collections. Instead of manually assigning Users to the collection, Users are assigned to Segments based on shared attributes or behaviors.
+Liferay DXP comes out of the box with powerful tools to understand and deliver personalized experiences. The first step to delivering a personalized experience is to start with understanding, or segmenting your users. [*User Segments*](./segmentation/creating-and-managing-user-segments.md) are dynamically assigned [*Collections*](../../content-authoring-and-management/collections-and-collection-pages/about-collections-and-collection-pages.md). Instead of manually assigning Users to the Collection, Users are assigned to Segments based on shared attributes or behaviors (see [Personalizing Collections](./experience-personalization/personalizing-collections.md) for more information).
 
 ## Segmentation
 
@@ -32,11 +32,19 @@ Content Page Personalization dynamically changes the page layout and content bas
 
 ![You can create unique experiences for different segments of Users.](./personalizing-site-experience/images/02.png)
 
-### Content Sets
+### Collections
 
+<<<<<<< HEAD:docs/dxp/latest/en/site-building/personalizing-site-experience/personalizing-site-experience.md
 Content Sets <!-- Link to Content Sets documentation placeholder --> organize and display content. Content Set Personalization provides selection of Content Sets based on User Segments. This means the Content Set which displays in a given context is determined by the User Segment criteria. For example, you could use a Content Set to display "featured" articles at the top of a page. Then you could create User Segments containing users who should receive more specialized content, rather than the default. Those Segments would then see content personalized to their interest rather than the default. See [Content Set Personalization](./experience-personalization/personalizing-collections.md) for more information.
+=======
+[Collections](../../content-authoring-and-management/collections-and-collection-pages/about-collections-and-collection-pages.md) organize and display content. [Collections Personalization](./experience-personalization/personalizing-collections.md) provides selection of Collections based on User Segments. This means the Content Set which displays in a given context is determined by the [User Segment](./segmentation/creating-and-managing-user-segments.md) criteria. For example, you could use a Collections to display "featured" articles at the top of a page. Then you could create User Segments containing users who should receive more specialized content, rather than the default. Those Segments would then see content personalized to their interest rather than the default. See [Personalizing Collections](./experience-personalization/personalizing-collections.md) for more information.
+>>>>>>> 904c79d9e (LRDOCS-9167 Fix and add  cross-liks. Other updates.):docs/dxp/7.x/en/site-building/personalizing-site-experience/personalizing-site-experience.md
 
 ![You can personalize Content Sets to display assets for specific User Segments.](./personalizing-site-experience/images/03.png)
+
+```note::
+    Collections are named Content Sets in Liferay DXP 7.2.
+```
 
 ### Previewing User Experiences
 
