@@ -2,6 +2,6 @@ Developer Guide
 ===============
 
 -  :doc:`/using-search/developer-guide/writing-a-similar-results-contributor`
+-  :doc:`/using-search/developer-guide/model-entity-indexing`
 * Aggregations
-* Model Entity Indexing
 * Search Queries and Filters
