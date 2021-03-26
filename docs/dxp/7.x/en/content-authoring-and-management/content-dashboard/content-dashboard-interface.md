@@ -31,7 +31,7 @@ To access the Information or Performance sidebar, click the Actions Menu (![Acti
 This tool is the graphical area at the top of the Content Dashboard page. The chart on this area represents the total number of assets for the combination of categories in the global Vocabularies you select. This chart takes into account:
 
 - Web content articles exclusively, across all Sites and Asset Libraries.
-- Content you have access to.
+- Content you have access.
 - The existing [filters](#filtering-and-sorting-content-in-the-contents-list) in the [Contents list](#contents-list).
 - A maximum of two global Vocabularies (for the *x* and *y* axes.)
 
@@ -40,6 +40,12 @@ This tool is the graphical area at the top of the Content Dashboard page. The ch
 ```tip::
    If the Content Audit Tool doesn't show the expected chart, `verify your Categories <../tags-and-categories/defining-categories-and-vocabularies-for-content.md>`__ for the global Vocabularies and ensure that `your content is categorized <../tags-and-categories/organizing-content-with-categories-and-tags.md>`__.
 ```
+
+The following video shows and overview of the Content Audit Tool:
+
+<video width="100%" height="100%" controls>
+    <source src="./content-dashboard-interface/resources/01.mp4" type="video/mp4">
+</video>
 
 In the Content Audit Tool interface you can find:
 
@@ -55,7 +61,7 @@ In the Content Audit Tool interface you can find:
 By default, the bar chart shows the total number of assets for each Category in the selected global Vocabularies, but you can filter this information in different ways:
 
 - Using the [filters](#filtering-and-sorting-content-in-the-contents-list) in the [Contents list](#contents-list).
-- Filtering categories in the chart, by clicking the Category name in the chart legend.
+- Filtering categories in the chart by clicking the Category name in the chart legend.
 - Changing the Vocabularies.
 
 To change the Vocabularies:
@@ -73,7 +79,7 @@ To change the Vocabularies:
 
 ## Contents List
 
-By default, this area shows all the content you have access to, across all sites and Asset Libraries. From here, you can sort and filter this content using built-in or custom filters. The Content Audit Tool chart changes dynamically based on the filters that you set.
+By default, this area shows all the content you have access, across all sites and Asset Libraries. From here, you can sort and filter this content using built-in or custom filters. The Content Audit Tool chart changes dynamically based on the filters that you set.
 
 In the Contents list you can find the following elements:
 
@@ -167,7 +173,7 @@ You can access the Content Performance sidebar for assets in the Contents list w
 - The Liferay DXP instance has an active [connection to Liferay Analytics Cloud](https://learn.liferay.com/analytics-cloud/latest/en/getting-started/connecting-data-sources/connecting-liferay-dxp-to-analytics-cloud.html) and your site is synchronized.
 
 ```note::
-   The *Metrics* option for your content is available when these conditions are met (2). If the *Metrics* options is missing, one or more conditions are not met (1).
+   The *Metrics* option for your content is available when these conditions are met (2). If the *Metrics* option is missing, one or more conditions are not met (1).
 ```
 
 ![Ensure that your configuration meets the conditions for showing the content metrics](./content-dashboard-interface/images/13.png)
