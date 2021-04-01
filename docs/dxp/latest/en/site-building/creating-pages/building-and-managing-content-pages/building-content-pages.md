@@ -64,6 +64,7 @@ Once you've [added a Content Page](../adding-pages/adding-a-page-to-a-site.md), 
 
     ![Edit an existing Content Page by dropping Fragments or Widgets in the edit area.](building-content-pages/images/02.png)
 
+<<<<<<< HEAD:docs/dxp/latest/en/site-building/creating-pages/building-and-managing-content-pages/building-content-pages.md
     When you enter the Site Builder view, you can add or edit your content in two ways:
 
     - *Page Design*: If you have permission to update the page and the page content, this mode is available.
@@ -73,6 +74,8 @@ Once you've [added a Content Page](../adding-pages/adding-a-page-to-a-site.md), 
 
     ![Choose between Page Design or Content Editing editing modes.](building-content-pages/images/18.png)
 
+=======
+>>>>>>> 3fd63e47c (LRDOCS-9217 Remove duplicate content about the editing options.):docs/dxp/7.x/en/site-building/creating-pages/building-and-managing-content-pages/building-content-pages.md
 1. From the Content Page sidebar, select the *Fragments and Widgets* button (![Fragments and Widgets](../../../images/icon-cards2.png)) and start adding the Fragments and Widgets for your content. You can browse for the component or use the *Search* field to find a specific Fragment or Widget.
 
     ![Add Fragments and Widgets from the Content Page sidebar](building-content-pages/images/03.png)
