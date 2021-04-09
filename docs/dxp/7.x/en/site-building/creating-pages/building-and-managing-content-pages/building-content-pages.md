@@ -13,9 +13,9 @@ The Liferay Page Editor helps you design your pages.
 When you open the Page Editor, you can edit your content in two ways:
 
 - *Page Design*: You can design pages when you have permission to update the page and the page content.
-- *Content Edition*: You can edit content when you have permission to update the page but not the page content.
+- *Content Editing*: You can edit content when you have permission to update the page but not the page content.
 
-![Choose between Page Design or Content Edition editing modes.](building-content-pages/images/18.png)
+![Choose between Page Design or Content Editing editing modes.](building-content-pages/images/18.png)
 
 The editing options available in the Content Page sidebar depend on the editing mode you choose.
 

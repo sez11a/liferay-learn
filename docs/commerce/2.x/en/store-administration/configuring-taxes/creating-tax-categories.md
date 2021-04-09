@@ -1,18 +1,24 @@
 # Creating Tax Categories
 
-Tax Categories are containers for one or more tax calculations in your store. Tax categories have to be created _first_ before applying any type of taxes.  Products can be taxed differently by assigning different tax categories to them.
+Liferay Commerce uses Tax Categories to store and apply tax rates to Channel Products and shipping costs. Once a Tax Category is created, you can use Tax Calculation Engines to [add multiple tax rates](./setting-rates-for-tax-calculations.md) to it. These rates are scoped to the Channel in which they're created. You can then [apply tax rates](applying-tax-rates.md) to Channel Products and shipping costs by assigning the Tax Category to them.
 
-To create a new tax category:
+```note::
+   Tax Categories serve as containers for tax rates and must be created before you can apply tax rates to any Products or shipping costs.
+```
 
-1. Go to the _Global Applications_ menu &rarr; _Commerce_ &rarr; _Tax Categories_.
-1. Click the (![Add icon](../../images/icon-add.png)) icon.
-1. Enter the following:
-    * **Name**: Holiday Special
-    * **Description**: Taxes for holidays
+Follow these steps to create a new Tax Category:
 
-1. Click _Save_ when finished.
+1. Open the *Global Menu* (![Global Menu](../../images/icon-applications-menu.png)), and go to *Tax Categories* in the *Commerce* tab.
 
-A new tax category has been created.
+1. Click on the *Add* button (![Add icon](../../images/icon-add.png)).
+
+1. Enter a *Name* for your Tax Category.
+
+1. Optionally, enter a *Description* and *External Reference Code*.
+
+1. Click *Save* when finished to create your new Tax Category.
+
+Once created, you can add tax rates to a Tax Category in each of your Channels. See [Setting Rates for Tax Calculations](./setting-rates-for-tax-calculations.md) for more information.
 
 ## Commerce 2.1 and Below
 
@@ -51,5 +57,5 @@ The Tax Category is now available for your store.
 
 ## Additional Information
 
-* [Setting Tax Rates by Address](../configuring-taxes/setting-tax-rate-by-address.md)
-* [Setting Fixed Tax Rates](../configuring-taxes/setting-tax-rate-by-fixed-rate.md)
+* [Setting Rates for Tax Calculations](./setting-rates-for-tax-calculations.md)
+* [Applying Tax Rates](./applying-tax-rates.md)
