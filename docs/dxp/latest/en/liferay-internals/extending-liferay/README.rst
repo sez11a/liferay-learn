@@ -16,4 +16,4 @@ Extending Liferay
 Portlet Filters
 ---------------
 
--  :doc:`/liferay-internals/extending-liferay/portlet-filters/auditing-portlet-activity-with-portlet-filters`
+-  :doc:`/liferay-internals/extending-liferay/portlet-filters/auditing-portlet-activity-with-a-portlet-filter`
