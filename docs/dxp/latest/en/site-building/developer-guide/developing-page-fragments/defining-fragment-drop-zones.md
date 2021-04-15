@@ -52,7 +52,7 @@ The following code excerpt shows how to use the `data-lfr-drop-zone-id` attribut
    ```
 
    ```tip::
-      You can configure the order of the drop zones and other elements in the fragment. For more information, read `Setting the Order of Elements in a Fragment <./setting-the-order-of-elements-in-a-fragment.md>`_.
+      You can configure the order of the drop zones and other elements in the Fragment. For more information, read `Setting the Order of Elements in a Fragment <./setting-the-order-of-elements-in-a-fragment.md>`_.
    ```
 
 ## Additional Information
