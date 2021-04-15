@@ -7,7 +7,7 @@ Although Portal includes default Master Page Templates that you can use to defin
 Follow these steps to create a Master Page Template:
 
 1. Open Product Menu and go to Site &rarr; *Design* &rarr; *Page Templates*.
-1. Under the *Masters* tab, click *Add* (![Add](./../../../images/icon-add.png) to create a new Master Page Template.
+1. Under the *Masters* tab, click *Add* (![Add](./../../../images/icon-add.png)) to create a new Master Page Template.
 1. Enter the *Name* of your new Master Page Template.
 1. Click *Fragments and Widgets* (![Fragments and Widgets](./../../../images/icon-add-widget.png)) on the sidebar and add Fragments for the common elements that you require.
 
@@ -34,15 +34,7 @@ You can revert any action using the *Undo* (![Preview](../../../images/icon-undo
   If a custom Master Page Template is used for a page, the Theme for the page is defined through the Master Page Template and can't be changed through the page's settings. See `Changing a Master Page Template's Theme <./managing-master-pages.md#changing-a-master-page-template-s-theme>`_ for more information.
 ```
 
-<<<<<<< HEAD:docs/dxp/latest/en/site-building/creating-pages/defining-headers-and-footers/creating-a-master-page-template.md
-## Related Information
-
-- [Master Page Templates](./master-page-templates.md)
-- [Managing Master Page Templates](./managing-master-pages.md)
-- [Understanding Pages](../understanding-pages/understanding-pages.md)
-=======
 ## Additional Information
 
 - [Managing Master Pages](./managing-master-pages.md)
 - [Master Pages Templates](./master-page-templates.md)
->>>>>>> 63d2cf693 (LRDOCS-9164 Fix Update images and description. Add 'Additional Information'.):docs/dxp/7.x/en/site-building/creating-pages/defining-headers-and-footers/creating-a-master-page-template.md
