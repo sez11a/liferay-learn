@@ -1,4 +1,4 @@
-package com.acme.j1h1.osgi.commands;
+package com.acme.j1h1.internal.osgi.commands;
 
 import com.acme.j1h1.Greeter;
 
@@ -7,9 +7,9 @@ import org.osgi.service.component.annotations.Reference;
 
 @Component(
 	property = {"osgi.command.function=greet", "osgi.command.scope=j1h1"},
-	service = Object.class
+	service = J1H1OSGiCommands.class
 )
-public class GreeterOSGiCommands {
+public class J1H1OSGiCommands {
 
 	public void greet(String name) {
 		_greeter.greet(name);

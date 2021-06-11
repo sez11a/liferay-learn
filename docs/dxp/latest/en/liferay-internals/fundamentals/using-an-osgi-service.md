@@ -125,7 +125,7 @@ Getting an OSGi service from the registry requires adding an [`@Reference`](http
 private Greeter _greeter;
 ```
 
-The `GreeterOSGiCommands` class has the above private `Greeter` field called `_greeter`. The `@Reference` annotation tells the OSGi runtime to inject the field with a `Greeter` service from the registry. If `J1H1Greeter` is the best matching `Greeter` service component in the registry (it's the only match in this example), the runtime injects `_greeter` with a `J1H1Greeter`.
+The `J1H1OSGiCommands` class has the above private `Greeter` field called `_greeter`. The `@Reference` annotation tells the OSGi runtime to inject the field with a `Greeter` service from the registry. If `J1H1Greeter` is the best matching `Greeter` service component in the registry (it's the only match in this example), the runtime injects `_greeter` with a `J1H1Greeter`.
 
 ### Make Your Class a Component
 
@@ -134,18 +134,12 @@ Only Declarative Services components can use the `@Reference` annotation. Add th
 ```java
 @Component(
 	property = {"osgi.command.function=greet", "osgi.command.scope=j1h1"},
-	service = Object.class
+	service = J1H1OSGiCommands.class
 )
-public class GreeterOSGiCommands {
+public class J1H1OSGiCommands {
 ```
 
-The `GreeterOSGiCommands` class is a service component of type `Object`. Unless there's a particular interface or class you need to implement, making your class a service of type `Object` is fine.
-
-```note::
-   As in Java, where every class is a subclass of ``java.lang.Object`` (even though you don't need to specify it by default), in Declarative Services, the runtime must know the type of class to register. Because you're not implementing any particular type, your parent class is ``java.lang.Object``, so you must specify that class as the service. While Java doesn't require you to specify `Object` as the parent when you're creating a class that doesn't inherit anything, Declarative Services does.
-```
-
-The `GreeterOSGiCommands` class's two properties define a Gogo shell command with a command function called `greet` in a scope called `j1h1`. The deployed `GreeterOSGiCommands` component provides the Gogo Shell command `j1h1:greet` that takes a `String` as input.
+The `J1H1OSGiCommands` class provides an OSGi service of its own type. The two properties define a Gogo shell command with a command function called `greet` in a scope called `j1h1`. The deployed `J1H1OSGiCommands` component provides the Gogo Shell command `j1h1:greet` that takes a `String` as input.
 
 ### Add a Dependency on the API
 
