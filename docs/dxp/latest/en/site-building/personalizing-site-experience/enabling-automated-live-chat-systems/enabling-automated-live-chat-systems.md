@@ -58,5 +58,4 @@ If you are unsure how to get the Account ID or Token for your chat provider see 
 * [Smartsupp](./getting-a-chat-provider-account-id/smartsupp.md)
 * [Tawk.to](./getting-a-chat-provider-account-id/tawk-to.md)
 * [Tidio](./getting-a-chat-provider-account-id/tidio.md)
-* [Tolvnow](./getting-a-chat-provider-account-id/tolvnow.md)
 * [Zendesk](./getting-a-chat-provider-account-id/zendesk.md)
