@@ -5,7 +5,7 @@ Liferay now offers an integration between [*DocuSign*](https://www.docusign.com/
 
 ## Enabling DocuSign 
 
-1. Open the Global menu on the top right corner. ![icon](./images/icon-applications-menu.png)
+1. Open the Global menu on the top right corner. ![icon](../../../images/icon-applications-menu.png)
 
 2. Click *Instance Settings* in the Control Panel.
 
@@ -73,7 +73,7 @@ Liferay now offers an integration between [*DocuSign*](https://www.docusign.com/
 
 ## How to use
 
-1. In the *Home page*, open the *Application menu* ![icon](./images/icon-menu.png)
+1. In the *Home page*, open the *Application menu* (![icon](../../../images/icon-menu.png))
 
 2. In the Application Menu, click on *Content & Data* then click on *Documents and Media*.![Documents and Media](./images/22.png)
 
