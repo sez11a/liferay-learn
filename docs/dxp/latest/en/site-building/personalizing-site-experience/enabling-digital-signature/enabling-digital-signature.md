@@ -11,7 +11,7 @@ Liferay now offers an integration between [*DocuSign*](https://www.docusign.com/
 
     ![Instance Settings](./images/01.png)
 
-3. Now, go to *Digital Signature*.
+3. Go to *Digital Signature*.
 
     ![Category Digital Signature](./images/02.png)
 
@@ -31,29 +31,33 @@ Liferay now offers an integration between [*DocuSign*](https://www.docusign.com/
 
 6. When you choose *Always Inherit* all sites will be linked to these settings. After choosing this option click on *Save* and Digital Signature must be available at Liferay's Portal.![Option Always Override](./images/05.png)
 
-7. When you choose *Always Override* as your Site Settings Strategy, that means every website will have its own configuration. The website conﬁguration must be done in your Site Settings. After choosing this option click on *Save*.![Option Always Override](./images/06.png) 
+7. When you choose *Always Override* as your Site Settings Strategy, that means every website will have its own configuration. The website conﬁguration must be done in your Site Settings. After choosing this option click on *Save*.
 
-8. When you choose *Inherit or Override*, that means your configuration has caracteristics of both options. It also means that you can set the configuration at instance settings and site settings. After choosing this option click on *Save*. ![Option Inherit or Override](./images/07.png) 
+    ![Option Always Override](./images/06.png) 
+
+8. When you choose *Inherit or Override*, that means your configuration has caracteristics of both options. It also means that you can set the configuration at instance settings and site settings. After choosing this option click on *Save*. 
+
+    ![Option Inherit or Override](./images/07.png) 
 
 9. After clicking on *Save*, go to the Site Settings page in the Conﬁguration section.
 
-10. Now go to *Digital Signature*.![Category Digital Signature](./images/08.png)
+10. Go to *Digital Signature*.![Category Digital Signature](./images/08.png)
 
 11. Switch the *toggle* to Enable;![Enable Toggle](./images/09.png)
 
-12. Now you need to input the User ID, API Account ID, Account's Base URI, Integration Key and the RSA Private Key DocuSign webSite.![DocuSign Keys](./images/10.png)
+12. Input the User ID, API Account ID, Account's Base URI, Integration Key and the RSA Private Key DocuSign webSite.![DocuSign Keys](./images/10.png)
 
 13. Once ﬁnished, click *save* and then Digital Signature must be available on Liferay Portal.
 
 ## Getting the keys in DocuSign
 
-1. Now, log into your [DocuSign account](https://account.docusign.com/oauth/auth?response_type=code&scope=all%20click.manage%20me_profile%20room_forms%20inproductcommunication_read%20data_explorer_signing_insights%20notary_read%20notary_write%20search_read%20search_write&client_id=2CC56DC9-4BCD-4B55-8AB0-8BA60BAE1065&redirect_uri=https%3A%2F%2Fapp.docusign.com%2Foauth%2Fcallback&state=%7B%22_ga%22%3A%222.118655759.764594398.1623180514-1139176039.1617134435%22%2C%22_gac%22%3A%221.229447918.1623246419.Cj0KCQjwzYGGBhCTARIsAHdMTQzcglmBh46xqjPM4dkiNQRuMKhi-gwyVf3j54T-CTJ70hdI_7Mp_kIaAgpFEALw_wcB%22%2C%22authTxnId%22%3A%2258fe6cdb-4162-4bc7-8827-594f0d8ce1c7%22%7D#/username) to get your account information.![DocuSign Account Information](./images/11.png)
+1. Log into your [DocuSign account](https://account.docusign.com/oauth/auth?response_type=code&scope=all%20click.manage%20me_profile%20room_forms%20inproductcommunication_read%20data_explorer_signing_insights%20notary_read%20notary_write%20search_read%20search_write&client_id=2CC56DC9-4BCD-4B55-8AB0-8BA60BAE1065&redirect_uri=https%3A%2F%2Fapp.docusign.com%2Foauth%2Fcallback&state=%7B%22_ga%22%3A%222.118655759.764594398.1623180514-1139176039.1617134435%22%2C%22_gac%22%3A%221.229447918.1623246419.Cj0KCQjwzYGGBhCTARIsAHdMTQzcglmBh46xqjPM4dkiNQRuMKhi-gwyVf3j54T-CTJ70hdI_7Mp_kIaAgpFEALw_wcB%22%2C%22authTxnId%22%3A%2258fe6cdb-4162-4bc7-8827-594f0d8ce1c7%22%7D#/username) to get your account information.![DocuSign Account Information](./images/11.png)
 
 2. Click on the *Settings tab* at the top of the page.![Settings Tab](./images/12.png)
 
 3. Scroll down the page and click on *Apps and Keys* in the *Integrations section*.![Apps and Keys](./images/13.png)
 
-4. Now, you already got three out of five credentials you need: User ID key, API Account ID key and Account Base URI.![Three Credencials Informations](./images/14.png)
+4. You already got three out of five credentials you need: User ID key, API Account ID key and Account Base URI.![Three Credencials Informations](./images/14.png)
 
 5. To get the other two you need to add an APP. Click on *ADD APP AND INTEGRATION KEY*. ![Add app and Integration Key](./images/15.png)
 
@@ -79,7 +83,7 @@ Liferay now offers an integration between [*DocuSign*](https://www.docusign.com/
 
 3. Choose the document you want to assign, then click on the *Kebab button*. ![Save Button](./images/23.png)
 
-4. Now, click on *Collect Digital Signature*.![Collect Digital Signature](./images/24.png)
+4. Click on *Collect Digital Signature*.![Collect Digital Signature](./images/24.png)
 
 5. Fill the *Envelope*'s information and click on *Save*.
 
