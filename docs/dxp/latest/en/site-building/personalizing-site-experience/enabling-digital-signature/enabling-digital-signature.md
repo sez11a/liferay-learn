@@ -1,99 +1,77 @@
-﻿
-# Enabling Digital Signature
+﻿# Enabling DocuSign Digital Signatures
 
-Liferay now offers an integration between [*DocuSign*](https://www.docusign.com/) and [Liferay's portal](https://www.liferay.com/home). DocuSign is a software that manages documents to be signed electronically. The main goal of this feature is help you manage and collect the signatures on your documents.
+You can now integrate [*DocuSign*](https://www.docusign.com/) digital signatures into your Liferay documents. DocuSign is a service that manages documents to be signed electronically. With this integration, you can manage and collect signatures on your documents.
 
-## Enabling DocuSign 
+Before you enable digital signatures in Liferay, make sure you've generated and retrieved your User ID key, API Account key, Account Base URI, Integration key, and RSA Private key. Instructions for doing this can be found [on DocuSign's website](https://support.docusign.com/en/guides/ndse-admin-guide-api-and-keys). 
 
-1. Open the Global menu on the top right corner. ![icon](../../../images/icon-applications-menu.png)
+## Enabling Digital Signatures
 
-2. Click *Instance Settings* in the Control Panel.
+1. Open the Global menu on the top right corner. ![Global Menu](../../../images/icon-applications-menu.png)
 
-    ![Instance Settings](./images/01.png)
+1. Click *Control Panel* &rarr; *Instance Settings* &rarr; *Digital Signature*. 
 
-3. Go to *Digital Signature*.
+1. Switch the *toggle* to Enable.
 
-    ![Category Digital Signature](./images/02.png)
+    ![Switch the toggle.](./images/03.png)
 
-4. Switch the *toggle* to Enable.
+1. You must choose a *Site Settings Strategy* (see below).
 
-    ![Switch the Toggle](./images/03.png)
+    ![Your Site Settings Strategy defines the scope of your digital signature.](./images/04.png)
 
-5. You must choose a *Site Settings Strategy*.
+1. Click *Save*. 
 
-    ![Site Settings Strategy](./images/04.png)
+You have three options for your Site settings strategy: 
 
-    **Always Inherit:** All sites linked to these settings.
+**Always Inherit:** All sites are linked to these settings.
 
-    **Always Override:** Every website will have to provide its own conﬁguration.
+**Always Override:** Every site must provide its own configuration.
 
-    **Inherit or Override:** Can be deﬁned in both site settings and instance settings. If deﬁned in both, the site settings will override those of the instance.
+**Inherit or Override:** Can be defined in both site settings and instance settings. If defined in both, the site settings will override those of the instance.
 
-6. When you choose *Always Inherit* all sites will be linked to these settings. After choosing this option click on *Save* and Digital Signature must be available at Liferay's Portal.![Option Always Override](./images/05.png)
+You now must add your digital keys from DocuSign at the proper scope in Liferay. 
 
-7. When you choose *Always Override* as your Site Settings Strategy, that means every website will have its own configuration. The website conﬁguration must be done in your Site Settings. After choosing this option click on *Save*.
+## Adding Digital Keys
 
-    ![Option Always Override](./images/06.png) 
+Depending on what you chose for your Site Settings strategy, you must add your digital keys at the proper scope: 
 
-8. When you choose *Inherit or Override*, that means your configuration has caracteristics of both options. It also means that you can set the configuration at instance settings and site settings. After choosing this option click on *Save*. 
+- If you chose Always Inherit, add the keys in Instance Settings. 
+- If you chose Always Override, add the keys in Site Settings. 
+- If you chose Inherit or Override, add the keys in either place.
 
-    ![Option Inherit or Override](./images/07.png) 
+1. Navigate to _Control Panel_ &rarr; _Instance Settings_ &rarr; _Digital Signature_ or for Site Settings, the _Site Menu_ &rarr; _Configuration_ &rarr; _Site Settings_ &rarr; _Digital Signature_. 
 
-9. After clicking on *Save*, go to the Site Settings page in the Conﬁguration section.
+1. If it's not switched already, switch the toggle to _Enabled_.
 
-10. Go to *Digital Signature*.![Category Digital Signature](./images/08.png)
+![Switch the toggle.](./images/09.png)
 
-11. Switch the *toggle* to Enable;![Enable Toggle](./images/09.png)
+1. Enter the User ID, API Account ID, Account's Base URI, Integration Key, and the RSA Private Key you previously retrieved from the DocuSign website. 
 
-12. Input the User ID, API Account ID, Account's Base URI, Integration Key and the RSA Private Key DocuSign webSite.![DocuSign Keys](./images/10.png)
+1. Click *Save* to enable digital signatures. 
 
-13. Once ﬁnished, click *save* and then Digital Signature must be available on Liferay Portal.
+## Enabling Document Signing in Documents and Media
 
-## Getting the keys in DocuSign
+1. Open the *Site Menu* (![Site Menu](../../../images/icon-menu.png)) &rarr; *Content & Data* &rarr; *Documents and Media*.
 
-1. Log into your [DocuSign account](https://account.docusign.com/oauth/auth?response_type=code&scope=all%20click.manage%20me_profile%20room_forms%20inproductcommunication_read%20data_explorer_signing_insights%20notary_read%20notary_write%20search_read%20search_write&client_id=2CC56DC9-4BCD-4B55-8AB0-8BA60BAE1065&redirect_uri=https%3A%2F%2Fapp.docusign.com%2Foauth%2Fcallback&state=%7B%22_ga%22%3A%222.118655759.764594398.1623180514-1139176039.1617134435%22%2C%22_gac%22%3A%221.229447918.1623246419.Cj0KCQjwzYGGBhCTARIsAHdMTQzcglmBh46xqjPM4dkiNQRuMKhi-gwyVf3j54T-CTJ70hdI_7Mp_kIaAgpFEALw_wcB%22%2C%22authTxnId%22%3A%2258fe6cdb-4162-4bc7-8827-594f0d8ce1c7%22%7D#/username) to get your account information.![DocuSign Account Information](./images/11.png)
+1. Find the document you want to collect digital signatures for and click its *Actions* button. ![Actions button](./images/23.png) Select _Collect Digital Signature_.
 
-2. Click on the *Settings tab* at the top of the page.![Settings Tab](./images/12.png)
+1. Fill the *Envelope*'s information and click on *Save*.
 
-3. Scroll down the page and click on *Apps and Keys* in the *Integrations section*.![Apps and Keys](./images/13.png)
+<!--The step above was the one spot that didn't seem clear to me, and you have no screenshot of it. Can you add one? -Rich -->
 
-4. You already got three out of five credentials you need: User ID key, API Account ID key and Account Base URI.![Three Credencials Informations](./images/14.png)
+## Tracking Envelope Status
 
-5. To get the other two you need to add an APP. Click on *ADD APP AND INTEGRATION KEY*. ![Add app and Integration Key](./images/15.png)
+DocuSign uses the term _envelope_ to denote a document or collection of documents to be signed. Once sent, you can track your envelope status from within Liferay.
 
-6. Input a name for that APP and click on *CREATE APP*.![Create App](./images/16.png)
+1. Open the *Site Menu* (![Site Menu](../../../images/icon-menu.png)) &rarr; _Content & Data_ &rarr; _Digital Signature_ to see a list of created envelopes. 
 
-7. The fourth credential, Integration key, is under the App's name.![Fourth Credential](./images/17.png)
+![You can see when envelopes were created, to whom they were sent, and their status.](./images/25.png)
 
+1. Click on the name of the envelope to see its details and download the document by clicking on the *Download* button.
 
-8. To get the last credential, RSA Private Key, you need to add a pair of RSA keys. In the Service Integration section, click on *GENERATE RSA*![RSA Key](./images/18.png)
+![You can view the details of your envelopes from inside Liferay.](./images/26.png)
 
-9. Look at the yellow warning, this information appears at that moment only, be sure to copy the information that you need otherwise you must create another app. Copy the Private Key. After that click on *Close*.![Last Credential](./images/19.png) 
+1. You can also create an envelope directly from this screen using the *Add button*. You'll be brought to Documents and Media to add a document and to enter the envelope information. 
 
-10. To save this app, scroll the page down and click on *Save*.![Save Button](./images/20.png)
+![Create an envelope directly by using the Add button.](./images/27.png) 
 
-11. Done! You already have all the credentials you need to enable the Digital Signature on Liferay's portal.
-
-
-## How to use
-
-1. In the *Home page*, open the *Application menu* (![icon](../../../images/icon-menu.png))
-
-2. In the Application Menu, click on *Content & Data* then click on *Documents and Media*.![Documents and Media](./images/22.png)
-
-3. Choose the document you want to assign, then click on the *Kebab button*. ![Save Button](./images/23.png)
-
-4. Click on *Collect Digital Signature*.![Collect Digital Signature](./images/24.png)
-
-5. Fill the *Envelope*'s information and click on *Save*.
-
-6. You can track the status of your envelope by clicking on *Digital Signature* in the Content & Data section in the Application menu.![Track Status of Envelope](./images/25.png)
-
-7. You can click on the name of the envelope to see its details and download the document by clicking on the *Download* button.![Envelope Details and Downloads](./images/26.png)
-
-8. You can also create an envelope directly from this screen using the *Add button* ![Create Envelope Directly](./images/27.png) 
-
-9. The *Document Library* is where you can upload your documents. You may select a file,  drag and drop a document, click on *Select File* or click on the *Add button*.![Create Envelope Directly](./images/28.png) 
-
-10. Fill the rest of the envelope information and click on *Save* to create your envelope. After that your Digital Signature is set.
-
+<!-- This article seems to be missing the last step: what happens when you enter the envelope? Is an email sent to the recipient? Is there a link to the document in that email? Does that link go back to Liferay or to DocuSign? Are we notified when the documents are signed, or do we have to keep checking the status? You should describe the entire process so the reader can get a good picture of how the integration works. -Rich -->
