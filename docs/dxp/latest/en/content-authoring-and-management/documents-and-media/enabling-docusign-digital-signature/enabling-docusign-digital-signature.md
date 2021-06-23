@@ -1,12 +1,12 @@
-﻿Enabling DocuSign Digital Signatures
-<!--Why did you change "digital signatures" (plural) to "digital signature" (singular) throughout the file? - Rich .. During SME review we talked about this, it was a request from the devs. Saying that the feature is "Enable Digital Signature", we revised the article and left the mentions to the button as singular and when mentioning signatures in general in the plural as it makes more sense for us - Eve/Fábio -->
+﻿# Enabling DocuSign Digital Signatures
+
 You can now integrate [*DocuSign*](https://www.docusign.com/) digital signatures into your Liferay documents. DocuSign is a service that manages documents to be signed electronically. With this integration, you can manage and collect signatures on your documents.
 
 Before you enable digital signatures in Liferay, make sure you've generated and retrieved your User ID key, API Account key, Account Base URI, Integration key, and RSA Private key. Instructions for doing this can be found on [DocuSign's website](https://support.docusign.com/en/guides/ndse-admin-guide-api-and-keys). 
 
 ## Enabling Digital Signatures
 
-1. Open the Global menu on the top right corner. ![Global Menu](../../../images/icon-applications-menu.png)
+1. Open the Global Menu(![Global Menu](../../../images/icon-applications-menu.png)).
 
 1. Click *Control Panel* &rarr; *Instance Settings* &rarr; *Digital Signature*. 
 
@@ -14,7 +14,7 @@ Before you enable digital signatures in Liferay, make sure you've generated and 
 
     ![Switch the toggle.](./images/01.png)
 
-1. You must choose a *Site Settings Strategy* (see below).
+1. Choose a *Site Settings Strategy* (see below).
 
     ![Your Site Settings Strategy defines the scope of your digital signatures.](./images/02.png)
 
@@ -28,7 +28,7 @@ You have three options for your Site settings strategy:
 
 **Inherit or Override:** Can be defined in both site settings and instance settings. If defined in both, the site settings will override those of the instance.
 
-You now must add your digital keys from DocuSign at the proper scope in Liferay. 
+You must now add your digital keys from DocuSign at the proper scope in Liferay. 
 
 ## Adding Digital Keys
 
@@ -42,19 +42,16 @@ Depending on what you chose for your Site Settings strategy, you must add your d
 
 1. If it's not switched already, switch the toggle to _Enabled_.
 
-    ![Switch the toggle to enable.](./images/03.png)
+![Switch the toggle.](./images/03.png)
 
 1. Enter the User ID, API Account ID, Account's Base URI, Integration Key, and the RSA Private Key you previously retrieved from the DocuSign website. 
 
 1. Click *Save* to enable digital signatures. 
 
-## Collecting Document Signing in Documents and Media
+## Collecting Document Signatures in Documents and Media
 
-1. Find the document you want to collect the digital signatures and click *Actions* &rarr; *Collect Digital Signature*.
-
-    ![You can see the Actions and Collect Digital Signatures buttons.](./images/04.png) 
-
-1. For multiple documents, select the documents you want to collect the signatures and click on *Collect Digital Signature* ![Collect Digital Signature](../../../images/icon-digital-signature.png). 
+1. For one document, find the document that should be signed and click *Actions* &rarr; *Collect Digital Signature*.![Actions button](./images/05.png) 
+1. For multiple documents, select the documents that should be signed and click *Collect Digital Signature* 
 
     ![You can see multiple selected files and the Collect Digital Signature button.](./images/05.png)
 
@@ -63,12 +60,20 @@ Depending on what you chose for your Site Settings strategy, you must add your d
     ![Fill the envelope's information with its name, recipient's name and email, email's subject and message.](./images/06.png)
     <!--Changing this screenshot to one filled in is in our list, since we'll have a meeting to retake all the screenshots with devs we'll replace this one then.-->
 
-1. Envelope sent, Recipients must go through [DocuSign's process](https://www.docusign.com/products/electronic-signature) to sign the document. 
+1. when the envelope is sent, Recipients must go through [DocuSign's process](https://www.docusign.com/products/electronic-signature) to sign the document. 
+1. When the envelope is sent, the recipient gets an email with a link to the document. Recipients must go through DocuSign's process to sign the document. 
+
+   ![Switch the toggle.](./images/08.png)
+
+   Your Digital Signature is automatically generated based on your full name and the initials you provide. 
+
+1. The copy of the signed document goes back to you and the recipients. 
 
 ## Tracking Envelope's Status
 
 DocuSign uses the term _envelope_ to denote a document or collection of documents to be signed. Once sent, you can track your envelope status from within Liferay. 
->You can check the different labels of status in [DocuSigns' website](https://support.docusign.com/en/guides/ndse-user-guide-document-status). 
+
+> You can check the different labels of status on [DocuSign's website](https://support.docusign.com/en/guides/ndse-user-guide-document-status). 
 
 1. Open the *Site Menu* (![Site Menu](../../../images/icon-menu.png)) &rarr; _Content & Data_ &rarr; _Digital Signature_ to see a list of created envelopes. 
 
@@ -76,15 +81,11 @@ DocuSign uses the term _envelope_ to denote a document or collection of document
 
 1. You can also create an envelope directly from this screen using the ![Add Button](../../../images/icon-add.png). You'll be brought to the envelope's screen to enter its information. 
 
-1. Use *Filter and Order* or type keywords in the *Search* bar to organize the documents you visualize.    
+1. Use *Filter and Order* or type keywords in the *Search* bar to find documents.
 
-    ![Organized documents through Filter and Order, or Search Bar.](./images/08.png)
+    ![Find documents through Filter and Order, or Search Bar.](./images/08.png)
 
-1. Click on the name of the envelope to see its details and download the document by clicking on the *Download* button. 
+1. Click the name of the envelope to see its details, and download the document by clicking the *Download* button. 
 
     ![You can view the details of your envelopes from inside Liferay.](./images/09.png)
 
-<!--Some screenshots from this article have to be modified, because the feature is still under development, so we decided to write the doc anyway, send it to Rich and later change just the images not to delay the process -Eve/Fábio -->
-    
-
-    
