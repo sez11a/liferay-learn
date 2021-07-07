@@ -4,7 +4,7 @@ DevOps
 .. toctree::
    :maxdepth: 2
 
-   devops/configuring-document-previews.md
+   devops/configuring-documents-and-media-previews.md
    ../../system-administration/file-storage/enabling-antivirus-scanning-for-uploaded-files.md
    devops/enabling-optimization-of-animated-gifs.md
    devops/enabling-openoffice-libreoffice-integration.md
@@ -12,7 +12,7 @@ DevOps
    devops/sharepoint_integration.rst
    devops/google_drive_integration.rst
 
--  :doc:`/content-authoring-and-management/documents-and-media/devops/configuring-document-previews`
+-  :doc:`/content-authoring-and-management/documents-and-media/devops/configuring-documents-and-media-previews`
 -  :doc:`../../system-administration/file-storage/enabling-antivirus-scanning-for-uploaded-files`
 -  :doc:`/content-authoring-and-management/documents-and-media/devops/enabling-optimization-of-animated-gifs`
 -  :doc:`/content-authoring-and-management/documents-and-media/devops/enabling-openoffice-libreoffice-integration`

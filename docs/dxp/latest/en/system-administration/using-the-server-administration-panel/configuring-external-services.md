@@ -87,5 +87,5 @@ Restart the application server to finish enabling Xuggler.
 
 ## Additonal Information
 
-* [Configuring Document Previews](../../content-authoring-and-management/documents-and-media/devops/configuring-document-previews.md)
+* [Configuring Documents and Media Previews](../../content-authoring-and-management/documents-and-media/devops/configuring-documents-and-media-previews.md)
 * []()
