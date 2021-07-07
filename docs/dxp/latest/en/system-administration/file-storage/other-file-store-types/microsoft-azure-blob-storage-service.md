@@ -48,7 +48,7 @@ Follow these steps to use Azure Blob Storage as the default Store for the Lifera
 Once finished restarting, the configured Azure Blob Storage container is your instance's default store.
 
 ```important::
-   If you're using Azure Blog Storage store in a clustered environment, the configuration on all nodes must be identical. In particular, make sure the ``portal-ext.properties`` file and the Azure Blob Storage store settings in System Settings are the same. 
+   If you're using Azure Blob Storage store in a clustered environment, the configuration on all nodes must be identical. In particular, make sure the ``portal-ext.properties`` file and the Azure Blob Storage store settings in System Settings are the same. 
 ```
 ## Additional Information
 
