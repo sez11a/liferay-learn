@@ -1,62 +1,26 @@
-# Configuring Document Previews
+# Configuring Documents and Media Previews
 
-File previews help users browse and find media efficiently. To view a preview of a file, click the file's name in the Document Library. If the file is an image, the image appears. If an installed app can render a preview of the file type, a representative image of the file appears (e.g., the opening frame of a video file or a presentation's first slide). If there are no such preview apps for the file, a generic image based on the file type appears.
+By default, Liferay DXP uses [PDFBox](https://pdfbox.apache.org) to generate [previews](../uploading-and-managing/previewing-files.md) for files added to the Document Library. This is because PDFBox is the only 100% Java-based tool that can be distributed with DXP.
 
-![File previews show file contents.](./configuring-document-previews/images/01.png)
+However, since PDFBox only supports a limited number of file types, Liferay also provides integration with external services to support additional file types. These services can be used to more quickly generate high quality file previews for more of your files.
 
-## File Preview Apps
+```important::
+   To be used for generating previews, the service must first be installed on the server running the Liferay DXP instance. 
+```
 
-Whenever possible, DXP generates previews of documents added to the Document Library. Out of the box, Java-based APIs generate previews. The only tool available that is 100% Java and has a compatible license to be distributed with DXP is [PDFBox](https://pdfbox.apache.org).
-A separate thread generates a preview for PDFs when uploaded. This process may last only a few seconds for a small file. The larger the file, the longer it takes.
+Liferay DXP currently supports integration with the following services.
 
-While PDFBox provides a default implementation of image generation for document previews and thumbnails, you must install and configure additional tools to harness the full power of document previews. These tools include
+* [OpenOffice](http://www.openoffice.org) or [LibreOffice](http://www.libreoffice.org): These services can be used in server mode to generate thumbnails and previews for supported file types (`.pdf`, `.docx`, `.odt`, `.ppt`, `.odp`, etc.). You can also use them to convert documents and view them in your browser. See [Enabling OpenOffice/LibreOffice Integration](./enabling-openoffice-libreoffice-integration.md) to learn more.
 
-* [OpenOffice](http://www.openoffice.org) or [LibreOffice](http://www.libreoffice.org):
-    Either of these in server mode can generate thumbnails and previews for supported file types (`.pdf`, `.docx`, `.odt`, `.ppt`, `.odp`, etc.), view documents in your browser, and convert documents. See [Enabling OpenOffice/LibreOffice Integration](./enabling-openoffice-libreoffice-integration.md) to learn more.
+* [ImageMagick](http://www.imagemagick.org) (also requires [Ghostscript](http://www.ghostscript.com)): These services provide fast, high-quality previews and conversions for image files. See [Enabling ImageMagick and Ghostscript](../../../system-administration/using-the-server-administration-panel/configuring-external-services.md#enabling-imagemagick-and-ghostscript) for more information.
 
-* [ImageMagick](http://www.imagemagick.org) (also requires [Ghostscript](http://www.ghostscript.com)): Enables faster and higher-quality previews and conversions.
+* [FFmpeg](http://ffmpeg.org/): This service provides support for audio and video files. In addition to generating file previews, you can and play multimedia in your browser's native HTML 5 player. See [Enabling FFmpeg for Audio and Video Previews]() for more information.
 
-* [Xuggler](http://www.xuggle.com/xuggler): Enables audio and video previews, can play audio and video files in your browser, and extracts thumbnails from video files.
+   ```note::
+      Liferay 7.3.x and earlier versions use `Xuggler <http://www.xuggle.com/xuggler>`_ for generating audio and video previews. See `Enabling Xuggler <../../../system-administration/using-the-server-administration-panel/configuring-external-services.md#enabling-xuggler>`_ for more information.
+   ```
 
-After installing these tools, configure them in the Control Panel's Server Administration screen.
-
-## Enabling ImageMagick
-
-1. Navigate to the _Global Menu_ &rarr; _Control Panel_.
-1. Click _Server Administration_.
-
-   ![Navigate to the Server Administration to install the preview tools.](./configuring-document-previews/images/02.png).
-
-1. Click _External Services_.
-1. Enter the Ghostscript and ImageMagick `variables` in the _Path_ field.
-
-   ![Enable Ghostscript and ImageMagick.](./configuring-document-previews/images/03.png).
-
-1. Check the _Enabled_ box.
-1. Click _Save_ when finished.
-
-## Enabling Xuggler
-
-1. Navigate to the _Global Menu_ &rarr; _Control Panel_.
-1. Click _Server Administration_.
-1. Click _External Services_.
-1. Scroll down to the bottom.
-1. Select the desired `JAR` file based on your operating system.
-
-   ![Xuggler provides video conversion functionality.](./configuring-document-previews/images/04.png).
-
-1. Click _Install_.
-1. Shut down your application server.
-1. Start the application server.
-1. Navigate back to the _Server Administration_ &rarr; _External Services_.
-1. Verify that the success message displays.
-
-   ![Enable Xuggler once it has been installed.](./configuring-document-previews/images/05.png).
-
-1. Check the _Enabled_ box.
-1. Click _Save_ when finished.
-
-With these tools installed and configured, Documents and Media can preview content of various types. For example, you can view documents in a viewer page by page. You can also view and play multimedia (audio or video) in your browser's native HTML 5 player. 
+With these tools installed and configured, Documents and Media can provide in application previews of most file types.
 
 ## Additional Information
 
