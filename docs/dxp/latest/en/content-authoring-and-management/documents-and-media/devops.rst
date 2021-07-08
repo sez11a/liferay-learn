@@ -7,6 +7,7 @@ DevOps
    devops/configuring-documents-and-media-previews.md
    ../../system-administration/file-storage/enabling-antivirus-scanning-for-uploaded-files.md
    devops/enabling-optimization-of-animated-gifs.md
+   devops/enabling-ffmpeg-for-audio-and-video-previews.md
    devops/enabling-openoffice-libreoffice-integration.md
    devops/enabling-document-creation-and-editing-with-microsoft-office-365.md
    devops/sharepoint_integration.rst
@@ -15,6 +16,7 @@ DevOps
 -  :doc:`/content-authoring-and-management/documents-and-media/devops/configuring-documents-and-media-previews`
 -  :doc:`../../system-administration/file-storage/enabling-antivirus-scanning-for-uploaded-files`
 -  :doc:`/content-authoring-and-management/documents-and-media/devops/enabling-optimization-of-animated-gifs`
+-  :doc:`/content-authoring-and-management/documents-and-media/devops/enabling-ffmpeg-for-audio-and-video-previews`
 -  :doc:`/content-authoring-and-management/documents-and-media/devops/enabling-openoffice-libreoffice-integration`
 -  :doc:`/content-authoring-and-management/documents-and-media/devops/enabling-document-creation-and-editing-with-microsoft-office-365`
 

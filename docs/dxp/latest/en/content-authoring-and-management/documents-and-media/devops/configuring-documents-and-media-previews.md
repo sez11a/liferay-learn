@@ -14,7 +14,7 @@ Liferay DXP currently supports integration with the following services.
 
 * [ImageMagick](http://www.imagemagick.org) (also requires [Ghostscript](http://www.ghostscript.com)): These services provide fast, high-quality previews and conversions for image files. See [Enabling ImageMagick and Ghostscript](../../../system-administration/using-the-server-administration-panel/configuring-external-services.md#enabling-imagemagick-and-ghostscript) for more information.
 
-* [FFmpeg](http://ffmpeg.org/): This service provides support for audio and video files. In addition to generating file previews, you can and play multimedia in your browser's native HTML 5 player. See [Enabling FFmpeg for Audio and Video Previews]() for more information.
+* [FFmpeg](http://ffmpeg.org/): This service provides support for audio and video files. In addition to generating file previews, you can and play multimedia in your browser's native HTML 5 player. See [Enabling FFmpeg for Audio and Video Previews](./enabling-ffmpeg-for-audio-and-video-previews.md) for more information.
 
    ```note::
       Liferay 7.3.x and earlier versions use `Xuggler <http://www.xuggle.com/xuggler>`_ for generating audio and video previews. See `Enabling Xuggler <../../../system-administration/using-the-server-administration-panel/configuring-external-services.md#enabling-xuggler>`_ for more information.

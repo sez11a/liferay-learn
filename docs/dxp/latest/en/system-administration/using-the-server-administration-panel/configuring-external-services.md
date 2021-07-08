@@ -1,9 +1,9 @@
 # Configuring External Services
 
-Liferay provides integration with external services for converting files and generating file previews. Three of these services can be enabled in the Server Administration settings: [ImageMagick](https://www.imagemagick.org/script/index.php), [Ghostscript](https://www.ghostscript.com/), and [Xuggler](http://www.xuggle.com/xuggler/). <!--Elsewhere in documentation, I see that ImageMagick is said to 'convert' files, and I see that... -->
+Liferay provides integration with external services for converting files and generating file previews. Three of these services can be enabled in the Server Administration settings: [ImageMagick](https://www.imagemagick.org/script/index.php), [Ghostscript](https://www.ghostscript.com/), and [Xuggler](http://www.xuggle.com/xuggler/).
 
 ```important::
-   As of Liferay 7.3.x, the Xuggler integration is deprecated. Users are advised to use Liferay's FFmpeg integration as an alternative. See ` <>`_ for more information.
+   As of Liferay 7.3.x, the Xuggler integration is deprecated. Users are advised to use Liferay's FFmpeg integration as an alternative. See `Enabling FFmpeg for Audio and Video Previews <../../content-authoring-and-management/documents-and-media/devops/enabling-ffmpeg-for-audio-and-video-previews.md>`_ for more information.
 ```
 
 ![Enable ImageMagick, Ghostscript, and Xuggler from the External Services tab.](./configuring-external-services/images/01.png)
@@ -18,10 +18,10 @@ After installing these services, configure your Liferay instance to use them via
 
 ## Enabling ImageMagick and Ghostscript
 
-By default, Documents and Media uses [PDFBox](https://pdfbox.apache.org/) to generate previews. [ImageMagick](https://www.imagemagick.org/script/index.php) and [Ghostscript](https://www.ghostscript.com/) provide faster and higher-quality previews and conversions and supports more image file types. To work, both services must be installed.
+By default, Documents and Media uses [PDFBox](https://pdfbox.apache.org/) to generate previews. [ImageMagick](https://www.imagemagick.org/script/index.php) and [Ghostscript](https://www.ghostscript.com/) provide faster and higher-quality previews and conversions and supports more image file types. To work, both services must be installed and enabled together.
 
 ```note::
-   Depending on your OS, these services may already be installed.If you're on Linux, both are likely already installed. However, they are not likely to be installed on Windows, while they may be on macOS.
+   Depending on your OS, these services may already be installed. If you're on Linux, both are likely already installed. However, they are not likely to be installed on Windows, while they may be on macOS.
 ```
 
 Once both ImageMagick and Ghostscript are installed on the server, follow these steps to enable these services for your Liferay instance:
@@ -85,7 +85,7 @@ xuggler.enabled=true
 
 Restart the application server to finish enabling Xuggler.
 
-## Additonal Information
+## Additional Information
 
 * [Configuring Documents and Media Previews](../../content-authoring-and-management/documents-and-media/devops/configuring-documents-and-media-previews.md)
-* []()
+* [Enabling FFmpeg for Audio and Video Previews](../../content-authoring-and-management/documents-and-media/devops/enabling-ffmpeg-for-audio-and-video-previews.md)
