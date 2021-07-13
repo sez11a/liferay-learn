@@ -43,6 +43,22 @@ Each Sort option has two settings: _Label_ and _Field_.
 
 ![From the Sort widget's configuration, add, edit, or remove Sort options.](./sorting-search-results/images/02.png)
 
+## Changing the Default Sort Behavior
+
+Out of the box, the Relevance option is first in the Sort widget's list, making it the default sort applied to the page. Therefore, results are sorted by relevance when a search is executed. Searching by relevance is the expected default behavior for most users, but you can exert a different sort strategy on default searches by changing the first option in the Sort widget configuration.
+
+To change the default sort option,
+
+1. Open the Sort widget's configuration screen by clicking the Widget Options ![Widget Options](../../../images/icon-widget-options.png) button.
+
+1. Click the Add ![Add](../../../images/icon-duplicate.png) button below the Relevance option.
+
+1. Duplicate the current Relevance option's values--this will ensure that Relevance is the second option in the list.
+
+1. Now change the top option. If you choose one of the existing options, make sure you remove the duplicate by clicking its Remove ![Minus](../../../images/icon-minus.png)
+
+1. Save the configuration. Enter a search and you'll see the new sort applied.
+
 ## Finding Sortable Fields
 
 To find the fields available for use in the Sort widget, Users with the proper permissions can navigate to *Control Panel* &rarr; *Configuration* &rarr; *Search*.  From there, open the Field Mappings tab and browse the mappings for each index.  Scroll to the `properties` section of the mapping and find any `keyword` field, `date` field, or a field with a numeric data type. The `type` field is instructive:
@@ -99,3 +115,56 @@ The `-` sign following the field name indicates that the order is _descending_. 
 **Field:** `createDate+`
 
 The `+` sign following the field name indicates that the order is _ascending_.  Sorting this way brings the oldest (by creation date) results to the top of the list.
+
+## Sorting by Nested Fields
+
+> Availability: 7.2 FP12+, 7.3 FP2+
+
+As described in [Accessing Nested DDM Fields](../search-facets/custom-facet.md#accessing-nested-ddm-fields) (in the Custom Facets article), DDM Fields became [nested fields](../../../liferay-internals/reference/7-3-breaking-changes.md#dynamic-data-mapping-fields-in-elasticsearch-have-changed-to-a-nested-document) as of Liferay 7.2 SP3+/FP8+ (and on all Liferay 7.3 versions). On the latest Fix Pack and GA release of 7.2 and 7.3, the [Elasticsearch Nested query](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-nested-query.html) is supported to account for these nested fields.
+
+Your Sort configurations that relied on fields named `ddm__keyword__*` at the root of the Elasticsearch document continue to be valid--the Search framework itself was adjusted to account for the nested field types. Use these fields as usual in your Sort widget's _Field_ configuration, even though they're no longer at the root of the document.
+
+The Sort widget works with keyword, date, and numeric fields. To find DDM keyword fields in existing documents in the index,
+
+```json
+GET liferay-20097/_search
+{
+  "query": {
+    "nested": {
+      "path": "ddmFieldArray",
+      "query": {
+        "wildcard":  { "ddmFieldArray.ddmFieldName": "ddm__keyword*" }
+      }
+    }
+  }
+}
+```
+
+Replace the Company Id---`20097`---in the index name parameter to match your instance's value.
+
+The document returned has a `ddmFieldArray` object with nested content:
+
+```json
+ "ddmFieldArray" : [
+    {
+      "ddmFieldName" : "ddm__keyword__40806__Textb5mx_en_US",
+      "ddmValueFieldName" : "ddmFieldValueKeyword_en_US",
+      "ddmFieldValueKeyword_en_US_String_sortable" : "some text has been entered",
+      "ddmFieldValueKeyword_en_US" : "some text has been entered"
+    },
+    {
+      "ddmFieldName" : "ddm__keyword__40806__Selectjdw0_en_US",
+      "ddmValueFieldName" : "ddmFieldValueKeyword_en_US",
+      "ddmFieldValueKeyword_en_US_String_sortable" : "option 3",
+      "ddmFieldValueKeyword_en_US" : "value 3"
+    },
+    {
+      "ddmFieldName" : "ddm__keyword__40806__Boolean15cg_en_US",
+      "ddmValueFieldName" : "ddmFieldValueKeyword_en_US",
+      "ddmFieldValueKeyword_en_US" : "true",
+      "ddmFieldValueKeyword_en_US_String_sortable" : "true"
+    }
+  ],
+```
+
+To use one of these fields in a Sort configuration, enter the `ddmFieldName` value (e.g., `ddm__keyword__40806__Testb5mx_en_US`) as the _Field_ setting.

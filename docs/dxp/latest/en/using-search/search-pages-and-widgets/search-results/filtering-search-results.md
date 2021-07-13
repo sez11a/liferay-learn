@@ -13,7 +13,7 @@ For now, consider these basic usages:
 | **User Title Filter:** End Users directly manipulate the filter key to refine results to the one they were looking for, using the Title |`Filter Field` _(title\_en\_US)_ <br /> `Filter Value` _(podcast)_ <br /> `Filter Query Type` _(Match)_ <br /> `Occur Type` _(must_not)_|
 | **Hard-Coded Filtering:** An administrative User configures the Search Page with filters that are invisible and unchangeable for end Users | ***Add to the above configuration*** <br /> `Invisible` _(True--checked)_ <br /> `Immutable` _(True--checked)_|
 
-Custom filters can do so many things, it's impossible to list them all. What follows is a widget configuration tour. You can see some example configurations in [Custom Filter Examples](./custom-filter-examples.md).  
+Custom filters can do so many things, it's impossible to list them all. What follows is a widget configuration tour. You can see some example configurations in [Custom Filter Examples](./custom-filter-examples.md).
 
 ## Adding a Custom Filter
 
@@ -76,6 +76,59 @@ Values in this field typically match the name of an application-defined index.
 To find the fields you can filter by in the Custom Filter widget, Users with the proper permissions can navigate to *Control Panel* &rarr; *Configuration* &rarr; *Search*.  From there, open the Field Mappings tab and browse the mappings for the `liferay-[companyId]` index. Scroll to the [`properties`](https://www.elastic.co/guide/en/elasticsearch/reference/current/properties.html) section of the mapping.
 
 ![Browse the field mappings to find Liferay DXP's indexed fields.](./filtering-search-results/images/04.png)
+
+## Finding and Using Nested Fields
+
+> Availability: 7.2 FP10+, 7.3 FP1/SP1+
+
+As described in [Accessing Nested DDM Fields](../search-facets/custom-facet.md#accessing-nested-ddm-fields) (in the Custom Facets article), DDM Fields became [nested fields](../../../liferay-internals/reference/7-3-breaking-changes.md#dynamic-data-mapping-fields-in-elasticsearch-have-changed-to-a-nested-document) as of Liferay 7.2 SP3+/FP8+ (and on all Liferay 7.3 versions). On the latest Fix Pack and GA release of 7.2 and 7.3, the [Elasticsearch Nested query](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-nested-query.html) is supported to account for these nested fields.
+
+To find DDM fields in existing documents in the index,
+
+```json
+GET liferay-20097/_search
+{
+  "query": {
+    "nested": {
+      "path": "ddmFieldArray",
+      "query": {
+        "wildcard":  { "ddmFieldArray.ddmFieldName": "ddm__*" }
+      }
+    }
+  }
+}
+```
+
+Replace the Company Id---`20097`---in the index name parameter to match your instance's value.
+
+The document returned has a `ddmFieldArray` object with nested content:
+
+```json
+ "ddmFieldArray" : [
+    {
+      "ddmFieldName" : "ddm__keyword__40806__Textb5mx_en_US",
+      "ddmValueFieldName" : "ddmFieldValueKeyword_en_US",
+      "ddmFieldValueKeyword_en_US_String_sortable" : "some text has been entered",
+      "ddmFieldValueKeyword_en_US" : "some text has been entered"
+    },
+    {
+      "ddmFieldName" : "ddm__keyword__40806__Selectjdw0_en_US",
+      "ddmValueFieldName" : "ddmFieldValueKeyword_en_US",
+      "ddmFieldValueKeyword_en_US_String_sortable" : "option 3",
+      "ddmFieldValueKeyword_en_US" : "value 3"
+    },
+    {
+      "ddmFieldName" : "ddm__keyword__40806__Boolean15cg_en_US",
+      "ddmValueFieldName" : "ddmFieldValueKeyword_en_US",
+      "ddmFieldValueKeyword_en_US" : "true",
+      "ddmFieldValueKeyword_en_US_String_sortable" : "true"
+    }
+  ],
+```
+
+Using one of these fields in a Custom Filter configuration requires three custom filter widgets.  A [Nested query](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-nested-query.html) is added for wrapping the required child queries: one child query matches the field's name, the other the value.
+
+See [Boosting Matches to Nested Fields](custom-filter-examples.md#boosting-matches-to-nested-fields) for an example showing the use of a DDM Structure field with the Custom Filter widget.
 
 ## Related Content
 
