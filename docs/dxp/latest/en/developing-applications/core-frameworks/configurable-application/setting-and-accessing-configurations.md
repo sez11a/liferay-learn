@@ -144,3 +144,4 @@ Now the font family attribute is a dropdown selection.
 ## Further Customization
 
 * [Categorizing a Configuration](./categorizing-a-configuration.md)
+* [Field Options Provider](./field-options-provider.md)
