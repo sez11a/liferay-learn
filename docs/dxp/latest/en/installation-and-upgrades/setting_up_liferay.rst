@@ -93,7 +93,7 @@ Visit `Users <../system-administration/configuring-liferay/virtual-instances/use
 Configure File Storage
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Using `Documents and Media <../content-authoring-and-management/documents-and-media/sharing-documents-and-media.md>`_, file attachments, and embedding images in content requires file storage. Visit `File Storage <../system-administration/file-storage/configuring-file-storage.md>`_ to configure it.
+Using `Documents and Media <../content-authoring-and-management/documents-and-media/documents-and-media-overview.md>`_, file attachments, and embedding images in content requires file storage. Visit `File Storage <../system-administration/file-storage/configuring-file-storage.md>`_ to configure it.
 
 After setting up file storage, consider enabling antivirus file scanning. See `Enabling Antivirus Scanning for Uploaded Files <../system-administration/file-storage/enabling-antivirus-scanning-for-uploaded-files.md>`_ to learn how.
 
